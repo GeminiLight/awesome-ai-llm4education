@@ -117,12 +117,6 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-1. :sparkles: **EduAgent: Generative Student Agents in Learning**
-
-    *Songlin Xu, Xinyu Zhang, Lianhui Qin*
-
-    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07963)
-
 1. :sparkles: **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
 
     *Zhengyuan Liu, Stella Xin Yin, Carolyn Lee, Nancy F. Chen*
@@ -287,7 +281,13 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     *Silan Hu, Xiaoning Wang*
 
-    preprint, 2024. [`conference`](https://arxiv.org/abs/2405.03734)
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2405.03734)
+
+1. :sparkles: **EduAgent: Generative Student Agents in Learning**
+
+    *Songlin Xu, Xinyu Zhang, Lianhui Qin*
+
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07963)
 
 1. **Visualizing Self-Regulated Learner Profiles in Dashboards: Design Insights from Teachers**
 
@@ -474,6 +474,12 @@ We collect papers related to **artificial intelligence (AI) and large language m
     *Xin-Peng Wang, Liang Chen, M. Zhang*
 
     AAAI, 2023. [`conference`](https://ojs.aaai.org/index.php/AAAI/article/view/26214)
+
+1. **Learning Behavior-oriented Knowledge Tracing**
+
+    *Bihan Xu, Zhenya Huang, Jia-Yin Liu, Shuanghong Shen, Qi Liu, Enhong Chen, Jinze Wu, Shijin Wang*
+
+    KDD, 2023. [`conference`](http://staff.ustc.edu.cn/~huangzhy/files/papers/BihanXu-KDD2023.pdf)
 
 1. **Evolutionary Neural Architecture Search for Transformer in Knowledge Tracing**
 
@@ -739,12 +745,6 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 ## [Dataset & Benchmark](#content)
 
-1. **PTADisc: A Cross-Course Dataset Supporting Personalized Learning in Cold-Start Scenarios**
-
-    *Liya Hu, Zhiang Dong, Jingyuan Chen, Guifeng Wang, Zhihua Wang, Zhou Zhao, Fei Wu*
-
-    NeurIPS, conference. [`preprint`](https://openreview.net/forum?id=EIydMrHBHP)
-
 1. **EduNLP: Towards a Unified and Modularized Library for Educational Resources**
 
     *Zhenya Huang, Yuting Ning, Longhu Qin, Shiwei Tong, Shangzi Xue, Tong Xiao, Xin Lin, Jiayu Liu, Qi Liu, Enhong Chen, Shijing Wang*
@@ -768,6 +768,12 @@ We collect papers related to **artificial intelligence (AI) and large language m
     *Hasan Abu-Rasheed, Christian Weber, Madjid Fathi*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2402.07910)
+
+1. **PTADisc: A Cross-Course Dataset Supporting Personalized Learning in Cold-Start Scenarios**
+
+    *Liya Hu, Zhiang Dong, Jingyuan Chen, Guifeng Wang, Zhihua Wang, Zhou Zhao, Fei Wu*
+
+    NeurIPS, 2023. [`conference`](https://openreview.net/forum?id=EIydMrHBHP)
 
 1. **EdNet: A Large-Scale Hierarchical Dataset in Education**
 
