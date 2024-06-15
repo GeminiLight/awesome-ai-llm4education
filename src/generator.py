@@ -22,6 +22,14 @@ def convert_csv_to_md(csv_file_path, mdFile, header):
     df_paper_info['category'] = df_paper_info['category'].apply(lambda x: x.split(';'))
     df_paper_info = df_paper_info.explode('category')
     category_list = df_paper_info['category'].unique().tolist()
+    print(category_list)
+
+    presorted_category_list = ['Survey', 'Tutoring System', 'Adaptive Learning', 'Assessment - Student Profiling', 'Assessment - Adaptive Testing', 'Assessment - Cognitive Diagnosis', 'Assessment - Knowledge Tracing', 'Assessment - Question Generation', 'Assessment - Question Retrieval', 'Assessment - Automated Scoring', 'Aided Teaching', 'Material Generation', 'Specific Scenario - Computer Science', 'Specific Scenario - Math', 'Specific Scenario - Medical', 'Dataset & Benchmark']
+    
+    # sort the paper info based on the presorted category list
+    df_paper_info['category'] = pd.Categorical(df_paper_info['category'], categories=presorted_category_list, ordered=True)
+    df_paper_info = df_paper_info.sort_values(by=['category', 'year', 'publisher', 'type'])
+
     # command = "cp " + header + " " + mdFile
     # os.system(command)
     shutil.copy(header, mdFile)
@@ -66,8 +74,10 @@ def convert_csv_to_md(csv_file_path, mdFile, header):
                 file.writelines(f"### [{category}](#content)\n\n")
             for i, paper in df_paper_info_category.iterrows():
                 paper_id_count += 1
-                # "category", "title", "publisher", "year", "type", "link", "authors"
-                file.writelines(f"{paper_id_count}. **{paper['title']}**")
+                if paper['is_llm_related'] == 1:
+                    file.writelines(f"{paper_id_count}. :sparkles: **{paper['title']}**")
+                else:
+                    file.writelines(f"{paper_id_count}. **{paper['title']}**")
                 file.write('\n\n')
                 file.writelines("    *{}*".format(paper['authors']))
                 file.write('\n\n')
