@@ -22,8 +22,7 @@ def convert_csv_to_md(csv_file_path, mdFile, header):
     df_paper_info['category'] = df_paper_info['category'].apply(lambda x: x.split(';'))
     df_paper_info = df_paper_info.explode('category')
     category_list = df_paper_info['category'].unique().tolist()
-    print(category_list)
-
+    # print(category_list)
     presorted_category_list = ['Survey', 'Tutoring System', 'Adaptive Learning', 'Assessment - Student Profiling', 'Assessment - Adaptive Testing', 'Assessment - Cognitive Diagnosis', 'Assessment - Knowledge Tracing', 'Assessment - Question Generation', 'Assessment - Question Retrieval', 'Assessment - Automated Scoring', 'Aided Teaching', 'Material Generation', 'Specific Scenario - Computer Science', 'Specific Scenario - Math', 'Specific Scenario - Medical', 'Dataset & Benchmark']
     
     # sort the paper info based on the presorted category list

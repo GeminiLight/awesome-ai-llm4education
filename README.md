@@ -87,12 +87,6 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 ### [Tutoring System](#content)
 
-1. :sparkles: **ArgueTutor: An Adaptive Dialog-Based Learning System for Argumentation Skills**
-
-    *Thiemo Wambsganss, C. Niklaus, Matthias Cetto, Matthias Söllner, S. Handschuh, J. Leimeister*
-
-    CHI, 2024. [`conference`](https://dl.acm.org/doi/abs/10.1145/3411764.3445781)
-
 1. :sparkles: **Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling**
 
     *Minju Park, Sojung Kim, Seunghyun Lee, Soonwoo Kwon, Kyuseok Kim*
@@ -176,6 +170,12 @@ We collect papers related to **artificial intelligence (AI) and large language m
     *Eleni Ilkou*
 
     WWW Companion, 2022. [`workshop`](https://arxiv.org/abs/2203.08507)
+
+1. **ArgueTutor: An Adaptive Dialog-Based Learning System for Argumentation Skills**
+
+    *Thiemo Wambsganss, C. Niklaus, Matthias Cetto, Matthias Söllner, S. Handschuh, J. Leimeister*
+
+    CHI, 2021. [`conference`](https://dl.acm.org/doi/abs/10.1145/3411764.3445781)
 
 1. **An Interaction Design for Machine Teaching to Develop AI Tutors**
 
