@@ -28,7 +28,7 @@ def convert_csv_to_md(csv_file_path, mdFile, header):
     
     # sort the paper info based on the presorted category list
     df_paper_info['category'] = pd.Categorical(df_paper_info['category'], categories=presorted_category_list, ordered=True)
-    df_paper_info = df_paper_info.sort_values(by=['category', 'year', 'publisher', 'type'])
+    df_paper_info = df_paper_info.sort_values(by=['category', 'year', 'publisher', 'type'], ascending=[True, False, True, True])
 
     # command = "cp " + header + " " + mdFile
     # os.system(command)
@@ -42,16 +42,16 @@ def convert_csv_to_md(csv_file_path, mdFile, header):
             category_left_index = temp_category_list[2 * i + 1].replace(" ", "-").replace("&", "").lower()
             file.writelines('<tr>\n')
             if category_left in abbr:
-                file.writelines(f"\t<td>&emsp;<a href=#{{{category_left_index}}}>2.{2*i+1} {category_left} ({abbr[category_left]})</a></td>\n")
+                file.writelines(f"\t<td>&emsp;<a href=#{category_left_index}>2.{2*i+1} {category_left} ({abbr[category_left]})</a></td>\n")
             else:
-                file.writelines(f"\t<td>&emsp;<a href=#{{{category_left_index}}}>2.{2*i+1} {category_left}</a></td>\n")
+                file.writelines(f"\t<td>&emsp;<a href=#{category_left_index}>2.{2*i+1} {category_left}</a></td>\n")
             if 2 * i + 1 < len(temp_category_list) - 1:
                 category_right = temp_category_list[2 * i + 2]
                 category_right_index = temp_category_list[2 * i + 2].replace(" ", "-").replace("&", "").lower()
                 if category_right in abbr:
-                    file.writelines(f"\t<td>&emsp;<a href=#{{{category_right_index}}}>2.{2*i+2} {category_right} ({abbr[category_right]})</a></td>\n")
+                    file.writelines(f"\t<td>&emsp;<a href=#{category_right_index}>2.{2*i+2} {category_right} ({abbr[category_right]})</a></td>\n")
                 else:
-                    file.writelines(f"\t<td>&emsp;<a href=#{{{category_right_index}}}>2.{2*i+2} {category_right}</a></td>\n")
+                    file.writelines(f"\t<td>&emsp;<a href=#{category_right_index}>2.{2*i+2} {category_right}</a></td>\n")
             else:
                 file.writelines('<td>&ensp;</td>\n')
                 file.writelines('</tr>\n')
