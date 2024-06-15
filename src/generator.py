@@ -79,9 +79,9 @@ def convert_csv_to_md(csv_file_path, mdFile, header):
                 else:
                     file.writelines(f"{paper_id_count}. **{paper['title']}**")
                 file.write('\n\n')
-                file.writelines("    *{}*".format(paper['authors']))
+                file.writelines(f"  *{paper['authors']}*")
                 file.write('\n\n')
-                file.writelines(f"    {paper['publisher']}, {paper['year']}. [`{paper['type']}`]({paper['link']})")
+                file.writelines(f"  {paper['publisher']}, {paper['year']}. [`{paper['type']}`]({paper['link']})")
                 file.write('\n\n')
                 if isinstance(paper['code'], str) and len(paper['code']) > 0:
                     file.writelines(f", [`code`]({paper['code']})")
