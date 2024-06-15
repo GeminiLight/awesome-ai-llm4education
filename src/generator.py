@@ -61,7 +61,7 @@ def convert_csv_to_md(csv_file_path, mdFile, header):
         file.writelines('</table>\n\n')
 
         # write content
-        paper_id_count = 0
+        paper_id_count = 1
         if_write_tasks_section = False
         for category in category_list:
             df_paper_info_category = df_paper_info[df_paper_info['category'] == category]
@@ -73,15 +73,15 @@ def convert_csv_to_md(csv_file_path, mdFile, header):
                     file.writelines("## [Tasks](#content)\n\n")
                 file.writelines(f"### [{category}](#content)\n\n")
             for i, paper in df_paper_info_category.iterrows():
-                paper_id_count += 1
+                # paper_id_count += 1
                 if paper['is_llm_related'] == 1:
                     file.writelines(f"{paper_id_count}. :sparkles: **{paper['title']}**")
                 else:
                     file.writelines(f"{paper_id_count}. **{paper['title']}**")
                 file.write('\n\n')
-                file.writelines(f"  *{paper['authors']}*")
+                file.writelines(f"    *{paper['authors']}*")
                 file.write('\n\n')
-                file.writelines(f"  {paper['publisher']}, {paper['year']}. [`{paper['type']}`]({paper['link']})")
+                file.writelines(f"    {paper['publisher']}, {paper['year']}. [`{paper['type']}`]({paper['link']})")
                 file.write('\n\n')
                 if isinstance(paper['code'], str) and len(paper['code']) > 0:
                     file.writelines(f", [`code`]({paper['code']})")
