@@ -1,6 +1,8 @@
 # Awesome Data-driven NFT Papers
 
-We collect papers related to artificial intelligence (with a focus of large language model - LLM) for education from top conferences, journals, and specialized domain-specific conferences. We then categorize them according to their specific tasks for better organization.
+We collect papers related to **artificial intelligence (AI) and large language model (LLM) for education** from top conferences, journals, and specialized domain-specific conferences. We then categorize them according to their specific tasks for better organization.
+
+**:sparkles: indicates the papers that are related to LLM.**
 
 ## [Content](#content)
 
