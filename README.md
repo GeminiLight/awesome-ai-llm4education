@@ -208,73 +208,97 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     SIGIR, 2024. [`conference`](https://arxiv.org/abs/2404.10876)
 
-2. :sparkles: **Learning Structure and Knowledge Aware Representation with Large Language Models for Concept Recommendation**
+2. **Modeling Balanced Explicit and Implicit Relations with Contrastive Learning for Knowledge Concept Recommendation in MOOCs**
+
+    *Hengnian Gu, Zhiyi Duan, Pan Xie, Dongdai Zhou*
+
+    WWW, 2024. [`conference`](https://arxiv.org/abs/2402.08256)
+
+3. :sparkles: **Learning Structure and Knowledge Aware Representation with Large Language Models for Concept Recommendation**
 
     *Qingyao Li, Wei Xia, Kounianhua Du, Qiji Zhang, Weinan Zhang, Ruiming Tang, Yong Yu*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2405.12442)
 
-3. **Set-to-Sequence Ranking-based Concept-aware Learning Path Recommendation**
+4. **Set-to-Sequence Ranking-based Concept-aware Learning Path Recommendation**
 
     *Xianyu Chen, Jian Shen, Wei Xia, Jiarui Jin, Yakun Song, Weinan Zhang, Weiwen Liu, Menghui Zhu, Ruiming Tang, Kai Dong, Dingyin Xia, Yong Yu*
 
     AAAI, 2023. [`conference`](https://arxiv.org/abs/2306.04234)
 
-4. **Graph Enhanced Hierarchical Reinforcement Learning for Goal-oriented Learning Path Recommendation**
+5. **Graph Enhanced Hierarchical Reinforcement Learning for Goal-oriented Learning Path Recommendation**
 
     *Qingyao Li, Wei Xia, Li'ang Yin, Jian Shen, Renting Rui, Weinan Zhang, Xianyu Chen, Ruiming Tang, Yong Yu*
 
     CIKM, 2023. [`conference`](https://dl.acm.org/doi/abs/10.1145/3583780.3614897)
 
-5. **MHRR: MOOCs Recommender Service With Meta Hierarchical Reinforced Ranking**
+6. **MHRR: MOOCs Recommender Service With Meta Hierarchical Reinforced Ranking**
 
     *Yuchen Li, Haoyi Xiong, Linghe Kong, Rui Zhang, Fanqin Xu, Guihai Chen, Minglu Li*
 
     TSC, 2023. [`journal`](https://ieeexplore.ieee.org/document/10286866)
 
-6. **Constraint Sampling Reinforcement Learning: Incorporating Expertise For Faster Learning**
+7. **Constraint Sampling Reinforcement Learning: Incorporating Expertise For Faster Learning**
 
     *Tong Mu, Georgios Theocharous, David Arbour, Emma Brunskill*
 
     AAAI, 2022. [`conference`](https://arxiv.org/abs/2112.15221)
 
-7. **CurriculumTutor: An Adaptive Algorithm for Mastering a Curriculum**
+8. **CurriculumTutor: An Adaptive Algorithm for Mastering a Curriculum**
 
     *Shabana K M, Chandrashekar Lakshminarayanan*
 
     AIED, 2022. [`conference`](https://dl.acm.org/doi/10.1007/978-3-031-11644-5_26)
 
-8. **Reinforcement Learning for the Adaptive Scheduling of Educational Activities**
+9. **ConceptGuide: Supporting Online Video Learning with Concept Map-based Recommendation of Learning Path**
+
+    *Chien-Lin Tang, Jingxian Liao, Hao-Chuan Wang, Ching-Ying Sung, Wen-Chieh Lin*
+
+    WWW, 2021. [`conference`](https://dl.acm.org/doi/10.1145/3442381.3449808)
+
+10. **Reinforcement Learning for the Adaptive Scheduling of Educational Activities**
 
     *A. Singla, Anna N. Rafferty, Goran Radanovic, N. Heffernan*
 
     CHI, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3313831.3376518)
 
-9. **Deep Reinforcement Learning for Adaptive Learning Systems**
+11. **Deep Reinforcement Learning for Adaptive Learning Systems**
 
     *Xiao Li, Hanchen Xu, Jinming Zhang, Hua-hua Chang*
 
     arXiv, 2020. [`preprint`](https://arxiv.org/abs/2004.08410)
 
-10. **Exploiting Cognitive Structure for Adaptive Learning**
+12. **Exploiting Cognitive Structure for Adaptive Learning**
 
     *Qi Liu, Shiwei Tong, Chuanren Liu, Hongke Zhao, Enhong Chen, Haiping Ma, Shijin Wang*
 
     KDD, 2019. [`conference`](https://arxiv.org/abs/1905.12470)
 
-11. **Combining Adaptivity with Progression Ordering for Intelligent Tutoring Systems**
+13. **Using structured knowledge and traditional word embeddings to generate concept representations in the educational domain**
+
+    *Oghenemaro Anuyah, Ion Madrazo Azpiazu, Maria Soledad Pera*
+
+    WWW Companion, 2019. [`workshop`](https://dl.acm.org/doi/abs/10.1145/3308560.3316583)
+
+14. **Combining Adaptivity with Progression Ordering for Intelligent Tutoring Systems**
 
     *Tong Mu, Shuhan Wang, Erik Andersen, Emma Brunskill*
 
     Learning@Scale, 2018. [`conference`](https://dl.acm.org/doi/10.1145/3231644.3231672)
 
-12. **The Effects of Adaptive Learning in a Massive Open Online Course on Learners’ Skill Development**
+15. **The Effects of Adaptive Learning in a Massive Open Online Course on Learners' Skill Development**
 
     *Y. Rosen, I. Rushkin, Rob Rubin, Liberty Munson, Andrew M. Ang, G. Weber, Glenn Lopez, D. Tingley*
 
     Learning@Scale, 2018. [`conference`](https://scholar.harvard.edu/files/dtingley/files/adaptivelas2018.pdf)
 
-13. **Program2Tutor: Combining Automatic Curriculum Generation with Multi-Armed Bandits for Intelligent Tutoring Systems**
+16. **Ontology-based Recommender System in Higher Education**
+
+    *Charbel Obeid, Inaya Lahoud, Hicham El Khoury,  Pierre-Antoine Champin*
+
+    WWW Companion, 2018. [`workshop`](https://dl.acm.org/doi/10.1145/3184558.3191533)
+
+17. **Program2Tutor: Combining Automatic Curriculum Generation with Multi-Armed Bandits for Intelligent Tutoring Systems**
 
     *Tong Mu, Karan Goel*
 
@@ -386,61 +410,67 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     WWW, 2024. [`conference`](https://arxiv.org/abs/2404.11290)
 
-8. **Endowing Interpretability for Neural Cognitive Diagnosis by Efficient Kolmogorov-Arnold Networks**
+8. **Towards the Identifiability and Explainability for Personalized Learner Modeling: An Inductive Paradigm**
+
+    *Jiatong Li, Qi Liu, Fei Wang, Jiayu Liu, Zhenya Huang, Fangzhou Yao, Linbo Zhu, Yu Su*
+
+    WWW, 2024. [`conference`](https://arxiv.org/abs/2309.00300)
+
+9. **Endowing Interpretability for Neural Cognitive Diagnosis by Efficient Kolmogorov-Arnold Networks**
 
     *Shiwei Tong, Qi Liu, Runlong Yu, Wei Huang, Zhenya Huang, Zachary A Pardos, Weijie Jiang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2405.14399)
 
-9. **Disentangling Cognitive Diagnosis with Limited Exercise Labels**
+10. **Disentangling Cognitive Diagnosis with Limited Exercise Labels**
 
     *Xiangzhi Chen, Le Wu, Fei Liu, Lei Chen, Kun Zhang, Richang Hong, Meng Wang*
 
     NeurIPS, 2023. [`conference`](https://openreview.net/forum?id=ogPBujRhiN)
 
-10. **Leveraging Transferable Knowledge Concept Graph Embedding for Cold-Start Cognitive Diagnosis**
+11. **Leveraging Transferable Knowledge Concept Graph Embedding for Cold-Start Cognitive Diagnosis**
 
     *Weibo Gao, Hao Wang, Qi Liu, Fei Wang, Xin Lin, Linan Yue, Zheng Zhang, Rui Lv, Shijin Wang*
 
     SIGIR, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3539618.3591774)
 
-11. **Reconciling Cognitive Modeling with Knowledge Forgetting: A Continuous Time-aware Neural Network Approach**
+12. **Reconciling Cognitive Modeling with Knowledge Forgetting: A Continuous Time-aware Neural Network Approach**
 
     *Haiping Ma, Jingyuan Wang, Hengshu Zhu, Xin Xia, Haifeng Zhang, Xingyi Zhang, Lei Zhang*
 
     IJCAI, 2022. [`conference`](https://www.ijcai.org/proceedings/2022/302)
 
-12. **HierCDF: A Bayesian Network-based Hierarchical Cognitive Diagnosis Framework**
+13. **HierCDF: A Bayesian Network-based Hierarchical Cognitive Diagnosis Framework**
 
     *Jiatong Li, Fei Wang, Qi Liu, Mengxiao Zhu, Wei Huang, Zhenya Huang, Enhong Chen, Yu Su, Shijin Wang*
 
     KDD, 2022. [`conference`](http://staff.ustc.edu.cn/~cheneh/paper_pdf/2022/Jiatong-Li-KDD.pdf)
 
-13. **Towards a New Generation of Cognitive Diagnosis**
+14. **Towards a New Generation of Cognitive Diagnosis**
 
     *Qi Liu*
 
     IJCAI, 2021. [`conference`](http://staff.ustc.edu.cn/~qiliuql/files/Publications/QiLiu-IJCAI2021.pdf)
 
-14. **Item Response Ranking for Cognitive Diagnosis**
+15. **Item Response Ranking for Cognitive Diagnosis**
 
     *Shiwei Tong, Qi Liu, Runlong Yu, Wei Huang, Zhenya Huang, Zachary A Pardos, Weijie Jiang*
 
     IJCAI, 2021. [`conference`](http://staff.ustc.edu.cn/~huangzhy/files/papers/ShiweiTong-IJCAI2021.pdf)
 
-15. **RCD: Relation Map Driven Cognitive Diagnosis for Intelligent Education Systems**
+16. **RCD: Relation Map Driven Cognitive Diagnosis for Intelligent Education Systems**
 
     *Weibo Gao, Qi Liu, Zhenya Huang, Yu Yin, Haoyang Bi, Mu-Chun Wang, Jianhui Ma, Shijin Wang, Yu Su*
 
     SIGIR, 2021. [`conference`](http://staff.ustc.edu.cn/~huangzhy/files/papers/WeiboGao-SIGIR2021.pdf)
 
-16. **Incremental Cognitive Diagnosis for Intelligent Education**
+17. **Incremental Cognitive Diagnosis for Intelligent Education**
 
     *Shiwei Tong, Jiayu Liu, Yuting Hong, Zhenya Huang, Le Wu, Qi Liu, Wei Huang, Enhong Chen, Dan Zhang*
 
     SIGIR, 2021. [`conference`](http://staff.ustc.edu.cn/~qiliuql/files/Publications/Shiwei-Tong-KDD22.pdf)
 
-17. **Neural Cognitive Diagnosis for Intelligent Education Systems**
+18. **Neural Cognitive Diagnosis for Intelligent Education Systems**
 
     *Fei Wang,Qi Liu,Enhong Chen,Zhenya Huang,Yuying Chen,Yu Yin,Zai Huang,Shijin Wang*
 
@@ -454,97 +484,109 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     WWW, 2024. [`conference`](https://dl.acm.org/doi/10.1145/3589334.3645373)
 
-2. **Language Model Can Do Knowledge Tracing: Simple but Effective Method to Integrate Language Model and Knowledge Tracing Task**
+2. **Question Difficulty Consistent Knowledge Tracing**
+
+    *Guimei Liu, Huijing Zhan, Jung-jae Kim*
+
+    WWW, 2024. [`conference`](https://dl.acm.org/doi/10.1145/3589334.3645582)
+
+3. **Language Model Can Do Knowledge Tracing: Simple but Effective Method to Integrate Language Model and Knowledge Tracing Task**
 
     *Shangshang Yang, Linrui Qin, Xiaoshan Yu*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.02893)
 
-3. **Enhancing Deep Knowledge Tracing via Diffusion Models for Personalized Adaptive Learning**
+4. **Enhancing Deep Knowledge Tracing via Diffusion Models for Personalized Adaptive Learning**
 
     *Ming Kuo, Shouvon Sarker, Lijun Qian, Yujian Fu, Xiangfang Li, Xishuang Dong*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2405.05134)
 
-4. **Deep Attentive Model for Knowledge Tracing**
+5. **Deep Attentive Model for Knowledge Tracing**
 
     *Xin-Peng Wang, Liang Chen, M. Zhang*
 
     AAAI, 2023. [`conference`](https://ojs.aaai.org/index.php/AAAI/article/view/26214)
 
-5. **Learning Behavior-oriented Knowledge Tracing**
+6. **Learning Behavior-oriented Knowledge Tracing**
 
     *Bihan Xu, Zhenya Huang, Jia-Yin Liu, Shuanghong Shen, Qi Liu, Enhong Chen, Jinze Wu, Shijin Wang*
 
     KDD, 2023. [`conference`](http://staff.ustc.edu.cn/~huangzhy/files/papers/BihanXu-KDD2023.pdf)
 
-6. **Evolutionary Neural Architecture Search for Transformer in Knowledge Tracing**
+7. **Evolutionary Neural Architecture Search for Transformer in Knowledge Tracing**
 
     *Shangshang Yang, Xiaoshan Yu, Ye Tian, Xueming Yan, Haiping Ma, Xingyi Zhang*
 
     NeurIPS, 2023. [`conference`](https://openreview.net/forum?id=G14N38AjpU)
 
-7. **Monitoring Student Progress for Learning Process-Consistent Knowledge Tracing**
+8. **Monitoring Student Progress for Learning Process-Consistent Knowledge Tracing**
 
     *Shuanghong Shen, Enhong Chen, Qi Liu, Zhenya Huang, Wei Huang, Yu Yin, Yu Su, Shijin Wang*
 
     TKDE, 2023. [`journal`](https://ieeexplore.ieee.org/document/9950313)
 
-8. **Tracing Knowledge Instead of Patterns: Stable Knowledge Tracing with Diagnostic Transformer**
+9. **Tracing Knowledge Instead of Patterns: Stable Knowledge Tracing with Diagnostic Transformer**
 
     *Yu Yin, Le Dai, Zhenya Huang, Shuanghong Shen, Fei Wang, Qi Liu, Enhong Chen, Xin Li*
 
     WWW, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3543507.3583255)
 
-9. **Interpretable Knowledge Tracing: Simple and Efficient Student Modeling with Causal Relations**
+10. **Interpretable Knowledge Tracing: Simple and Efficient Student Modeling with Causal Relations**
 
     *Sein Minn, Jill-Jenn Vie, Koh Takeuchi, Hisashi Kashima, Feida Zhu*
 
     AAAI, 2022. [`conference`](https://ojs.aaai.org/index.php/AAAI/article/view/21560/21309)
 
-10. **No Task Left Behind: Multi-Task Learning of Knowledge Tracing and Option Tracing for Better Student Assessment**
+11. **No Task Left Behind: Multi-Task Learning of Knowledge Tracing and Option Tracing for Better Student Assessment**
 
     *Suyeong An, Junghoon Kim, Minsam Kim, Juneyoung Park*
 
     AAAI, 2022. [`conference`](https://arxiv.org/abs/2204.14006)
 
-11. **HGKT: Introducing Hierarchical Exercise Graph for Knowledge Tracing**
+12. **HGKT: Introducing Hierarchical Exercise Graph for Knowledge Tracing**
 
     *Hanshuang Tong, Zhen Wang, Yun Zhou, Shiwei Tong, Wenyuan Han, Qi Liu*
 
     SIGIR, 2022. [`conference`](https://arxiv.org/abs/2006.16915)
 
-12. **Learning Process-consistent Knowledge Tracing**
+13. **Learning Process-consistent Knowledge Tracing**
 
     *Shuanghong Shen, Qi Liu, Enhong Chen, Zhenya Huang, Wei Huang, Yu Yin, Yu Su, Shijin Wang*
 
     KDD, 2021. [`conference`](http://staff.ustc.edu.cn/~cheneh/paper_pdf/2021/Shuanghong-Shen-KDD.pdf)
 
-13. **Improving Knowledge Tracing via Pre-training Question Embeddings**
+14. **Improving Knowledge Tracing via Pre-training Question Embeddings**
 
     *Yunfei Liu, Yang Yang, Xianyu Chen, Jian Shen, Haifeng Zhang, Yong Yu*
 
     IJCAI, 2020. [`conference`](https://arxiv.org/abs/2012.05031)
 
-14. **Assessment Modeling: Fundamental Pre-training Tasks for Interactive Educational Systems**
+15. **Assessment Modeling: Fundamental Pre-training Tasks for Interactive Educational Systems**
 
     *Youngduck Choi, Youngnam Lee, Junghyun Cho, Jineon Baek, Dongmin Shin, Hangyeol Yu, Yugeun Shim, Seewoo Lee, Jonghun Shin, Chan Bae, Byungsoo Kim, Jaewe Heo*
 
     arXiv, 2020. [`preprint`](https://arxiv.org/abs/2002.05505)
 
-15. **EKT: Exercise-Aware Knowledge Tracing for Student Performance Prediction**
+16. **EKT: Exercise-Aware Knowledge Tracing for Student Performance Prediction**
 
     *Qi Liu, Zhenya Huang, Yu Yin, Enhong Chen, Hui Xiong, Yu Su, Guoping Hu*
 
     TKDE, 2019. [`journal`](https://arxiv.org/abs/1906.05658)
 
-16. **Dynamic Key-Value Memory Networks for Knowledge Tracing**
+17. **Augmenting Knowledge Tracing by Considering Forgetting Behavior**
+
+    *Koki Nagatani, Qian Zhang, Masahiro Sato, Yan-Ying Chen, Francine Chen, Tomoko Ohkuma*
+
+    WWW, 2019. [`conference`](https://dl.acm.org/doi/10.1145/3308558.3313565)
+
+18. **Dynamic Key-Value Memory Networks for Knowledge Tracing**
 
     *Jiani Zhang, Xingjian Shi, Irwin King, Dit-Yan Yeung*
 
     WWW, 2017. [`conference`](https://arxiv.org/abs/1611.08108)
 
-17. **Deep Knowledge Tracing**
+19. **Deep Knowledge Tracing**
 
     *Chris Piech, Jonathan Spencer, Jonathan Huang, Surya Ganguli, Mehran Sahami, Leonidas Guibas, Jascha Sohl-Dickstein*
 
@@ -587,6 +629,12 @@ We collect papers related to **artificial intelligence (AI) and large language m
     *Xinyi Lu, Simin Fan, Jessica Houghton, Lu Wang, Xu Wang*
 
     CHI, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3544548.3580957)
+
+7. **Improving Learning Outcomes with Gaze Tracking and Automatic Question Generation**
+
+    *Rohail Syed, Kevyn Collins-Thompson, Paul N. Bennett, Mengqiu Teng, Shane Williams, Dr. Wendy W. Tay, Shamsi Iqbal*
+
+    WWW, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3366423.3380240)
 
 ### [Question Retrieval](#content)
 
@@ -640,6 +688,12 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     CIKM, 2022. [`conference`](https://arxiv.org/abs/2208.01182)
 
+7. **Predicting Student Performance using Advanced Learning Analytics**
+
+    *Ali Daud, Naif Radi Aljohani, Rabeeh Ayaz Abbasi, Miltiadis D. Lytras, Farhat Abbas, Jalal S. Alowibdi*
+
+    WWW Companion, 2017. [`workshop`](https://arxiv.org/abs/2203.08507)
+
 
 
 ## [Material Generation](#content)
@@ -650,29 +704,59 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     NAACL, 2024. [`conference`](https://arxiv.org/abs/2402.14207)
 
-2. :sparkles: **Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency**
+2. **Generating Privacy-preserving Educational Data Records with Diffusion Model**
+
+    *Quanlong Guan, Yanchong Yu, Xiujie Huang, Liangda Fang, Chaobo He, Lusheng Wu, Weiqi Luo, Guanliang Chen*
+
+    WWW, 2024. [`conference`](https://dl.acm.org/doi/10.1145/3589335.3651511)
+
+3. :sparkles: **Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency**
 
     *Eric Zelikman, Wanjing Anya Ma, Jasmine E. Tran, Diyi Yang, Jason D. Yeatman, Nick Haber*
 
     EMNLP, 2023. [`conference`](https://arxiv.org/abs/2310.06837)
 
-3. :sparkles: **On the Automatic Generation and Simplification of Children's Stories**
+4. :sparkles: **On the Automatic Generation and Simplification of Children's Stories**
 
     *Maria Valentini, Jennifer Weber, Jesus Salcido, Téa Wright, Eliana Colunga, Katharina Kann*
 
     EMNLP, 2023. [`conference`](https://arxiv.org/abs/2310.18502)
 
-4. :sparkles: **FairytaleCQA: Integrating a Commonsense Knowledge Graph into Children's Storybook Narratives**
+5. :sparkles: **FairytaleCQA: Integrating a Commonsense Knowledge Graph into Children's Storybook Narratives**
 
     *Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuanzhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Dakuo Wang, Yuling Su*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2311.09756)
 
-5. :sparkles: **Robosourcing Educational Resources – Leveraging Large Language Models for Learnersourcing**
+6. :sparkles: **Robosourcing Educational Resources – Leveraging Large Language Models for Learnersourcing**
 
     *Paul Denny, Sami Sarsa, Arto Hellas, Juho Leinonen*
 
     Learning@Scale - Workshop on Learnersourcing: Student-generated Content @ Scale, 2022. [`workshop`](https://arxiv.org/abs/2211.04715)
+
+7. **Linking Streets in OpenStreetMap to Persons in Wikidata**
+
+    *Daria Gurtovoy, Simon Gottschalk*
+
+    WWW Companion, 2022. [`workshop`](https://dl.acm.org/doi/abs/10.1145/3487553.3524267)
+
+8. **Personal Knowledge Graphs: Use Cases in e-learning Platforms**
+
+    *Eleni Ilkou*
+
+    WWW Companion, 2022. [`workshop`](https://arxiv.org/abs/2203.08507)
+
+9. **Automatic Hierarchical Table of Contents Generation for Educational Videos**
+
+    *Debabrata Mahapatra, Ragunathan Mariappan, Vaibhav Rajan*
+
+    WWW, 2018. [`conference`](https://dl.acm.org/doi/10.1145/3184558.3186336)
+
+10. **Automatic Generation of Quizzes from DBpedia According to Educational Standards**
+
+    *Oscar Rodríguez Rocha, Catherine Faron Zucker*
+
+    WWW Companion, 2018. [`workshop`](https://dl.acm.org/doi/10.1145/3184558.3191534)
 
 
 
@@ -708,7 +792,7 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     *Rudrajit Choudhuri, Dylan Liu, Igor Steinmacher, Marco Gerosa, Anita Sarma*
 
-    ICSE, 2024. [`preprint`](https://arxiv.org/abs/2312.11719)
+    ICSE, 2024. [`conference`](https://arxiv.org/abs/2312.11719)
 
 6. :sparkles: **Evaluating the Effectiveness of LLMs in Introductory Computer Science Education: A Semester-Long Field Study**
 
@@ -760,7 +844,13 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06711)
 
-4. **The Knowledge-Learning-Instruction Framework: Bridging the Science-Practice Chasm to Enhance Robust Student Learning**
+4. **LearnerExp: Exploring and Explaining the Time Management of Online Learning Activity**
+
+    *Huan He, Qinghua Zheng, Bo Dong*
+
+    WWW, 2019. [`conference`](https://dl.acm.org/doi/10.1145/3308558.3314140)
+
+5. **The Knowledge-Learning-Instruction Framework: Bridging the Science-Practice Chasm to Enhance Robust Student Learning**
 
     *K. Koedinger, Albert T. Corbett, C. Perfetti*
 
