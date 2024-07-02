@@ -30,7 +30,9 @@ def convert_csv_to_md(csv_file_path, mdFile, header):
                 if category_id % 2 == 0: file.writelines('<tr>\n')
                 file.writelines(f'\t<td>&emsp;<a href=#{category_name_for_herf}>{group_id+1}.{category_id+1} {category_name}</a></td>\n')
                 if category_id % 2 == 1: file.writelines('</tr>\n')
-            if len(category_list_of_group) % 2 == 0: file.writelines('</tr>\n')
+            if len(category_list_of_group) % 1 == 0:
+                file.writelines(f'\t<td></td>\n')
+                file.writelines('</tr>\n')
         file.writelines('</table>\n\n')
 
         def write_one_paper(file, paper, paper_id_count):

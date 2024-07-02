@@ -32,6 +32,8 @@ We collect papers related to **artificial intelligence (AI) and large language m
 </tr>
 <tr>
 	<td>&emsp;<a href=#student-profiling>4.7 Student Profiling</a></td>
+	<td></td>
+</tr>
 <tr>
 <tr><td colspan="2"><a href="#material-generation">5. Material Generation</a></td>
 <tr>
@@ -41,7 +43,9 @@ We collect papers related to **artificial intelligence (AI) and large language m
 	<td>&emsp;<a href=#math>6.2 Math</a></td>
 </tr>
 <tr>
-	<td>&emsp;<a href=#medical>6.3 Medical</a></td>
+	<td>&emsp;<a href=#medicine>6.3 Medicine</a></td>
+	<td></td>
+</tr>
 <tr>
 <tr><td colspan="2"><a href="#aided-teaching">7. Aided Teaching</a></td>
 <tr>
@@ -814,7 +818,7 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2402.01927)
 
-### [Medical](#content)
+### [Medicine](#content)
 
 1. :sparkles: **Leveraging Large Language Model as Simulated Patients for Clinical Education**
 
