@@ -1,5 +1,7 @@
 # Awesome Artificial Intelligence and Large Language Model for Education
 
+> We will release our work on **Goal-oriented Learning with LLM-powered Agentic Framework**, which currently is under internal review of Microsoft. Stay tuned!
+
 We collect papers related to **artificial intelligence (AI) and large language model (LLM) for education** from top conferences, journals, and specialized domain-specific conferences. We then categorize them according to their specific tasks for better organization.
 
 **:sparkles: indicates the papers that are related to LLM.**
