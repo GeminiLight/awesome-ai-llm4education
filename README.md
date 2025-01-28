@@ -1,10 +1,11 @@
 # Awesome Artificial Intelligence and Large Language Model for Education
 
-> We will release our work on **Goal-oriented Learning with LLM-powered Agentic Framework**, which currently is under internal review of Microsoft. Stay tuned!
-
 We collect papers related to **artificial intelligence (AI) and large language model (LLM) for education** from top conferences, journals, and specialized domain-specific conferences. We then categorize them according to their specific tasks for better organization.
 
 **:sparkles: indicates the papers that are related to LLM.**
+
+> [!note]
+> 🎉 Our paper "[LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System](https://arxiv.org/abs/2501.15749)" has been accepted by **WWW 2025 (Industry Track) as Oral Presentation**!
 
 ## [Content](#content)
 
@@ -318,85 +319,91 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2402.09216)
 
-4. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
+4. :sparkles: **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
+
+    *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
+
+    WWW, 2024. [`conference`](https://arxiv.org/abs/2501.15749)
+
+5. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
 
     *Zhengyuan Liu, Stella Xin Yin, Geyu Lin, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-5. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
+6. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
 
     *Wei-Yu Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-6. :sparkles: **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
+7. :sparkles: **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
 
     *Zhengyuan Liu, Stella Xin Yin, Carolyn Lee, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.03429)
 
-7. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
+8. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
 
     *Glen Smith, Adit Gupta, Christopher MacLellan*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07883)
 
-8. **OATutor: An Open-source Adaptive Tutoring System and Curated Content Library for Learning Sciences Research**
+9. **OATutor: An Open-source Adaptive Tutoring System and Curated Content Library for Learning Sciences Research**
 
     *Z. Pardos, Matthew Tang, Ioannis Anastasopoulos, Shreya K. Sheel, Ethan Zhang*
 
     CHI, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3544548.3581574)
 
-9. :sparkles: **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
+10. :sparkles: **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
 
     *Yann Hicke, Anmol Agarwal, Qianou Ma, Paul Denny*
 
     NeurIPS - Workshop on Generative AI for Education (GAIED), 2023. [`workshop`](https://arxiv.org/abs/2311.02775)
 
-10. :sparkles: **WordPlay: An Agent Framework for Language Learning Games**
+11. :sparkles: **WordPlay: An Agent Framework for Language Learning Games**
 
     *Ariel Blobstein, Daniel Izmaylov, Tal Yifat, Michal Levy, Avi Segal, Avi Segal*
 
     NeurIPS - Workshop on Generative AI for Education (GAIED), 2023. [`workshop`](https://gaied.org/neurips2023/files/9/9_paper.pdf)
 
-11. :sparkles: **Empowering Private Tutoring by Chaining Large Language Models**
+12. :sparkles: **Empowering Private Tutoring by Chaining Large Language Models**
 
     *Yulin Chen, Ning Ding, Hai-Tao Zheng, Zhiyuan Liu, Maosong Sun, Bowen Zhou*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2309.08112)
 
-12. :sparkles: **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
+13. :sparkles: **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
 
     *Chenxi Dong*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2311.17696)
 
-13. **Personal Knowledge Graphs: Use Cases in e-learning Platforms**
+14. **Personal Knowledge Graphs: Use Cases in e-learning Platforms**
 
     *Eleni Ilkou*
 
     WWW Companion, 2022. [`workshop`](https://arxiv.org/abs/2203.08507)
 
-14. **ArgueTutor: An Adaptive Dialog-Based Learning System for Argumentation Skills**
+15. **ArgueTutor: An Adaptive Dialog-Based Learning System for Argumentation Skills**
 
     *Thiemo Wambsganss, C. Niklaus, Matthias Cetto, Matthias Söllner, S. Handschuh, J. Leimeister*
 
     CHI, 2021. [`conference`](https://dl.acm.org/doi/abs/10.1145/3411764.3445781)
 
-15. **An Interaction Design for Machine Teaching to Develop AI Tutors**
+16. **An Interaction Design for Machine Teaching to Develop AI Tutors**
 
     *Daniel Weitekamp, Erik Harpstead, K. Koedinger*
 
     CHI, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3313831.3376226)
 
-16. **The Cognitive Tutor Authoring Tools (CTAT): Preliminary Evaluation of Efficiency Gains**
+17. **The Cognitive Tutor Authoring Tools (CTAT): Preliminary Evaluation of Efficiency Gains**
 
     *V. Aleven, B. McLaren, J. Sewall, K. Koedinger*
 
     International Conference on Intelligent Tutoring Systems, 2006. [`conference`](https://figshare.com/articles/journal_contribution/The_Cognitive_Tutor_Authoring_Tools_CTAT_Preliminary_Evaluation_of_Efficiency_Gains/6470495/1/files/11899052.pdf)
 
-17. **Locus of Feedback Control in Computer-Based Tutoring**
+18. **Locus of Feedback Control in Computer-Based Tutoring**
 
     *Albert T. Corbett, John R. Anderson*
 

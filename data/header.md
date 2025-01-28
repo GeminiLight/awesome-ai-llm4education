@@ -4,6 +4,9 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 **:sparkles: indicates the papers that are related to LLM.**
 
+> [!note]
+> 🎉 Our paper "[LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System](https://arxiv.org/abs/2501.15749)" has been accepted by **WWW 2025 (Industry Track) as Oral Presentation**!
+
 ## [Content](#content)
 
 <!-- <table>
