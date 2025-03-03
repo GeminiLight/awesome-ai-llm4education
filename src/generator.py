@@ -184,6 +184,6 @@ def convert_csv_to_md(csv_file_path, mdFile, header, only_llm_related=False):
 if __name__ == '__main__':
     # md2csv("../README.md", "../data/papers.csv")
     theme = 'dark'
-    convert_csv_to_md("../data/papers.csv", "../README.md", "../data/header.md", only_llm_related=True)
+    convert_csv_to_md("../data/papers.csv", "../README.md", "../data/header.md", only_llm_related=False)
     convert_csv_to_md("../data/papers.csv", "../LLM4EDU.md", "../data/header.md", only_llm_related=True)
     # visualize("../data/papers.csv")
