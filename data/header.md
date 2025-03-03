@@ -6,11 +6,11 @@
 </div>
 
 > [!IMPORTANT]
-> There are two versions of this list:
+> There are two versions of our paper list:
 >
-> - [LLM4EDU version](LLM4EDU.md): LLM-related papers only.
+> - [LLM4EDU version](LLM4EDU.md): Only LLM-related papers.
 >
-> - [Full Version](README.md): All AI and LLM education papers.
+> - [Full Version](README.md): AI & LLM-related papers.
 
 We collect papers related to **artificial intelligence (AI) and large language model (LLM) for education** from top conferences, journals, and specialized domain-specific conferences. We then categorize them according to their specific tasks for better organization.
 
