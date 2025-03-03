@@ -181,43 +181,49 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2402.09216)
 
-5. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
+5. :sparkles: **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
+
+    *Jiayu Liu, Zhenya Huang, Tong Xiao, Jing Sha, Jinze Wu, Qi Liu, Shijin Wang, Enhong Chen*
+
+    NeurIPS, 2024. [`conference`](https://neurips.cc/virtual/2024/poster/93477)
+
+6. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
 
     *Zhengyuan Liu, Stella Xin Yin, Geyu Lin, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-6. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
+7. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
 
     *Wei-Yu Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-7. :sparkles: **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
+8. :sparkles: **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
 
     *Zhengyuan Liu, Stella Xin Yin, Carolyn Lee, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.03429)
 
-8. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
+9. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
 
     *Glen Smith, Adit Gupta, Christopher MacLellan*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07883)
 
-9. :sparkles: **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
+10. :sparkles: **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
 
     *Yann Hicke, Anmol Agarwal, Qianou Ma, Paul Denny*
 
     NeurIPS - Workshop on Generative AI for Education (GAIED), 2023. [`workshop`](https://arxiv.org/abs/2311.02775)
 
-10. :sparkles: **Empowering Private Tutoring by Chaining Large Language Models**
+11. :sparkles: **Empowering Private Tutoring by Chaining Large Language Models**
 
     *Yulin Chen, Ning Ding, Hai-Tao Zheng, Zhiyuan Liu, Maosong Sun, Bowen Zhou*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2309.08112)
 
-11. :sparkles: **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
+12. :sparkles: **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
 
     *Chenxi Dong*
 
@@ -460,6 +466,12 @@ We collect papers related to **artificial intelligence (AI) and large language m
     *Murong Yue, Wijdane Mifdal, Yixuan Zhang, Jennifer Suh, Ziyu Yao*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06711)
+
+5. :sparkles: **Simulating Classroom Education with LLM-Empowered Agents**
+
+    *Zheyuan Zhang, Daniel Zhang-Li, Jifan Yu, Linlu Gong, Jinchang Zhou, Zhanxin Hao, Jianxiao Jiang, Jie Cao, Huiqin Liu, Zhiyuan Liu, Lei Hou, Juanzi Li*
+
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.19226)
 
 
 
