@@ -1,4 +1,16 @@
-# Awesome Artificial Intelligence and Large Language Model for Education
+<div align="center">
+  <h1>Awesome AI and LLM for Education</h1>
+  <p>
+    <strong>A curated list of papers related to artificial intelligence (AI) and large language model (LLM) for education</strong>
+  </p>
+</div>
+
+> [!IMPORTANT]
+> There are two versions of this list:
+>
+> - [LLM4EDU version](LLM4EDU.md): LLM-related papers only.
+>
+> - [Full Version](README.md): All AI and LLM education papers.
 
 We collect papers related to **artificial intelligence (AI) and large language model (LLM) for education** from top conferences, journals, and specialized domain-specific conferences. We then categorize them according to their specific tasks for better organization.
 
