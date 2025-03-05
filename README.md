@@ -72,6 +72,10 @@ We collect papers related to **artificial intelligence (AI) and large language m
 	<td>&emsp;<a href=#medicine>5.4 Medicine</a></td>
 </tr>
 <tr>
+	<td>&emsp;<a href=#social-good>5.5 Social Good</a></td>
+	<td></td>
+</tr>
+<tr>
 <tr><td colspan="2"><a href="#aided-teaching">6. Aided Teaching</a></td>
 <tr>
 <tr><td colspan="2"><a href="#dataset--benchmark">7. Dataset & Benchmark</a></td>
@@ -1086,6 +1090,14 @@ We collect papers related to **artificial intelligence (AI) and large language m
     *Yanzeng Li, Cheng Zeng, Jialun Zhong, Ruoyu Zhang, Minhao Zhang, Lei Zou*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.13066)
+
+### [Social Good](#content)
+
+1. **LLM-Powered AI Tutors with Personas for d/Deaf and Hard-of-Hearing Online Learners**
+
+    *Haocong Cheng, Si Chen, Christopher Perdriau, Yun Huang*
+
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2411.09873)
 
 
 
