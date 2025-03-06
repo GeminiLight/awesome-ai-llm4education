@@ -4,7 +4,7 @@
     A curated list of papers related to artificial intelligence (AI) and large language model (LLM) for education
   </p>
   <p>
-    <strong>[🌟 LLM4EDU version](LLM4EDU.md) | [🤖 Full Version](README.md)</strong>
+    <strong><a href="LLM4EDU.md" style="text-decoration: none; color:rgb(69, 162, 255);">🌟 LLM4EDU Version</a> | <a href="README.md" style="text-decoration: none; color:rgb(170, 125, 252);">🤖 Full Version</a></strong>
   </p>
 </div>
 
