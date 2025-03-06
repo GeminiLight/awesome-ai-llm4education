@@ -1,9 +1,14 @@
 <div align="center">
   <h1>Awesome AI and LLM for Education</h1>
   <p>
-    <strong>A curated list of papers related to artificial intelligence (AI) and large language model (LLM) for education</strong>
+    A curated list of papers related to artificial intelligence (AI) and large language model (LLM) for education
+  </p>
+  <p>
+    <strong>[🌟 LLM4EDU version](LLM4EDU.md) | [🤖 Full Version](README.md)</strong>
   </p>
 </div>
+
+---
 
 > [!IMPORTANT]
 > There are two versions of our paper list:
