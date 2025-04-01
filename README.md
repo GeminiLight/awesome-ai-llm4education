@@ -858,49 +858,61 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 ### [Question Generation](#content)
 
-1. **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
+1. **Exploring Iterative Enhancement for Improving Learnersourced Multiple-Choice Question Explanations with Large Language Models**
+
+    *Qiming Bao, Juho Leinonen, Alex Yuxuan Peng, Wanjun Zhong, Gaël Gendron, Timothy Pistotti, Alice Huang, Paul Denny, Michael Witbrock, Jiamou Liu*
+
+    AAAI, 2025. [`conference`](https://arxiv.org/abs/2309.10444)
+
+2. **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
 
     *Jaewook Lee, Digory Smith, Simon Woodhead, Andrew Lan*
 
     EDM, 2024. [`conference`](https://arxiv.org/abs/2405.00864)
 
-2. **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
+3. **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
 
     *Alexander Scarlatos, Wanyong Feng, Digory Smith, Simon Woodhead, Andrew Lan*
 
     NAACL - BEA workshop, 2024. [`workshop`](https://arxiv.org/abs/2405.05144)
 
-3. **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
+4. **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
 
     *Wanyong Feng, Jaewook Lee, Hunter McNichols, Alexander Scarlatos, Digory Smith, Simon Woodhead, Nancy Otero Ornelas, Andrew Lan*
 
     NAACL findings, 2024. [`conference`](https://arxiv.org/abs/2404.02124)
 
-4. **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
+5. **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
 
     *Maxime Griot, Jean Vanderdonckt, Demet Yuksel, Coralie Hemptinne*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.02394)
 
-5. **Leveraging Large Language Models for Concept Graph Recovery and Question Answering in NLP Education**
+6. **Leveraging Large Language Models for Concept Graph Recovery and Question Answering in NLP Education**
 
     *Rui Yang, Boming Yang, Sixun Ouyang, Tianwei She, Aosong Feng, Yuang Jiang, Freddy Lecue, Jinghui Lu, Irene Li*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2402.14293)
 
-6. **ReadingQizMaker: A Human-NLP Collaborative System that Supports Instructors to Design High-Qality Reading Qiz Qestions**
+7. **ReadingQizMaker: A Human-NLP Collaborative System that Supports Instructors to Design High-Qality Reading Qiz Qestions**
 
     *Xinyi Lu, Simin Fan, Jessica Houghton, Lu Wang, Xu Wang*
 
     CHI, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3544548.3580957)
 
-7. **EQG-RACE: Examination-Type Question Generation**
+8. **DeepQR: Neural-based Quality Ratings for Learnersourced Multiple-Choice Questions**
+
+    *Lin Ni, Qiming Bao, Xiaoxuan Li, Qianqian Qi, Paul Denny, Jim Warren, Michael Witbrock, Jiamou Liu*
+
+    AAAI, 2022. [`conference`](https://arxiv.org/abs/2111.10058)
+
+9. **EQG-RACE: Examination-Type Question Generation**
 
     *Xin Jia, Wenjie Zhou, Xu Sun, Yunfang Wu*
 
     AAAI, 2021. [`conference`](https://arxiv.org/abs/2012.06106)
 
-8. **Improving Learning Outcomes with Gaze Tracking and Automatic Question Generation**
+10. **Improving Learning Outcomes with Gaze Tracking and Automatic Question Generation**
 
     *Rohail Syed, Kevyn Collins-Thompson, Paul N. Bennett, Mengqiu Teng, Shane Williams, Dr. Wendy W. Tay, Shamsi Iqbal*
 

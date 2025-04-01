@@ -272,31 +272,37 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 ### [Question Generation](#content)
 
-1. :sparkles: **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
+1. :sparkles: **Exploring Iterative Enhancement for Improving Learnersourced Multiple-Choice Question Explanations with Large Language Models**
+
+    *Qiming Bao, Juho Leinonen, Alex Yuxuan Peng, Wanjun Zhong, Gaël Gendron, Timothy Pistotti, Alice Huang, Paul Denny, Michael Witbrock, Jiamou Liu*
+
+    AAAI, 2025. [`conference`](https://arxiv.org/abs/2309.10444)
+
+2. :sparkles: **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
 
     *Jaewook Lee, Digory Smith, Simon Woodhead, Andrew Lan*
 
     EDM, 2024. [`conference`](https://arxiv.org/abs/2405.00864)
 
-2. :sparkles: **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
+3. :sparkles: **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
 
     *Alexander Scarlatos, Wanyong Feng, Digory Smith, Simon Woodhead, Andrew Lan*
 
     NAACL - BEA workshop, 2024. [`workshop`](https://arxiv.org/abs/2405.05144)
 
-3. :sparkles: **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
+4. :sparkles: **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
 
     *Wanyong Feng, Jaewook Lee, Hunter McNichols, Alexander Scarlatos, Digory Smith, Simon Woodhead, Nancy Otero Ornelas, Andrew Lan*
 
     NAACL findings, 2024. [`conference`](https://arxiv.org/abs/2404.02124)
 
-4. :sparkles: **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
+5. :sparkles: **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
 
     *Maxime Griot, Jean Vanderdonckt, Demet Yuksel, Coralie Hemptinne*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.02394)
 
-5. :sparkles: **Leveraging Large Language Models for Concept Graph Recovery and Question Answering in NLP Education**
+6. :sparkles: **Leveraging Large Language Models for Concept Graph Recovery and Question Answering in NLP Education**
 
     *Rui Yang, Boming Yang, Sixun Ouyang, Tianwei She, Aosong Feng, Yuang Jiang, Freddy Lecue, Jinghui Lu, Irene Li*
 
