@@ -26,6 +26,8 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 ## [Content](#content)
 
+![AI4Edu](resources/ai4edu-loop.png)
+
 <!-- <table>
 <tr><td colspan="2"><a href="#survey-papers">1. Survey</a></td></tr>
 <tr><td colspan="2"><a href="#tasks">2. Tasks</a></td></tr>  --><table>
@@ -37,56 +39,62 @@ We collect papers related to **artificial intelligence (AI) and large language m
 	<td>&emsp;<a href=#task-specific-survey>1.2 Task-Specific Survey</a></td>
 </tr>
 <tr>
-<tr><td colspan="2"><a href="#tutoring-and-personalized-learning">2. Tutoring And Personalized Learning</a></td>
+<tr><td colspan="2"><a href="#tutoring-strategy">2. Tutoring Strategy</a></td>
 <tr>
 	<td>&emsp;<a href=#learning-path-recommendation>2.1 Learning Path Recommendation</a></td>
-	<td>&emsp;<a href=#student-simulation--profiling>2.2 Student Simulation & Profiling</a></td>
+	<td>&emsp;<a href=#tutoring-system>2.2 Tutoring System</a></td>
 </tr>
 <tr>
-	<td>&emsp;<a href=#tutoring-system>2.3 Tutoring System</a></td>
+<tr><td colspan="2"><a href="#learning-experience">3. Learning Experience</a></td>
+<tr>
+	<td>&emsp;<a href=#learning-engagement>3.1 Learning Engagement</a></td>
+	<td>&emsp;<a href=#student-simulation--profiling>3.2 Student Simulation & Profiling</a></td>
+</tr>
+<tr>
+<tr><td colspan="2"><a href="#assessment--feedback">4. Assessment & Feedback</a></td>
+<tr>
+	<td>&emsp;<a href=#adaptive-testing>4.1 Adaptive Testing</a></td>
+	<td>&emsp;<a href=#automated-grading>4.2 Automated Grading</a></td>
+</tr>
+<tr>
+	<td>&emsp;<a href=#cognitive-diagnosis>4.3 Cognitive Diagnosis</a></td>
+	<td>&emsp;<a href=#knowledge-structuring>4.4 Knowledge Structuring</a></td>
+</tr>
+<tr>
+	<td>&emsp;<a href=#knowledge-tracing>4.5 Knowledge Tracing</a></td>
 	<td></td>
 </tr>
 <tr>
-<tr><td colspan="2"><a href="#assessment">3. Assessment</a></td>
+<tr><td colspan="2"><a href="#material-preparation">5. Material Preparation</a></td>
 <tr>
-	<td>&emsp;<a href=#adaptive-testing>3.1 Adaptive Testing</a></td>
-	<td>&emsp;<a href=#automated-grading>3.2 Automated Grading</a></td>
+	<td>&emsp;<a href=#content-generation>5.1 Content Generation</a></td>
+	<td>&emsp;<a href=#question-generation>5.2 Question Generation</a></td>
 </tr>
 <tr>
-	<td>&emsp;<a href=#cognitive-diagnosis>3.3 Cognitive Diagnosis</a></td>
-	<td>&emsp;<a href=#knowledge-tracing>3.4 Knowledge Tracing</a></td>
-</tr>
-<tr>
-	<td>&emsp;<a href=#question-generation>3.5 Question Generation</a></td>
-	<td>&emsp;<a href=#question-retrieval>3.6 Question Retrieval</a></td>
-</tr>
-<tr>
-<tr><td colspan="2"><a href="#material-preparation">4. Material Preparation</a></td>
-<tr>
-	<td>&emsp;<a href=#content-generation>4.1 Content Generation</a></td>
-	<td>&emsp;<a href=#knowledge-structuring>4.2 Knowledge Structuring</a></td>
-</tr>
-<tr>
-<tr><td colspan="2"><a href="#specific-scenario">5. Specific Scenario</a></td>
-<tr>
-	<td>&emsp;<a href=#computer-science>5.1 Computer Science</a></td>
-	<td>&emsp;<a href=#language>5.2 Language</a></td>
-</tr>
-<tr>
-	<td>&emsp;<a href=#math>5.3 Math</a></td>
-	<td>&emsp;<a href=#medicine>5.4 Medicine</a></td>
-</tr>
-<tr>
-	<td>&emsp;<a href=#social-good>5.5 Social Good</a></td>
+	<td>&emsp;<a href=#question-retrieval>5.3 Question Retrieval</a></td>
 	<td></td>
 </tr>
 <tr>
-<tr><td colspan="2"><a href="#aided-teaching">6. Aided Teaching</a></td>
+<tr><td colspan="2"><a href="#specific-scenario">6. Specific Scenario</a></td>
 <tr>
-<tr><td colspan="2"><a href="#dataset--benchmark">7. Dataset & Benchmark</a></td>
+	<td>&emsp;<a href=#computer-science>6.1 Computer Science</a></td>
+	<td>&emsp;<a href=#language>6.2 Language</a></td>
+</tr>
 <tr>
-	<td>&emsp;<a href=#benchmark>7.1 Benchmark</a></td>
-	<td>&emsp;<a href=#dataset>7.2 Dataset</a></td>
+	<td>&emsp;<a href=#liberal-arts>6.3 Liberal Arts</a></td>
+	<td>&emsp;<a href=#math>6.4 Math</a></td>
+</tr>
+<tr>
+	<td>&emsp;<a href=#medicine>6.5 Medicine</a></td>
+	<td>&emsp;<a href=#social-good>6.6 Social Good</a></td>
+</tr>
+<tr>
+<tr><td colspan="2"><a href="#aided-teaching">7. Aided Teaching</a></td>
+<tr>
+<tr><td colspan="2"><a href="#dataset--benchmark">8. Dataset & Benchmark</a></td>
+<tr>
+	<td>&emsp;<a href=#benchmark>8.1 Benchmark</a></td>
+	<td>&emsp;<a href=#dataset>8.2 Dataset</a></td>
 </tr>
 </table>
 
@@ -140,135 +148,285 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 
 
-## [Tutoring And Personalized Learning](#content)
+## [Tutoring Strategy](#content)
 
 ### [Learning Path Recommendation](#content)
 
-1. **Item-Difficulty-Aware Learning Path Recommendation: From a Real Walking Perspective**
+1. **LearnMate: Enhancing Online Education with LLM-Powered Personalized Learning Plans and Support**
+
+    *Xinyu Jessica Wang, Christine P. Lee, Bilge Mutlu*
+
+    CHI Extended Abstract, 2025. [`workshop`](https://arxiv.org/abs/2503.13340)
+
+2. **PlanGlow: Personalized Study Planning with an Explainable and Controllable LLM-Driven System**
+
+    *Jiwon Chun, Yankun Zhao, Hanlin Chen, Meng Xia*
+
+    Learning@Scale, 2025. [`conference`](https://arxiv.org/abs/2503.13340)
+
+3. **Item-Difficulty-Aware Learning Path Recommendation: From a Real Walking Perspective**
 
     *Haotian Zhang, Shuanghong Shen, Bihan Xu, Zhenya Huang, Jinze Wu, Jing Sha, Shijin Wang*
 
     KDD, 2024. [`conference`](https://dl.acm.org/doi/10.1145/3637528.3671947)
 
-2. **Privileged Knowledge State Distillation for Reinforcement Learning-based Educational Path Recommendation**
+4. **Privileged Knowledge State Distillation for Reinforcement Learning-based Educational Path Recommendation**
 
     *Qingyao Li, Wei Xia, Li'ang Yin, Jiarui Jin, Yong Yu*
 
     KDD, 2024. [`conference`](https://dl.acm.org/doi/10.1145/3637528.3671872)
 
-3. **Doubly constrained offline reinforcement learning for learning path recommendation**
+5. **Doubly constrained offline reinforcement learning for learning path recommendation**
 
     *Yue Yun, Huan Dai, Rui An, Yupei Zhang, Xuequn Shang*
 
     Knowledge-Based Systems (KBS), 2024. [`journal`](https://www.sciencedirect.com/science/article/abs/pii/S0950705123009917)
 
-4. **Course Recommender Systems Need to Consider the Job Market**
+6. **Course Recommender Systems Need to Consider the Job Market**
 
     *Jibril Frej, Anna Dai, Syrielle Montariol, Antoine Bosselut, Tanja Käser*
 
     SIGIR, 2024. [`conference`](https://arxiv.org/abs/2404.10876)
 
-5. **Modeling Balanced Explicit and Implicit Relations with Contrastive Learning for Knowledge Concept Recommendation in MOOCs**
+7. **Modeling Balanced Explicit and Implicit Relations with Contrastive Learning for Knowledge Concept Recommendation in MOOCs**
 
     *Hengnian Gu, Zhiyi Duan, Pan Xie, Dongdai Zhou*
 
     WWW, 2024. [`conference`](https://arxiv.org/abs/2402.08256)
 
-6. **Learning Structure and Knowledge Aware Representation with Large Language Models for Concept Recommendation**
+8. **Learning Structure and Knowledge Aware Representation with Large Language Models for Concept Recommendation**
 
     *Qingyao Li, Wei Xia, Kounianhua Du, Qiji Zhang, Weinan Zhang, Ruiming Tang, Yong Yu*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2405.12442)
 
-7. **Set-to-Sequence Ranking-based Concept-aware Learning Path Recommendation**
+9. **Set-to-Sequence Ranking-based Concept-aware Learning Path Recommendation**
 
     *Xianyu Chen, Jian Shen, Wei Xia, Jiarui Jin, Yakun Song, Weinan Zhang, Weiwen Liu, Menghui Zhu, Ruiming Tang, Kai Dong, Dingyin Xia, Yong Yu*
 
     AAAI, 2023. [`conference`](https://arxiv.org/abs/2306.04234)
 
-8. **Graph Enhanced Hierarchical Reinforcement Learning for Goal-oriented Learning Path Recommendation**
+10. **Graph Enhanced Hierarchical Reinforcement Learning for Goal-oriented Learning Path Recommendation**
 
     *Qingyao Li, Wei Xia, Li'ang Yin, Jian Shen, Renting Rui, Weinan Zhang, Xianyu Chen, Ruiming Tang, Yong Yu*
 
     CIKM, 2023. [`conference`](https://dl.acm.org/doi/abs/10.1145/3583780.3614897)
 
-9. **MHRR: MOOCs Recommender Service With Meta Hierarchical Reinforced Ranking**
+11. **MHRR: MOOCs Recommender Service With Meta Hierarchical Reinforced Ranking**
 
     *Yuchen Li, Haoyi Xiong, Linghe Kong, Rui Zhang, Fanqin Xu, Guihai Chen, Minglu Li*
 
     TSC, 2023. [`journal`](https://ieeexplore.ieee.org/document/10286866)
 
-10. **Constraint Sampling Reinforcement Learning: Incorporating Expertise For Faster Learning**
+12. **Constraint Sampling Reinforcement Learning: Incorporating Expertise For Faster Learning**
 
     *Tong Mu, Georgios Theocharous, David Arbour, Emma Brunskill*
 
     AAAI, 2022. [`conference`](https://arxiv.org/abs/2112.15221)
 
-11. **CurriculumTutor: An Adaptive Algorithm for Mastering a Curriculum**
+13. **CurriculumTutor: An Adaptive Algorithm for Mastering a Curriculum**
 
     *Shabana K M, Chandrashekar Lakshminarayanan*
 
     AIED, 2022. [`conference`](https://dl.acm.org/doi/10.1007/978-3-031-11644-5_26)
 
-12. **Automatic Interpretable Personalized Learning**
+14. **Automatic Interpretable Personalized Learning**
 
     *Ethan Prihar, Aaron Haim, Adam Sales, Neil Heffernan*
 
     Learning@Scale, 2022. [`conference`](https://dl.acm.org/doi/abs/10.1145/3491140.3528267)
 
-13. **ConceptGuide: Supporting Online Video Learning with Concept Map-based Recommendation of Learning Path**
+15. **ConceptGuide: Supporting Online Video Learning with Concept Map-based Recommendation of Learning Path**
 
     *Chien-Lin Tang, Jingxian Liao, Hao-Chuan Wang, Ching-Ying Sung, Wen-Chieh Lin*
 
     WWW, 2021. [`conference`](https://dl.acm.org/doi/10.1145/3442381.3449808)
 
-14. **Reinforcement Learning for the Adaptive Scheduling of Educational Activities**
+16. **Reinforcement Learning for the Adaptive Scheduling of Educational Activities**
 
     *A. Singla, Anna N. Rafferty, Goran Radanovic, N. Heffernan*
 
     CHI, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3313831.3376518)
 
-15. **Deep Reinforcement Learning for Adaptive Learning Systems**
+17. **Deep Reinforcement Learning for Adaptive Learning Systems**
 
     *Xiao Li, Hanchen Xu, Jinming Zhang, Hua-hua Chang*
 
     arXiv, 2020. [`preprint`](https://arxiv.org/abs/2004.08410)
 
-16. **Learning Path Recommendation Based on Knowledge Tracing Model and Reinforcement Learning**
+18. **Learning Path Recommendation Based on Knowledge Tracing Model and Reinforcement Learning**
 
     *Dejun Cai, Yuan Zhang, Bintao Dai*
 
     IEEE International Conference on Computer and Communications (ICCC), 2019. [`conference`](https://ieeexplore.ieee.org/document/9064104)
 
-17. **Exploiting Cognitive Structure for Adaptive Learning**
+19. **Exploiting Cognitive Structure for Adaptive Learning**
 
     *Qi Liu, Shiwei Tong, Chuanren Liu, Hongke Zhao, Enhong Chen, Haiping Ma, Shijin Wang*
 
     KDD, 2019. [`conference`](https://arxiv.org/abs/1905.12470)
 
-18. **Combining Adaptivity with Progression Ordering for Intelligent Tutoring Systems**
+20. **Combining Adaptivity with Progression Ordering for Intelligent Tutoring Systems**
 
     *Tong Mu, Shuhan Wang, Erik Andersen, Emma Brunskill*
 
     Learning@Scale, 2018. [`conference`](https://dl.acm.org/doi/10.1145/3231644.3231672)
 
-19. **The Effects of Adaptive Learning in a Massive Open Online Course on Learners' Skill Development**
+21. **The Effects of Adaptive Learning in a Massive Open Online Course on Learners' Skill Development**
 
     *Y. Rosen, I. Rushkin, Rob Rubin, Liberty Munson, Andrew M. Ang, G. Weber, Glenn Lopez, D. Tingley*
 
     Learning@Scale, 2018. [`conference`](https://scholar.harvard.edu/files/dtingley/files/adaptivelas2018.pdf)
 
-20. **Ontology-based Recommender System in Higher Education**
+22. **Ontology-based Recommender System in Higher Education**
 
     *Charbel Obeid, Inaya Lahoud, Hicham El Khoury,  Pierre-Antoine Champin*
 
     WWW Companion, 2018. [`workshop`](https://dl.acm.org/doi/10.1145/3184558.3191533)
 
-21. **Program2Tutor: Combining Automatic Curriculum Generation with Multi-Armed Bandits for Intelligent Tutoring Systems**
+23. **Program2Tutor: Combining Automatic Curriculum Generation with Multi-Armed Bandits for Intelligent Tutoring Systems**
 
     *Tong Mu, Karan Goel*
 
     NeurIPS - Workshop on Teaching Machines Humans and Robots, 2017. [`workshop`](http://www.teaching-machines.cc/nips2017/papers/nips17-teaching_paper-12.pdf)
+
+### [Tutoring System](#content)
+
+1. **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
+
+    *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
+
+    WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749)
+
+, [`code`](https://github.com/GeminiLight/gen-mentor)
+
+2. **Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning**
+
+    *Xiangen Hu, Sheng Xu, Richard Tong, Art Graesser*
+
+    arXiv, 2025. [`preprint`](https://arxiv.org/abs/2501.06682)
+
+3. **From Problem-Solving to Teaching Problem-Solving: Aligning LLMs with Pedagogy using Reinforcement Learning**
+
+    *David Dinucu-Jianu, Jakub Macina, Nico Daheim, Ido Hakimi, Iryna Gurevych, Mrinmaya Sachan*
+
+    arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.15607)
+
+, [`code`](https://github.com/eth-lre/PedagogicalRL)
+
+4. **Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling**
+
+    *Minju Park, Sojung Kim, Seunghyun Lee, Soonwoo Kwon, Kyuseok Kim*
+
+    CHI-LBW, 2024. [`workshop`](https://arxiv.org/abs/2403.14071)
+
+5. **An Educational Tool for Learning about Social Media Tracking, Profiling, and Recommendation**
+
+    *Nicolas Pope, Juho Kahila, Jari Laru, Henriikka Vartiainen, Teemu Roos, Matti Tedre*
+
+    ICALT, 2024. [`conference`](https://arxiv.org/abs/2402.01813)
+
+6. **AutoTutor meets Large Language Models: A Language Model Tutor with Rich Pedagogy and Guardrails**
+
+    *Sankalan Pal Chowdhury, Vilém Zouhar, Mrinmaya Sachan*
+
+    Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2402.09216)
+
+7. **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
+
+    *Jiayu Liu, Zhenya Huang, Tong Xiao, Jing Sha, Jinze Wu, Qi Liu, Shijin Wang, Enhong Chen*
+
+    NeurIPS, 2024. [`conference`](https://neurips.cc/virtual/2024/poster/93477)
+
+8. **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
+
+    *Zhengyuan Liu, Stella Xin Yin, Geyu Lin, Nancy F. Chen*
+
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
+
+9. **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
+
+    *Wei-Yu Chen*
+
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
+
+10. **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
+
+    *Zhengyuan Liu, Stella Xin Yin, Carolyn Lee, Nancy F. Chen*
+
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.03429)
+
+11. **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
+
+    *Glen Smith, Adit Gupta, Christopher MacLellan*
+
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07883)
+
+12. **OATutor: An Open-source Adaptive Tutoring System and Curated Content Library for Learning Sciences Research**
+
+    *Z. Pardos, Matthew Tang, Ioannis Anastasopoulos, Shreya K. Sheel, Ethan Zhang*
+
+    CHI, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3544548.3581574)
+
+13. **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
+
+    *Yann Hicke, Anmol Agarwal, Qianou Ma, Paul Denny*
+
+    NeurIPS - Workshop on Generative AI for Education (GAIED), 2023. [`workshop`](https://arxiv.org/abs/2311.02775)
+
+14. **Empowering Private Tutoring by Chaining Large Language Models**
+
+    *Yulin Chen, Ning Ding, Hai-Tao Zheng, Zhiyuan Liu, Maosong Sun, Bowen Zhou*
+
+    arXiv, 2023. [`preprint`](https://arxiv.org/abs/2309.08112)
+
+15. **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
+
+    *Chenxi Dong*
+
+    arXiv, 2023. [`preprint`](https://arxiv.org/abs/2311.17696)
+
+16. **Personal Knowledge Graphs: Use Cases in e-learning Platforms**
+
+    *Eleni Ilkou*
+
+    WWW Companion, 2022. [`workshop`](https://arxiv.org/abs/2203.08507)
+
+17. **ArgueTutor: An Adaptive Dialog-Based Learning System for Argumentation Skills**
+
+    *Thiemo Wambsganss, C. Niklaus, Matthias Cetto, Matthias Söllner, S. Handschuh, J. Leimeister*
+
+    CHI, 2021. [`conference`](https://dl.acm.org/doi/abs/10.1145/3411764.3445781)
+
+18. **An Interaction Design for Machine Teaching to Develop AI Tutors**
+
+    *Daniel Weitekamp, Erik Harpstead, K. Koedinger*
+
+    CHI, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3313831.3376226)
+
+19. **The Cognitive Tutor Authoring Tools (CTAT): Preliminary Evaluation of Efficiency Gains**
+
+    *V. Aleven, B. McLaren, J. Sewall, K. Koedinger*
+
+    International Conference on Intelligent Tutoring Systems, 2006. [`conference`](https://figshare.com/articles/journal_contribution/The_Cognitive_Tutor_Authoring_Tools_CTAT_Preliminary_Evaluation_of_Efficiency_Gains/6470495/1/files/11899052.pdf)
+
+20. **Locus of Feedback Control in Computer-Based Tutoring**
+
+    *Albert T. Corbett, John R. Anderson*
+
+    CHI, 2001. [`conference`](http://pact.cs.cmu.edu/corbett/Corbett&AndersonCHI2001.pdf)
+
+
+
+## [Learning Experience](#content)
+
+### [Learning Engagement](#content)
+
+1. **Examining the Role of LLM-Driven Interactions on Attention and Cognitive Engagement in Virtual Classrooms**
+
+    *Suleyman Ozdel, Can Sarpkaya, Efe Bozkir, Hong Gao, Enkelejda Kasneci*
+
+    arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.07377)
 
 ### [Student Simulation & Profiling](#content)
 
@@ -284,179 +442,69 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     CHI, 2025. [`conference`](https://arxiv.org/abs/2502.02780)
 
-3. **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
+3. **CoderAgent: Simulating Student Behavior for Personalized Programming Learning with Large Language Models**
+
+    *Yi Zhan, Qi Liu, Weibo Gao, Zheng Zhang, Tianfu Wang, Shuanghong Shen, Junyu Lu, Zhenya Huang*
+
+    IJCAI, 2025. [`conference`](https://arxiv.org/abs/2505.20642)
+
+4. **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
 
     *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
 
     WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749)
 
-4. **AdaRD: An Adaptive Response Denoising Framework for Robust Learner Modeling**
+5. **AdaRD: An Adaptive Response Denoising Framework for Robust Learner Modeling**
 
     *Fangzhou Yao, Qi Liu, Linan Yue, Weibo Gao, Jiatong Li, Xin Li, Yuanjing He*
 
     KDD, 2024. [`conference`](https://dl.acm.org/doi/10.1145/3637528.3671684)
 
-5. **Towards Modeling Learner Performance with Large Language Models**
+6. **Towards Modeling Learner Performance with Large Language Models**
 
     *Seyed Parsa Neshaei, Richard Lee Davis, Adam Hazimeh, Bojan Lazarevski, Pierre Dillenbourg, Tanja Käser*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2403.14661)
 
-6. **FOKE: A Personalized and Explainable Education Framework Integrating Foundation Models, Knowledge Graphs, and Prompt Engineering**
+7. **FOKE: A Personalized and Explainable Education Framework Integrating Foundation Models, Knowledge Graphs, and Prompt Engineering**
 
     *Silan Hu, Xiaoning Wang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2405.03734)
 
-7. **EduAgent: Generative Student Agents in Learning**
+8. **EduAgent: Generative Student Agents in Learning**
 
     *Songlin Xu, Xinyu Zhang, Lianhui Qin*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07963)
 
-8. **Visualizing Self-Regulated Learner Profiles in Dashboards: Design Insights from Teachers**
+9. **Visualizing Self-Regulated Learner Profiles in Dashboards: Design Insights from Teachers**
 
     *Paola Mejia-Domenzain, Eva Laini, Seyed Parsa Neshaei, Thiemo Wambsganss, Tanja Käser*
 
     AIED, 2023. [`conference`](https://arxiv.org/abs/2305.16851)
 
-9. **Contextualizing Problems to Student Interests at Scale in Intelligent Tutoring System Using Large Language Models**
+10. **Contextualizing Problems to Student Interests at Scale in Intelligent Tutoring System Using Large Language Models**
 
     *Gautam Yadav, Ying-Jui Tseng, Xiaolin Ni*
 
     AIED - Workshop on Empowering Education with LLMs - the Next-Gen Interface and Content Generation, 2023. [`workshop`](https://arxiv.org/abs/2306.00190)
 
-10. **Mitigating Biases in Student Performance Prediction via Attention-Based Personalized Federated Learning**
+11. **Mitigating Biases in Student Performance Prediction via Attention-Based Personalized Federated Learning**
 
     *Yun-Wei Chu, Seyyedali Hosseinalipour, Elizabeth Tenorio, Laura Cruz, Kerrie Douglas, Andrew Lan, Christopher Brinton*
 
     CIKM, 2022. [`conference`](https://arxiv.org/abs/2208.01182)
 
-11. **Predicting Student Performance using Advanced Learning Analytics**
+12. **Predicting Student Performance using Advanced Learning Analytics**
 
     *Ali Daud, Naif Radi Aljohani, Rabeeh Ayaz Abbasi, Miltiadis D. Lytras, Farhat Abbas, Jalal S. Alowibdi*
 
     WWW Companion, 2017. [`workshop`](https://arxiv.org/abs/2203.08507)
 
-### [Tutoring System](#content)
-
-1. **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
-
-    *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
-
-    WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749)
-
-2. **Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning**
-
-    *Xiangen Hu, Sheng Xu, Richard Tong, Art Graesser*
-
-    arXiv, 2025. [`preprint`](https://arxiv.org/abs/2501.06682)
-
-3. **Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling**
-
-    *Minju Park, Sojung Kim, Seunghyun Lee, Soonwoo Kwon, Kyuseok Kim*
-
-    CHI-LBW, 2024. [`workshop`](https://arxiv.org/abs/2403.14071)
-
-4. **An Educational Tool for Learning about Social Media Tracking, Profiling, and Recommendation**
-
-    *Nicolas Pope, Juho Kahila, Jari Laru, Henriikka Vartiainen, Teemu Roos, Matti Tedre*
-
-    ICALT, 2024. [`conference`](https://arxiv.org/abs/2402.01813)
-
-5. **AutoTutor meets Large Language Models: A Language Model Tutor with Rich Pedagogy and Guardrails**
-
-    *Sankalan Pal Chowdhury, Vilém Zouhar, Mrinmaya Sachan*
-
-    Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2402.09216)
-
-6. **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
-
-    *Jiayu Liu, Zhenya Huang, Tong Xiao, Jing Sha, Jinze Wu, Qi Liu, Shijin Wang, Enhong Chen*
-
-    NeurIPS, 2024. [`conference`](https://neurips.cc/virtual/2024/poster/93477)
-
-7. **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
-
-    *Zhengyuan Liu, Stella Xin Yin, Geyu Lin, Nancy F. Chen*
-
-    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
-
-8. **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
-
-    *Wei-Yu Chen*
-
-    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
-
-9. **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
-
-    *Zhengyuan Liu, Stella Xin Yin, Carolyn Lee, Nancy F. Chen*
-
-    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.03429)
-
-10. **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
-
-    *Glen Smith, Adit Gupta, Christopher MacLellan*
-
-    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07883)
-
-11. **OATutor: An Open-source Adaptive Tutoring System and Curated Content Library for Learning Sciences Research**
-
-    *Z. Pardos, Matthew Tang, Ioannis Anastasopoulos, Shreya K. Sheel, Ethan Zhang*
-
-    CHI, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3544548.3581574)
-
-12. **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
-
-    *Yann Hicke, Anmol Agarwal, Qianou Ma, Paul Denny*
-
-    NeurIPS - Workshop on Generative AI for Education (GAIED), 2023. [`workshop`](https://arxiv.org/abs/2311.02775)
-
-13. **Empowering Private Tutoring by Chaining Large Language Models**
-
-    *Yulin Chen, Ning Ding, Hai-Tao Zheng, Zhiyuan Liu, Maosong Sun, Bowen Zhou*
-
-    arXiv, 2023. [`preprint`](https://arxiv.org/abs/2309.08112)
-
-14. **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
-
-    *Chenxi Dong*
-
-    arXiv, 2023. [`preprint`](https://arxiv.org/abs/2311.17696)
-
-15. **Personal Knowledge Graphs: Use Cases in e-learning Platforms**
-
-    *Eleni Ilkou*
-
-    WWW Companion, 2022. [`workshop`](https://arxiv.org/abs/2203.08507)
-
-16. **ArgueTutor: An Adaptive Dialog-Based Learning System for Argumentation Skills**
-
-    *Thiemo Wambsganss, C. Niklaus, Matthias Cetto, Matthias Söllner, S. Handschuh, J. Leimeister*
-
-    CHI, 2021. [`conference`](https://dl.acm.org/doi/abs/10.1145/3411764.3445781)
-
-17. **An Interaction Design for Machine Teaching to Develop AI Tutors**
-
-    *Daniel Weitekamp, Erik Harpstead, K. Koedinger*
-
-    CHI, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3313831.3376226)
-
-18. **The Cognitive Tutor Authoring Tools (CTAT): Preliminary Evaluation of Efficiency Gains**
-
-    *V. Aleven, B. McLaren, J. Sewall, K. Koedinger*
-
-    International Conference on Intelligent Tutoring Systems, 2006. [`conference`](https://figshare.com/articles/journal_contribution/The_Cognitive_Tutor_Authoring_Tools_CTAT_Preliminary_Evaluation_of_Efficiency_Gains/6470495/1/files/11899052.pdf)
-
-19. **Locus of Feedback Control in Computer-Based Tutoring**
-
-    *Albert T. Corbett, John R. Anderson*
-
-    CHI, 2001. [`conference`](http://pact.cs.cmu.edu/corbett/Corbett&AndersonCHI2001.pdf)
 
 
-
-## [Assessment](#content)
+## [Assessment & Feedback](#content)
 
 ### [Adaptive Testing](#content)
 
@@ -637,6 +685,14 @@ We collect papers related to **artificial intelligence (AI) and large language m
     *Florin Bulgarov, Rodney Nielsen*
 
     AAAI, 2019. [`conference`](https://ojs.aaai.org/index.php/AAAI/article/view/12009)
+
+### [Knowledge Structuring](#content)
+
+1. **Using structured knowledge and traditional word embeddings to generate concept representations in the educational domain**
+
+    *Oghenemaro Anuyah, Ion Madrazo Azpiazu, Maria Soledad Pera*
+
+    WWW Companion, 2019. [`workshop`](https://dl.acm.org/doi/abs/10.1145/3308560.3316583)
 
 ### [Knowledge Tracing](#content)
 
@@ -856,82 +912,6 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     NeurIPS, 2015. [`conference`](https://arxiv.org/abs/1506.05908)
 
-### [Question Generation](#content)
-
-1. **Exploring Iterative Enhancement for Improving Learnersourced Multiple-Choice Question Explanations with Large Language Models**
-
-    *Qiming Bao, Juho Leinonen, Alex Yuxuan Peng, Wanjun Zhong, Gaël Gendron, Timothy Pistotti, Alice Huang, Paul Denny, Michael Witbrock, Jiamou Liu*
-
-    AAAI, 2025. [`conference`](https://arxiv.org/abs/2309.10444)
-
-2. **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
-
-    *Jaewook Lee, Digory Smith, Simon Woodhead, Andrew Lan*
-
-    EDM, 2024. [`conference`](https://arxiv.org/abs/2405.00864)
-
-3. **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
-
-    *Alexander Scarlatos, Wanyong Feng, Digory Smith, Simon Woodhead, Andrew Lan*
-
-    NAACL - BEA workshop, 2024. [`workshop`](https://arxiv.org/abs/2405.05144)
-
-4. **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
-
-    *Wanyong Feng, Jaewook Lee, Hunter McNichols, Alexander Scarlatos, Digory Smith, Simon Woodhead, Nancy Otero Ornelas, Andrew Lan*
-
-    NAACL findings, 2024. [`conference`](https://arxiv.org/abs/2404.02124)
-
-5. **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
-
-    *Maxime Griot, Jean Vanderdonckt, Demet Yuksel, Coralie Hemptinne*
-
-    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.02394)
-
-6. **Leveraging Large Language Models for Concept Graph Recovery and Question Answering in NLP Education**
-
-    *Rui Yang, Boming Yang, Sixun Ouyang, Tianwei She, Aosong Feng, Yuang Jiang, Freddy Lecue, Jinghui Lu, Irene Li*
-
-    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2402.14293)
-
-7. **ReadingQizMaker: A Human-NLP Collaborative System that Supports Instructors to Design High-Qality Reading Qiz Qestions**
-
-    *Xinyi Lu, Simin Fan, Jessica Houghton, Lu Wang, Xu Wang*
-
-    CHI, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3544548.3580957)
-
-8. **DeepQR: Neural-based Quality Ratings for Learnersourced Multiple-Choice Questions**
-
-    *Lin Ni, Qiming Bao, Xiaoxuan Li, Qianqian Qi, Paul Denny, Jim Warren, Michael Witbrock, Jiamou Liu*
-
-    AAAI, 2022. [`conference`](https://arxiv.org/abs/2111.10058)
-
-9. **EQG-RACE: Examination-Type Question Generation**
-
-    *Xin Jia, Wenjie Zhou, Xu Sun, Yunfang Wu*
-
-    AAAI, 2021. [`conference`](https://arxiv.org/abs/2012.06106)
-
-10. **Improving Learning Outcomes with Gaze Tracking and Automatic Question Generation**
-
-    *Rohail Syed, Kevyn Collins-Thompson, Paul N. Bennett, Mengqiu Teng, Shane Williams, Dr. Wendy W. Tay, Shamsi Iqbal*
-
-    WWW, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3366423.3380240)
-
-### [Question Retrieval](#content)
-
-1. **Large Language Model Augmented Exercise Retrieval for Personalized Language Learning**
-
-    *Austin Xu, Will Monroe, Klinton Bicknell*
-
-    Learning Analytics and Knowledge (LAK), 2024. [`conference`](https://arxiv.org/abs/2402.16877)
-
-2. **Fine-Grained Similarity Measurement between Educational Videos and Exercises**
-
-    *Xin Wang, Wei Huang, Qi Liu, Yu Yin, Zhenya Huang, Le Wu, Jianhui Ma, Xue Wang*
-
-    MM, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3394171.3413783)
-
 
 
 ## [Material Preparation](#content)
@@ -1004,13 +984,87 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     WWW Companion, 2018. [`workshop`](https://dl.acm.org/doi/10.1145/3184558.3191534)
 
-### [Knowledge Structuring](#content)
+### [Question Generation](#content)
 
-1. **Using structured knowledge and traditional word embeddings to generate concept representations in the educational domain**
+1. **Exploring Iterative Enhancement for Improving Learnersourced Multiple-Choice Question Explanations with Large Language Models**
 
-    *Oghenemaro Anuyah, Ion Madrazo Azpiazu, Maria Soledad Pera*
+    *Qiming Bao, Juho Leinonen, Alex Yuxuan Peng, Wanjun Zhong, Gaël Gendron, Timothy Pistotti, Alice Huang, Paul Denny, Michael Witbrock, Jiamou Liu*
 
-    WWW Companion, 2019. [`workshop`](https://dl.acm.org/doi/abs/10.1145/3308560.3316583)
+    AAAI, 2025. [`conference`](https://arxiv.org/abs/2309.10444)
+
+2. **KAQG: A Knowledge‑Graph‑Enhanced RAG for Difficulty‑Controlled Question Generation**
+
+    *Ching Han Chen, Ming Fang Shiu*
+
+    arXiv, 2025. [`preprint`](https://arxiv.org/abs/2505.07618)
+
+3. **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
+
+    *Jaewook Lee, Digory Smith, Simon Woodhead, Andrew Lan*
+
+    EDM, 2024. [`conference`](https://arxiv.org/abs/2405.00864)
+
+4. **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
+
+    *Alexander Scarlatos, Wanyong Feng, Digory Smith, Simon Woodhead, Andrew Lan*
+
+    NAACL - BEA workshop, 2024. [`workshop`](https://arxiv.org/abs/2405.05144)
+
+5. **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
+
+    *Wanyong Feng, Jaewook Lee, Hunter McNichols, Alexander Scarlatos, Digory Smith, Simon Woodhead, Nancy Otero Ornelas, Andrew Lan*
+
+    NAACL findings, 2024. [`conference`](https://arxiv.org/abs/2404.02124)
+
+6. **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
+
+    *Maxime Griot, Jean Vanderdonckt, Demet Yuksel, Coralie Hemptinne*
+
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.02394)
+
+7. **Leveraging Large Language Models for Concept Graph Recovery and Question Answering in NLP Education**
+
+    *Rui Yang, Boming Yang, Sixun Ouyang, Tianwei She, Aosong Feng, Yuang Jiang, Freddy Lecue, Jinghui Lu, Irene Li*
+
+    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2402.14293)
+
+8. **ReadingQizMaker: A Human-NLP Collaborative System that Supports Instructors to Design High-Qality Reading Qiz Qestions**
+
+    *Xinyi Lu, Simin Fan, Jessica Houghton, Lu Wang, Xu Wang*
+
+    CHI, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3544548.3580957)
+
+9. **DeepQR: Neural-based Quality Ratings for Learnersourced Multiple-Choice Questions**
+
+    *Lin Ni, Qiming Bao, Xiaoxuan Li, Qianqian Qi, Paul Denny, Jim Warren, Michael Witbrock, Jiamou Liu*
+
+    AAAI, 2022. [`conference`](https://arxiv.org/abs/2111.10058)
+
+10. **EQG-RACE: Examination-Type Question Generation**
+
+    *Xin Jia, Wenjie Zhou, Xu Sun, Yunfang Wu*
+
+    AAAI, 2021. [`conference`](https://arxiv.org/abs/2012.06106)
+
+11. **Improving Learning Outcomes with Gaze Tracking and Automatic Question Generation**
+
+    *Rohail Syed, Kevyn Collins-Thompson, Paul N. Bennett, Mengqiu Teng, Shane Williams, Dr. Wendy W. Tay, Shamsi Iqbal*
+
+    WWW, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3366423.3380240)
+
+### [Question Retrieval](#content)
+
+1. **Large Language Model Augmented Exercise Retrieval for Personalized Language Learning**
+
+    *Austin Xu, Will Monroe, Klinton Bicknell*
+
+    Learning Analytics and Knowledge (LAK), 2024. [`conference`](https://arxiv.org/abs/2402.16877)
+
+2. **Fine-Grained Similarity Measurement between Educational Videos and Exercises**
+
+    *Xin Wang, Wei Huang, Qi Liu, Yu Yin, Zhenya Huang, Le Wu, Jianhui Ma, Xue Wang*
+
+    MM, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3394171.3413783)
 
 
 
@@ -1086,15 +1140,29 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     NeurIPS - Workshop on Generative AI for Education (GAIED), 2024. [`workshop`](https://gaied.org/neurips2023/files/9/9_paper.pdf)
 
+### [Liberal Arts](#content)
+
+1. **Exploring LLM-Powered Role and Action-Switching Pedagogical Agents for History Education in Virtual Reality**
+
+    *Zihao Zhu, Ao Yu, Xin Tong, Pan Hui*
+
+    CHI, 2025. [`conference`](https://arxiv.org/pdf/2505.02699)
+
 ### [Math](#content)
 
-1. **One Size doesn’t Fit All: A Personalized Conversational Tutoring Agent for Mathematics Instruction**
+1. **MathEDU: Towards Adaptive Feedback for Student Mathematical Problem-Solving**
+
+    *Wei-Ling Hsu, Yu-Chien Tang, An-Zi Yen*
+
+    arXiv, 2025. [`conference`](https://arxiv.org/pdf/2505.18056)
+
+2. **One Size doesn’t Fit All: A Personalized Conversational Tutoring Agent for Mathematics Instruction**
 
     *Ben Liu, Jihan Zhang, Fangquan Lin, Xu Jia, Min Peng*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2502.12633)
 
-2. **Mathemyths: Leveraging Large Language Models to Teach Mathematical Language through Child-AI Co-Creative Storytelling**
+3. **Mathemyths: Leveraging Large Language Models to Teach Mathematical Language through Child-AI Co-Creative Storytelling**
 
     *Chao Zhang, Xuechen Liu, Katherine Ziska, Soobin Jeon, Chi-Lin Yu, Ying Xu*
 
@@ -1110,7 +1178,13 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 ### [Social Good](#content)
 
-1. **LLM-Powered AI Tutors with Personas for d/Deaf and Hard-of-Hearing Online Learners**
+1. **PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions**
+
+    *Daeun Kyung, Hyunseung Chung, Seongsu Bae, Jiho Kim, Jae Ho Sohn, Taerim Kim, Soo Kyung Kim, Edward Choi*
+
+    arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.17818)
+
+2. **LLM-Powered AI Tutors with Personas for d/Deaf and Hard-of-Hearing Online Learners**
 
     *Haocong Cheng, Si Chen, Christopher Perdriau, Yun Huang*
 
@@ -1126,37 +1200,43 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     CHI, 2025. [`conference`](https://arxiv.org/abs/2502.09799)
 
-2. **Supporting Self-Reflection at Scale with Large Language Models: Insights from Randomized Field Experiments in Classrooms**
+2. **LLMs are Biased Teachers: Evaluating LLM Bias in Personalized Education**
+
+    *Iain Weissburg, Sathvika Anand, Sharon Levy, Haewon Jeong*
+
+    NAACL Findings, 2025. [`conference`](https://aclanthology.org/2025.findings-naacl.314/)
+
+3. **Supporting Self-Reflection at Scale with Large Language Models: Insights from Randomized Field Experiments in Classrooms**
 
     *Harsh Kumar, Ruiwei Xiao, Benjamin Lawson, Ilya Musabirov, Jiakai Shi, Xinyuan Wang, Huayin Luo, Joseph Jay Williams, Anna Rafferty, John Stamper, Michael Liut*
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2406.07571)
 
-3. **The Promises and Pitfalls of Using Language Models to Measure Instruction Quality in Education**
+4. **The Promises and Pitfalls of Using Language Models to Measure Instruction Quality in Education**
 
     *Paiheng Xu, Jing Liu, Nathan Jones, Julie Cohen, Wei Ai*
 
     NAACL, 2024. [`conference`](https://arxiv.org/abs/2404.02444)
 
-4. **MathVC: An LLM-Simulated Multi-Character Virtual Classroom for Mathematics Education**
+5. **MathVC: An LLM-Simulated Multi-Character Virtual Classroom for Mathematics Education**
 
     *Murong Yue, Wijdane Mifdal, Yixuan Zhang, Jennifer Suh, Ziyu Yao*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06711)
 
-5. **Simulating Classroom Education with LLM-Empowered Agents**
+6. **Simulating Classroom Education with LLM-Empowered Agents**
 
     *Zheyuan Zhang, Daniel Zhang-Li, Jifan Yu, Linlu Gong, Jinchang Zhou, Zhanxin Hao, Jianxiao Jiang, Jie Cao, Huiqin Liu, Zhiyuan Liu, Lei Hou, Juanzi Li*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.19226)
 
-6. **LearnerExp: Exploring and Explaining the Time Management of Online Learning Activity**
+7. **LearnerExp: Exploring and Explaining the Time Management of Online Learning Activity**
 
     *Huan He, Qinghua Zheng, Bo Dong*
 
     WWW, 2019. [`conference`](https://dl.acm.org/doi/10.1145/3308558.3314140)
 
-7. **The Knowledge-Learning-Instruction Framework: Bridging the Science-Practice Chasm to Enhance Robust Student Learning**
+8. **The Knowledge-Learning-Instruction Framework: Bridging the Science-Practice Chasm to Enhance Robust Student Learning**
 
     *K. Koedinger, Albert T. Corbett, C. Perfetti*
 
@@ -1168,25 +1248,31 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 ### [Benchmark](#content)
 
-1. **EduNLP: Towards a Unified and Modularized Library for Educational Resources**
+1. **Towards Robust Evaluation of STEM Education: Leveraging MLLMs in Project-Based Learning**
+
+    *Yanhao Jia, Xinyi Wu, Qinglin Zhang, Yiran Qin, Luwei Xiao, Shuai Zhao*
+
+    arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.17050)
+
+2. **EduNLP: Towards a Unified and Modularized Library for Educational Resources**
 
     *Zhenya Huang, Yuting Ning, Longhu Qin, Shiwei Tong, Shangzi Xue, Tong Xiao, Xin Lin, Jiayu Liu, Qi Liu, Enhong Chen, Shijing Wang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.01276)
 
-2. **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
+3. **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
 
     *Jinchang Hou, Chang Ao, Haihong Wu, Xiangtao Kong, Zhigang Zheng, Daijia Tang, Chengming Li, Xiping Hu, Ruifeng Xu, Shiwen Ni, Min Yang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2401.15927)
 
-3. **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
+4. **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
 
     *Hasan Abu-Rasheed, Christian Weber, Madjid Fathi*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2402.07910)
 
-4. **pyKT: A Python Library to Benchmark Deep Learning based Knowledge Tracing Models**
+5. **pyKT: A Python Library to Benchmark Deep Learning based Knowledge Tracing Models**
 
     *Zitao Liu, Qiongqiong Liu, Jiahao Chen, Shuyan Huang, Jiliang Tang, Weiqing Luo*
 

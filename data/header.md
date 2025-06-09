@@ -26,6 +26,8 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 ## [Content](#content)
 
+![AI4Edu](resources/ai4edu-loop.png)
+
 <!-- <table>
 <tr><td colspan="2"><a href="#survey-papers">1. Survey</a></td></tr>
 <tr><td colspan="2"><a href="#tasks">2. Tasks</a></td></tr>  -->

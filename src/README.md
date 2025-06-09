@@ -11,3 +11,10 @@ p.s.
 ```bash
 pip install -r requirements.txt
 ```
+
+## Usage
+
+```bash
+cd src
+python generator.py
+```
