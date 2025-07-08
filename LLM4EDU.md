@@ -33,10 +33,10 @@ We collect papers related to **artificial intelligence (AI) and large language m
 <tr><td colspan="2"><a href="#tasks">2. Tasks</a></td></tr>  --><table>
 
 <tr>
-<tr><td colspan="2"><a href="#survey">1. Survey</a></td>
+<tr><td colspan="2"><a href="#survey--analysis">1. Survey & Analysis</a></td>
 <tr>
 	<td>&emsp;<a href=#comprehensive-survey>1.1 Comprehensive Survey</a></td>
-	<td></td>
+	<td>&emsp;<a href=#empirical-analysis>1.2 Empirical Analysis</a></td>
 </tr>
 <tr>
 <tr><td colspan="2"><a href="#tutoring-strategy">2. Tutoring Strategy</a></td>
@@ -90,7 +90,7 @@ We collect papers related to **artificial intelligence (AI) and large language m
 </tr>
 </table>
 
-## [Survey](#content)
+## [Survey & Analysis](#content)
 
 ### [Comprehensive Survey](#content)
 
@@ -117,6 +117,20 @@ We collect papers related to **artificial intelligence (AI) and large language m
     *Wensheng Gan, Zhenlian Qi, Jiayang Wu, Jerry Chun-Wei Lin*
 
     BigData, 2023. [`conference`](https://arxiv.org/abs/2311.13160)
+
+### [Empirical Analysis](#content)
+
+1. :sparkles: **The effect of ChatGPT on students’ learning performance, learning perception, and higher-order thinking: insights from a meta-analysis**
+
+    *Jin Wang, Wenxiang Fan*
+
+    Nature, 2025. [`journal`](https://www.nature.com/articles/s41599-025-04787-y)
+
+2. :sparkles: **A systematic review of AI-driven intelligent tutoring systems (ITS) in K-12 education**
+
+    *Angélique Létourneau, Marion Deslandes Martineau, Patrick Charland, John Alexander Karran, Jared Boasen, Pierre Majorique Léger*
+
+    npj science of learning, 2025. [`journal`](https://www.nature.com/articles/s41539-025-00320-7)
 
 
 
@@ -326,31 +340,37 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     NAACL Findings, 2025. [`conference`](https://arxiv.org/abs/2502.01090)
 
-2. :sparkles: **Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models**
+2. :sparkles: **COGENT: A Curriculum-oriented Framework for Generating Grade-appropriate Educational Content**
+
+    *Zhengyuan Liu, Stella Xin Yin, Dion Hoe-Lian Goh, Nancy F. Chen*
+
+    arXiv, 2025. [`preprint`](https://arxiv.org/abs/2409.15024)
+
+3. :sparkles: **Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models**
 
     *Yijia Shao, Yucheng Jiang, Theodore A. Kanell, Peter Xu, Omar Khattab, Monica S. Lam*
 
     NAACL, 2024. [`conference`](https://arxiv.org/abs/2402.14207)
 
-3. :sparkles: **Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency**
+4. :sparkles: **Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency**
 
     *Eric Zelikman, Wanjing Anya Ma, Jasmine E. Tran, Diyi Yang, Jason D. Yeatman, Nick Haber*
 
     EMNLP, 2023. [`conference`](https://arxiv.org/abs/2310.06837)
 
-4. :sparkles: **On the Automatic Generation and Simplification of Children's Stories**
+5. :sparkles: **On the Automatic Generation and Simplification of Children's Stories**
 
     *Maria Valentini, Jennifer Weber, Jesus Salcido, Téa Wright, Eliana Colunga, Katharina Kann*
 
     EMNLP, 2023. [`conference`](https://arxiv.org/abs/2310.18502)
 
-5. :sparkles: **FairytaleCQA: Integrating a Commonsense Knowledge Graph into Children's Storybook Narratives**
+6. :sparkles: **FairytaleCQA: Integrating a Commonsense Knowledge Graph into Children's Storybook Narratives**
 
     *Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuanzhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Dakuo Wang, Yuling Su*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2311.09756)
 
-6. :sparkles: **Robosourcing Educational Resources – Leveraging Large Language Models for Learnersourcing**
+7. :sparkles: **Robosourcing Educational Resources – Leveraging Large Language Models for Learnersourcing**
 
     *Paul Denny, Sami Sarsa, Arto Hellas, Juho Leinonen*
 
@@ -388,13 +408,19 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     NAACL findings, 2024. [`conference`](https://arxiv.org/abs/2404.02124)
 
-6. :sparkles: **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
+6. :sparkles: **Multiple-Choice Question Generation Using Large Language Models: Methodology and Educator Insights**
+
+    *Giorgio Biancini, Alessio Ferrato, Carla Limongelli*
+
+    UMAP Adjunct, 2024. [`workshop`](https://arxiv.org/abs/2506.04851)
+
+7. :sparkles: **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
 
     *Maxime Griot, Jean Vanderdonckt, Demet Yuksel, Coralie Hemptinne*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.02394)
 
-7. :sparkles: **Leveraging Large Language Models for Concept Graph Recovery and Question Answering in NLP Education**
+8. :sparkles: **Leveraging Large Language Models for Concept Graph Recovery and Question Answering in NLP Education**
 
     *Rui Yang, Boming Yang, Sixun Ouyang, Tianwei She, Aosong Feng, Yuang Jiang, Freddy Lecue, Jinghui Lu, Irene Li*
 
@@ -414,55 +440,61 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 ### [Computer Science](#content)
 
-1. :sparkles: **CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs**
+1. :sparkles: **Partnering with AI: A Pedagogical Feedback System for LLM Integration into Programming Education**
+
+    *Niklas Scholz, Manh Hung Nguyen, Adish Singla, Tomohiro Nagashima*
+
+    ECTEL, 2025. [`conference`](https://arxiv.org/pdf/2507.00406)
+
+2. :sparkles: **CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs**
 
     *Majeed Kazemitabaar, Runlong Ye, Xiaoning Wang, Austin Z. Henley, Paul Denny, Michelle Craig, Tovi Grossman*
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2401.11314)
 
-2. :sparkles: **Interactions with Prompt Problems: A New Way to Teach Programming with Large Language Models**
+3. :sparkles: **Interactions with Prompt Problems: A New Way to Teach Programming with Large Language Models**
 
     *James Prather, Paul Denny, Juho Leinonen, David H. Smith IV, Brent N. Reeves, Stephen MacNeil, Brett A. Becker, Andrew Luxton-Reilly, Thezyrie Amarouche, Bailey Kimmel*
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2401.10759)
 
-3. :sparkles: **ChatScratch: An AI-Augmented System Toward Autonomous Visual Programming Learning for Children Aged 6-12**
+4. :sparkles: **ChatScratch: An AI-Augmented System Toward Autonomous Visual Programming Learning for Children Aged 6-12**
 
     *Liuqing Chen, Shuhong Xiao, Yunnong Chen, Ruoyu Wu, Yaxuan Song, Lingyun Sun*
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2402.04975)
 
-4. :sparkles: **Exploring How Multiple Levels of GPT-Generated Programming Hints Support or Disappoint Novices**
+5. :sparkles: **Exploring How Multiple Levels of GPT-Generated Programming Hints Support or Disappoint Novices**
 
     *Ruiwei Xiao, Xinying Hou, John Stamper*
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2404.02213)
 
-5. :sparkles: **AI-Tutoring in Software Engineering Education**
+6. :sparkles: **AI-Tutoring in Software Engineering Education**
 
     *Eduard Frankford, Clemens Sauerwein, Patrick Bassner, Stephan Krusche, Ruth Breu*
 
     ICSE, 2024. [`conference`](https://arxiv.org/abs/2404.02548)
 
-6. :sparkles: **How Far Are We? The Triumphs and Trials of Generative AI in Learning Software Engineering**
+7. :sparkles: **How Far Are We? The Triumphs and Trials of Generative AI in Learning Software Engineering**
 
     *Rudrajit Choudhuri, Dylan Liu, Igor Steinmacher, Marco Gerosa, Anita Sarma*
 
     ICSE, 2024. [`conference`](https://arxiv.org/abs/2312.11719)
 
-7. :sparkles: **Evaluating the Effectiveness of LLMs in Introductory Computer Science Education: A Semester-Long Field Study**
+8. :sparkles: **Evaluating the Effectiveness of LLMs in Introductory Computer Science Education: A Semester-Long Field Study**
 
     *Wenhan Lyu, Yimeng Wang, Tingting (Rachel)Chung, Yifan Sun, Yixuan Zhang*
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2404.13414)
 
-8. :sparkles: **Accelerating Scientific Discovery with Generative Knowledge Extraction, Graph-Based Representation, and Multimodal Intelligent Graph Reasoning**
+9. :sparkles: **Accelerating Scientific Discovery with Generative Knowledge Extraction, Graph-Based Representation, and Multimodal Intelligent Graph Reasoning**
 
     *Markus J. Buehler*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2403.11996)
 
-9. :sparkles: **Studying the effect of AI Code Generators on Supporting Novice Learners in Introductory Programming**
+10. :sparkles: **Studying the effect of AI Code Generators on Supporting Novice Learners in Introductory Programming**
 
     *Majeed Kazemitabaar, Justin Chow, Carl Ka To Ma, Barbara J. Ericson, David Weintrop, Tovi Grossman*
 
@@ -584,13 +616,19 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.17050)
 
-2. :sparkles: **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
+2. :sparkles: **Benchmarking the Pedagogical Knowledge of Large Language Models**
+
+    *Maxime Lelièvre, Amy Waldock, Meng Liu, Natalia Valdés Aspillaga, Alasdair Mackintosh, María José Ogando Portela, Jared Lee, Paul Atherton, Robin A. A. Ince, Oliver G. B. Garrod*
+
+    arXiv, 2025. [`preprint`](https://arxiv.org/abs/2506.18710)
+
+3. :sparkles: **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
 
     *Jinchang Hou, Chang Ao, Haihong Wu, Xiangtao Kong, Zhigang Zheng, Daijia Tang, Chengming Li, Xiping Hu, Ruifeng Xu, Shiwen Ni, Min Yang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2401.15927)
 
-3. :sparkles: **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
+4. :sparkles: **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
 
     *Hasan Abu-Rasheed, Christian Weber, Madjid Fathi*
 
