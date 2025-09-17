@@ -3,19 +3,20 @@
   <p>
     A curated list of papers related to artificial intelligence (AI) and large language model (LLM) for education
   </p>
-  <p>
-    <strong><a href="LLM4EDU.md" style="text-decoration: none; color:rgb(69, 162, 255);">🌟 LLM4EDU Version</a> | <a href="README.md" style="text-decoration: none; color:rgb(170, 125, 252);">🤖 Full Version</a></strong>
-  </p>
 </div>
 
 ---
 
 > [!IMPORTANT]
-> There are two versions of our paper list:
+> 🚀 Welcome to visit the **[Online Webpage](http://tianfuwang.tech/awesome-ai-llm4education/)** for better experience!
+> 
+> There are two versions of this repository:
 >
-> - [LLM4EDU version](LLM4EDU.md): Only LLM-related papers.
->
-> - [Full Version](README.md): AI & LLM-related papers.
+<!-- 
+  <p>
+    <strong><a href="LLM4EDU.md" style="text-decoration: none; color:rgb(69, 162, 255);">🌟 LLM4EDU Version</a> | <a href="README.md" style="text-decoration: none; color:rgb(170, 125, 252);">🤖 Full Version</a></strong>
+  </p> -->
+
 
 We collect papers related to **artificial intelligence (AI) and large language model (LLM) for education** from top conferences, journals, and specialized domain-specific conferences. We then categorize them according to their specific tasks for better organization.
 
