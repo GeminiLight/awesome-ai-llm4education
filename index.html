@@ -53,31 +53,42 @@
         
         .main-wrapper {
             min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: radial-gradient(1200px 600px at 20% 0%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 60%),
+                        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 24px;
         }
         
         body.dark .main-wrapper {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: radial-gradient(1200px 600px at 20% 0%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 60%),
+                        linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
         
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: var(--surface-light);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-large);
+            max-width: 1100px;
+            margin: 24px auto 40px auto;
+            padding: 16px 20px;
+            /* Make container translucent to blend with background */
+            /* background: rgba(255, 255, 255, 0.72); */
+            /* -webkit-backdrop-filter: saturate(120%) blur(14px); */
+            /* backdrop-filter: saturate(120%) blur(14px); */
+            /* border-radius: var(--border-radius-lg); */
+            /* border: 1px solid rgba(255, 255, 255, 0.45); */
+            /* box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.35); */
             overflow: hidden;
             transition: var(--transition);
         }
         
-        body.dark .container {
-            background: var(--surface-dark);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-        }
+        /* body.dark .container { */
+            /* Dark mode glass */
+            /* background: rgba(17, 24, 39, 0.60); ~ slate-900 with alpha */
+            /* -webkit-backdrop-filter: saturate(120%) blur(14px); */
+            /* backdrop-filter: saturate(120%) blur(14px); */
+            /* border: 1px solid rgba(255, 255, 255, 0.06); */
+            /* box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.6); */
+        /* } */
         .header {
             background: var(--gradient-primary);
-            padding: 48px 48px 32px 48px;
+            padding: 36px 28px 24px 28px;
             margin: 0 0 32px 0;
             display: flex;
             flex-direction: column;
@@ -127,8 +138,8 @@
         
         .description {
             color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            max-width: 800px;
+            /* font-size: 1.2rem; */
+            max-width: 1000px;
             line-height: 1.6;
             position: relative;
             z-index: 2;
@@ -185,21 +196,180 @@
             border-color: rgba(255, 255, 255, 0.5);
             transform: scale(1.1);
         }
+        .group-filter-bar {
+            display: flex;
+            gap: 12px;
+            margin: 0 32px 16px 32px;
+            flex-wrap: wrap;
+            background: var(--surface-light);
+            border: 1px solid var(--border-light);
+            border-radius: var(--border-radius);
+            /* padding: 16px 24px; */
+            padding: 200px;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .group-button {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            background: var(--surface-light);
+            color: var(--text-primary-light);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .group-button:hover {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+            color: var(--secondary);
+            transform: translateY(-1px);
+        }
+        
+        .group-button.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+            box-shadow: 0 4px 8px rgba(139, 92, 246, 0.2);
+        }
+        .group-button:focus-visible,
+        .filter-button:focus-visible,
+        .chip:focus-visible,
+        .reset-button:focus-visible,
+        .clear-all:focus-visible {
+            outline: 3px solid rgba(59, 130, 246, 0.5);
+            outline-offset: 2px;
+        }
+        
+        body.dark .group-filter-bar {
+            background: var(--surface-dark);
+            border-color: var(--border-dark);
+        }
+        
+        body.dark .group-button {
+            background: var(--surface-dark);
+            color: var(--text-primary-dark);
+            border-color: var(--border-dark);
+        }
+        
+        body.dark .group-button:hover {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.4);
+            color: #c4b5fd;
+        }
+        
+        body.dark .group-button.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+            box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
+        }
+        
         .filter-bar {
             display: flex;
             gap: 16px;
-            margin: 0 32px 32px 32px;
+            margin: 0 0 24px 0;
             flex-wrap: wrap;
             background: var(--surface-light);
             border: 1px solid var(--border-light);
             border-radius: var(--border-radius);
             padding: 24px;
             box-shadow: var(--shadow-soft);
+            position: sticky;
+            top: 12px;
+            z-index: 10;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+        }
+        
+        .filter-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 120px;
+        }
+        
+        .filter-section-wide {
+            min-width: 160px;
+        }
+        
+        .filter-section-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* Inline row to keep specific filters on one line */
+        .filter-row-inline {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 16px;
+            align-items: flex-end;
+            width: 100%;
+        }
+
+        /* Chip-style toggle buttons for multi-select filters */
+        .chip {
+            padding: 6px 12px;
+            border-radius: 9999px;
+            border: 1px solid var(--border-light);
+            background: var(--surface-light);
+            color: var(--text-primary-light);
+            font-size: 13px;
+            font-weight: 100;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        .chip .count {
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--primary);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            padding: 2px 6px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .chip:hover {
+            background: rgba(59, 130, 246, 0.06);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-1px);
+        }
+        .chip.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+        }
+        .chip.active .count {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border-color: rgba(255,255,255,0.25);
+        }
+        .chip[aria-disabled="true"] {
+            opacity: 0.45;
+            cursor: not-allowed;
+            transform: none;
         }
         
         body.dark .filter-bar {
             background: var(--surface-dark);
             border-color: var(--border-dark);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+        
+        body.dark .filter-label {
+            color: var(--text-primary-dark);
         }
         
         .filter-bar input, .filter-bar select {
@@ -214,47 +384,133 @@
             transition: var(--transition);
         }
         
-        /* Fixed widths for different filter types */
-        .filter-bar select[name="group"] {
-            width: 200px;
+        .filter-button {
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            background: var(--surface-light);
+            color: var(--text-primary-light);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            min-height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .filter-bar select[name="category"] {
+        .filter-button:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.3);
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+        
+        .filter-button.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+        }
+        
+        .filter-button.active:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .filter-label {
+            font-weight: 600;
+            color: var(--text-primary-light);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* Accent colors per filter field */
+        .filter-section[data-field="group"] .filter-label { color: #8b5cf6; }      /* Purple */
+        .filter-section[data-field="category"] .filter-label { color: #3b82f6; }   /* Blue */
+        .filter-section[data-field="type"] .filter-label { color: #10b981; }       /* Green */
+        .filter-section[data-field="is_llm_related"] .filter-label { color: #f59e0b; } /* Amber */
+        .filter-section[data-field="publisher"] .filter-label { color: #6366f1; }   /* Indigo */
+        .filter-section[data-field="year"] .filter-label { color: #06b6d4; }        /* Cyan */
+        .filter-section[data-field="title"] .filter-label { color: #0ea5e9; }       /* Sky */
+        .filter-section[data-field="authors"] .filter-label { color: #0ea5e9; }     /* Sky */
+        
+        /* Fixed widths for different filter types */
+        .filter-bar select[name="group"] {
             width: 180px;
         }
         
         .filter-bar select[name="year"] {
-            width: 120px;
-        }
-        
-        .filter-bar select[name="type"] {
-            width: 150px;
+            width: 100px;
         }
         
         .filter-bar select[name="publisher"] {
-            width: 160px;
-        }
-        
-        .filter-bar select[name="is_llm_related"] {
             width: 140px;
         }
         
         .filter-bar input[name="title"] {
-            width: 250px;
-        }
-        
-        .filter-bar input[name="authors"] {
             width: 200px;
         }
         
-        .filter-bar input {
+        .filter-bar input[name="authors"] {
             width: 180px;
+        }
+        
+        .filter-bar input {
+            width: 160px;
         }
         
         body.dark .filter-bar input, body.dark .filter-bar select {
             background: var(--surface-dark);
             color: var(--text-primary-dark);
             border-color: var(--border-dark);
+        }
+        
+        body.dark .filter-button {
+            background: var(--surface-dark);
+            color: var(--text-primary-dark);
+            border-color: var(--border-dark);
+        }
+        
+        body.dark .filter-button:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+        }
+        
+        body.dark .filter-button.active {
+            background: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+        }
+        
+        body.dark .filter-button.active:hover {
+            background: #3b82f6;
+            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+        }
+        
+        body.dark .filter-label {
+            color: var(--text-primary-dark);
+        }
+
+        body.dark .chip {
+            background: var(--surface-dark);
+            color: var(--text-primary-dark);
+            border-color: var(--border-dark);
+        }
+        body.dark .chip .count {
+            background: rgba(59, 130, 246, 0.12);
+            color: var(--primary-light);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+        body.dark .chip.active {
+            background: var(--primary-light);
+            border-color: var(--primary-light);
+            color: white;
         }
         
         .filter-bar input:focus, .filter-bar select:focus {
@@ -306,22 +562,108 @@
         .paper-list {
             display: flex;
             flex-direction: column;
-            gap: 24px;
-            padding: 0 32px 32px 32px;
+            gap: 16px;
+            padding: 0 0 32px 0;
         }
+
+        /* Utilities */
+        .hidden { display: none !important; }
+        .row { display: flex; }
+        .gap-8 { gap: 8px; }
+        .align-center { align-items: center; }
+
+        .empty-title { font-weight: 800; margin-bottom: 6px; }
+        .empty-subtitle { margin-bottom: 12px; }
+
+        .results-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 0 0 12px 0;
+            color: var(--text-secondary-light);
+            font-weight: 600;
+        }
+        body.dark .results-info {
+            color: var(--text-secondary-dark);
+        }
+        .clear-all {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            background: var(--surface-light);
+            color: var(--text-primary-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .clear-all:hover {
+            background: rgba(244, 63, 94, 0.08);
+            border-color: rgba(244, 63, 94, 0.35);
+            color: #e11d48;
+            transform: translateY(-1px);
+        }
+        body.dark .clear-all {
+            background: var(--surface-dark);
+            color: var(--text-primary-dark);
+            border-color: var(--border-dark);
+        }
+        body.dark .clear-all:hover {
+            background: rgba(244, 63, 94, 0.12);
+            color: #fb7185;
+            border-color: rgba(244, 63, 94, 0.4);
+        }
+
+        .empty-state {
+            margin: 0 0 24px 0;
+            padding: 24px;
+            border-radius: var(--border-radius);
+            border: 1px dashed var(--border-light);
+            color: var(--text-secondary-light);
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.02), rgba(139, 92, 246, 0.04));
+        }
+        body.dark .empty-state {
+            border-color: var(--border-dark);
+            color: var(--text-secondary-dark);
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.06));
+        }
+
+        .loader {
+            display: none;
+            width: 100%;
+            /* padding: 24px 32px; */
+            padding: 32px 100px 32px 100px;
+            align-items: center;
+            gap: 12px;
+            
+        }
+        .loader.active { display: flex; }
+        .spinner {
+            width: 18px; height: 18px; border: 3px solid rgba(0,0,0,0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
         
         .paper-card {
             background: var(--surface-light);
             border: 1px solid var(--border-light);
             border-radius: var(--border-radius);
-            padding: 24px;
+            padding: 20px;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
             position: relative;
             overflow: hidden;
-            min-height: 280px;
+            min-height: 120px;
+        }
+        
+        .paper-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
         }
         
         .paper-card.llm-paper {
@@ -385,16 +727,15 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            margin-top: auto;
-            padding: 12px 16px;
-            border-radius: 8px;
+            gap: 4px;
+            padding: 6px 10px;
+            border-radius: 6px;
             background: rgba(37, 99, 235, 0.05);
             border: 1px solid rgba(37, 99, 235, 0.1);
             transition: var(--transition);
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             text-align: center;
-            min-height: 26px;
+            min-height: 20px;
         }
         
         .paper-card.llm-paper .paper-link {
@@ -426,11 +767,11 @@
             border-color: rgba(59, 130, 246, 0.3);
         }
         .paper-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--text-primary-light);
             line-height: 1.4;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
         
         body.dark .paper-title {
@@ -438,13 +779,14 @@
         }
         
         .paper-meta {
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             color: var(--text-secondary-light);
             font-weight: 500;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
+            line-height: 1.4;
         }
         
         body.dark .paper-meta {
@@ -454,19 +796,27 @@
         .paper-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 12px;
+            gap: 6px;
+            margin-bottom: 0; /* Updated margin-bottom to 0 */
         }
+        .paper-bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 12px;
+            margin-top: auto; /* stick bottom */
+        }
+        .paper-bottom-row .paper-tags { margin-bottom: 0; flex: 1; }
         
         .paper-tag {
             display: inline-flex;
             align-items: center;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             transition: var(--transition);
         }
         
@@ -525,20 +875,17 @@
         }
         
         .llm-indicator {
-            position: absolute;
-            top: 12px;
-            right: 12px;
             background: linear-gradient(135deg, #f59e0b, #d97706);
             border-radius: 50%;
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
             animation: glow 2s ease-in-out infinite alternate;
-            font-size: 1.1rem;
-            z-index: 2;
+            font-size: 1rem;
+            flex-shrink: 0;
         }
         
         .paper-card.llm-paper::after {
@@ -560,31 +907,16 @@
             z-index: 1;
         }
         
-        .llm-research-badge {
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: white;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 0 0 8px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            z-index: 2;
-            box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
-            transition: var(--transition);
-        }
         
-        .paper-card.llm-paper:hover .llm-research-badge {
-            background: linear-gradient(135deg, #d97706, #92400e);
-            box-shadow: 0 4px 8px rgba(245, 158, 11, 0.4);
-        }
         
         .paper-card.llm-paper:hover .llm-indicator {
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(245, 158, 11, 0.8), 0 0 30px rgba(245, 158, 11, 0.3);
+        }
+        
+        .paper-top-row .llm-indicator {
+            position: static;
+            margin-left: 8px;
         }
         
         @keyframes glow {
@@ -607,21 +939,6 @@
             animation: pulse 3s ease-in-out infinite;
         }
         
-        @keyframes slideInBadge {
-            from {
-                opacity: 0;
-                transform: translate(-10px, -10px);
-            }
-            to {
-                opacity: 1;
-                transform: translate(0, 0);
-            }
-        }
-        
-        .llm-research-badge {
-            animation: slideInBadge 0.5s ease-out;
-        }
-        
         .paper-abstract {
             font-size: 0.95rem;
             color: var(--text-secondary-light);
@@ -636,15 +953,15 @@
         .pub-info {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(59, 130, 246, 0.12));
             border: 1px solid rgba(37, 99, 235, 0.15);
-            border-radius: 20px;
-            padding: 6px 14px;
-            font-size: 0.8rem;
+            border-radius: 16px;
+            padding: 4px 12px;
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             width: fit-content;
             transition: var(--transition);
             position: relative;
@@ -683,30 +1000,14 @@
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
         }
         
-        .pub-info .year {
-            background: rgba(37, 99, 235, 0.1);
-            border-radius: 12px;
-            padding: 2px 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-        
         body.dark .pub-info .year {
             background: rgba(59, 130, 246, 0.15);
             color: var(--primary-light);
         }
         
-        .pub-info .publisher {
-            color: var(--text-secondary-light);
-            font-weight: 500;
-        }
-        
-        body.dark .pub-info .publisher {
-            color: var(--text-secondary-dark);
-        }
         
         @media (max-width: 768px) {
+            .filter-row-inline { flex-wrap: wrap; }
             .main-wrapper {
                 padding: 12px;
             }
@@ -731,22 +1032,109 @@
                 font-size: 2.5rem;
             }
             
+            .group-filter-bar {
+                margin: 0 16px 12px 16px;
+                padding: 12px 16px;
+            }
+            
+            .group-button {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+            
             .filter-bar {
-                margin: 0 16px 24px 16px;
+                margin: 0 0 16px 0;
                 padding: 20px;
+                top: 8px;
+            }
+            
+            .filter-section {
+                min-width: 100px;
+            }
+            
+            .filter-section-wide {
+                min-width: 140px;
+            }
+            
+            .filter-button {
+                padding: 4px 10px;
+                font-size: 12px;
+                min-height: 28px;
+            }
+            
+            .filter-label {
+                font-size: 13px;
+                margin-top: 6px;
             }
             
             .paper-list {
-                grid-template-columns: 1fr;
-                padding: 0 16px 24px 16px;
-                gap: 16px;
+                padding: 0 0 24px 0;
+                gap: 12px;
+            }
+            .results-info {
+                margin: 0 0 8px 0;
+            }
+            
+            .paper-card {
+                padding: 16px;
+                gap: 10px;
+                min-height: 180px;
+            }
+            
+            .paper-top-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 100%;
+            }
+            
+            .paper-top-row .llm-indicator {
+                width: 28px;
+                height: 28px;
+                font-size: 0.875rem;
+            }
+            
+            .paper-title {
+                font-size: 1.15rem;
+            }
+            
+            .paper-meta {
+                font-size: 0.75rem;
+                gap: 4px;
+            }
+            
+            .paper-tags {
+                gap: 4px;
+                margin-bottom: 6px;
+            }
+            
+            .paper-tag {
+                padding: 2px 6px;
+                border-radius: 8px;
+                font-size: 0.65rem;
+            }
+            
+            .pub-info {
+                gap: 4px;
+                padding: 3px 10px;
+                font-size: 0.7rem;
+            }
+            
+            .pub-info .year {
+                padding: 1px 4px;
+                font-size: 0.65rem;
+            }
+            
+            .paper-link {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+                min-height: 18px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="main-wrapper">
-        <div class="container">
+    <!-- <div class="main-wrapper"> -->
             <div class="header">
                 <div class="header-top">
                     <div class="title">Awesome AI & LLM for Education</div>
@@ -760,15 +1148,55 @@
                     A curated list of papers related to artificial intelligence (AI) and large language model (LLM) for education from top conferences, journals, and specialized domain-specific conferences.
                 </div>
             </div>
+
+        <div class="container">
+
+            <div class="group-filter-bar hidden" id="groupFilterBar"></div>
+            <div class="results-info hidden" id="resultsInfo" aria-live="polite" aria-atomic="true">
+                <div><span id="resultsCount">0</span> results</div>
+                <div class="row gap-8 align-center">
+                    <button class="clear-all" id="clearAllBtn" title="Clear all filters">Clear filters</button>
+                </div>
+            </div>
             <div class="filter-bar" id="filterBar">
                 <!-- Filter controls will be generated here -->
             </div>
+            <div class="loader" id="loader"><div class="spinner"></div><div>Loading papers…</div></div>
             <div class="paper-list" id="paperList">
                 <!-- Paper cards will be rendered here -->
             </div>
+            <div class="empty-state hidden" id="emptyState">
+                <div class="empty-title">No results</div>
+                <div class="empty-subtitle">Try adjusting or clearing some filters to broaden your search.</div>
+                <button class="reset-button" id="emptyResetBtn"><i class="fa-solid fa-rotate-left"></i> Reset filters</button>
+            </div>
         </div>
-    </div>
+    <!-- </div> -->
     <script>
+        // Utility: debounce
+        const debounce = (fn, delay = 200) => {
+            let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), delay); };
+        };
+        // Field mapping: resolve headers case-insensitively
+        let fieldMap = {};
+        const F = (name) => fieldMap[name?.toLowerCase?.()] || name;
+        const displayLabels = {
+            'category': 'Category 🏷️',
+            'is_llm_related': 'LLM-related 🤖',
+            'type': 'Type 🧩',
+            'group': 'Group 🗂️',
+            'publisher': 'Publisher',
+            'year': 'Year',
+            'title': 'Title',
+            'authors': 'Authors'
+        };
+        // Normalize helpers for boolean-like fields
+        const normalizeBool = (val) => {
+            const s = (val ?? '').toString().trim().toLowerCase();
+            if(['1','true','yes','y','t'].includes(s)) return 'true';
+            if(['0','false','no','n','f'].includes(s)) return 'false';
+            return s;
+        };
         // Night/Day mode toggle
         const toggleBtn = document.getElementById('toggleModeBtn');
         toggleBtn.onclick = () => {
@@ -781,11 +1209,28 @@
             toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
         }
 
-        // Fetch and parse CSV
+        // Fetch and parse CSV: prefer merging both files if available
         async function fetchCSV() {
-            const resp = await fetch('data/papers.csv');
-            const text = await resp.text();
-            return parseCSV(text);
+            const loader = document.getElementById('loader');
+            loader.classList.add('active');
+            try {
+                const files = ['data/papers.csv', 'data/processed_data.csv'];
+                const results = await Promise.allSettled(files.map(f => fetch(f)));
+                const okResponses = [];
+                for (let i = 0; i < results.length; i++) {
+                    const res = results[i];
+                    if(res.status === 'fulfilled' && res.value && res.value.ok) {
+                        okResponses.push(res.value);
+                    }
+                }
+                if(okResponses.length === 0) throw new Error('Failed to load data files');
+                const allText = await Promise.all(okResponses.map(r => r.text()));
+                const arrays = allText.map(txt => parseCSV(txt));
+                // Merge arrays (simple concat). We'll compute header union later.
+                return arrays.flat();
+            } finally {
+                loader.classList.remove('active');
+            }
         }
         function parseCSV(text) {
             const lines = text.split(/\r?\n/).filter(l => l.trim());
@@ -809,75 +1254,313 @@
             const values = Array.from(new Set(papers.map(p => p[header]).filter(Boolean)));
             return values.length > 1 && values.length <= 20 && values.every(v => v.length < 32);
         }
+        // Group is now a chip-based multi-select; group button bar removed
+        
         // Create filter controls
         function createFilters(papers, headers) {
             const bar = document.getElementById('filterBar');
             bar.innerHTML = '';
             // Filter out 'link' and 'code' fields from filters but keep them in data
             const filteredHeaders = headers.filter(h => !['link', 'code'].includes(h.toLowerCase()));
+            // Prepare a dedicated inline row container for Publisher, Year, Title, Authors, and Reset
+            const inlineRow = document.createElement('div');
+            inlineRow.className = 'filter-row-inline';
             
-            filteredHeaders.forEach(h => {
-                const values = Array.from(new Set(papers.map(p => p[h]).filter(Boolean)));
-                if(isCategorical(h, papers)) {
-                    const sel = document.createElement('select');
-                    sel.name = h;
-                    sel.innerHTML = `<option value="">All ${h}</option>` + values.map(o => `<option value="${o}">${o}</option>`).join('');
-                    sel.onchange = () => {
-                        renderPapers();
-                        updateFilterOptions(); // Update other filters based on current selection
-                    };
-                    bar.appendChild(sel);
-                } else {
-                    const inp = document.createElement('input');
-                    inp.type = 'text';
-                    inp.placeholder = `Search ${h}`;
-                    inp.name = h;
-                    inp.oninput = () => {
-                        renderPapers();
-                        updateFilterOptions(); // Update other filters based on current selection
-                    };
-                    bar.appendChild(inp);
+            // Create filter sections for button-based filters
+            const chipFilters = ['group', 'category', 'is_llm_related', 'type'];
+            chipFilters.forEach(fieldName => {
+                const key = F(fieldName);
+                if(!allHeaders.map(h=>h.toLowerCase()).includes(fieldName)) {
+                    // if header case differs, ensure key exists in dataset
+                    if(!fieldMap[fieldName]) fieldMap[fieldName] = key;
+                }
+                if(key && headers.includes(key)) {
+                    let rawValues = papers.map(p => p[key]).filter(v => v !== undefined && v !== null && String(v).trim() !== '');
+                    if(fieldName === 'is_llm_related') {
+                        rawValues = rawValues.map(v => normalizeBool(v));
+                        // Force only 'true'/'false' options if present
+                        const hasTrue = rawValues.includes('true');
+                        const hasFalse = rawValues.includes('false');
+                        const values = [];
+                        if(hasTrue) values.push('true');
+                        if(hasFalse) values.push('false');
+                        if(values.length) {
+                            createChipFilterSection(bar, key, values, displayLabels[fieldName] || key);
+                            return;
+                        }
+                        // Fallback to unique values if data is irregular
+                    }
+                    const values = Array.from(new Set(rawValues));
+                    if(isCategorical(fieldName, papers)) {
+                        createChipFilterSection(bar, key, values, displayLabels[fieldName] || key);
+                    }
                 }
             });
             
-            // Add reset button
+            // Create filter sections for other categorical fields
+            filteredHeaders.forEach(h => {
+                // Skip fields already handled as button filters or group (handled separately)
+                if(h.toLowerCase() === 'group' || chipFilters.includes(h.toLowerCase())) return;
+                
+                const values = Array.from(new Set(papers.map(p => p[h]).filter(Boolean)));
+                if(isCategorical(h, papers)) {
+                    const section = document.createElement('div');
+                    section.className = 'filter-section';
+                    section.dataset.field = h.toLowerCase();
+                    if(['title', 'authors'].includes(h.toLowerCase())) {
+                        section.classList.add('filter-section-wide');
+                    }
+                    
+                    const label = document.createElement('div');
+                    label.className = 'filter-label';
+                    const lbl = displayLabels[h.toLowerCase()] || h;
+                    label.textContent = lbl;
+                    section.appendChild(label);
+                    
+                    const sel = document.createElement('select');
+                    sel.name = h;
+                    sel.innerHTML = `<option value="">All ${lbl}</option>` + values.map(o => `<option value="${o}">${o}</option>`).join('');
+                    sel.onchange = () => { renderPapers(); updateFilterOptions(); };
+                    section.appendChild(sel);
+
+                    // If this is publisher or year, add to inline row; else append to bar
+                    if(['publisher','year'].includes(h.toLowerCase())) {
+                        inlineRow.appendChild(section);
+                    } else {
+                        bar.appendChild(section);
+                    }
+                } else {
+                    const section = document.createElement('div');
+                    section.className = 'filter-section';
+                    section.dataset.field = h.toLowerCase();
+                    if(['title', 'authors'].includes(h.toLowerCase())) {
+                        section.classList.add('filter-section-wide');
+                    }
+                    
+                    const label = document.createElement('div');
+                    label.className = 'filter-label';
+                    const lbl2 = displayLabels[h.toLowerCase()] || h;
+                    label.textContent = lbl2;
+                    section.appendChild(label);
+                    
+                    const inp = document.createElement('input');
+                    inp.type = 'text';
+                    inp.placeholder = `Search ${lbl2}`;
+                    inp.name = h;
+                    inp.oninput = debounce(() => { renderPapers(); updateFilterOptions(); }, 250);
+                    section.appendChild(inp);
+
+                    // If this is title or authors, add to inline row; else append to bar
+                    if(['title','authors'].includes(h.toLowerCase())) {
+                        inlineRow.appendChild(section);
+                    } else {
+                        bar.appendChild(section);
+                    }
+                }
+            });
+            
+            // Add reset button in its own section
+            const resetSection = document.createElement('div');
+            resetSection.className = 'filter-section';
+            resetSection.style.alignSelf = 'flex-end';
+            
             const resetBtn = document.createElement('button');
             resetBtn.className = 'reset-button';
-            resetBtn.innerHTML = '<i class="fa-solid fa-refresh"></i> Reset Filters';
+            resetBtn.innerHTML = '<i class="fa-solid fa-refresh"></i> Reset';
             resetBtn.onclick = () => {
-                // Clear all filters
-                Array.from(bar.children).forEach(ctrl => {
-                    if(ctrl.tagName === 'SELECT') {
-                        ctrl.selectedIndex = 0;
-                    } else if(ctrl.tagName === 'INPUT') {
-                        ctrl.value = '';
-                    }
+                // Clear all filters except group buttons
+                const selectElements = bar.querySelectorAll('select');
+                selectElements.forEach(sel => {
+                    sel.selectedIndex = 0;
                 });
+                
+                const inputElements = bar.querySelectorAll('input');
+                inputElements.forEach(inp => {
+                    inp.value = '';
+                });
+                
+                // Reset chip filters
+                const chips = bar.querySelectorAll('.chip.active');
+                chips.forEach(c => c.classList.remove('active'));
+                
                 renderPapers();
                 updateFilterOptions();
             };
-            bar.appendChild(resetBtn);
+            resetSection.appendChild(resetBtn);
+            // add reset to inline row
+            inlineRow.appendChild(resetSection);
+
+            // Finally, append inline row to the bar at the end so it appears as one row
+            bar.appendChild(inlineRow);
+
+            // Wire Clear All and empty reset
+            const clearAllBtn = document.getElementById('clearAllBtn');
+            if(clearAllBtn) clearAllBtn.onclick = resetBtn.onclick;
+            const emptyResetBtn = document.getElementById('emptyResetBtn');
+            if(emptyResetBtn) emptyResetBtn.onclick = resetBtn.onclick;
+        }
+        
+        // Create chip-based multi-select filter section
+        function createChipFilterSection(container, actualFieldName, values, labelText) {
+            const section = document.createElement('div');
+            section.className = 'filter-section';
+            section.dataset.field = (actualFieldName || '').toLowerCase();
+            if(['category'].includes(actualFieldName.toLowerCase())) {
+                section.classList.add('filter-section-wide');
+            }
+            
+            // Add label
+            const label = document.createElement('div');
+            label.className = 'filter-label';
+            label.textContent = labelText || actualFieldName;
+            section.appendChild(label);
+            
+            // Add buttons container
+            const buttonsContainer = document.createElement('div');
+            buttonsContainer.className = 'filter-section-row';
+            
+            // Add chips for each value
+            values.forEach(value => {
+                const chip = document.createElement('button');
+                chip.className = 'chip';
+                chip.setAttribute('role', 'button');
+                chip.setAttribute('aria-pressed', 'false');
+                chip.dataset.field = actualFieldName;
+                chip.dataset.value = value;
+                chip.innerHTML = `${value} <span class="count">0</span>`;
+                chip.onclick = () => {
+                    if(chip.getAttribute('aria-disabled') === 'true') return;
+                    const active = chip.classList.toggle('active');
+                    chip.setAttribute('aria-pressed', active ? 'true' : 'false');
+                    renderPapers();
+                    updateFilterOptions();
+                };
+                buttonsContainer.appendChild(chip);
+            });
+            
+            section.appendChild(buttonsContainer);
+            container.appendChild(section);
         }
         
         // Update filter options based on current filtered papers
         function updateFilterOptions() {
             const filters = getFilters();
+            // Group-first scoping for options and counts (support multi-select OR)
+            const gk = F('group');
+            const gval = filters[gk];
+            const groupScoped = Array.isArray(gval) && gval.length
+                ? allPapers.filter(p => gval.some(val => (p[gk]||'').toLowerCase() === String(val).toLowerCase()))
+                : (!gval || (Array.isArray(gval) && !gval.length) ? allPapers.slice() : allPapers.filter(p => (p[gk]||'').toLowerCase() === String(gval).toLowerCase()));
+            
+            // Current filtered used for rendering results
             const currentFiltered = allPapers.filter(paper => {
                 return Object.entries(filters).every(([k, v]) => {
+                    const key = F(k) || k;
+                    const kLower = (k || '').toLowerCase();
+                    if(v == null) return true;
+                    if(Array.isArray(v) && v.length) {
+                        return v.some(val => {
+                            if(kLower === 'is_llm_related') {
+                                return normalizeBool(paper[key]) === normalizeBool(String(val));
+                            }
+                            return (paper[key]||'').toLowerCase() === String(val).toLowerCase();
+                        });
+                    }
                     if(!v) return true;
-                    return (paper[k]||'').toLowerCase().includes(v.toLowerCase());
+                    if(kLower === 'is_llm_related') {
+                        return normalizeBool(paper[key]) === normalizeBool(String(v));
+                    }
+                    return (paper[key]||'').toLowerCase().includes(String(v).toLowerCase());
                 });
             });
             
             const bar = document.getElementById('filterBar');
-            Array.from(bar.children).forEach(ctrl => {
-                if(ctrl.tagName === 'SELECT') {
-                    const fieldName = ctrl.name;
-                    const currentValue = ctrl.value;
-                    const availableValues = Array.from(new Set(currentFiltered.map(p => p[fieldName]).filter(Boolean)));
-                    
-                    ctrl.innerHTML = `<option value="">All ${fieldName}</option>` + 
-                        availableValues.map(o => `<option value="${o}" ${o === currentValue ? 'selected' : ''}>${o}</option>`).join('');
+            
+            // No group button bar; group selection is via chips
+
+            // Update Group chip counts: compute with all OTHER filters applied (exclude group)
+            if (gk) {
+                const filtersNoGroup = { ...filters };
+                delete filtersNoGroup[gk];
+                const baseForGroupCounts = allPapers.filter(paper => {
+                    return Object.entries(filtersNoGroup).every(([k, v]) => {
+                        const key = F(k) || k;
+                        const kLower = (k || '').toLowerCase();
+                        if(v == null) return true;
+                        if(Array.isArray(v) && v.length) {
+                            return v.some(val => {
+                                if(kLower === 'is_llm_related') {
+                                    return normalizeBool(paper[key]) === normalizeBool(String(val));
+                                }
+                                return (paper[key]||'').toLowerCase() === String(val).toLowerCase();
+                            });
+                        }
+                        if(!v) return true;
+                        if(kLower === 'is_llm_related') {
+                            return normalizeBool(paper[key]) === normalizeBool(String(v));
+                        }
+                        return (paper[key]||'').toLowerCase().includes(String(v).toLowerCase());
+                    });
+                });
+                const groupCounts = baseForGroupCounts.reduce((acc, p) => {
+                    const v = p[gk];
+                    if(v) acc[v] = (acc[v]||0)+1;
+                    return acc;
+                }, {});
+                const gchips = bar.querySelectorAll(`.chip[data-field="${gk}"]`);
+                gchips.forEach(chip => {
+                    const v = chip.dataset.value;
+                    const c = groupCounts[v] || 0;
+                    const countEl = chip.querySelector('.count');
+                    if(countEl) countEl.textContent = String(c);
+                    if(c === 0) {
+                        chip.setAttribute('aria-disabled', 'true');
+                        if(chip.classList.contains('active')) {
+                            chip.classList.remove('active');
+                            chip.setAttribute('aria-pressed', 'false');
+                        }
+                    } else {
+                        chip.removeAttribute('aria-disabled');
+                    }
+                });
+            }
+            
+            // Update select elements
+            const selects = bar.querySelectorAll('select');
+            selects.forEach(ctrl => {
+                const fieldName = ctrl.name;
+                const currentValue = ctrl.value;
+                const availableValues = Array.from(new Set(groupScoped.map(p => p[fieldName]).filter(Boolean)));
+                ctrl.innerHTML = `<option value="">All ${fieldName}</option>` + 
+                    availableValues.map(o => `<option value="${o}" ${o === currentValue ? 'selected' : ''}>${o}</option>`).join('');
+            });
+            
+            // Update chip filters (counts and disabled state)
+            const chipFieldKeys = ['category', 'type', 'is_llm_related'].map(F);
+            chipFieldKeys.forEach(fieldKey => {
+                const chips = bar.querySelectorAll(`.chip[data-field="${fieldKey}"]`);
+                if(chips.length > 0) {
+                    const availCounts = groupScoped.reduce((acc, p) => {
+                        let v = p[fieldKey];
+                        if((fieldKey || '').toLowerCase() === 'is_llm_related') v = normalizeBool(v);
+                        if(v) acc[v] = (acc[v]||0)+1;
+                        return acc;
+                    }, {});
+                    chips.forEach(chip => {
+                        const v = chip.dataset.value;
+                        const c = availCounts[v] || 0;
+                        const countEl = chip.querySelector('.count');
+                        if(countEl) countEl.textContent = String(c);
+                        if(c === 0) {
+                            chip.setAttribute('aria-disabled', 'true');
+                        } else {
+                            chip.removeAttribute('aria-disabled');
+                        }
+                        if(c === 0 && chip.classList.contains('active')) {
+                            chip.classList.remove('active');
+                            chip.setAttribute('aria-pressed', 'false');
+                        }
+                    });
                 }
             });
         }
@@ -885,53 +1568,113 @@
         function getFilters() {
             const bar = document.getElementById('filterBar');
             const filters = {};
-            Array.from(bar.children).forEach(ctrl => {
-                if(ctrl.value) filters[ctrl.name] = ctrl.value;
+            
+            // Get other filters from inputs and selects
+            const selects = bar.querySelectorAll('select');
+            selects.forEach(ctrl => { if(ctrl.value) filters[ctrl.name] = ctrl.value; });
+            const inputs = bar.querySelectorAll('input');
+            inputs.forEach(ctrl => { if(ctrl.value) filters[ctrl.name] = ctrl.value; });
+            
+            // Get filters from active chips (multi-select)
+            const activeChips = bar.querySelectorAll('.chip.active');
+            activeChips.forEach(chip => {
+                const field = chip.dataset.field;
+                const value = chip.dataset.value;
+                if(!filters[field]) filters[field] = [];
+                filters[field].push(value);
             });
+            
             return filters;
         }
         function renderPapers() {
             const filters = getFilters();
             let filtered = allPapers.filter(paper => {
                 return Object.entries(filters).every(([k, v]) => {
+                    const key = F(k) || k;
+                    const kLower = (k || '').toLowerCase();
+                    if(v == null) return true;
+                    if(Array.isArray(v) && v.length) {
+                        return v.some(val => {
+                            if(kLower === 'is_llm_related') {
+                                return normalizeBool(paper[key]) === normalizeBool(String(val));
+                            }
+                            return (paper[key]||'').toLowerCase() === String(val).toLowerCase();
+                        });
+                    }
                     if(!v) return true;
-                    return (paper[k]||'').toLowerCase().includes(v.toLowerCase());
+                    if(kLower === 'is_llm_related') {
+                        return normalizeBool(paper[key]) === normalizeBool(String(v));
+                    }
+                    return (paper[key]||'').toLowerCase().includes(String(v).toLowerCase());
                 });
             });
+
+            // Sort: year desc (numeric), tiebreaker by title asc
+            filtered.sort((a,b) => {
+                const ya = parseInt(a[F('year')]) || 0;
+                const yb = parseInt(b[F('year')]) || 0;
+                if(yb !== ya) return yb - ya;
+                const ta = (a[F('title')]||'').toLowerCase();
+                const tb = (b[F('title')]||'').toLowerCase();
+                return ta.localeCompare(tb);
+            });
+            
             const list = document.getElementById('paperList');
             list.innerHTML = filtered.map(paper => {
-                const llmVal = (paper['is_llm_related'] || '').toString().trim().toLowerCase();
+                const llmVal = (paper[F('is_llm_related')] || '').toString().trim().toLowerCase();
                 const isLLMRelated = llmVal === 'yes' || llmVal === '1' || llmVal === 'true';
                 return `
                 <div class="paper-card ${isLLMRelated ? 'llm-paper' : ''}">
-                    ${isLLMRelated ? '<div class="llm-research-badge">LLM Research</div>' : ''}
-                    ${isLLMRelated ? '<div class="llm-indicator">🤖</div>' : ''}
-                    <div class="pub-info">
-                        <span class="publisher">${paper['publisher']||'N/A'}</span>
-                        <span class="year">${paper['year']||'N/A'}</span>
+                    <div class="paper-top-row">
+                        <div class="pub-info">
+                            <span class="publisher">${paper[F('publisher')]||'N/A'}</span>
+                            <span class="year">${paper[F('year')]||'N/A'}</span>
+                        </div>
+                        ${isLLMRelated ? '<div class="llm-indicator">🤖</div>' : ''}
                     </div>
-                    <div class="paper-title">${paper['title']||'No Title'}</div>
+                    <div class="paper-title">${paper[F('title')]||'No Title'}</div>
                     <div class="paper-meta">
-                        ${paper['authors']||'N/A'}
+                        ${paper[F('authors')]||'N/A'}
                     </div>
-                    <div class="paper-tags">
-                        ${paper['group'] ? `<span class="paper-tag group">${paper['group']}</span>` : ''}
-                        ${paper['category'] ? `<span class="paper-tag category">${paper['category']}</span>` : ''}
-                        ${paper['type'] ? `<span class="paper-tag type">${paper['type']}</span>` : ''}
-                        ${isLLMRelated ? `<span class="paper-tag llm">🤖 LLM</span>` : ''}
+                    <div class="paper-bottom-row">
+                        <div class="paper-tags">
+                            ${paper[F('group')] ? `<span class="paper-tag group">${paper[F('group')]}</span>` : ''}
+                            ${paper[F('category')] ? `<span class="paper-tag category">${paper[F('category')]}</span>` : ''}
+                            ${paper[F('type')] ? `<span class="paper-tag type">${paper[F('type')]}</span>` : ''}
+                            ${isLLMRelated ? `<span class="paper-tag llm">🤖 LLM</span>` : ''}
+                        </div>
+                        ${paper[F('link')] ? `<a class="paper-link" href="${paper[F('link')]}" target="_blank"><i class="fa-solid fa-external-link-alt"></i> View Paper</a>` : '<div></div>'}
                     </div>
-                    ${paper['link'] ? `<a class="paper-link" href="${paper['link']}" target="_blank"><i class="fa-solid fa-external-link-alt"></i> View Paper</a>` : '<div style="margin-top: auto;"></div>'}
                 </div>
             `;
             }).join('');
+
+            // Results info and empty state
+            const info = document.getElementById('resultsInfo');
+            const countEl = document.getElementById('resultsCount');
+            const empty = document.getElementById('emptyState');
+            countEl.textContent = String(filtered.length);
+            info.classList.remove('hidden');
+            if(filtered.length === 0) empty.classList.remove('hidden'); else empty.classList.add('hidden');
         }
         // Init: show all by default
         fetchCSV().then(papers => {
-            if(!papers.length) return;
+            if(!papers || !papers.length) throw new Error('No data');
             allPapers = papers;
-            allHeaders = Object.keys(papers[0]);
+            // compute union of headers across all records to capture fields like 'group'
+            const headerSet = new Set();
+            papers.forEach(p => Object.keys(p).forEach(k => headerSet.add(k)));
+            allHeaders = Array.from(headerSet);
+            // build field map
+            fieldMap = {};
+            allHeaders.forEach(h => { fieldMap[h.toLowerCase()] = h; });
             createFilters(papers, allHeaders);
             renderPapers();
+            updateFilterOptions();
+        }).catch(err => {
+            const list = document.getElementById('paperList');
+            list.innerHTML = '<div class="empty-state">Failed to load papers. Please check data files.</div>';
+            console.error(err);
         });
     </script>
 </body>
