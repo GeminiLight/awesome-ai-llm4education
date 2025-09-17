@@ -304,8 +304,8 @@
             border-color: var(--primary);
         }
         .paper-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 24px;
             padding: 0 32px 32px 32px;
         }
@@ -321,7 +321,7 @@
             gap: 16px;
             position: relative;
             overflow: hidden;
-            min-height: 320px;
+            min-height: 280px;
         }
         
         .paper-card.llm-paper {
@@ -426,7 +426,7 @@
             border-color: rgba(59, 130, 246, 0.3);
         }
         .paper-title {
-            font-size: 1.375rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary-light);
             line-height: 1.4;
