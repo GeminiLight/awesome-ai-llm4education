@@ -95,6 +95,7 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
         
@@ -150,6 +151,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             transition: var(--transition);
             font-weight: 500;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
         
@@ -174,6 +176,7 @@
             transition: var(--transition);
             position: relative;
             z-index: 2;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
         
@@ -897,7 +900,8 @@
             });
             const list = document.getElementById('paperList');
             list.innerHTML = filtered.map(paper => {
-                const isLLMRelated = paper['is_llm_related'] && paper['is_llm_related'].toLowerCase() === 'yes';
+                const llmVal = (paper['is_llm_related'] || '').toString().trim().toLowerCase();
+                const isLLMRelated = llmVal === 'yes' || llmVal === '1' || llmVal === 'true';
                 return `
                 <div class="paper-card ${isLLMRelated ? 'llm-paper' : ''}">
                     ${isLLMRelated ? '<div class="llm-research-badge">LLM Research</div>' : ''}
