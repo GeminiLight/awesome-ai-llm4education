@@ -46,10 +46,9 @@ def convert_csv_to_md(csv_file_path, mdFile, header, only_llm_related=False):
             file.writelines(f"    *{paper['authors']}*")
             file.write('\n\n')
             file.writelines(f"    {paper['publisher']}, {paper['year']}. [`{paper['type']}`]({paper['link']})")
-            file.write('\n\n')
             if isinstance(paper['code'], str) and len(paper['code']) > 0:
                 file.writelines(f", [`code`]({paper['code']})")
-                file.write('\n\n')
+            file.write('\n\n')
 
         # Write paper info
         for group_id, group_name in enumerate(group_list):

@@ -17,6 +17,8 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 > [!note]
 > 🎉 Our paper "[LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System](https://arxiv.org/abs/2501.15749)" has been accepted by **WWW 2025 (Industry Track) as Oral Presentation**!
+>
+> 🎈 Welcome to check our [project page](https://tianfuwang.tech/gen-mentor/) and [demo code](https://github.com/GeminiLight/gen-mentor) to enjoy the goal-oriented learning experience!
 
 ## [Content](#content)
 

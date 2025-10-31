@@ -17,6 +17,8 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
 > [!note]
 > 🎉 Our paper "[LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System](https://arxiv.org/abs/2501.15749)" has been accepted by **WWW 2025 (Industry Track) as Oral Presentation**!
+>
+> 🎈 Welcome to check our [project page](https://tianfuwang.tech/gen-mentor/) and [demo code](https://github.com/GeminiLight/gen-mentor) to enjoy the goal-oriented learning experience!
 
 ## [Content](#content)
 
@@ -168,9 +170,7 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
 
-    WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749)
-
-, [`code`](https://github.com/GeminiLight/gen-mentor)
+    WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749), [`code`](https://github.com/GeminiLight/gen-mentor)
 
 2. :sparkles: **Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning**
 
@@ -182,9 +182,7 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     *David Dinucu-Jianu, Jakub Macina, Nico Daheim, Ido Hakimi, Iryna Gurevych, Mrinmaya Sachan*
 
-    arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.15607)
-
-, [`code`](https://github.com/eth-lre/PedagogicalRL)
+    arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.15607), [`code`](https://github.com/eth-lre/PedagogicalRL)
 
 4. :sparkles: **A Theory of Adaptive Scaffolding for LLM-Based Pedagogical Agents**
 
