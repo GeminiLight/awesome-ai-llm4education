@@ -156,7 +156,7 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     *Jiwon Chun, Yankun Zhao, Hanlin Chen, Meng Xia*
 
-    Learning@Scale, 2025. [`conference`](https://arxiv.org/abs/2503.13340)
+    Learning@Scale, 2025. [`conference`](https://arxiv.org/abs/2504.12452)
 
 3. :sparkles: **Learning Structure and Knowledge Aware Representation with Large Language Models for Concept Recommendation**
 
@@ -436,35 +436,35 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     AAAI, 2025. [`conference`](https://arxiv.org/abs/2309.10444)
 
-2. :sparkles: **KAQG: A Knowledge‑Graph‑Enhanced RAG for Difficulty‑Controlled Question Generation**
+2. :sparkles: **Multiple-Choice Question Generation Using Large Language Models: Methodology and Educator Insights**
+
+    *Giorgio Biancini, Alessio Ferrato, Carla Limongelli*
+
+    UMAP Adjunct, 2025. [`workshop`](https://arxiv.org/abs/2506.04851)
+
+3. :sparkles: **KAQG: A Knowledge‑Graph‑Enhanced RAG for Difficulty‑Controlled Question Generation**
 
     *Ching Han Chen, Ming Fang Shiu*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2505.07618)
 
-3. :sparkles: **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
+4. :sparkles: **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
 
     *Jaewook Lee, Digory Smith, Simon Woodhead, Andrew Lan*
 
     EDM, 2024. [`conference`](https://arxiv.org/abs/2405.00864)
 
-4. :sparkles: **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
+5. :sparkles: **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
 
     *Alexander Scarlatos, Wanyong Feng, Digory Smith, Simon Woodhead, Andrew Lan*
 
     NAACL - BEA workshop, 2024. [`workshop`](https://arxiv.org/abs/2405.05144)
 
-5. :sparkles: **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
+6. :sparkles: **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
 
     *Wanyong Feng, Jaewook Lee, Hunter McNichols, Alexander Scarlatos, Digory Smith, Simon Woodhead, Nancy Otero Ornelas, Andrew Lan*
 
     NAACL findings, 2024. [`conference`](https://arxiv.org/abs/2404.02124)
-
-6. :sparkles: **Multiple-Choice Question Generation Using Large Language Models: Methodology and Educator Insights**
-
-    *Giorgio Biancini, Alessio Ferrato, Carla Limongelli*
-
-    UMAP Adjunct, 2024. [`workshop`](https://arxiv.org/abs/2506.04851)
 
 7. :sparkles: **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
 
@@ -704,37 +704,31 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     EMNLP Findings, 2025. [`conference`](https://aclanthology.org/2025.findings-emnlp.889/)
 
-3. :sparkles: **IntrEx: A Dataset for Modeling Engagement in Educational Conversations**
-
-    *Xingwei Tan, Mahathi Parvatham, Chiara Gambi, Gabriele Pergola*
-
-    EMNLP Findings, 2025. [`conference`](https://arxiv.org/abs/2509.06652)
-
-4. :sparkles: **Towards Robust Evaluation of STEM Education: Leveraging MLLMs in Project-Based Learning**
+3. :sparkles: **Towards Robust Evaluation of STEM Education: Leveraging MLLMs in Project-Based Learning**
 
     *Yanhao Jia, Xinyi Wu, Qinglin Zhang, Yiran Qin, Luwei Xiao, Shuai Zhao*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.17050)
 
-5. :sparkles: **Benchmarking the Pedagogical Knowledge of Large Language Models**
+4. :sparkles: **Benchmarking the Pedagogical Knowledge of Large Language Models**
 
     *Maxime Lelièvre, Amy Waldock, Meng Liu, Natalia Valdés Aspillaga, Alasdair Mackintosh, María José Ogando Portela, Jared Lee, Paul Atherton, Robin A. A. Ince, Oliver G. B. Garrod*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2506.18710)
 
-6. :sparkles: **From Answers to Questions: EQGBench for Evaluating LLMs' Educational Question Generation**
+5. :sparkles: **From Answers to Questions: EQGBench for Evaluating LLMs' Educational Question Generation**
 
     *Chengliang Zhou, Mei Wang, Ting Zhang, Qiannan Zhu, Jian Li, Hua Huang*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2508.10005)
 
-7. :sparkles: **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
+6. :sparkles: **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
 
     *Jinchang Hou, Chang Ao, Haihong Wu, Xiangtao Kong, Zhigang Zheng, Daijia Tang, Chengming Li, Xiping Hu, Ruifeng Xu, Shiwen Ni, Min Yang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2401.15927)
 
-8. :sparkles: **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
+7. :sparkles: **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
 
     *Hasan Abu-Rasheed, Christian Weber, Madjid Fathi*
 

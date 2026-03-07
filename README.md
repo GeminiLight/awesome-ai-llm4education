@@ -178,7 +178,7 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     *Jiwon Chun, Yankun Zhao, Hanlin Chen, Meng Xia*
 
-    Learning@Scale, 2025. [`conference`](https://arxiv.org/abs/2503.13340)
+    Learning@Scale, 2025. [`conference`](https://arxiv.org/abs/2504.12452)
 
 3. **Item-Difficulty-Aware Learning Path Recommendation: From a Real Walking Perspective**
 
@@ -1058,35 +1058,35 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     AAAI, 2025. [`conference`](https://arxiv.org/abs/2309.10444)
 
-2. **KAQG: A Knowledge‑Graph‑Enhanced RAG for Difficulty‑Controlled Question Generation**
+2. **Multiple-Choice Question Generation Using Large Language Models: Methodology and Educator Insights**
+
+    *Giorgio Biancini, Alessio Ferrato, Carla Limongelli*
+
+    UMAP Adjunct, 2025. [`workshop`](https://arxiv.org/abs/2506.04851)
+
+3. **KAQG: A Knowledge‑Graph‑Enhanced RAG for Difficulty‑Controlled Question Generation**
 
     *Ching Han Chen, Ming Fang Shiu*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2505.07618)
 
-3. **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
+4. **Math Multiple Choice Question Generation via Human-Large Language Model Collaboration**
 
     *Jaewook Lee, Digory Smith, Simon Woodhead, Andrew Lan*
 
     EDM, 2024. [`conference`](https://arxiv.org/abs/2405.00864)
 
-4. **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
+5. **Improving Automated Distractor Generation for Math Multiple-choice Questions with Overgenerate-and-rank**
 
     *Alexander Scarlatos, Wanyong Feng, Digory Smith, Simon Woodhead, Andrew Lan*
 
     NAACL - BEA workshop, 2024. [`workshop`](https://arxiv.org/abs/2405.05144)
 
-5. **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
+6. **Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models**
 
     *Wanyong Feng, Jaewook Lee, Hunter McNichols, Alexander Scarlatos, Digory Smith, Simon Woodhead, Nancy Otero Ornelas, Andrew Lan*
 
     NAACL findings, 2024. [`conference`](https://arxiv.org/abs/2404.02124)
-
-6. **Multiple-Choice Question Generation Using Large Language Models: Methodology and Educator Insights**
-
-    *Giorgio Biancini, Alessio Ferrato, Carla Limongelli*
-
-    UMAP Adjunct, 2024. [`workshop`](https://arxiv.org/abs/2506.04851)
 
 7. **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
 
@@ -1368,49 +1368,43 @@ We collect papers related to **artificial intelligence (AI) and large language m
 
     EMNLP Findings, 2025. [`conference`](https://aclanthology.org/2025.findings-emnlp.889/)
 
-3. **IntrEx: A Dataset for Modeling Engagement in Educational Conversations**
-
-    *Xingwei Tan, Mahathi Parvatham, Chiara Gambi, Gabriele Pergola*
-
-    EMNLP Findings, 2025. [`conference`](https://arxiv.org/abs/2509.06652)
-
-4. **Towards Robust Evaluation of STEM Education: Leveraging MLLMs in Project-Based Learning**
+3. **Towards Robust Evaluation of STEM Education: Leveraging MLLMs in Project-Based Learning**
 
     *Yanhao Jia, Xinyi Wu, Qinglin Zhang, Yiran Qin, Luwei Xiao, Shuai Zhao*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.17050)
 
-5. **Benchmarking the Pedagogical Knowledge of Large Language Models**
+4. **Benchmarking the Pedagogical Knowledge of Large Language Models**
 
     *Maxime Lelièvre, Amy Waldock, Meng Liu, Natalia Valdés Aspillaga, Alasdair Mackintosh, María José Ogando Portela, Jared Lee, Paul Atherton, Robin A. A. Ince, Oliver G. B. Garrod*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2506.18710)
 
-6. **From Answers to Questions: EQGBench for Evaluating LLMs' Educational Question Generation**
+5. **From Answers to Questions: EQGBench for Evaluating LLMs' Educational Question Generation**
 
     *Chengliang Zhou, Mei Wang, Ting Zhang, Qiannan Zhu, Jian Li, Hua Huang*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2508.10005)
 
-7. **EduNLP: Towards a Unified and Modularized Library for Educational Resources**
+6. **EduNLP: Towards a Unified and Modularized Library for Educational Resources**
 
     *Zhenya Huang, Yuting Ning, Longhu Qin, Shiwei Tong, Shangzi Xue, Tong Xiao, Xin Lin, Jiayu Liu, Qi Liu, Enhong Chen, Shijing Wang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.01276)
 
-8. **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
+7. **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
 
     *Jinchang Hou, Chang Ao, Haihong Wu, Xiangtao Kong, Zhigang Zheng, Daijia Tang, Chengming Li, Xiping Hu, Ruifeng Xu, Shiwen Ni, Min Yang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2401.15927)
 
-9. **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
+8. **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
 
     *Hasan Abu-Rasheed, Christian Weber, Madjid Fathi*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2402.07910)
 
-10. **pyKT: A Python Library to Benchmark Deep Learning based Knowledge Tracing Models**
+9. **pyKT: A Python Library to Benchmark Deep Learning based Knowledge Tracing Models**
 
     *Zitao Liu, Qiongqiong Liu, Jiahao Chen, Shuyan Huang, Jiliang Tang, Weiqing Luo*
 
