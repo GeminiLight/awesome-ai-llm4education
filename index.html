@@ -1753,6 +1753,251 @@
                 transition: none !important;
             }
         }
+        /* ===== Academic Refinement Theme ===== */
+        :root {
+            --primary: #1d4e89;
+            --primary-light: #2563a6;
+            --primary-dark: #173e6f;
+            --secondary: #3b4f67;
+            --accent: #0f766e;
+            --background-light: #f4f6f8;
+            --background-dark: #101418;
+            --surface-light: #ffffff;
+            --surface-dark: #171d23;
+            --text-primary-light: #18222c;
+            --text-primary-dark: #ecf2f7;
+            --text-secondary-light: #53616e;
+            --text-secondary-dark: #a6b5c3;
+            --border-light: #d8e0e7;
+            --border-dark: #2d3a46;
+            --shadow-soft: 0 6px 14px -12px rgba(24, 34, 44, 0.35);
+            --shadow-medium: 0 12px 24px -18px rgba(24, 34, 44, 0.32);
+            --shadow-colored: 0 10px 22px -18px rgba(29, 78, 137, 0.28);
+            --gradient-primary: linear-gradient(180deg, #1f3f63 0%, #2a567e 100%);
+        }
+
+        body {
+            font-family: 'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', sans-serif;
+            background: var(--background-light);
+            letter-spacing: 0;
+        }
+
+        body::before {
+            content: none;
+        }
+
+        body.dark {
+            background: var(--background-dark);
+        }
+
+        .header {
+            max-width: 1160px;
+            margin: 18px auto 14px auto;
+            padding: 26px 28px 20px 28px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 14px 28px -24px rgba(9, 15, 22, 0.65);
+        }
+
+        .header::before {
+            background: linear-gradient(180deg, rgba(30, 64, 99, 0.94) 0%, rgba(42, 86, 126, 0.92) 100%);
+            backdrop-filter: none;
+        }
+
+        .title {
+            font-family: 'Source Serif 4', 'Noto Serif SC', Georgia, serif;
+            font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+            letter-spacing: 0;
+            text-shadow: none;
+            font-weight: 700;
+        }
+
+        .description {
+            font-size: 0.96rem;
+            max-width: 980px;
+            color: rgba(245, 250, 255, 0.88);
+        }
+
+        .toggle-mode {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            box-shadow: none;
+        }
+
+        .container {
+            max-width: 1160px;
+            margin: 0 auto 34px auto;
+            padding: 10px 12px 16px 12px;
+        }
+
+        .ia-toolbar {
+            top: 8px;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .stats-strip,
+        .active-filters,
+        .filter-bar,
+        .paper-card {
+            border-radius: 12px;
+        }
+
+        .stats-strip,
+        .active-filters,
+        .filter-bar {
+            backdrop-filter: none;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .stat-card {
+            background: #fbfdff;
+            border: 1px solid #e0e7ee;
+        }
+
+        .stat-value {
+            font-family: 'Source Serif 4', 'Noto Serif SC', Georgia, serif;
+            font-weight: 700;
+        }
+
+        .filter-bar {
+            padding: 14px;
+            border: 1px solid var(--border-light);
+            top: 96px;
+        }
+
+        .filter-label {
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            font-weight: 700;
+        }
+
+        .chip,
+        .filter-button,
+        .filter-bar input,
+        .filter-bar select,
+        .reset-button,
+        .clear-all,
+        .quick-clear {
+            border-radius: 9px;
+            min-height: 34px;
+            font-size: 12px;
+        }
+
+        .chip {
+            background: #f8fbfd;
+            border-color: #d7e3ef;
+            color: #20486f;
+        }
+
+        .chip.active {
+            background: #1f4f82;
+            color: #fff;
+            border-color: #1f4f82;
+            box-shadow: none;
+        }
+
+        .paper-list {
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 12px;
+        }
+
+        .paper-card {
+            min-height: 184px;
+            border: 1px solid var(--border-light);
+            background: var(--surface-light);
+            box-shadow: var(--shadow-soft);
+            animation: none;
+        }
+
+        .paper-card::before,
+        .paper-card.llm-paper::before,
+        .paper-card.llm-paper::after {
+            background: linear-gradient(90deg, #2b5a86, #4c759a);
+            animation: none;
+            opacity: 0.85;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-medium);
+            border-color: #c3d3e1;
+        }
+
+        .paper-title {
+            font-family: 'Source Serif 4', 'Noto Serif SC', Georgia, serif;
+            font-size: 1.08rem;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .paper-meta {
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .paper-tag {
+            font-size: 0.64rem;
+            letter-spacing: 0.03em;
+            font-weight: 700;
+        }
+
+        .llm-indicator,
+        .paper-card.llm-paper:hover .llm-indicator,
+        .paper-card.llm-paper .paper-tag.llm {
+            animation: none;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .llm-indicator {
+            width: 26px;
+            height: 26px;
+            font-size: 0.8rem;
+            background: #b45309;
+        }
+
+        .loader {
+            min-height: 90px;
+            border: 1px dashed var(--border-light);
+            background: #f9fbfc;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                margin: 10px 8px 10px 8px;
+                padding: 20px 14px 16px 14px;
+                border-radius: 10px;
+            }
+
+            .container {
+                padding: 8px 8px 14px 8px;
+            }
+
+            .ia-toolbar {
+                position: relative;
+                top: 0;
+            }
+
+            .filter-bar {
+                top: 0;
+                border-radius: 10px;
+                padding: 12px;
+            }
+
+            .paper-list {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .paper-card {
+                min-height: 170px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1842,6 +2087,89 @@
             if(['0','false','no','n','f'].includes(s)) return 'false';
             return s;
         };
+        const filterLabel = (key) => displayLabels[(key || '').toLowerCase()] || key;
+        const normalizeFilterValueLabel = (key, value) => {
+            if((key || '').toLowerCase() === 'is_llm_related') {
+                const v = normalizeBool(value);
+                if(v === 'true') return 'Yes';
+                if(v === 'false') return 'No';
+            }
+            return String(value);
+        };
+
+        function removeSingleFilter(field, value) {
+            const bar = document.getElementById('filterBar');
+            if(!bar) return;
+
+            bar.querySelectorAll('select').forEach(sel => {
+                if(sel.name === field && sel.value === value) sel.selectedIndex = 0;
+            });
+
+            bar.querySelectorAll('input').forEach(inp => {
+                if(inp.name === field && inp.value === value) inp.value = '';
+            });
+
+            bar.querySelectorAll('.chip').forEach(chip => {
+                if(chip.dataset.field === field && chip.dataset.value === value) {
+                    chip.classList.remove('active');
+                    chip.setAttribute('aria-pressed', 'false');
+                }
+            });
+        }
+
+        function updateInfoArchitecture(filtered, filters) {
+            const totalEl = document.getElementById('statTotal');
+            const visibleEl = document.getElementById('statVisible');
+            const llmShareEl = document.getElementById('statLLMShare');
+            if(totalEl) totalEl.textContent = String(allPapers.length);
+            if(visibleEl) visibleEl.textContent = String(filtered.length);
+            if(llmShareEl) {
+                const llmCount = filtered.filter(p => normalizeBool(p[F('is_llm_related')]) === 'true').length;
+                const ratio = filtered.length ? Math.round((llmCount / filtered.length) * 100) : 0;
+                llmShareEl.textContent = `${ratio}%`;
+            }
+
+            const chipsWrap = document.getElementById('activeFiltersChips');
+            const quickClearBtn = document.getElementById('quickClearBtn');
+            if(!chipsWrap) return;
+
+            const activeItems = [];
+            Object.entries(filters).forEach(([key, value]) => {
+                if(Array.isArray(value)) {
+                    value.forEach(v => activeItems.push({ key, value: v }));
+                } else if(value) {
+                    activeItems.push({ key, value });
+                }
+            });
+
+            chipsWrap.innerHTML = '';
+            if(activeItems.length === 0) {
+                const empty = document.createElement('span');
+                empty.className = 'active-filters-empty';
+                empty.textContent = 'No filters applied';
+                chipsWrap.appendChild(empty);
+                if(quickClearBtn) quickClearBtn.classList.add('hidden');
+                return;
+            }
+
+            activeItems.forEach(item => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'active-chip';
+                btn.dataset.field = item.key;
+                btn.dataset.value = String(item.value);
+                btn.title = 'Remove this filter';
+                btn.innerHTML = `<span>${filterLabel(item.key)}: ${normalizeFilterValueLabel(item.key, item.value)}</span><span aria-hidden="true">x</span>`;
+                btn.onclick = () => {
+                    removeSingleFilter(item.key, String(item.value));
+                    renderPapers();
+                    updateFilterOptions();
+                };
+                chipsWrap.appendChild(btn);
+            });
+
+            if(quickClearBtn) quickClearBtn.classList.remove('hidden');
+        }
         // Night/Day mode toggle
         const toggleBtn = document.getElementById('toggleModeBtn');
         toggleBtn.onclick = () => {
