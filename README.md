@@ -2085,7 +2085,14 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     2025, preprint. [`1`](Thomas Sievers)
 
+### [EACL](#content)
 
+1. **Instructional Agents: LLM Agents Can Reduce Teaching Faculty Workload through Multi-Agent Instructional Design**
+
+    *Huaiyuan Yao, Wanpeng Xu, Justin Turnau, Nadia Kellam, Hua Wei*
+
+    EACL, 2026. [`preprint`](https://arxiv.org/abs/2508.19611) [`code`](https://github.com/DaRL-GenAI/instructional_agents) [`plugin`](https://github.com/DaRL-GenAI/instructional_agents-skills)
+   
 
 ## [Dataset](#content)
 
