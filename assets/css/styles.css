@@ -195,8 +195,7 @@
             background: var(--surface-light);
             border: 1px solid var(--border-light);
             border-radius: var(--border-radius);
-            /* padding: 16px 24px; */
-            padding: 200px;
+            padding: 16px 24px;
             box-shadow: var(--shadow-soft);
         }
         
@@ -621,11 +620,10 @@
         .loader {
             display: none;
             width: 100%;
-            /* padding: 24px 32px; */
-            padding: 32px 100px 32px 100px;
+            padding: 24px 32px;
             align-items: center;
             gap: 12px;
-            
+
         }
         .loader.active { display: flex; }
         .spinner {

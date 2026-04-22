@@ -22,16 +22,27 @@
             if(['0','false','no','n','f'].includes(s)) return 'false';
             return s;
         };
+        // HTML escape function to prevent XSS
+        const escapeHtml = (text) => {
+            if (!text) return text;
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        };
         // Night/Day mode toggle
         const toggleBtn = document.getElementById('toggleModeBtn');
-        toggleBtn.onclick = () => {
-            document.body.classList.toggle('dark');
-            toggleBtn.innerHTML = document.body.classList.contains('dark') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-        };
-        if(localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark');
-            toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        if (!toggleBtn) {
+            console.warn('Toggle button not found');
+        } else {
+            toggleBtn.onclick = () => {
+                document.body.classList.toggle('dark');
+                toggleBtn.innerHTML = document.body.classList.contains('dark') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+                localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+            };
+            if(localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark');
+                toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
         }
 
         // Fetch and parse CSV: prefer merging both files if available
@@ -452,23 +463,23 @@
                 <div class="paper-card ${isLLMRelated ? 'llm-paper' : ''}">
                     <div class="paper-top-row">
                         <div class="pub-info">
-                            <span class="publisher">${paper[F('publisher')]||'N/A'}</span>
-                            <span class="year">${paper[F('year')]||'N/A'}</span>
+                            <span class="publisher">${escapeHtml(paper[F('publisher')]||'N/A')}</span>
+                            <span class="year">${escapeHtml(paper[F('year')]||'N/A')}</span>
                         </div>
                         ${isLLMRelated ? '<div class="llm-indicator">🤖</div>' : ''}
                     </div>
-                    <div class="paper-title">${paper[F('title')]||'No Title'}</div>
+                    <div class="paper-title">${escapeHtml(paper[F('title')]||'No Title')}</div>
                     <div class="paper-meta">
-                        ${paper[F('authors')]||'N/A'}
+                        ${escapeHtml(paper[F('authors')]||'N/A')}
                     </div>
                     <div class="paper-bottom-row">
                         <div class="paper-tags">
-                            ${paper[F('group')] ? `<span class="paper-tag group">${paper[F('group')]}</span>` : ''}
-                            ${paper[F('category')] ? `<span class="paper-tag category">${paper[F('category')]}</span>` : ''}
-                            ${paper[F('type')] ? `<span class="paper-tag type">${paper[F('type')]}</span>` : ''}
+                            ${paper[F('group')] ? `<span class="paper-tag group">${escapeHtml(paper[F('group')])}</span>` : ''}
+                            ${paper[F('category')] ? `<span class="paper-tag category">${escapeHtml(paper[F('category')])}</span>` : ''}
+                            ${paper[F('type')] ? `<span class="paper-tag type">${escapeHtml(paper[F('type')])}</span>` : ''}
                             ${isLLMRelated ? `<span class="paper-tag llm">🤖 LLM</span>` : ''}
                         </div>
-                        ${paper[F('link')] ? `<a class="paper-link" href="${paper[F('link')]}" target="_blank"><i class="fa-solid fa-external-link-alt"></i> View Paper</a>` : '<div></div>'}
+                        ${paper[F('link')] ? `<a class="paper-link" href="${escapeHtml(paper[F('link')])}" target="_blank"><i class="fa-solid fa-external-link-alt"></i> View Paper</a>` : '<div></div>'}
                     </div>
                 </div>
             `;
