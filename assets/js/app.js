@@ -22,16 +22,26 @@
             if(['0','false','no','n','f'].includes(s)) return 'false';
             return s;
         };
+        // HTML escape function to prevent XSS
+        const escapeHtml = (text) => {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        };
         // Night/Day mode toggle
         const toggleBtn = document.getElementById('toggleModeBtn');
-        toggleBtn.onclick = () => {
-            document.body.classList.toggle('dark');
-            toggleBtn.innerHTML = document.body.classList.contains('dark') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-        };
-        if(localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark');
-            toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        if (!toggleBtn) {
+            console.warn('Toggle button not found');
+        } else {
+            toggleBtn.onclick = () => {
+                document.body.classList.toggle('dark');
+                toggleBtn.innerHTML = document.body.classList.contains('dark') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+                localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+            };
+            if(localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark');
+                toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
         }
 
         // Fetch and parse CSV: prefer merging both files if available
@@ -390,6 +400,8 @@
             });
         }
         let allPapers = [], allHeaders = [];
+        let filterCache = { key: null, result: null }; // Cache for filtered results
+
         function getFilters() {
             const bar = document.getElementById('filterBar');
             const filters = {};
@@ -413,36 +425,48 @@
         }
         function renderPapers() {
             const filters = getFilters();
-            let filtered = allPapers.filter(paper => {
-                return Object.entries(filters).every(([k, v]) => {
-                    const key = F(k) || k;
-                    const kLower = (k || '').toLowerCase();
-                    if(v == null) return true;
-                    if(Array.isArray(v) && v.length) {
-                        return v.some(val => {
-                            if(kLower === 'is_llm_related') {
-                                return normalizeBool(paper[key]) === normalizeBool(String(val));
-                            }
-                            return (paper[key]||'').toLowerCase() === String(val).toLowerCase();
-                        });
-                    }
-                    if(!v) return true;
-                    if(kLower === 'is_llm_related') {
-                        return normalizeBool(paper[key]) === normalizeBool(String(v));
-                    }
-                    return (paper[key]||'').toLowerCase().includes(String(v).toLowerCase());
-                });
-            });
+            const filterKey = JSON.stringify(filters);
 
-            // Sort: year desc (numeric), tiebreaker by title asc
-            filtered.sort((a,b) => {
-                const ya = parseInt(a[F('year')]) || 0;
-                const yb = parseInt(b[F('year')]) || 0;
-                if(yb !== ya) return yb - ya;
-                const ta = (a[F('title')]||'').toLowerCase();
-                const tb = (b[F('title')]||'').toLowerCase();
-                return ta.localeCompare(tb);
-            });
+            // Check cache
+            let filtered;
+            if (filterCache.key === filterKey) {
+                filtered = filterCache.result;
+            } else {
+                filtered = allPapers.filter(paper => {
+                    return Object.entries(filters).every(([k, v]) => {
+                        const key = F(k) || k;
+                        const kLower = (k || '').toLowerCase();
+                        if(v == null) return true;
+                        if(Array.isArray(v) && v.length) {
+                            return v.some(val => {
+                                if(kLower === 'is_llm_related') {
+                                    return normalizeBool(paper[key]) === normalizeBool(String(val));
+                                }
+                                return (paper[key]||'').toLowerCase() === String(val).toLowerCase();
+                            });
+                        }
+                        if(!v) return true;
+                        if(kLower === 'is_llm_related') {
+                            return normalizeBool(paper[key]) === normalizeBool(String(v));
+                        }
+                        return (paper[key]||'').toLowerCase().includes(String(v).toLowerCase());
+                    });
+                });
+
+                // Sort: year desc (numeric), tiebreaker by title asc
+                filtered.sort((a,b) => {
+                    const ya = parseInt(a[F('year')]) || 0;
+                    const yb = parseInt(b[F('year')]) || 0;
+                    if(yb !== ya) return yb - ya;
+                    const ta = (a[F('title')]||'').toLowerCase();
+                    const tb = (b[F('title')]||'').toLowerCase();
+                    return ta.localeCompare(tb);
+                });
+
+                // Update cache
+                filterCache.key = filterKey;
+                filterCache.result = filtered;
+            }
             
             const list = document.getElementById('paperList');
             list.innerHTML = filtered.map(paper => {
@@ -452,23 +476,23 @@
                 <div class="paper-card ${isLLMRelated ? 'llm-paper' : ''}">
                     <div class="paper-top-row">
                         <div class="pub-info">
-                            <span class="publisher">${paper[F('publisher')]||'N/A'}</span>
-                            <span class="year">${paper[F('year')]||'N/A'}</span>
+                            <span class="publisher">${escapeHtml(paper[F('publisher')]||'N/A')}</span>
+                            <span class="year">${escapeHtml(paper[F('year')]||'N/A')}</span>
                         </div>
                         ${isLLMRelated ? '<div class="llm-indicator">🤖</div>' : ''}
                     </div>
-                    <div class="paper-title">${paper[F('title')]||'No Title'}</div>
+                    <div class="paper-title">${escapeHtml(paper[F('title')]||'No Title')}</div>
                     <div class="paper-meta">
-                        ${paper[F('authors')]||'N/A'}
+                        ${escapeHtml(paper[F('authors')]||'N/A')}
                     </div>
                     <div class="paper-bottom-row">
                         <div class="paper-tags">
-                            ${paper[F('group')] ? `<span class="paper-tag group">${paper[F('group')]}</span>` : ''}
-                            ${paper[F('category')] ? `<span class="paper-tag category">${paper[F('category')]}</span>` : ''}
-                            ${paper[F('type')] ? `<span class="paper-tag type">${paper[F('type')]}</span>` : ''}
+                            ${paper[F('group')] ? `<span class="paper-tag group">${escapeHtml(paper[F('group')])}</span>` : ''}
+                            ${paper[F('category')] ? `<span class="paper-tag category">${escapeHtml(paper[F('category')])}</span>` : ''}
+                            ${paper[F('type')] ? `<span class="paper-tag type">${escapeHtml(paper[F('type')])}</span>` : ''}
                             ${isLLMRelated ? `<span class="paper-tag llm">🤖 LLM</span>` : ''}
                         </div>
-                        ${paper[F('link')] ? `<a class="paper-link" href="${paper[F('link')]}" target="_blank"><i class="fa-solid fa-external-link-alt"></i> View Paper</a>` : '<div></div>'}
+                        ${paper[F('link')] ? `<a class="paper-link" href="${escapeHtml(paper[F('link')])}" target="_blank"><i class="fa-solid fa-external-link-alt"></i> View Paper</a>` : '<div></div>'}
                     </div>
                 </div>
             `;
