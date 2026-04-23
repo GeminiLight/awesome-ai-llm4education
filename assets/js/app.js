@@ -69,16 +69,91 @@
             }
         }
         function parseCSV(text) {
-            const lines = text.split(/\r?\n/).filter(l => l.trim());
-            const headers = lines[0].split(',').map(h => h.trim());
+            const lines = [];
+            let currentLine = '';
+            let inQuotes = false;
+
+            // First pass: handle multi-line fields
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const nextChar = text[i + 1];
+
+                if (char === '"') {
+                    if (inQuotes && nextChar === '"') {
+                        // Escaped quote
+                        currentLine += '"';
+                        i++; // Skip next quote
+                    } else {
+                        // Toggle quote state
+                        inQuotes = !inQuotes;
+                    }
+                } else if ((char === '\n' || char === '\r') && !inQuotes) {
+                    // End of line (not inside quotes)
+                    if (currentLine.trim()) {
+                        lines.push(currentLine);
+                    }
+                    currentLine = '';
+                    // Skip \r\n combination
+                    if (char === '\r' && nextChar === '\n') {
+                        i++;
+                    }
+                } else {
+                    currentLine += char;
+                }
+            }
+
+            // Add last line
+            if (currentLine.trim()) {
+                lines.push(currentLine);
+            }
+
+            if (lines.length === 0) return [];
+
+            // Parse header
+            const headers = parseCSVLine(lines[0]);
+
+            // Parse data rows
             return lines.slice(1).map(line => {
-                const values = line.match(/(?:"[^"]*"|[^,])+/g) || line.split(',');
+                const values = parseCSVLine(line);
                 const obj = {};
                 headers.forEach((h, i) => {
-                    obj[h] = (values[i] || '').replace(/^"|"$/g, '').trim();
+                    obj[h] = values[i] || '';
                 });
                 return obj;
             });
+        }
+
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                const nextChar = line[i + 1];
+
+                if (char === '"') {
+                    if (inQuotes && nextChar === '"') {
+                        // Escaped quote - add single quote
+                        current += '"';
+                        i++; // Skip next quote
+                    } else {
+                        // Toggle quote state
+                        inQuotes = !inQuotes;
+                    }
+                } else if (char === ',' && !inQuotes) {
+                    // Field separator
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+
+            // Add last field
+            result.push(current.trim());
+
+            return result;
         }
         // Helper: detect which fields are categorical (for dropdown)
         function isCategorical(header, papers) {
