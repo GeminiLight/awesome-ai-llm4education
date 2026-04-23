@@ -25,8 +25,6 @@
         </header>
 
         <div class="container">
-            <div class="group-filter-bar hidden" id="groupFilterBar"></div>
-
             <section class="ia-toolbar" id="iaToolbar" aria-label="Statistics and active filters">
                 <div class="stats-strip" id="statsStrip">
                     <div class="stat-card">
@@ -51,13 +49,6 @@
                 </div>
             </section>
 
-            <div class="results-info hidden" id="resultsInfo" aria-live="polite" aria-atomic="true">
-                <div><span id="resultsCount">0</span> results</div>
-                <div class="row gap-8 align-center">
-                    <button class="clear-all" id="clearAllBtn" title="Clear all filters">Clear filters</button>
-                </div>
-            </div>
-
             <section class="filter-bar" id="filterBar" aria-label="Filter controls">
                 <!-- Filter controls will be generated here -->
             </section>
@@ -70,12 +61,6 @@
             <section class="paper-list" id="paperList" aria-label="Paper list">
                 <!-- Paper cards will be rendered here -->
             </section>
-
-            <div class="empty-state hidden" id="emptyState">
-                <div class="empty-title">No results</div>
-                <div class="empty-subtitle">Try adjusting or clearing some filters to broaden your search.</div>
-                <button class="reset-button" id="emptyResetBtn"><i class="fa-solid fa-rotate-left"></i> Reset filters</button>
-            </div>
         </div>
     </main>
     <script src="assets/js/app.js"></script>

@@ -96,419 +96,289 @@
         function createFilters(papers, headers) {
             const bar = document.getElementById('filterBar');
             bar.innerHTML = '';
-            // Filter out 'link' and 'code' fields from filters but keep them in data
-            const filteredHeaders = headers.filter(h => !['link', 'code'].includes(h.toLowerCase()));
-            // Prepare a dedicated inline row container for Publisher, Year, Title, Authors, and Reset
-            const inlineRow = document.createElement('div');
-            inlineRow.className = 'filter-row-inline';
-            
+
+            // Add search box first
+            const searchSection = document.createElement('div');
+            searchSection.className = 'search-box';
+            searchSection.innerHTML = `
+                <i class="fa-solid fa-search"></i>
+                <input type="text" name="title" placeholder="Search papers by title, authors, or keywords..." />
+            `;
+            const searchInput = searchSection.querySelector('input');
+            searchInput.oninput = debounce(() => { renderPapers(); updateStats(); }, 250);
+            bar.appendChild(searchSection);
+
             // Create filter sections for button-based filters
-            const chipFilters = ['group', 'category', 'is_llm_related', 'type'];
+            const chipFilters = ['group', 'category', 'type', 'is_llm_related'];
             chipFilters.forEach(fieldName => {
                 const key = F(fieldName);
-                if(!allHeaders.map(h=>h.toLowerCase()).includes(fieldName)) {
-                    // if header case differs, ensure key exists in dataset
-                    if(!fieldMap[fieldName]) fieldMap[fieldName] = key;
-                }
                 if(key && headers.includes(key)) {
                     let rawValues = papers.map(p => p[key]).filter(v => v !== undefined && v !== null && String(v).trim() !== '');
                     if(fieldName === 'is_llm_related') {
                         rawValues = rawValues.map(v => normalizeBool(v));
-                        // Force only 'true'/'false' options if present
                         const hasTrue = rawValues.includes('true');
                         const hasFalse = rawValues.includes('false');
                         const values = [];
-                        if(hasTrue) values.push('true');
-                        if(hasFalse) values.push('false');
+                        if(hasTrue) values.push('Yes');
+                        if(hasFalse) values.push('No');
                         if(values.length) {
                             createChipFilterSection(bar, key, values, displayLabels[fieldName] || key);
                             return;
                         }
-                        // Fallback to unique values if data is irregular
                     }
-                    const values = Array.from(new Set(rawValues));
-                    if(isCategorical(fieldName, papers)) {
+                    const values = Array.from(new Set(rawValues)).sort();
+                    if(values.length > 0) {
                         createChipFilterSection(bar, key, values, displayLabels[fieldName] || key);
                     }
                 }
             });
-            
-            // Create filter sections for other categorical fields
-            filteredHeaders.forEach(h => {
-                // Skip fields already handled as button filters or group (handled separately)
-                if(h.toLowerCase() === 'group' || chipFilters.includes(h.toLowerCase())) return;
-                
-                const values = Array.from(new Set(papers.map(p => p[h]).filter(Boolean)));
-                if(isCategorical(h, papers)) {
-                    const section = document.createElement('div');
-                    section.className = 'filter-section';
-                    section.dataset.field = h.toLowerCase();
-                    if(['title', 'authors'].includes(h.toLowerCase())) {
-                        section.classList.add('filter-section-wide');
-                    }
-                    
-                    const label = document.createElement('div');
-                    label.className = 'filter-label';
-                    const lbl = displayLabels[h.toLowerCase()] || h;
-                    label.textContent = lbl;
-                    section.appendChild(label);
-                    
-                    const sel = document.createElement('select');
-                    sel.name = h;
-                    sel.innerHTML = `<option value="">All ${lbl}</option>` + values.map(o => `<option value="${o}">${o}</option>`).join('');
-                    sel.onchange = () => { renderPapers(); updateFilterOptions(); };
-                    section.appendChild(sel);
 
-                    // If this is publisher or year, add to inline row; else append to bar
-                    if(['publisher','year'].includes(h.toLowerCase())) {
-                        inlineRow.appendChild(section);
-                    } else {
-                        bar.appendChild(section);
-                    }
-                } else {
-                    const section = document.createElement('div');
-                    section.className = 'filter-section';
-                    section.dataset.field = h.toLowerCase();
-                    if(['title', 'authors'].includes(h.toLowerCase())) {
-                        section.classList.add('filter-section-wide');
-                    }
-                    
-                    const label = document.createElement('div');
-                    label.className = 'filter-label';
-                    const lbl2 = displayLabels[h.toLowerCase()] || h;
-                    label.textContent = lbl2;
-                    section.appendChild(label);
-                    
-                    const inp = document.createElement('input');
-                    inp.type = 'text';
-                    inp.placeholder = `Search ${lbl2}`;
-                    inp.name = h;
-                    inp.oninput = debounce(() => { renderPapers(); updateFilterOptions(); }, 250);
-                    section.appendChild(inp);
-
-                    // If this is title or authors, add to inline row; else append to bar
-                    if(['title','authors'].includes(h.toLowerCase())) {
-                        inlineRow.appendChild(section);
-                    } else {
+            // Add year and publisher dropdowns
+            ['year', 'publisher'].forEach(fieldName => {
+                const key = F(fieldName);
+                if(key && headers.includes(key)) {
+                    const values = Array.from(new Set(papers.map(p => p[key]).filter(Boolean))).sort((a,b) => {
+                        if(fieldName === 'year') return parseInt(b) - parseInt(a);
+                        return a.localeCompare(b);
+                    });
+                    if(values.length > 0) {
+                        const section = document.createElement('div');
+                        section.className = 'filter-group';
+                        const label = document.createElement('label');
+                        label.className = 'filter-label';
+                        label.textContent = displayLabels[fieldName] || key;
+                        const sel = document.createElement('select');
+                        sel.name = key;
+                        sel.innerHTML = `<option value="">All</option>` + values.map(o => `<option value="${escapeHtml(o)}">${escapeHtml(o)}</option>`).join('');
+                        sel.onchange = () => { renderPapers(); updateStats(); };
+                        section.appendChild(label);
+                        section.appendChild(sel);
                         bar.appendChild(section);
                     }
                 }
             });
-            
-            // Add reset button in its own section
-            const resetSection = document.createElement('div');
-            resetSection.className = 'filter-section';
-            resetSection.style.alignSelf = 'flex-end';
-            
-            const resetBtn = document.createElement('button');
-            resetBtn.className = 'reset-button';
-            resetBtn.innerHTML = '<i class="fa-solid fa-refresh"></i> Reset';
-            resetBtn.onclick = () => {
-                // Clear all filters except group buttons
-                const selectElements = bar.querySelectorAll('select');
-                selectElements.forEach(sel => {
-                    sel.selectedIndex = 0;
-                });
-                
-                const inputElements = bar.querySelectorAll('input');
-                inputElements.forEach(inp => {
-                    inp.value = '';
-                });
-                
-                // Reset chip filters
-                const chips = bar.querySelectorAll('.chip.active');
-                chips.forEach(c => c.classList.remove('active'));
-                
-                renderPapers();
-                updateFilterOptions();
-            };
-            resetSection.appendChild(resetBtn);
-            // add reset to inline row
-            inlineRow.appendChild(resetSection);
-
-            // Finally, append inline row to the bar at the end so it appears as one row
-            bar.appendChild(inlineRow);
-
-            // Wire Clear All and empty reset
-            const clearAllBtn = document.getElementById('clearAllBtn');
-            if(clearAllBtn) clearAllBtn.onclick = resetBtn.onclick;
-            const emptyResetBtn = document.getElementById('emptyResetBtn');
-            if(emptyResetBtn) emptyResetBtn.onclick = resetBtn.onclick;
         }
-        
+
         // Create chip-based multi-select filter section
         function createChipFilterSection(container, actualFieldName, values, labelText) {
             const section = document.createElement('div');
-            section.className = 'filter-section';
-            section.dataset.field = (actualFieldName || '').toLowerCase();
-            if(['category'].includes(actualFieldName.toLowerCase())) {
-                section.classList.add('filter-section-wide');
-            }
-            
-            // Add label
-            const label = document.createElement('div');
+            section.className = 'filter-group';
+
+            const label = document.createElement('label');
             label.className = 'filter-label';
             label.textContent = labelText || actualFieldName;
             section.appendChild(label);
-            
-            // Add buttons container
+
             const buttonsContainer = document.createElement('div');
-            buttonsContainer.className = 'filter-section-row';
-            
-            // Add chips for each value
+            buttonsContainer.className = 'filter-options';
+
             values.forEach(value => {
-                const chip = document.createElement('button');
-                chip.className = 'chip';
-                chip.setAttribute('role', 'button');
-                chip.setAttribute('aria-pressed', 'false');
-                chip.dataset.field = actualFieldName;
-                chip.dataset.value = value;
-                chip.innerHTML = `${value} <span class="count">0</span>`;
-                chip.onclick = () => {
-                    if(chip.getAttribute('aria-disabled') === 'true') return;
-                    const active = chip.classList.toggle('active');
-                    chip.setAttribute('aria-pressed', active ? 'true' : 'false');
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.dataset.field = actualFieldName;
+                btn.dataset.value = value;
+                btn.textContent = value;
+                btn.onclick = () => {
+                    btn.classList.toggle('active');
                     renderPapers();
-                    updateFilterOptions();
+                    updateStats();
                 };
-                buttonsContainer.appendChild(chip);
+                buttonsContainer.appendChild(btn);
             });
-            
+
             section.appendChild(buttonsContainer);
             container.appendChild(section);
         }
         
-        // Update filter options based on current filtered papers
-        function updateFilterOptions() {
+        // Update stats display
+        function updateStats() {
             const filters = getFilters();
-            // Group-first scoping for options and counts (support multi-select OR)
-            const gk = F('group');
-            const gval = filters[gk];
-            const groupScoped = Array.isArray(gval) && gval.length
-                ? allPapers.filter(p => gval.some(val => (p[gk]||'').toLowerCase() === String(val).toLowerCase()))
-                : (!gval || (Array.isArray(gval) && !gval.length) ? allPapers.slice() : allPapers.filter(p => (p[gk]||'').toLowerCase() === String(gval).toLowerCase()));
-            
-            // Current filtered used for rendering results
-            const currentFiltered = allPapers.filter(paper => {
-                return Object.entries(filters).every(([k, v]) => {
-                    const key = F(k) || k;
-                    const kLower = (k || '').toLowerCase();
-                    if(v == null) return true;
-                    if(Array.isArray(v) && v.length) {
-                        return v.some(val => {
-                            if(kLower === 'is_llm_related') {
-                                return normalizeBool(paper[key]) === normalizeBool(String(val));
-                            }
-                            return (paper[key]||'').toLowerCase() === String(val).toLowerCase();
-                        });
-                    }
-                    if(!v) return true;
-                    if(kLower === 'is_llm_related') {
-                        return normalizeBool(paper[key]) === normalizeBool(String(v));
-                    }
-                    return (paper[key]||'').toLowerCase().includes(String(v).toLowerCase());
-                });
-            });
-            
-            const bar = document.getElementById('filterBar');
-            
-            // No group button bar; group selection is via chips
+            const filtered = allPapers.filter(paper => matchesFilters(paper, filters));
 
-            // Update Group chip counts: compute with all OTHER filters applied (exclude group)
-            if (gk) {
-                const filtersNoGroup = { ...filters };
-                delete filtersNoGroup[gk];
-                const baseForGroupCounts = allPapers.filter(paper => {
-                    return Object.entries(filtersNoGroup).every(([k, v]) => {
-                        const key = F(k) || k;
-                        const kLower = (k || '').toLowerCase();
-                        if(v == null) return true;
-                        if(Array.isArray(v) && v.length) {
-                            return v.some(val => {
-                                if(kLower === 'is_llm_related') {
-                                    return normalizeBool(paper[key]) === normalizeBool(String(val));
-                                }
-                                return (paper[key]||'').toLowerCase() === String(val).toLowerCase();
-                            });
-                        }
-                        if(!v) return true;
-                        if(kLower === 'is_llm_related') {
-                            return normalizeBool(paper[key]) === normalizeBool(String(v));
-                        }
-                        return (paper[key]||'').toLowerCase().includes(String(v).toLowerCase());
-                    });
-                });
-                const groupCounts = baseForGroupCounts.reduce((acc, p) => {
-                    const v = p[gk];
-                    if(v) acc[v] = (acc[v]||0)+1;
-                    return acc;
-                }, {});
-                const gchips = bar.querySelectorAll(`.chip[data-field="${gk}"]`);
-                gchips.forEach(chip => {
-                    const v = chip.dataset.value;
-                    const c = groupCounts[v] || 0;
-                    const countEl = chip.querySelector('.count');
-                    if(countEl) countEl.textContent = String(c);
-                    if(c === 0) {
-                        chip.setAttribute('aria-disabled', 'true');
-                        if(chip.classList.contains('active')) {
-                            chip.classList.remove('active');
-                            chip.setAttribute('aria-pressed', 'false');
-                        }
-                    } else {
-                        chip.removeAttribute('aria-disabled');
+            // Update visible count
+            const statVisible = document.getElementById('statVisible');
+            if(statVisible) statVisible.textContent = filtered.length;
+
+            // Update active filters display
+            const activeFiltersChips = document.getElementById('activeFiltersChips');
+            const quickClearBtn = document.getElementById('quickClearBtn');
+
+            if(activeFiltersChips) {
+                const filterEntries = Object.entries(filters).filter(([k, v]) => k !== 'search' && v);
+
+                if(filterEntries.length === 0 && !filters.search) {
+                    activeFiltersChips.innerHTML = '<span class="active-filters-empty">No filters applied</span>';
+                    if(quickClearBtn) quickClearBtn.classList.add('hidden');
+                } else {
+                    const chips = [];
+
+                    if(filters.search) {
+                        chips.push(`<span class="filter-chip">Search: "${escapeHtml(filters.search)}"</span>`);
                     }
-                });
-            }
-            
-            // Update select elements
-            const selects = bar.querySelectorAll('select');
-            selects.forEach(ctrl => {
-                const fieldName = ctrl.name;
-                const currentValue = ctrl.value;
-                const availableValues = Array.from(new Set(groupScoped.map(p => p[fieldName]).filter(Boolean)));
-                ctrl.innerHTML = `<option value="">All ${fieldName}</option>` + 
-                    availableValues.map(o => `<option value="${o}" ${o === currentValue ? 'selected' : ''}>${o}</option>`).join('');
-            });
-            
-            // Update chip filters (counts and disabled state)
-            const chipFieldKeys = ['category', 'type', 'is_llm_related'].map(F);
-            chipFieldKeys.forEach(fieldKey => {
-                const chips = bar.querySelectorAll(`.chip[data-field="${fieldKey}"]`);
-                if(chips.length > 0) {
-                    const availCounts = groupScoped.reduce((acc, p) => {
-                        let v = p[fieldKey];
-                        if((fieldKey || '').toLowerCase() === 'is_llm_related') v = normalizeBool(v);
-                        if(v) acc[v] = (acc[v]||0)+1;
-                        return acc;
-                    }, {});
-                    chips.forEach(chip => {
-                        const v = chip.dataset.value;
-                        const c = availCounts[v] || 0;
-                        const countEl = chip.querySelector('.count');
-                        if(countEl) countEl.textContent = String(c);
-                        if(c === 0) {
-                            chip.setAttribute('aria-disabled', 'true');
+
+                    filterEntries.forEach(([field, values]) => {
+                        const label = displayLabels[field.toLowerCase()] || field;
+                        if(Array.isArray(values)) {
+                            values.forEach(v => {
+                                chips.push(`<span class="filter-chip">${escapeHtml(label)}: ${escapeHtml(v)}</span>`);
+                            });
                         } else {
-                            chip.removeAttribute('aria-disabled');
-                        }
-                        if(c === 0 && chip.classList.contains('active')) {
-                            chip.classList.remove('active');
-                            chip.setAttribute('aria-pressed', 'false');
+                            chips.push(`<span class="filter-chip">${escapeHtml(label)}: ${escapeHtml(values)}</span>`);
                         }
                     });
+
+                    activeFiltersChips.innerHTML = chips.join('');
+                    if(quickClearBtn) quickClearBtn.classList.remove('hidden');
                 }
-            });
+            }
         }
         let allPapers = [], allHeaders = [];
+
         function getFilters() {
             const bar = document.getElementById('filterBar');
             const filters = {};
-            
-            // Get other filters from inputs and selects
+
+            // Get search input
+            const searchInput = bar.querySelector('input[name="title"]');
+            if(searchInput && searchInput.value) filters.search = searchInput.value;
+
+            // Get select filters
             const selects = bar.querySelectorAll('select');
             selects.forEach(ctrl => { if(ctrl.value) filters[ctrl.name] = ctrl.value; });
-            const inputs = bar.querySelectorAll('input');
-            inputs.forEach(ctrl => { if(ctrl.value) filters[ctrl.name] = ctrl.value; });
-            
-            // Get filters from active chips (multi-select)
-            const activeChips = bar.querySelectorAll('.chip.active');
-            activeChips.forEach(chip => {
-                const field = chip.dataset.field;
-                const value = chip.dataset.value;
+
+            // Get active filter buttons (multi-select)
+            const activeButtons = bar.querySelectorAll('.filter-btn.active');
+            activeButtons.forEach(btn => {
+                const field = btn.dataset.field;
+                const value = btn.dataset.value;
                 if(!filters[field]) filters[field] = [];
                 filters[field].push(value);
             });
-            
+
             return filters;
         }
+
+        function matchesFilters(paper, filters) {
+            return Object.entries(filters).every(([k, v]) => {
+                if(k === 'search') {
+                    const searchTerm = v.toLowerCase();
+                    const title = (paper[F('title')] || '').toLowerCase();
+                    const authors = (paper[F('authors')] || '').toLowerCase();
+                    return title.includes(searchTerm) || authors.includes(searchTerm);
+                }
+
+                const key = F(k) || k;
+                const kLower = k.toLowerCase();
+
+                if(Array.isArray(v) && v.length) {
+                    return v.some(val => {
+                        if(kLower === 'is_llm_related') {
+                            const paperVal = normalizeBool(paper[key]);
+                            return (val === 'Yes' && paperVal === 'true') || (val === 'No' && paperVal === 'false');
+                        }
+                        return (paper[key] || '').toLowerCase() === val.toLowerCase();
+                    });
+                }
+
+                if(kLower === 'is_llm_related') {
+                    const paperVal = normalizeBool(paper[key]);
+                    return (v === 'Yes' && paperVal === 'true') || (v === 'No' && paperVal === 'false');
+                }
+
+                return (paper[key] || '').toLowerCase().includes(v.toLowerCase());
+            });
+        }
+
         function renderPapers() {
             const filters = getFilters();
-            let filtered = allPapers.filter(paper => {
-                return Object.entries(filters).every(([k, v]) => {
-                    const key = F(k) || k;
-                    const kLower = (k || '').toLowerCase();
-                    if(v == null) return true;
-                    if(Array.isArray(v) && v.length) {
-                        return v.some(val => {
-                            if(kLower === 'is_llm_related') {
-                                return normalizeBool(paper[key]) === normalizeBool(String(val));
-                            }
-                            return (paper[key]||'').toLowerCase() === String(val).toLowerCase();
-                        });
-                    }
-                    if(!v) return true;
-                    if(kLower === 'is_llm_related') {
-                        return normalizeBool(paper[key]) === normalizeBool(String(v));
-                    }
-                    return (paper[key]||'').toLowerCase().includes(String(v).toLowerCase());
-                });
-            });
+            let filtered = allPapers.filter(paper => matchesFilters(paper, filters));
 
-            // Sort: year desc (numeric), tiebreaker by title asc
+            // Sort: year desc, then title asc
             filtered.sort((a,b) => {
                 const ya = parseInt(a[F('year')]) || 0;
                 const yb = parseInt(b[F('year')]) || 0;
                 if(yb !== ya) return yb - ya;
-                const ta = (a[F('title')]||'').toLowerCase();
-                const tb = (b[F('title')]||'').toLowerCase();
-                return ta.localeCompare(tb);
+                return (a[F('title')] || '').localeCompare(b[F('title')] || '');
             });
-            
-            const list = document.getElementById('paperList');
-            list.innerHTML = filtered.map(paper => {
-                const llmVal = (paper[F('is_llm_related')] || '').toString().trim().toLowerCase();
-                const isLLMRelated = llmVal === 'yes' || llmVal === '1' || llmVal === 'true';
-                return `
-                <div class="paper-card ${isLLMRelated ? 'llm-paper' : ''}">
-                    <div class="paper-top-row">
-                        <div class="pub-info">
-                            <span class="publisher">${escapeHtml(paper[F('publisher')]||'N/A')}</span>
-                            <span class="year">${escapeHtml(paper[F('year')]||'N/A')}</span>
-                        </div>
-                        ${isLLMRelated ? '<div class="llm-indicator">🤖</div>' : ''}
-                    </div>
-                    <div class="paper-title">${escapeHtml(paper[F('title')]||'No Title')}</div>
-                    <div class="paper-meta">
-                        ${escapeHtml(paper[F('authors')]||'N/A')}
-                    </div>
-                    <div class="paper-bottom-row">
-                        <div class="paper-tags">
-                            ${paper[F('group')] ? `<span class="paper-tag group">${escapeHtml(paper[F('group')])}</span>` : ''}
-                            ${paper[F('category')] ? `<span class="paper-tag category">${escapeHtml(paper[F('category')])}</span>` : ''}
-                            ${paper[F('type')] ? `<span class="paper-tag type">${escapeHtml(paper[F('type')])}</span>` : ''}
-                            ${isLLMRelated ? `<span class="paper-tag llm">🤖 LLM</span>` : ''}
-                        </div>
-                        ${paper[F('link')] ? `<a class="paper-link" href="${escapeHtml(paper[F('link')])}" target="_blank"><i class="fa-solid fa-external-link-alt"></i> View Paper</a>` : '<div></div>'}
-                    </div>
-                </div>
-            `;
-            }).join('');
 
-            // Results info and empty state
-            const info = document.getElementById('resultsInfo');
-            const countEl = document.getElementById('resultsCount');
-            const empty = document.getElementById('emptyState');
-            countEl.textContent = String(filtered.length);
-            info.classList.remove('hidden');
-            if(filtered.length === 0) empty.classList.remove('hidden'); else empty.classList.add('hidden');
+            const list = document.getElementById('paperList');
+            if(filtered.length === 0) {
+                list.innerHTML = '<div class="empty-state"><i class="fa-solid fa-search"></i><p>No papers found matching your filters</p></div>';
+            } else {
+                list.innerHTML = filtered.map(paper => {
+                    const isLLM = normalizeBool(paper[F('is_llm_related')]) === 'true';
+                    const link = paper[F('link')] || '';
+                    const year = paper[F('year')] || 'N/A';
+                    const publisher = paper[F('publisher')] || 'N/A';
+                    const title = escapeHtml(paper[F('title')] || 'Untitled');
+                    const authors = escapeHtml(paper[F('authors')] || 'Unknown');
+                    const group = paper[F('group')] ? escapeHtml(paper[F('group')]) : '';
+                    const category = paper[F('category')] ? escapeHtml(paper[F('category')]) : '';
+                    const type = paper[F('type')] ? escapeHtml(paper[F('type')]) : '';
+
+                    return `
+                        <article class="paper-card">
+                            <div class="paper-header">
+                                <span class="paper-venue">${escapeHtml(publisher)} ${escapeHtml(year)}</span>
+                                ${isLLM ? '<span class="llm-badge">🤖 LLM</span>' : ''}
+                            </div>
+                            <h3 class="paper-title">${title}</h3>
+                            <p class="paper-authors">${authors}</p>
+                            <div class="paper-footer">
+                                <div class="paper-tags">
+                                    ${group ? `<span class="tag">${group}</span>` : ''}
+                                    ${category ? `<span class="tag">${category}</span>` : ''}
+                                    ${type ? `<span class="tag">${type}</span>` : ''}
+                                </div>
+                                ${link ? `<a href="${escapeHtml(link)}" target="_blank" class="paper-link">View Paper <i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : ''}
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+            }
+
+            updateStats();
         }
-        // Init: show all by default
+        // Initialize
         fetchCSV().then(papers => {
             if(!papers || !papers.length) throw new Error('No data');
             allPapers = papers;
-            // compute union of headers across all records to capture fields like 'group'
+
+            // Build header map
             const headerSet = new Set();
             papers.forEach(p => Object.keys(p).forEach(k => headerSet.add(k)));
             allHeaders = Array.from(headerSet);
-            // build field map
             fieldMap = {};
             allHeaders.forEach(h => { fieldMap[h.toLowerCase()] = h; });
+
+            // Update total stats
+            const statTotal = document.getElementById('statTotal');
+            const statVisible = document.getElementById('statVisible');
+            const statLLMShare = document.getElementById('statLLMShare');
+
+            if(statTotal) statTotal.textContent = papers.length;
+            if(statVisible) statVisible.textContent = papers.length;
+
+            const llmCount = papers.filter(p => normalizeBool(p[F('is_llm_related')]) === 'true').length;
+            const llmPercent = papers.length > 0 ? Math.round((llmCount / papers.length) * 100) : 0;
+            if(statLLMShare) statLLMShare.textContent = `${llmPercent}%`;
+
+            // Setup clear all button
+            const quickClearBtn = document.getElementById('quickClearBtn');
+            if(quickClearBtn) {
+                quickClearBtn.onclick = () => {
+                    const bar = document.getElementById('filterBar');
+                    bar.querySelectorAll('.filter-btn.active').forEach(btn => btn.classList.remove('active'));
+                    bar.querySelectorAll('select').forEach(sel => sel.selectedIndex = 0);
+                    bar.querySelectorAll('input').forEach(inp => inp.value = '');
+                    renderPapers();
+                };
+            }
+
             createFilters(papers, allHeaders);
             renderPapers();
-            updateFilterOptions();
         }).catch(err => {
             const list = document.getElementById('paperList');
-            list.innerHTML = '<div class="empty-state">Failed to load papers. Please check data files.</div>';
+            list.innerHTML = '<div class="empty-state"><p>Failed to load papers. Please check data files.</p></div>';
             console.error(err);
         });
