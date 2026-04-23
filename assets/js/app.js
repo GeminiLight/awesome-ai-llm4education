@@ -100,12 +100,15 @@
             // Add search box first
             const searchSection = document.createElement('div');
             searchSection.className = 'search-box';
-            searchSection.innerHTML = `
-                <i class="fa-solid fa-search"></i>
-                <input type="text" name="title" placeholder="Search papers by title, authors, or keywords..." />
-            `;
-            const searchInput = searchSection.querySelector('input');
+            const searchInput = document.createElement('input');
+            searchInput.type = 'text';
+            searchInput.name = 'title';
+            searchInput.placeholder = 'Search papers by title, authors, or keywords...';
             searchInput.oninput = debounce(() => { renderPapers(); updateStats(); }, 250);
+            const searchIcon = document.createElement('i');
+            searchIcon.className = 'fa-solid fa-search';
+            searchSection.appendChild(searchInput);
+            searchSection.appendChild(searchIcon);
             bar.appendChild(searchSection);
 
             // Create filter sections for button-based filters
@@ -144,20 +147,106 @@
                     if(values.length > 0) {
                         const section = document.createElement('div');
                         section.className = 'filter-group';
+
                         const label = document.createElement('label');
                         label.className = 'filter-label';
                         label.textContent = displayLabels[fieldName] || key;
-                        const sel = document.createElement('select');
-                        sel.name = key;
-                        sel.innerHTML = `<option value="">All</option>` + values.map(o => `<option value="${escapeHtml(o)}">${escapeHtml(o)}</option>`).join('');
-                        sel.onchange = () => { renderPapers(); updateStats(); };
                         section.appendChild(label);
-                        section.appendChild(sel);
+
+                        // Create custom select
+                        const customSelect = createCustomSelect(key, values, displayLabels[fieldName] || key);
+                        section.appendChild(customSelect);
                         bar.appendChild(section);
                     }
                 }
             });
         }
+
+        // Create custom select dropdown
+        function createCustomSelect(name, options, label) {
+            const container = document.createElement('div');
+            container.className = 'custom-select';
+            container.dataset.name = name;
+
+            const trigger = document.createElement('div');
+            trigger.className = 'select-trigger';
+            trigger.innerHTML = `
+                <span class="select-value">All ${label}</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            `;
+
+            const dropdown = document.createElement('div');
+            dropdown.className = 'select-dropdown';
+
+            // Add "All" option
+            const allOption = document.createElement('div');
+            allOption.className = 'select-option selected';
+            allOption.dataset.value = '';
+            allOption.textContent = `All ${label}`;
+            allOption.onclick = () => selectOption(container, '', `All ${label}`);
+            dropdown.appendChild(allOption);
+
+            // Add other options
+            options.forEach(opt => {
+                const option = document.createElement('div');
+                option.className = 'select-option';
+                option.dataset.value = opt;
+                option.textContent = opt;
+                option.onclick = () => selectOption(container, opt, opt);
+                dropdown.appendChild(option);
+            });
+
+            trigger.onclick = (e) => {
+                e.stopPropagation();
+                const wasActive = trigger.classList.contains('active');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.select-trigger.active').forEach(t => {
+                    t.classList.remove('active');
+                    t.nextElementSibling.classList.remove('active');
+                });
+
+                if(!wasActive) {
+                    trigger.classList.add('active');
+                    dropdown.classList.add('active');
+                }
+            };
+
+            container.appendChild(trigger);
+            container.appendChild(dropdown);
+
+            return container;
+        }
+
+        function selectOption(container, value, text) {
+            const trigger = container.querySelector('.select-trigger');
+            const valueSpan = trigger.querySelector('.select-value');
+            const dropdown = container.querySelector('.select-dropdown');
+
+            valueSpan.textContent = text;
+            container.dataset.value = value;
+
+            // Update selected state
+            dropdown.querySelectorAll('.select-option').forEach(opt => {
+                opt.classList.toggle('selected', opt.dataset.value === value);
+            });
+
+            // Close dropdown
+            trigger.classList.remove('active');
+            dropdown.classList.remove('active');
+
+            // Trigger filter update
+            renderPapers();
+            updateStats();
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.select-trigger.active').forEach(trigger => {
+                trigger.classList.remove('active');
+                trigger.nextElementSibling.classList.remove('active');
+            });
+        });
 
         // Create chip-based multi-select filter section
         function createChipFilterSection(container, actualFieldName, values, labelText) {
@@ -242,9 +331,13 @@
             const searchInput = bar.querySelector('input[name="title"]');
             if(searchInput && searchInput.value) filters.search = searchInput.value;
 
-            // Get select filters
-            const selects = bar.querySelectorAll('select');
-            selects.forEach(ctrl => { if(ctrl.value) filters[ctrl.name] = ctrl.value; });
+            // Get custom select filters
+            const customSelects = bar.querySelectorAll('.custom-select');
+            customSelects.forEach(select => {
+                const name = select.dataset.name;
+                const value = select.dataset.value;
+                if(value) filters[name] = value;
+            });
 
             // Get active filter buttons (multi-select)
             const activeButtons = bar.querySelectorAll('.filter-btn.active');
@@ -368,9 +461,29 @@
             if(quickClearBtn) {
                 quickClearBtn.onclick = () => {
                     const bar = document.getElementById('filterBar');
+
+                    // Clear filter buttons
                     bar.querySelectorAll('.filter-btn.active').forEach(btn => btn.classList.remove('active'));
-                    bar.querySelectorAll('select').forEach(sel => sel.selectedIndex = 0);
+
+                    // Clear custom selects
+                    bar.querySelectorAll('.custom-select').forEach(select => {
+                        const trigger = select.querySelector('.select-trigger');
+                        const valueSpan = trigger.querySelector('.select-value');
+                        const label = select.dataset.name;
+                        const displayLabel = displayLabels[label] || label;
+                        valueSpan.textContent = `All ${displayLabel}`;
+                        select.dataset.value = '';
+
+                        // Update selected state
+                        const dropdown = select.querySelector('.select-dropdown');
+                        dropdown.querySelectorAll('.select-option').forEach(opt => {
+                            opt.classList.toggle('selected', opt.dataset.value === '');
+                        });
+                    });
+
+                    // Clear search input
                     bar.querySelectorAll('input').forEach(inp => inp.value = '');
+
                     renderPapers();
                 };
             }
