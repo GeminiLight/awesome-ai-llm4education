@@ -127,31 +127,39 @@
             const result = [];
             let current = '';
             let inQuotes = false;
+            let fieldStarted = false;
 
             for (let i = 0; i < line.length; i++) {
                 const char = line[i];
                 const nextChar = line[i + 1];
 
-                if (char === '"') {
-                    if (inQuotes && nextChar === '"') {
+                if (char === '"' && !fieldStarted) {
+                    // Starting quote - enter quoted mode
+                    inQuotes = true;
+                    fieldStarted = true;
+                } else if (char === '"' && inQuotes) {
+                    if (nextChar === '"') {
                         // Escaped quote - add single quote
                         current += '"';
                         i++; // Skip next quote
                     } else {
-                        // Toggle quote state
-                        inQuotes = !inQuotes;
+                        // Ending quote - exit quoted mode
+                        inQuotes = false;
                     }
                 } else if (char === ',' && !inQuotes) {
                     // Field separator
-                    result.push(current.trim());
+                    result.push(current);
                     current = '';
-                } else {
+                    fieldStarted = false;
+                } else if (char !== ' ' || fieldStarted || inQuotes) {
+                    // Add character (skip leading spaces unless in quotes or field started)
                     current += char;
+                    if (char !== ' ') fieldStarted = true;
                 }
             }
 
             // Add last field
-            result.push(current.trim());
+            result.push(current);
 
             return result;
         }
