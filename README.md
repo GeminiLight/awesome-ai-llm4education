@@ -1629,6 +1629,12 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 
 
+## [AI Agent Infrastructure](#content)
+
+### [Agent Identity & Trust](#content)
+
+- [TWZRD Agent Intel](https://intel.twzrd.xyz) - Trust scoring MCP for AI agents on Solana. Enables educational AI pipelines to verify agent wallet identity and autonomy score before authorizing x402 micropayments for educational content and tutoring services. Free MCP: `{"mcpServers":{"twzrd-agent-intel":{"url":"https://intel.twzrd.xyz/mcp"}}}`
+
 ## [Dataset & Benchmark](#content)
 
 ### [Benchmark](#content)
