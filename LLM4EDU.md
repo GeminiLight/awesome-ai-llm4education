@@ -197,187 +197,217 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Tutoring System](#content)
 
-1. :sparkles: **PATS: Personality-Aware Teaching Strategies with Large Language Model Tutors**
+1. :sparkles: **Planning-Guided Tutoring with Assessment-Driven Memory for Pedagogical LLM Tutors**
+
+    *Zechen Li, Qiannan Zhu, Mei Wang, Jia Li, Hua Huang*
+
+    ACL, 2026. [`conference`](https://aclanthology.org/2026.acl-long.325/)
+
+2. :sparkles: **Beyond Pedagogical Principles: Multi-Horizon Preference Optimization for Efficient Socratic Tutoring**
+
+    *Xin Shi, Chao Zhang, Yifan Zhu, Xueqiao Zhang, Yawei Luo*
+
+    ACL, 2026. [`conference`](https://aclanthology.org/2026.acl-long.518/)
+
+3. :sparkles: **SHAPE: Unifying Safety, Helpfulness and Pedagogy for Educational LLMs**
+
+    *Sihang Zhao, Kangrui Yu, Youliang Yuan, Pinjia He, Hongyi Wen*
+
+    ACL, 2026. [`conference`](https://aclanthology.org/2026.acl-long.529/)
+
+4. :sparkles: **LearnerCoMPASS: Intelligent Tutoring System with Dynamic Cognitive Diagnosis and Multi-Model Path Planning**
+
+    *Ziji Sheng, Guiyao Tie, Weidong Wang, Pan Zhou, Daizong Liu*
+
+    ACL, 2026. [`conference`](https://aclanthology.org/2026.acl-long.408/)
+
+5. :sparkles: **CogNet-KG: Empowering Tutoring Dialogues with a Cognitively-Structured Knowledge Graph for STEM Learning**
+
+    *Ding Yu, Yu Lu, Tengju Li, Shasha Xiong, Shengquan Yu*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.639/)
+
+6. :sparkles: **PATS: Personality-Aware Teaching Strategies with Large Language Model Tutors**
 
     *Donya Rooein, Sankalan Pal Chowdhury, Mariia Eremeeva, Yuan Qin, Debora Nozza, Mrinmaya Sachan, Dirk Hovy*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.08402)
 
-2. :sparkles: **Rewarding How Models Think Pedagogically: Integrating Pedagogical Reasoning and Thinking Rewards for LLMs in Education**
+7. :sparkles: **Rewarding How Models Think Pedagogically: Integrating Pedagogical Reasoning and Thinking Rewards for LLMs in Education**
 
     *Unggi Lee, Jiyeong Bae, Jaehyeon Park, Haeun Park, Taejun Park, Younghoon Jeon, Sungmin Cho, Junbo Koh, Yeil Jeong, Gyeonggeon Lee*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.14560)
 
-3. :sparkles: **ClassAid: A Real-time Instructor-AI-Student Orchestration System for Classroom Programming Activities**
+8. :sparkles: **ClassAid: A Real-time Instructor-AI-Student Orchestration System for Classroom Programming Activities**
 
     *Gefei Zhang, Guodao Sun, Meng Xia, Ronghua Liang*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.06734)
 
-4. :sparkles: **Letting Tutor Personas Speak Up for LLMs: Learning Steering Vectors from Dialogue via Preference Optimization**
+9. :sparkles: **Letting Tutor Personas Speak Up for LLMs: Learning Steering Vectors from Dialogue via Preference Optimization**
 
     *Jaewook Lee, Alexander Scarlatos, Simon Woodhead, Andrew Lan*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.07639)
 
-5. :sparkles: **Designing AI Tutors for Interest-Based Learning: Insights from Human Instructors**
+10. :sparkles: **Designing AI Tutors for Interest-Based Learning: Insights from Human Instructors**
 
     *Abhishek Kulkarni, Sharon Lynn Chu*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.24036)
 
-6. :sparkles: **Evidence-Decision-Feedback: Theory-Driven Adaptive Scaffolding for LLM Agents**
+11. :sparkles: **Evidence-Decision-Feedback: Theory-Driven Adaptive Scaffolding for LLM Agents**
 
     *Clayton Cohn, Siyuan Guo, Surya Rayala, Hanchen David Wang, Naveeduddin Mohammed, Umesh Timalsina, Shruti Jain, Angela Eeds, Menton Deweese, Pamela J. Osborn Popp, Rebekah Stanton, Shakeera Walker, Meiyi Ma, Gautam Biswas*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.01415)
 
-7. :sparkles: **Arapai: An Offline-First AI Chatbot Architecture for Low-Connectivity Educational Environments**
+12. :sparkles: **Arapai: An Offline-First AI Chatbot Architecture for Low-Connectivity Educational Environments**
 
     *Joseph Walusimbi, Ann Move Oguti, Joshua Benjamin Ssentongo, Keith Ainebyona*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2603.03339)
 
-8. :sparkles: **SocialCoach: Personalized Social Skill Learning with RL-based Agentic Tutoring and Practice**
+13. :sparkles: **SocialCoach: Personalized Social Skill Learning with RL-based Agentic Tutoring and Practice**
 
     *Tianfu Wang, Max Xiong, Jianxun Lian, Hongyuan Zhu, Zhengyu Hu, Yuxuan Lei, Linxiao Gong, Xiaofang Li, Peiting Tsai, Nicholas Jing Yuan, Qi Zhang*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2606.04155)
 
-9. :sparkles: **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
+14. :sparkles: **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
 
     *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
 
     WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749), [`code`](https://github.com/GeminiLight/gen-mentor)
 
-10. :sparkles: **Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning**
+15. :sparkles: **Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning**
 
     *Xiangen Hu, Sheng Xu, Richard Tong, Art Graesser*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2501.06682)
 
-11. :sparkles: **From Problem-Solving to Teaching Problem-Solving: Aligning LLMs with Pedagogy using Reinforcement Learning**
+16. :sparkles: **From Problem-Solving to Teaching Problem-Solving: Aligning LLMs with Pedagogy using Reinforcement Learning**
 
     *David Dinucu-Jianu, Jakub Macina, Nico Daheim, Ido Hakimi, Iryna Gurevych, Mrinmaya Sachan*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.15607), [`code`](https://github.com/eth-lre/PedagogicalRL)
 
-12. :sparkles: **A Theory of Adaptive Scaffolding for LLM-Based Pedagogical Agents**
+17. :sparkles: **A Theory of Adaptive Scaffolding for LLM-Based Pedagogical Agents**
 
     *Clayton Cohn, Surya Rayala, Namrata Srivastava, Joyce Horn Fonteles, Shruti Jain, Xinying Luo, Divya Mereddy, Naveeduddin Mohammed, Gautam Biswas*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2508.01503)
 
-13. :sparkles: **Cultivating Helpful, Personalized, and Creative AI Tutors: A Framework for Pedagogical Alignment using Reinforcement Learning**
+18. :sparkles: **Cultivating Helpful, Personalized, and Creative AI Tutors: A Framework for Pedagogical Alignment using Reinforcement Learning**
 
     *Siyu Song, Wentao Liu, Ye Lu, Ruohua Zhang, Tao Liu, Jinze Lv, Xinyun Wang, Aimin Zhou, Fei Tan, Bo Jiang, Hao Hao*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2507.20335)
 
-14. :sparkles: **Exploring Conversational Design Choices in LLMs for Pedagogical Purposes: Socratic and Narrative Approaches for Improving Instructor's Teaching Practice**
+19. :sparkles: **Exploring Conversational Design Choices in LLMs for Pedagogical Purposes: Socratic and Narrative Approaches for Improving Instructor's Teaching Practice**
 
     *Si Chen, Isabel R. Molnar, Peiyu Li, Adam Acunin, Ting Hua, Alex Ambrose, Nitesh V. Chawla, Ronald Metoyer*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2501.04100)
 
-15. :sparkles: **An Experience Report on a Pedagogically Controlled Curriculum-Constrained AI Tutor for SE Education**
+20. :sparkles: **An Experience Report on a Pedagogically Controlled Curriculum-Constrained AI Tutor for SE Education**
 
     *Lucia Happe, Dominik Fuchs, Luca Huttner, Kai Marquardt, Anne Koziolek*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.11882)
 
-16. :sparkles: **IntelliCode: A Multi-Agent LLM Tutoring System with Centralized Learner Modeling**
+21. :sparkles: **IntelliCode: A Multi-Agent LLM Tutoring System with Centralized Learner Modeling**
 
     *Jones David, Shreya Ghosh*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.18669)
 
-17. :sparkles: **AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms**
+22. :sparkles: **AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms**
 
     *LearnLM Team, Eedi*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.23633)
 
-18. :sparkles: **AgentTutor: Empowering Personalized Learning with Multi-Turn Interactive Teaching in Intelligent Education Systems**
+23. :sparkles: **AgentTutor: Empowering Personalized Learning with Multi-Turn Interactive Teaching in Intelligent Education Systems**
 
     *Yuxin Liu, Zeqing Song, Jiong Lou, Chentao Wu, Jie Li*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2601.04219)
 
-19. :sparkles: **LeafTutor: An AI Agent for Programming Assignment Tutoring**
+24. :sparkles: **LeafTutor: An AI Agent for Programming Assignment Tutoring**
 
     *Madison Bochard, Tim Conser, Alyssa Duran, Lazaro Martull, Pu Tian, Yalong Wu*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2601.02375)
 
-20. :sparkles: **Evolutionary Reinforcement Learning based AI tutor for Socratic Interdisciplinary Instruction**
+25. :sparkles: **Evolutionary Reinforcement Learning based AI tutor for Socratic Interdisciplinary Instruction**
 
     *Mei Jiang, Haihai Shen, Zhuo Luo, Bingdong Li, Wenjing Hong, Ke Tang, Aimin Zhou*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.11930)
 
-21. :sparkles: **Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring**
+26. :sparkles: **Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring**
 
     *Saisab Sadhu, Ashim Dhor*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.22496)
 
-22. :sparkles: **Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling**
+27. :sparkles: **Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling**
 
     *Minju Park, Sojung Kim, Seunghyun Lee, Soonwoo Kwon, Kyuseok Kim*
 
     CHI-LBW, 2024. [`workshop`](https://arxiv.org/abs/2403.14071)
 
-23. :sparkles: **AutoTutor meets Large Language Models: A Language Model Tutor with Rich Pedagogy and Guardrails**
+28. :sparkles: **AutoTutor meets Large Language Models: A Language Model Tutor with Rich Pedagogy and Guardrails**
 
     *Sankalan Pal Chowdhury, Vilém Zouhar, Mrinmaya Sachan*
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2402.09216)
 
-24. :sparkles: **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
+29. :sparkles: **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
 
     *Jiayu Liu, Zhenya Huang, Tong Xiao, Jing Sha, Jinze Wu, Qi Liu, Shijin Wang, Enhong Chen*
 
     NeurIPS, 2024. [`conference`](https://neurips.cc/virtual/2024/poster/93477)
 
-25. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
+30. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
 
     *Zhengyuan Liu, Stella Xin Yin, Geyu Lin, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-26. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
+31. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
 
     *Wei-Yu Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-27. :sparkles: **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
+32. :sparkles: **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
 
     *Zhengyuan Liu, Stella Xin Yin, Carolyn Lee, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.03429)
 
-28. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
+33. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
 
     *Glen Smith, Adit Gupta, Christopher MacLellan*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07883)
 
-29. :sparkles: **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
+34. :sparkles: **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
 
     *Yann Hicke, Anmol Agarwal, Qianou Ma, Paul Denny*
 
     NeurIPS - Workshop on Generative AI for Education (GAIED), 2023. [`workshop`](https://arxiv.org/abs/2311.02775)
 
-30. :sparkles: **Empowering Private Tutoring by Chaining Large Language Models**
+35. :sparkles: **Empowering Private Tutoring by Chaining Large Language Models**
 
     *Yulin Chen, Ning Ding, Hai-Tao Zheng, Zhiyuan Liu, Maosong Sun, Bowen Zhou*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2309.08112)
 
-31. :sparkles: **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
+36. :sparkles: **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
 
     *Chenxi Dong*
 
@@ -433,67 +463,73 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Student Simulation & Profiling](#content)
 
-1. :sparkles: **Simulated Students in Tutoring Dialogues: Substance or Illusion?**
+1. :sparkles: **One LLM Does Not Simulate All Students: Ability-Aware Student Simulation via Cognitive Diagnosis Guided LLM Assignment**
+
+    *Huixing Que, Qi Liu, Weibo Gao, Zhenya Huang*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.302/)
+
+2. :sparkles: **Simulated Students in Tutoring Dialogues: Substance or Illusion?**
 
     *Alexander Scarlatos, Jaewook Lee, Simon Woodhead, Andrew Lan*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.04025)
 
-2. :sparkles: **Towards Valid Student Simulation with Large Language Models**
+3. :sparkles: **Towards Valid Student Simulation with Large Language Models**
 
     *Zhihao Yuan, Yunze Xiao, Ming Li, Weihao Xuan, Richard Tong, Mona Diab, Tom Mitchell*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.05473)
 
-3. :sparkles: **KASER: Knowledge-Aligned Student Error Simulator for Open-Ended Coding Tasks**
+4. :sparkles: **KASER: Knowledge-Aligned Student Error Simulator for Open-Ended Coding Tasks**
 
     *Zhangqi Duan, Nigel Fernandez, Andrew Lan*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.06633)
 
-4. :sparkles: **Agent4Edu: Generating Learner Response Data by Generative Agents for Intelligent Education Systems**
+5. :sparkles: **Agent4Edu: Generating Learner Response Data by Generative Agents for Intelligent Education Systems**
 
     *Weibo Gao, Qi Liu, Linan Yue, Fangzhou Yao, Rui Lv, Zheng Zhang, Hao Wang, Zhenya Huang*
 
     AAAI, 2025. [`conference`](https://arxiv.org/abs/2501.10332)
 
-5. :sparkles: **Classroom Simulacra: Building Contextual Student Generative Agents in Online Education for Learning Behavioral Simulation**
+6. :sparkles: **Classroom Simulacra: Building Contextual Student Generative Agents in Online Education for Learning Behavioral Simulation**
 
     *Songlin Xu, Hao-Ning Wen, Hongyi Pan, Dallas Dominguez, Dong yin Hu, Xinyu Zhang*
 
     CHI, 2025. [`conference`](https://arxiv.org/abs/2502.02780)
 
-6. :sparkles: **Evolution in Simulation: AI-Agent School with Dual Memory for High-Fidelity Educational Dynamics**
+7. :sparkles: **Evolution in Simulation: AI-Agent School with Dual Memory for High-Fidelity Educational Dynamics**
 
     *Sheng Jin, Haoming Wang, Zhiqi Gao, Yongbo Yang, Bao Chunjia, Chengliang Wang*
 
     EMNLP Findings, 2025. [`conference`](https://arxiv.org/abs/2510.11290)
 
-7. :sparkles: **CoderAgent: Simulating Student Behavior for Personalized Programming Learning with Large Language Models**
+8. :sparkles: **CoderAgent: Simulating Student Behavior for Personalized Programming Learning with Large Language Models**
 
     *Yi Zhan, Qi Liu, Weibo Gao, Zheng Zhang, Tianfu Wang, Shuanghong Shen, Junyu Lu, Zhenya Huang*
 
     IJCAI, 2025. [`conference`](https://arxiv.org/abs/2505.20642)
 
-8. :sparkles: **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
+9. :sparkles: **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
 
     *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
 
     WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749)
 
-9. :sparkles: **FOKE: A Personalized and Explainable Education Framework Integrating Foundation Models, Knowledge Graphs, and Prompt Engineering**
+10. :sparkles: **FOKE: A Personalized and Explainable Education Framework Integrating Foundation Models, Knowledge Graphs, and Prompt Engineering**
 
     *Silan Hu, Xiaoning Wang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2405.03734)
 
-10. :sparkles: **EduAgent: Generative Student Agents in Learning**
+11. :sparkles: **EduAgent: Generative Student Agents in Learning**
 
     *Songlin Xu, Xinyu Zhang, Lianhui Qin*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07963)
 
-11. :sparkles: **Contextualizing Problems to Student Interests at Scale in Intelligent Tutoring System Using Large Language Models**
+12. :sparkles: **Contextualizing Problems to Student Interests at Scale in Intelligent Tutoring System Using Large Language Models**
 
     *Gautam Yadav, Ying-Jui Tseng, Xiaolin Ni*
 
@@ -505,61 +541,85 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Automated Grading](#content)
 
-1. :sparkles: **Automated Feedback Generation for Undergraduate Mathematics: Development and Evaluation of an AI Teaching Assistant**
+1. :sparkles: **EduMARS: Can Vision-Language Models Grade Like Teachers? Benchmarking Multimodal, Rubric-Based Assessment on Chinese K-12 Answers**
+
+    *Xuan Zhao, Jiashun Chen, Wanting xu, Huiyuan Yan, Chaowei Fang, Xing Wei*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.466/)
+
+2. :sparkles: **FeedEval: Pedagogically Aligned Evaluation of LLM-Generated Essay Feedback**
+
+    *Seongyeub Chu, Jongwoo Kim, Munyong Yi*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.615/)
+
+3. :sparkles: **PsyScore: A Psychometrically-Aware Framework for Trait-Adaptive Essay Scoring and ZPD-Scaffolded Feedback**
+
+    *Wei Xia, Jin Wu, Haoran Shi, Xiangyu Wang, Chanjin Zheng*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.384/)
+
+4. :sparkles: **From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment**
+
+    *Ivo Bueno, Babette Bühler, Philipp Stark, Tim Fütterer, Ulrich Trautwein, Dorottya Demszky, Heather Hill, Enkelejda Kasneci*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.375/)
+
+5. :sparkles: **Automated Feedback Generation for Undergraduate Mathematics: Development and Evaluation of an AI Teaching Assistant**
 
     *Aron Gohr, Marie-Amelie Lawn, Kevin Gao, Inigo Serjeant, Stephen Heslip*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.03458)
 
-2. :sparkles: **Machine-Assisted Grading of Nationwide School-Leaving Essay Exams with LLMs and Statistical NLP**
+6. :sparkles: **Machine-Assisted Grading of Nationwide School-Leaving Essay Exams with LLMs and Statistical NLP**
 
     *Andres Karjus, Kais Allkivi, Silvia Maine, Katarin Leppik, Krister Kruusmaa, Merilin Aruvee*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.16314)
 
-3. :sparkles: **How Uncertain Is the Grade? A Benchmark of Uncertainty Metrics for LLM-Based Automatic Assessment**
+7. :sparkles: **How Uncertain Is the Grade? A Benchmark of Uncertainty Metrics for LLM-Based Automatic Assessment**
 
     *Hang Li, Kaiqi Yang, Xianxuan Long, Fedor Filippov, Yucheng Chu, Yasemin Copur-Gencturk, Peng He, Cory Miller, Namsoo Shin, Joseph Krajcik, Hui Liu, Jiliang Tang*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.16039)
 
-4. :sparkles: **Conversational Education at Scale: A Multi-LLM Agent Workflow for Procedural Learning and Pedagogic Quality Assessment**
+8. :sparkles: **Conversational Education at Scale: A Multi-LLM Agent Workflow for Procedural Learning and Pedagogic Quality Assessment**
 
     *Jiahuan Pei, Fanghua Ye, Xin Sun, Wentao Deng, Koen Hindriks, Junxiao Wang*
 
     EMNLP Findings, 2025. [`conference`](https://arxiv.org/pdf/2507.05528)
 
-5. :sparkles: **How well do Large Language Models Recognize Instructional Moves? Establishing Baselines for Foundation Models in Educational Discourse**
+9. :sparkles: **How well do Large Language Models Recognize Instructional Moves? Establishing Baselines for Foundation Models in Educational Discourse**
 
     *Kirk Vanacore, Rene F. Kizilcec*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.19903)
 
-6. :sparkles: **Large Language Models Approach Expert Pedagogical Quality in Math Tutoring but Differ in Instructional and Linguistic Profiles**
+10. :sparkles: **Large Language Models Approach Expert Pedagogical Quality in Math Tutoring but Differ in Instructional and Linguistic Profiles**
 
     *Ramatu Oiza Abdulsalam, Segun Aroyehun*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.20780)
 
-7. :sparkles: **Toward Trustworthy Difficulty Assessments: Large Language Models as Judges in Programming and Synthetic Tasks**
+11. :sparkles: **Toward Trustworthy Difficulty Assessments: Large Language Models as Judges in Programming and Synthetic Tasks**
 
     *H. M. Shadman Tabib, Jaber Ahmed Deedar*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.18597)
 
-8. :sparkles: **Large Language Models As MOOCs Graders**
+12. :sparkles: **Large Language Models As MOOCs Graders**
 
     *Shahriar Golchin, Nikhil Garuda, Christopher Impey, Matthew Wenger*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2402.03776)
 
-9. :sparkles: **From Automation to Augmentation: Large Language Models Elevating Essay Scoring Landscape**
+13. :sparkles: **From Automation to Augmentation: Large Language Models Elevating Essay Scoring Landscape**
 
     *Changrong Xiao, Wenxing Ma, Sean Xin Xu, Kunpeng Zhang, Yufang Wang, Qi Fu*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/pdf/2401.06431)
 
-10. :sparkles: **Large Language Models as Partners in Student Essay Evaluation**
+14. :sparkles: **Large Language Models as Partners in Student Essay Evaluation**
 
     *Toru Ishida, Tongxi Liu, Hailong Wang, William K. Cheung*
 
@@ -587,25 +647,31 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Knowledge Tracing](#content)
 
-1. :sparkles: **A Training-Free Large Reasoning Model-based Knowledge Tracing Framework for Unified Prediction and Prescription**
+1. :sparkles: **RAG-KT: Cross-platform Explainable Knowledge Tracing with Multi-view Fusion Retrieval Generation**
+
+    *Zhiyi Duan, Hongyu Yuan, Rui Liu*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.257/)
+
+2. :sparkles: **A Training-Free Large Reasoning Model-based Knowledge Tracing Framework for Unified Prediction and Prescription**
 
     *Unggi Lee, Joo Young Kim, Ran Ju, Minyoung Jung, Jeyeon Eo*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.01708)
 
-2. :sparkles: **Towards LLM-Empowered Knowledge Tracing via LLM-Student Hierarchical Behavior Alignment in Hyperbolic Space**
+3. :sparkles: **Towards LLM-Empowered Knowledge Tracing via LLM-Student Hierarchical Behavior Alignment in Hyperbolic Space**
 
     *Xingcheng Fu, Shengpeng Wang, Yisen Gao, Xianxian Li, Chunpei Li, Qingyun Sun, Dongran Yu*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.22879)
 
-3. :sparkles: **Problems With Large Language Models for Learner Modelling: Why LLMs Alone Fall Short for Responsible Tutoring in K--12 Education**
+4. :sparkles: **Problems With Large Language Models for Learner Modelling: Why LLMs Alone Fall Short for Responsible Tutoring in K--12 Education**
 
     *Danial Hooshyar, Yeongwook Yang, Gustav Sir, Tommi Karkkainen, Raija Hamalainen, Mutlu Cukurova, Roger Azevedo*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.23036)
 
-4. :sparkles: **PICKT: Practical Interlinked Concept Knowledge Tracing for Personalized Learning using Knowledge Map Concept Relations**
+5. :sparkles: **PICKT: Practical Interlinked Concept Knowledge Tracing for Personalized Learning using Knowledge Map Concept Relations**
 
     *Wonbeen Lee, Channyoung Lee, Junho Sohn, Hansam Cho*
 
@@ -617,61 +683,67 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Content Generation](#content)
 
-1. :sparkles: **ConvoLearn: A Dataset of Constructivist Tutor-Student Dialogue**
+1. :sparkles: **KCVR: Knowledge-Centric Video Reconstruction for Structured Pedagogical Summarization via Dynamic Graph Planning**
+
+    *Jingjiang Liu, Jia Zhu, Hanghui Guo, Weijie Shi, Yue Cui, Xiaokang Jin, Yilin Wang, Qingyu Niu, Jiawei Shen, Guoqing Ma, Yidan Liang, Shimin Di, Jiajie Xu*
+
+    ACL, 2026. [`conference`](https://aclanthology.org/2026.acl-long.414/)
+
+2. :sparkles: **ConvoLearn: A Dataset of Constructivist Tutor-Student Dialogue**
 
     *Mayank Sharma, Roy Pea, Hari Subramonyam*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.08950)
 
-2. :sparkles: **The Reel Deal: Designing and Evaluating LLM-Generated Short-Form Educational Videos**
+3. :sparkles: **The Reel Deal: Designing and Evaluating LLM-Generated Short-Form Educational Videos**
 
     *Lazaros Stavrinou, Argyris Constantinides, Marios Belk, Vasos Vassiliou, Fotis Liarokapis, Marios Constantinides*
 
     CHIGreece, 2025. [`conference`](https://arxiv.org/abs/2501.04101)
 
-3. :sparkles: **HealthCards: Exploring Text-to-Image Generation as Visual Aids for Healthcare Knowledge Democratizing and Education**
+4. :sparkles: **HealthCards: Exploring Text-to-Image Generation as Visual Aids for Healthcare Knowledge Democratizing and Education**
 
     *Qian Wu, Zheyao Gao, Longfei Gou, Yifan Hou, Qi Dou*
 
     EMNLP, 2025. [`conference`](https://aclanthology.org/2025.emnlp-main.1401/)
 
-4. :sparkles: **Classic4Children: Adapting Chinese Literary Classics for Children with Large Language Model**
+5. :sparkles: **Classic4Children: Adapting Chinese Literary Classics for Children with Large Language Model**
 
     *Jiali Chen, Xusen Hei, Yuqi Xue, Zihan Wu, Jiayuan Xie, Yi Cai*
 
     NAACL Findings, 2025. [`conference`](https://arxiv.org/abs/2502.01090)
 
-5. :sparkles: **COGENT: A Curriculum-oriented Framework for Generating Grade-appropriate Educational Content**
+6. :sparkles: **COGENT: A Curriculum-oriented Framework for Generating Grade-appropriate Educational Content**
 
     *Zhengyuan Liu, Stella Xin Yin, Dion Hoe-Lian Goh, Nancy F. Chen*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2409.15024)
 
-6. :sparkles: **Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models**
+7. :sparkles: **Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models**
 
     *Yijia Shao, Yucheng Jiang, Theodore A. Kanell, Peter Xu, Omar Khattab, Monica S. Lam*
 
     NAACL, 2024. [`conference`](https://arxiv.org/abs/2402.14207)
 
-7. :sparkles: **Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency**
+8. :sparkles: **Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency**
 
     *Eric Zelikman, Wanjing Anya Ma, Jasmine E. Tran, Diyi Yang, Jason D. Yeatman, Nick Haber*
 
     EMNLP, 2023. [`conference`](https://arxiv.org/abs/2310.06837)
 
-8. :sparkles: **On the Automatic Generation and Simplification of Children's Stories**
+9. :sparkles: **On the Automatic Generation and Simplification of Children's Stories**
 
     *Maria Valentini, Jennifer Weber, Jesus Salcido, Téa Wright, Eliana Colunga, Katharina Kann*
 
     EMNLP, 2023. [`conference`](https://arxiv.org/abs/2310.18502)
 
-9. :sparkles: **FairytaleCQA: Integrating a Commonsense Knowledge Graph into Children's Storybook Narratives**
+10. :sparkles: **FairytaleCQA: Integrating a Commonsense Knowledge Graph into Children's Storybook Narratives**
 
     *Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuanzhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Dakuo Wang, Yuling Su*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2311.09756)
 
-10. :sparkles: **Robosourcing Educational Resources – Leveraging Large Language Models for Learnersourcing**
+11. :sparkles: **Robosourcing Educational Resources – Leveraging Large Language Models for Learnersourcing**
 
     *Paul Denny, Sami Sarsa, Arto Hellas, Juho Leinonen*
 
@@ -755,43 +827,49 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Aided Teaching](#content)
 
-1. :sparkles: **Co-designing Large Language Model Tools for Project-Based Learning with K-12 Educators**
+1. :sparkles: **Double-Edged Sword or Sharp Tool? Designing and Evaluating Triadic LLM-Teacher Collaboration for K-12 Writing at Scale**
+
+    *Canran WANG, Yuwen Yang, Zhen Wang, Ming MA, Ding Yu, Chentai Wang, Keman Huang, Xiaoyong Du*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.597/)
+
+2. :sparkles: **Co-designing Large Language Model Tools for Project-Based Learning with K-12 Educators**
 
     *Prerna Ravi, John Masla, Gisella Kakoti, Grace Lin, Emma Anderson, Matt Taylor, Anastasia Ostrowski, Cynthia Breazeal, Eric Klopfer, Hal Abelson*
 
     CHI, 2025. [`conference`](https://arxiv.org/abs/2502.09799)
 
-2. :sparkles: **LLMs are Biased Teachers: Evaluating LLM Bias in Personalized Education**
+3. :sparkles: **LLMs are Biased Teachers: Evaluating LLM Bias in Personalized Education**
 
     *Iain Weissburg, Sathvika Anand, Sharon Levy, Haewon Jeong*
 
     NAACL Findings, 2025. [`conference`](https://aclanthology.org/2025.findings-naacl.314/)
 
-3. :sparkles: **A Humanoid Social Robot as a Teaching Assistant in the Classroom**
+4. :sparkles: **A Humanoid Social Robot as a Teaching Assistant in the Classroom**
 
     *Thomas Sievers*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2508.05646)
 
-4. :sparkles: **Supporting Self-Reflection at Scale with Large Language Models: Insights from Randomized Field Experiments in Classrooms**
+5. :sparkles: **Supporting Self-Reflection at Scale with Large Language Models: Insights from Randomized Field Experiments in Classrooms**
 
     *Harsh Kumar, Ruiwei Xiao, Benjamin Lawson, Ilya Musabirov, Jiakai Shi, Xinyuan Wang, Huayin Luo, Joseph Jay Williams, Anna Rafferty, John Stamper, Michael Liut*
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2406.07571)
 
-5. :sparkles: **The Promises and Pitfalls of Using Language Models to Measure Instruction Quality in Education**
+6. :sparkles: **The Promises and Pitfalls of Using Language Models to Measure Instruction Quality in Education**
 
     *Paiheng Xu, Jing Liu, Nathan Jones, Julie Cohen, Wei Ai*
 
     NAACL, 2024. [`conference`](https://arxiv.org/abs/2404.02444)
 
-6. :sparkles: **MathVC: An LLM-Simulated Multi-Character Virtual Classroom for Mathematics Education**
+7. :sparkles: **MathVC: An LLM-Simulated Multi-Character Virtual Classroom for Mathematics Education**
 
     *Murong Yue, Wijdane Mifdal, Yixuan Zhang, Jennifer Suh, Ziyu Yao*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06711)
 
-7. :sparkles: **Simulating Classroom Education with LLM-Empowered Agents**
+8. :sparkles: **Simulating Classroom Education with LLM-Empowered Agents**
 
     *Zheyuan Zhang, Daniel Zhang-Li, Jifan Yu, Linlu Gong, Jinchang Zhou, Zhanxin Hao, Jianxiao Jiang, Jie Cao, Huiqin Liu, Zhiyuan Liu, Lei Hou, Juanzi Li*
 
@@ -811,79 +889,85 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Computer Science](#content)
 
-1. :sparkles: **Relying on LLMs: Student Practices and Instructor Norms are Changing in Computer Science Education**
+1. :sparkles: **ALGOGEN: Tool-Generated Verifiable Traces for Reliable Algorithm Visualization**
+
+    *Liaokunpeng, Yuexiao Ma, Yisheng Lin, Hualin Zeng, Xiawu Zheng, Rongrong Ji*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.156/)
+
+2. :sparkles: **Relying on LLMs: Student Practices and Instructor Norms are Changing in Computer Science Education**
 
     *Xinrui Lin, Heyan Huang, Shumin Shi, John Vines*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.05506)
 
-2. :sparkles: **Learning by Teaching: Engaging Students as Instructors of Large Language Models in Computer Science Education**
+3. :sparkles: **Learning by Teaching: Engaging Students as Instructors of Large Language Models in Computer Science Education**
 
     *Xinming Yang, Haasil Pujara, Jun Li*
 
     COLM, 2025. [`conference`](https://arxiv.org/abs/2508.05979)
 
-3. :sparkles: **Partnering with AI: A Pedagogical Feedback System for LLM Integration into Programming Education**
+4. :sparkles: **Partnering with AI: A Pedagogical Feedback System for LLM Integration into Programming Education**
 
     *Niklas Scholz, Manh Hung Nguyen, Adish Singla, Tomohiro Nagashima*
 
     ECTEL, 2025. [`conference`](https://arxiv.org/pdf/2507.00406)
 
-4. :sparkles: **When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms**
+5. :sparkles: **When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms**
 
     *Junho Myung, Hyunseung Lim, Hana Oh, Hyoungwook Jin, Nayeon Kang, So-Yeon Ahn, Hwajung Hong, Alice Oh, Juho Kim*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.05506)
 
-5. :sparkles: **CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs**
+6. :sparkles: **CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs**
 
     *Majeed Kazemitabaar, Runlong Ye, Xiaoning Wang, Austin Z. Henley, Paul Denny, Michelle Craig, Tovi Grossman*
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2401.11314)
 
-6. :sparkles: **Interactions with Prompt Problems: A New Way to Teach Programming with Large Language Models**
+7. :sparkles: **Interactions with Prompt Problems: A New Way to Teach Programming with Large Language Models**
 
     *James Prather, Paul Denny, Juho Leinonen, David H. Smith IV, Brent N. Reeves, Stephen MacNeil, Brett A. Becker, Andrew Luxton-Reilly, Thezyrie Amarouche, Bailey Kimmel*
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2401.10759)
 
-7. :sparkles: **ChatScratch: An AI-Augmented System Toward Autonomous Visual Programming Learning for Children Aged 6-12**
+8. :sparkles: **ChatScratch: An AI-Augmented System Toward Autonomous Visual Programming Learning for Children Aged 6-12**
 
     *Liuqing Chen, Shuhong Xiao, Yunnong Chen, Ruoyu Wu, Yaxuan Song, Lingyun Sun*
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2402.04975)
 
-8. :sparkles: **Exploring How Multiple Levels of GPT-Generated Programming Hints Support or Disappoint Novices**
+9. :sparkles: **Exploring How Multiple Levels of GPT-Generated Programming Hints Support or Disappoint Novices**
 
     *Ruiwei Xiao, Xinying Hou, John Stamper*
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2404.02213)
 
-9. :sparkles: **AI-Tutoring in Software Engineering Education**
+10. :sparkles: **AI-Tutoring in Software Engineering Education**
 
     *Eduard Frankford, Clemens Sauerwein, Patrick Bassner, Stephan Krusche, Ruth Breu*
 
     ICSE, 2024. [`conference`](https://arxiv.org/abs/2404.02548)
 
-10. :sparkles: **How Far Are We? The Triumphs and Trials of Generative AI in Learning Software Engineering**
+11. :sparkles: **How Far Are We? The Triumphs and Trials of Generative AI in Learning Software Engineering**
 
     *Rudrajit Choudhuri, Dylan Liu, Igor Steinmacher, Marco Gerosa, Anita Sarma*
 
     ICSE, 2024. [`conference`](https://arxiv.org/abs/2312.11719)
 
-11. :sparkles: **Evaluating the Effectiveness of LLMs in Introductory Computer Science Education: A Semester-Long Field Study**
+12. :sparkles: **Evaluating the Effectiveness of LLMs in Introductory Computer Science Education: A Semester-Long Field Study**
 
     *Wenhan Lyu, Yimeng Wang, Tingting (Rachel)Chung, Yifan Sun, Yixuan Zhang*
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2404.13414)
 
-12. :sparkles: **Accelerating Scientific Discovery with Generative Knowledge Extraction, Graph-Based Representation, and Multimodal Intelligent Graph Reasoning**
+13. :sparkles: **Accelerating Scientific Discovery with Generative Knowledge Extraction, Graph-Based Representation, and Multimodal Intelligent Graph Reasoning**
 
     *Markus J. Buehler*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2403.11996)
 
-13. :sparkles: **Studying the effect of AI Code Generators on Supporting Novice Learners in Introductory Programming**
+14. :sparkles: **Studying the effect of AI Code Generators on Supporting Novice Learners in Introductory Programming**
 
     *Majeed Kazemitabaar, Justin Chow, Carl Ka To Ma, Barbara J. Ericson, David Weintrop, Tovi Grossman*
 
@@ -913,25 +997,55 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Math](#content)
 
-1. :sparkles: **MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors**
+1. :sparkles: **MathFlow: Enhancing the Perceptual Flow of MLLMs for Visual Mathematical Problems**
+
+    *Shuhang Chen, Hangjie Yuan, Yunqiu Xu, Pengwei Liu, Tao Feng, Jun Cen, Zeying Huang, Yi Yang*
+
+    ACL, 2026. [`conference`](https://aclanthology.org/2026.acl-long.43/)
+
+2. :sparkles: **MathMixup: Boosting LLM Mathematical Reasoning with Difficulty-Controllable Data Synthesis and Curriculum Learning**
+
+    *Xuchen Li, Jing Chen, Xuzhao Li, Hao Liang, Xiaohuan Zhou, Taifeng Wang, Wentao Zhang*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.118/)
+
+3. :sparkles: **Bridging the Culture Gap: A Framework for LLM-Driven Socio-Cultural Localization of Math Word Problems in Low-Resource Languages**
+
+    *Israel Abebe Azime, Tadesse Destaw Belay, Dietrich Klakow, Philipp Slusallek, Anshuman Chhabra*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.42/)
+
+4. :sparkles: **TabularMath: Understanding Math Reasoning over Tables with Large Language Models**
+
+    *Shi-Yu Tian, Zhi Zhou, Wei Dong, Kun-Yang Yu, Ming Yang, Zi-Jian Cheng, Lan-Zhe Guo, Yu-Feng Li*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.759/)
+
+5. :sparkles: **EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions**
+
+    *Weiyu Sun, Liangliang Chen, Yongnuo Cai, Huiru Xie, Yi Zeng, Ying Zhang*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.751/)
+
+6. :sparkles: **MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors**
 
     *Jakub Macina, Nico Daheim, Ido Hakimi, Manu Kapur, Iryna Gurevych, Mrinmaya Sachan*
 
     EMNLP, 2025. [`conference`](https://arxiv.org/abs/2502.18940)
 
-2. :sparkles: **MathEDU: Towards Adaptive Feedback for Student Mathematical Problem-Solving**
+7. :sparkles: **MathEDU: Towards Adaptive Feedback for Student Mathematical Problem-Solving**
 
     *Wei-Ling Hsu, Yu-Chien Tang, An-Zi Yen*
 
     arXiv, 2025. [`conference`](https://arxiv.org/pdf/2505.18056)
 
-3. :sparkles: **One Size doesn’t Fit All: A Personalized Conversational Tutoring Agent for Mathematics Instruction**
+8. :sparkles: **One Size doesn’t Fit All: A Personalized Conversational Tutoring Agent for Mathematics Instruction**
 
     *Ben Liu, Jihan Zhang, Fangquan Lin, Xu Jia, Min Peng*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2502.12633)
 
-4. :sparkles: **Mathemyths: Leveraging Large Language Models to Teach Mathematical Language through Child-AI Co-Creative Storytelling**
+9. :sparkles: **Mathemyths: Leveraging Large Language Models to Teach Mathematical Language through Child-AI Co-Creative Storytelling**
 
     *Chao Zhang, Xuechen Liu, Katherine Ziska, Soobin Jeon, Chi-Lin Yu, Ying Xu*
 
@@ -939,25 +1053,37 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Medicine](#content)
 
-1. :sparkles: **CaseMaster: Designing and Evaluating a Probe for Oral Case Presentation Training with LLM Assistance**
+1. :sparkles: **PUPPET: Neural-Symbolic Standardized Patients for Mental Health**
+
+    *Chen Xu, Yu ji, Zhenyu Lv, Yang Yi, Yizhe Yang, Luyao Ji, Chaoyi Chen, Xianyang Wang, Tian Lan, Zhihua Wang, Juan Wang, Xunde Dong, Fuze Tian, Qunxi Dong, Bin Hu*
+
+    ACL, 2026. [`conference`](https://aclanthology.org/2026.acl-long.121/)
+
+2. :sparkles: **DentalGPT: Incentivizing Multimodal Reasoning in Dentistry**
+
+    *Zhenyang Cai, Jiaming Zhang, Junjie Zhao, Ziyi Zeng, Yanchao Li, Liang Jingyi, Junying Chen, Yunjin Yang, Jiajun You, Shuzhi Deng, Xieruiqiii, Yuanting Chen, Xiangyi Feng, Jianquan Li, Liangyi Chen, Junwen Wang, Shan Jiang, Benyou Wang*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.135/)
+
+3. :sparkles: **CaseMaster: Designing and Evaluating a Probe for Oral Case Presentation Training with LLM Assistance**
 
     *Yang Ouyang, Yuansong Xu, Chang Jiang, Yifan Jin, Haoran Jiang, Quan Li*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.19332)
 
-2. :sparkles: **DischargeSim: A Simulation Benchmark for Educational Doctor–Patient Communication at Discharge**
+4. :sparkles: **DischargeSim: A Simulation Benchmark for Educational Doctor–Patient Communication at Discharge**
 
     *Zonghai Yao, Michael Sun, Won Seok Jang, SUNJAE KWON, Soie Kwon, Hong Yu*
 
     EMNLP, 2025. [`conference`](https://arxiv.org/abs/2509.07188)
 
-3. :sparkles: **HealthCards: Exploring Text-to-Image Generation as Visual Aids for Healthcare Knowledge Democratizing and Education**
+5. :sparkles: **HealthCards: Exploring Text-to-Image Generation as Visual Aids for Healthcare Knowledge Democratizing and Education**
 
     *Qian Wu, Zheyao Gao, Longfei Gou, Yifan Hou, Qi Dou*
 
     EMNLP, 2025. [`conference`](https://aclanthology.org/2025.emnlp-main.1401/)
 
-4. :sparkles: **Leveraging Large Language Model as Simulated Patients for Clinical Education**
+6. :sparkles: **Leveraging Large Language Model as Simulated Patients for Clinical Education**
 
     *Yanzeng Li, Cheng Zeng, Jialun Zhong, Ruoyu Zhang, Minhao Zhang, Lei Zou*
 
@@ -965,13 +1091,19 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Social Good](#content)
 
-1. :sparkles: **PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions**
+1. :sparkles: **GuideDog: A Real-World Egocentric Multimodal Dataset for Blind and Low-Vision Accessibility-Aware Guidance**
+
+    *Junhyeok Kim, Jaewoo Park, Junhee Park, Sangeyl Lee, Jiwan Chung, Jisung Kim, Ji Hoon Joung, Youngjae Yu*
+
+    ACL, 2026. [`conference`](https://aclanthology.org/2026.acl-long.251/)
+
+2. :sparkles: **PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions**
 
     *Daeun Kyung, Hyunseung Chung, Seongsu Bae, Jiho Kim, Jae Ho Sohn, Taerim Kim, Soo Kyung Kim, Edward Choi*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.17818)
 
-2. :sparkles: **LLM-Powered AI Tutors with Personas for d/Deaf and Hard-of-Hearing Online Learners**
+3. :sparkles: **LLM-Powered AI Tutors with Personas for d/Deaf and Hard-of-Hearing Online Learners**
 
     *Haocong Cheng, Si Chen, Christopher Perdriau, Yun Huang*
 
@@ -983,61 +1115,79 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Benchmark](#content)
 
-1. :sparkles: **Visual Reasoning Benchmark: Evaluating Multimodal LLMs on Classroom-Authentic Visual Problems from Primary Education**
+1. :sparkles: **AMO-Bench: Large Language Models Still Struggle in High School Math Competitions**
+
+    *Junlin Liu, Shengnan An, Shuang Zhou, Dan Ma, Yehao Lin, Xinxuan Lv, Xuanlin Wang, Xiaoyu Li, Ziwen Wang, Xuezhi Cao, Xunliang Cai*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.101/)
+
+2. :sparkles: **PedagogyBench: A Cognitive-Driven Benchmark for Multimodal Instructional Video Understanding**
+
+    *Xiaokang Jin, Jia Zhu, Jingjiang Liu, Yabing Shi, Jueqi Guan, Hao Chen, Pasquale De Meo*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.614/)
+
+3. :sparkles: **DataSciBench: An LLM Agent Benchmark for Data Science**
+
+    *Dan Zhang, Sining Zhoubian, Min Cai, Fengzu Li, Lekang Yang, Wei Wang, Tianjiao Dong, Ziniu Hu, Jie Tang, Yisong Yue*
+
+    ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.181/)
+
+4. :sparkles: **Visual Reasoning Benchmark: Evaluating Multimodal LLMs on Classroom-Authentic Visual Problems from Primary Education**
 
     *Mohamed Huti, Alasdair Mackintosh, Amy Waldock, Dominic Andrews, Maxime Lelievre, Moritz Boos, Tobias Murray, Paul Atherton, Robin A. A. Ince, Oliver G. B. Garrod*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.12196)
 
-2. :sparkles: **CASTLE: A Comprehensive Benchmark for Evaluating Student-Tailored Personalized Safety in Large Language Models**
+5. :sparkles: **CASTLE: A Comprehensive Benchmark for Evaluating Student-Tailored Personalized Safety in Large Language Models**
 
     *Rui Jia, Ruiyi Lan, Fengrui Liu, Zhongxiang Dai, Bo Jiang, Jing Shao, Jingyuan Chen, Guandong Xu, Fei Wu, Min Zhang*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.05633)
 
-3. :sparkles: **ISD-Agent-Bench: A Comprehensive Benchmark for Evaluating LLM-based Instructional Design Agents**
+6. :sparkles: **ISD-Agent-Bench: A Comprehensive Benchmark for Evaluating LLM-based Instructional Design Agents**
 
     *YoungHoon Jeon, Suwan Kim, Haein Son, Sookbun Lee, Yeil Jeong, Unggi Lee*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.10620)
 
-4. :sparkles: **MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors**
+7. :sparkles: **MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors**
 
     *Jakub Macina, Nico Daheim, Ido Hakimi, Manu Kapur, Iryna Gurevych, Mrinmaya Sachan*
 
     EMNLP, 2025. [`conference`](https://arxiv.org/abs/2502.18940)
 
-5. :sparkles: **VisualEDU: A Benchmark for Assessing Coding and Visual Comprehension through Educational Problem-Solving Video Generation**
+8. :sparkles: **VisualEDU: A Benchmark for Assessing Coding and Visual Comprehension through Educational Problem-Solving Video Generation**
 
     *Hao Chen, TIANYU SHI, Pengran huang, Zeyuan Li, Jiahui Pan, Qianglong Chen, Lewei He*
 
     EMNLP Findings, 2025. [`conference`](https://aclanthology.org/2025.findings-emnlp.889/)
 
-6. :sparkles: **Towards Robust Evaluation of STEM Education: Leveraging MLLMs in Project-Based Learning**
+9. :sparkles: **Towards Robust Evaluation of STEM Education: Leveraging MLLMs in Project-Based Learning**
 
     *Yanhao Jia, Xinyi Wu, Qinglin Zhang, Yiran Qin, Luwei Xiao, Shuai Zhao*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.17050)
 
-7. :sparkles: **Benchmarking the Pedagogical Knowledge of Large Language Models**
+10. :sparkles: **Benchmarking the Pedagogical Knowledge of Large Language Models**
 
     *Maxime Lelièvre, Amy Waldock, Meng Liu, Natalia Valdés Aspillaga, Alasdair Mackintosh, María José Ogando Portela, Jared Lee, Paul Atherton, Robin A. A. Ince, Oliver G. B. Garrod*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2506.18710)
 
-8. :sparkles: **From Answers to Questions: EQGBench for Evaluating LLMs' Educational Question Generation**
+11. :sparkles: **From Answers to Questions: EQGBench for Evaluating LLMs' Educational Question Generation**
 
     *Chengliang Zhou, Mei Wang, Ting Zhang, Qiannan Zhu, Jian Li, Hua Huang*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2508.10005)
 
-9. :sparkles: **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
+12. :sparkles: **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
 
     *Jinchang Hou, Chang Ao, Haihong Wu, Xiangtao Kong, Zhigang Zheng, Daijia Tang, Chengming Li, Xiping Hu, Ruifeng Xu, Shiwen Ni, Min Yang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2401.15927)
 
-10. :sparkles: **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
+13. :sparkles: **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
 
     *Hasan Abu-Rasheed, Christian Weber, Madjid Fathi*
 
