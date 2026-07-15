@@ -649,97 +649,103 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.302/)
 
-2. **Simulated Students in Tutoring Dialogues: Substance or Illusion?**
+2. **EduMirror: Modeling Educational Social Dynamics with Value-driven Multi-agent Simulation**
+
+    *Jingzhe Lin, Hengbin Yu, Yongdan Zeng, Fangwei Zhong*
+
+    ICML, 2026. [`conference`](https://openreview.net/forum?id=9CPlmQzUtF)
+
+3. **Simulated Students in Tutoring Dialogues: Substance or Illusion?**
 
     *Alexander Scarlatos, Jaewook Lee, Simon Woodhead, Andrew Lan*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.04025)
 
-3. **Towards Valid Student Simulation with Large Language Models**
+4. **Towards Valid Student Simulation with Large Language Models**
 
     *Zhihao Yuan, Yunze Xiao, Ming Li, Weihao Xuan, Richard Tong, Mona Diab, Tom Mitchell*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.05473)
 
-4. **KASER: Knowledge-Aligned Student Error Simulator for Open-Ended Coding Tasks**
+5. **KASER: Knowledge-Aligned Student Error Simulator for Open-Ended Coding Tasks**
 
     *Zhangqi Duan, Nigel Fernandez, Andrew Lan*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.06633)
 
-5. **Agent4Edu: Generating Learner Response Data by Generative Agents for Intelligent Education Systems**
+6. **Agent4Edu: Generating Learner Response Data by Generative Agents for Intelligent Education Systems**
 
     *Weibo Gao, Qi Liu, Linan Yue, Fangzhou Yao, Rui Lv, Zheng Zhang, Hao Wang, Zhenya Huang*
 
     AAAI, 2025. [`conference`](https://arxiv.org/abs/2501.10332)
 
-6. **Classroom Simulacra: Building Contextual Student Generative Agents in Online Education for Learning Behavioral Simulation**
+7. **Classroom Simulacra: Building Contextual Student Generative Agents in Online Education for Learning Behavioral Simulation**
 
     *Songlin Xu, Hao-Ning Wen, Hongyi Pan, Dallas Dominguez, Dong yin Hu, Xinyu Zhang*
 
     CHI, 2025. [`conference`](https://arxiv.org/abs/2502.02780)
 
-7. **Evolution in Simulation: AI-Agent School with Dual Memory for High-Fidelity Educational Dynamics**
+8. **Evolution in Simulation: AI-Agent School with Dual Memory for High-Fidelity Educational Dynamics**
 
     *Sheng Jin, Haoming Wang, Zhiqi Gao, Yongbo Yang, Bao Chunjia, Chengliang Wang*
 
     EMNLP Findings, 2025. [`conference`](https://arxiv.org/abs/2510.11290)
 
-8. **CoderAgent: Simulating Student Behavior for Personalized Programming Learning with Large Language Models**
+9. **CoderAgent: Simulating Student Behavior for Personalized Programming Learning with Large Language Models**
 
     *Yi Zhan, Qi Liu, Weibo Gao, Zheng Zhang, Tianfu Wang, Shuanghong Shen, Junyu Lu, Zhenya Huang*
 
     IJCAI, 2025. [`conference`](https://arxiv.org/abs/2505.20642)
 
-9. **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
+10. **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
 
     *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
 
     WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749)
 
-10. **AdaRD: An Adaptive Response Denoising Framework for Robust Learner Modeling**
+11. **AdaRD: An Adaptive Response Denoising Framework for Robust Learner Modeling**
 
     *Fangzhou Yao, Qi Liu, Linan Yue, Weibo Gao, Jiatong Li, Xin Li, Yuanjing He*
 
     KDD, 2024. [`conference`](https://dl.acm.org/doi/10.1145/3637528.3671684)
 
-11. **Towards Modeling Learner Performance with Large Language Models**
+12. **Towards Modeling Learner Performance with Large Language Models**
 
     *Seyed Parsa Neshaei, Richard Lee Davis, Adam Hazimeh, Bojan Lazarevski, Pierre Dillenbourg, Tanja Käser*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2403.14661)
 
-12. **FOKE: A Personalized and Explainable Education Framework Integrating Foundation Models, Knowledge Graphs, and Prompt Engineering**
+13. **FOKE: A Personalized and Explainable Education Framework Integrating Foundation Models, Knowledge Graphs, and Prompt Engineering**
 
     *Silan Hu, Xiaoning Wang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2405.03734)
 
-13. **EduAgent: Generative Student Agents in Learning**
+14. **EduAgent: Generative Student Agents in Learning**
 
     *Songlin Xu, Xinyu Zhang, Lianhui Qin*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07963)
 
-14. **Visualizing Self-Regulated Learner Profiles in Dashboards: Design Insights from Teachers**
+15. **Visualizing Self-Regulated Learner Profiles in Dashboards: Design Insights from Teachers**
 
     *Paola Mejia-Domenzain, Eva Laini, Seyed Parsa Neshaei, Thiemo Wambsganss, Tanja Käser*
 
     AIED, 2023. [`conference`](https://arxiv.org/abs/2305.16851)
 
-15. **Contextualizing Problems to Student Interests at Scale in Intelligent Tutoring System Using Large Language Models**
+16. **Contextualizing Problems to Student Interests at Scale in Intelligent Tutoring System Using Large Language Models**
 
     *Gautam Yadav, Ying-Jui Tseng, Xiaolin Ni*
 
     AIED - Workshop on Empowering Education with LLMs - the Next-Gen Interface and Content Generation, 2023. [`workshop`](https://arxiv.org/abs/2306.00190)
 
-16. **Mitigating Biases in Student Performance Prediction via Attention-Based Personalized Federated Learning**
+17. **Mitigating Biases in Student Performance Prediction via Attention-Based Personalized Federated Learning**
 
     *Yun-Wei Chu, Seyyedali Hosseinalipour, Elizabeth Tenorio, Laura Cruz, Kerrie Douglas, Andrew Lan, Christopher Brinton*
 
     CIKM, 2022. [`conference`](https://arxiv.org/abs/2208.01182)
 
-17. **Predicting Student Performance using Advanced Learning Analytics**
+18. **Predicting Student Performance using Advanced Learning Analytics**
 
     *Ali Daud, Naif Radi Aljohani, Rabeeh Ayaz Abbasi, Miltiadis D. Lytras, Farhat Abbas, Jalal S. Alowibdi*
 
@@ -751,37 +757,43 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Adaptive Testing](#content)
 
-1. **Search-Efficient Computerized Adaptive Testing**
+1. **Efficient Adaptive Testing via Gradient Path Matching Subset Selection for AI Education**
+
+    *Yan Zhuang, Junhao Yu, Bohou Zhang, Zachary Pardos, Jinze Wu, Daoqiang Zhang*
+
+    ICML, 2026. [`conference`](https://openreview.net/forum?id=XnK6Jr0i8D)
+
+2. **Search-Efficient Computerized Adaptive Testing**
 
     *Yuting Hong, Shiwei Tong, Wei Huang, Yan Zhuang, Qi Liu, Enhong Chen, Xin Li, Yuanjing He*
 
     CIKM, 2023. [`conference`](http://home.ustc.edu.cn/~zykb/files/paper/Yuting_cikm23.pdf)
 
-2. **GMOCAT: A Graph-Enhanced Multi-Objective Method for Computerized Adaptive Testing**
+3. **GMOCAT: A Graph-Enhanced Multi-Objective Method for Computerized Adaptive Testing**
 
     *Hangyu Wang, Ting Long, Liang Yin, Weinan Zhang, Wei Xia, Qichen Hong, Dingyin Xia, Ruiming Tang, Yong Yu*
 
     KDD, 2023. [`conference`](https://arxiv.org/abs/2310.07477)
 
-3. **A Bounded Ability Estimation for Computerized Adaptive Testing**
+4. **A Bounded Ability Estimation for Computerized Adaptive Testing**
 
     *Yan Zhuang, Qi Liu, GuanHao Zhao, Zhenya Huang, Weizhe Huang, Zachary Pardos, Enhong Chen, Jinze Wu, Xin Li*
 
     NeurIPS, 2023. [`conference`](https://openreview.net/forum?id=tAwjG5bM7H)
 
-4. **Fully Adaptive Framework: Neural Computerized Adaptive Testing for Online Education**
+5. **Fully Adaptive Framework: Neural Computerized Adaptive Testing for Online Education**
 
     *Yan Zhuang, Qi Liu, Zhenya Huang, Zhi Li, Shuanghong Shen, Haiping Ma*
 
     AAAI, 2022. [`conference`](https://ojs.aaai.org/index.php/AAAI/article/view/20399)
 
-5. **A Robust Computerized Adaptive Testing Approach in Educational Question Retrieval**
+6. **A Robust Computerized Adaptive Testing Approach in Educational Question Retrieval**
 
     *Yan Zhuang, Qi Liu, Zhenya Huang, Zhi Li, Binbin Jin, Haoyang Bi, Enhong Chen, Shijin Wang*
 
     SIGIR, 2022. [`conference`](http://staff.ustc.edu.cn/~cheneh/paper_pdf/2022/Yan-Zhuang-SIGIR.pdf)
 
-6. **BOBCAT: Bilevel Optimization-Based Computerized Adaptive Testing**
+7. **BOBCAT: Bilevel Optimization-Based Computerized Adaptive Testing**
 
     *Aritra Ghosh, Andrew Lan*
 
@@ -813,61 +825,73 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.375/)
 
-5. **Automated Feedback Generation for Undergraduate Mathematics: Development and Evaluation of an AI Teaching Assistant**
+5. **Evaluating AI Grading on Real-World Handwritten College Mathematics: A Large-Scale Study Toward a Benchmark**
+
+    *Zhiqi Yu, Xingping Liu, Haobin Mao, Mingshuo Liu, Long Chen, Jack Xin, Yifeng Yu*
+
+    ICML, 2026. [`conference`](https://openreview.net/forum?id=vcdsMrNGqP)
+
+6. **TRACE: Toulmin-based Reasoning Assessment through Constructive Elements for LLM CoT Evaluation**
+
+    *Yundong Kim, Heyoung Yang*
+
+    ICML, 2026. [`conference`](https://openreview.net/forum?id=NJ9MZkCLAG)
+
+7. **Automated Feedback Generation for Undergraduate Mathematics: Development and Evaluation of an AI Teaching Assistant**
 
     *Aron Gohr, Marie-Amelie Lawn, Kevin Gao, Inigo Serjeant, Stephen Heslip*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.03458)
 
-6. **Machine-Assisted Grading of Nationwide School-Leaving Essay Exams with LLMs and Statistical NLP**
+8. **Machine-Assisted Grading of Nationwide School-Leaving Essay Exams with LLMs and Statistical NLP**
 
     *Andres Karjus, Kais Allkivi, Silvia Maine, Katarin Leppik, Krister Kruusmaa, Merilin Aruvee*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.16314)
 
-7. **How Uncertain Is the Grade? A Benchmark of Uncertainty Metrics for LLM-Based Automatic Assessment**
+9. **How Uncertain Is the Grade? A Benchmark of Uncertainty Metrics for LLM-Based Automatic Assessment**
 
     *Hang Li, Kaiqi Yang, Xianxuan Long, Fedor Filippov, Yucheng Chu, Yasemin Copur-Gencturk, Peng He, Cory Miller, Namsoo Shin, Joseph Krajcik, Hui Liu, Jiliang Tang*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.16039)
 
-8. **Conversational Education at Scale: A Multi-LLM Agent Workflow for Procedural Learning and Pedagogic Quality Assessment**
+10. **Conversational Education at Scale: A Multi-LLM Agent Workflow for Procedural Learning and Pedagogic Quality Assessment**
 
     *Jiahuan Pei, Fanghua Ye, Xin Sun, Wentao Deng, Koen Hindriks, Junxiao Wang*
 
     EMNLP Findings, 2025. [`conference`](https://arxiv.org/pdf/2507.05528)
 
-9. **How well do Large Language Models Recognize Instructional Moves? Establishing Baselines for Foundation Models in Educational Discourse**
+11. **How well do Large Language Models Recognize Instructional Moves? Establishing Baselines for Foundation Models in Educational Discourse**
 
     *Kirk Vanacore, Rene F. Kizilcec*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.19903)
 
-10. **Large Language Models Approach Expert Pedagogical Quality in Math Tutoring but Differ in Instructional and Linguistic Profiles**
+12. **Large Language Models Approach Expert Pedagogical Quality in Math Tutoring but Differ in Instructional and Linguistic Profiles**
 
     *Ramatu Oiza Abdulsalam, Segun Aroyehun*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.20780)
 
-11. **Toward Trustworthy Difficulty Assessments: Large Language Models as Judges in Programming and Synthetic Tasks**
+13. **Toward Trustworthy Difficulty Assessments: Large Language Models as Judges in Programming and Synthetic Tasks**
 
     *H. M. Shadman Tabib, Jaber Ahmed Deedar*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.18597)
 
-12. **Large Language Models As MOOCs Graders**
+14. **Large Language Models As MOOCs Graders**
 
     *Shahriar Golchin, Nikhil Garuda, Christopher Impey, Matthew Wenger*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2402.03776)
 
-13. **From Automation to Augmentation: Large Language Models Elevating Essay Scoring Landscape**
+15. **From Automation to Augmentation: Large Language Models Elevating Essay Scoring Landscape**
 
     *Changrong Xiao, Wenxing Ma, Sean Xin Xu, Kunpeng Zhang, Yufang Wang, Qi Fu*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/pdf/2401.06431)
 
-14. **Large Language Models as Partners in Student Essay Evaluation**
+16. **Large Language Models as Partners in Student Essay Evaluation**
 
     *Toru Ishida, Tongxi Liu, Hailong Wang, William K. Cheung*
 
@@ -1267,91 +1291,97 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     ACL, 2026. [`conference`](https://aclanthology.org/2026.acl-long.414/)
 
-2. **ConvoLearn: A Dataset of Constructivist Tutor-Student Dialogue**
+2. **Code2Video: A Code-centric Paradigm for Educational Video Creation**
+
+    *Yanzhe Chen, Kevin Qinghong Lin, Mike Zheng Shou*
+
+    ICML, 2026. [`conference`](https://openreview.net/forum?id=HJ0JFzdwUo)
+
+3. **ConvoLearn: A Dataset of Constructivist Tutor-Student Dialogue**
 
     *Mayank Sharma, Roy Pea, Hari Subramonyam*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.08950)
 
-3. **The Reel Deal: Designing and Evaluating LLM-Generated Short-Form Educational Videos**
+4. **The Reel Deal: Designing and Evaluating LLM-Generated Short-Form Educational Videos**
 
     *Lazaros Stavrinou, Argyris Constantinides, Marios Belk, Vasos Vassiliou, Fotis Liarokapis, Marios Constantinides*
 
     CHIGreece, 2025. [`conference`](https://arxiv.org/abs/2501.04101)
 
-4. **HealthCards: Exploring Text-to-Image Generation as Visual Aids for Healthcare Knowledge Democratizing and Education**
+5. **HealthCards: Exploring Text-to-Image Generation as Visual Aids for Healthcare Knowledge Democratizing and Education**
 
     *Qian Wu, Zheyao Gao, Longfei Gou, Yifan Hou, Qi Dou*
 
     EMNLP, 2025. [`conference`](https://aclanthology.org/2025.emnlp-main.1401/)
 
-5. **Classic4Children: Adapting Chinese Literary Classics for Children with Large Language Model**
+6. **Classic4Children: Adapting Chinese Literary Classics for Children with Large Language Model**
 
     *Jiali Chen, Xusen Hei, Yuqi Xue, Zihan Wu, Jiayuan Xie, Yi Cai*
 
     NAACL Findings, 2025. [`conference`](https://arxiv.org/abs/2502.01090)
 
-6. **COGENT: A Curriculum-oriented Framework for Generating Grade-appropriate Educational Content**
+7. **COGENT: A Curriculum-oriented Framework for Generating Grade-appropriate Educational Content**
 
     *Zhengyuan Liu, Stella Xin Yin, Dion Hoe-Lian Goh, Nancy F. Chen*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2409.15024)
 
-7. **Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models**
+8. **Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models**
 
     *Yijia Shao, Yucheng Jiang, Theodore A. Kanell, Peter Xu, Omar Khattab, Monica S. Lam*
 
     NAACL, 2024. [`conference`](https://arxiv.org/abs/2402.14207)
 
-8. **Generating Privacy-preserving Educational Data Records with Diffusion Model**
+9. **Generating Privacy-preserving Educational Data Records with Diffusion Model**
 
     *Quanlong Guan, Yanchong Yu, Xiujie Huang, Liangda Fang, Chaobo He, Lusheng Wu, Weiqi Luo, Guanliang Chen*
 
     WWW, 2024. [`conference`](https://dl.acm.org/doi/10.1145/3589335.3651511)
 
-9. **Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency**
+10. **Generating and Evaluating Tests for K-12 Students with Language Model Simulations: A Case Study on Sentence Reading Efficiency**
 
     *Eric Zelikman, Wanjing Anya Ma, Jasmine E. Tran, Diyi Yang, Jason D. Yeatman, Nick Haber*
 
     EMNLP, 2023. [`conference`](https://arxiv.org/abs/2310.06837)
 
-10. **On the Automatic Generation and Simplification of Children's Stories**
+11. **On the Automatic Generation and Simplification of Children's Stories**
 
     *Maria Valentini, Jennifer Weber, Jesus Salcido, Téa Wright, Eliana Colunga, Katharina Kann*
 
     EMNLP, 2023. [`conference`](https://arxiv.org/abs/2310.18502)
 
-11. **FairytaleCQA: Integrating a Commonsense Knowledge Graph into Children's Storybook Narratives**
+12. **FairytaleCQA: Integrating a Commonsense Knowledge Graph into Children's Storybook Narratives**
 
     *Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuanzhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Dakuo Wang, Yuling Su*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2311.09756)
 
-12. **Robosourcing Educational Resources – Leveraging Large Language Models for Learnersourcing**
+13. **Robosourcing Educational Resources – Leveraging Large Language Models for Learnersourcing**
 
     *Paul Denny, Sami Sarsa, Arto Hellas, Juho Leinonen*
 
     Learning@Scale - Workshop on Learnersourcing: Student-generated Content @ Scale, 2022. [`workshop`](https://arxiv.org/abs/2211.04715)
 
-13. **Linking Streets in OpenStreetMap to Persons in Wikidata**
+14. **Linking Streets in OpenStreetMap to Persons in Wikidata**
 
     *Daria Gurtovoy, Simon Gottschalk*
 
     WWW Companion, 2022. [`workshop`](https://dl.acm.org/doi/abs/10.1145/3487553.3524267)
 
-14. **Personal Knowledge Graphs: Use Cases in e-learning Platforms**
+15. **Personal Knowledge Graphs: Use Cases in e-learning Platforms**
 
     *Eleni Ilkou*
 
     WWW Companion, 2022. [`workshop`](https://arxiv.org/abs/2203.08507)
 
-15. **Automatic Hierarchical Table of Contents Generation for Educational Videos**
+16. **Automatic Hierarchical Table of Contents Generation for Educational Videos**
 
     *Debabrata Mahapatra, Ragunathan Mariappan, Vaibhav Rajan*
 
     WWW, 2018. [`conference`](https://dl.acm.org/doi/10.1145/3184558.3186336)
 
-16. **Automatic Generation of Quizzes from DBpedia According to Educational Standards**
+17. **Automatic Generation of Quizzes from DBpedia According to Educational Standards**
 
     *Oscar Rodríguez Rocha, Catherine Faron Zucker*
 
@@ -1359,13 +1389,19 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
 ### [Knowledge Structuring](#content)
 
-1. **Instructor-Aligned Knowledge Graphs for Personalized Learning**
+1. **CSG: Cognitive Structure Generation for Intelligent Education**
+
+    *Hengnian Gu, Zhifu Chen, Yuxin Chen, Jin Zhou, Dongdai Zhou*
+
+    ICML, 2026. [`conference`](https://openreview.net/forum?id=PfarHkQG8e)
+
+2. **Instructor-Aligned Knowledge Graphs for Personalized Learning**
 
     *Abdulrahman AlRabah, Priyanka Kargupta, Jiawei Han, Abdussalam Alawini*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.17111)
 
-2. **Using structured knowledge and traditional word embeddings to generate concept representations in the educational domain**
+3. **Using structured knowledge and traditional word embeddings to generate concept representations in the educational domain**
 
     *Oghenemaro Anuyah, Ion Madrazo Azpiazu, Maria Soledad Pera*
 
@@ -1683,25 +1719,31 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.751/)
 
-6. **MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors**
+6. **HiPhO: How Far Are (M)LLMs from Humans in the Latest High School Physics Olympiad Benchmark?**
+
+    *Fangchen Yu, Haiyuan Wan, Qianjia Cheng, Yuchen Zhang, Jiacheng Chen, Fujun Han, Yulun Wu, Junchi Yao, Ruilizhen Hu, Ning Ding, Yu Cheng, Tao Chen, LEI BAI, Dongzhan Zhou, Yun Luo, Ganqu Cui, Peng Ye*
+
+    ICML, 2026. [`conference`](https://openreview.net/forum?id=w6DqR74BTt)
+
+7. **MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors**
 
     *Jakub Macina, Nico Daheim, Ido Hakimi, Manu Kapur, Iryna Gurevych, Mrinmaya Sachan*
 
     EMNLP, 2025. [`conference`](https://arxiv.org/abs/2502.18940)
 
-7. **MathEDU: Towards Adaptive Feedback for Student Mathematical Problem-Solving**
+8. **MathEDU: Towards Adaptive Feedback for Student Mathematical Problem-Solving**
 
     *Wei-Ling Hsu, Yu-Chien Tang, An-Zi Yen*
 
     arXiv, 2025. [`conference`](https://arxiv.org/pdf/2505.18056)
 
-8. **One Size doesn’t Fit All: A Personalized Conversational Tutoring Agent for Mathematics Instruction**
+9. **One Size doesn’t Fit All: A Personalized Conversational Tutoring Agent for Mathematics Instruction**
 
     *Ben Liu, Jihan Zhang, Fangquan Lin, Xu Jia, Min Peng*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2502.12633)
 
-9. **Mathemyths: Leveraging Large Language Models to Teach Mathematical Language through Child-AI Co-Creative Storytelling**
+10. **Mathemyths: Leveraging Large Language Models to Teach Mathematical Language through Child-AI Co-Creative Storytelling**
 
     *Chao Zhang, Xuechen Liu, Katherine Ziska, Soobin Jeon, Chi-Lin Yu, Ying Xu*
 
@@ -1721,25 +1763,31 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.135/)
 
-3. **CaseMaster: Designing and Evaluating a Probe for Oral Case Presentation Training with LLM Assistance**
+3. **ClinTutor-R1: Advancing Scalable and Robust One-to-Many Alignment in Clinical Socratic Education**
+
+    *Zhitao He, Haolin Yang, Zeyu Qin, Yi Fung*
+
+    ICML, 2026. [`conference`](https://openreview.net/forum?id=15Gs65kvHS)
+
+4. **CaseMaster: Designing and Evaluating a Probe for Oral Case Presentation Training with LLM Assistance**
 
     *Yang Ouyang, Yuansong Xu, Chang Jiang, Yifan Jin, Haoran Jiang, Quan Li*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2601.19332)
 
-4. **DischargeSim: A Simulation Benchmark for Educational Doctor–Patient Communication at Discharge**
+5. **DischargeSim: A Simulation Benchmark for Educational Doctor–Patient Communication at Discharge**
 
     *Zonghai Yao, Michael Sun, Won Seok Jang, SUNJAE KWON, Soie Kwon, Hong Yu*
 
     EMNLP, 2025. [`conference`](https://arxiv.org/abs/2509.07188)
 
-5. **HealthCards: Exploring Text-to-Image Generation as Visual Aids for Healthcare Knowledge Democratizing and Education**
+6. **HealthCards: Exploring Text-to-Image Generation as Visual Aids for Healthcare Knowledge Democratizing and Education**
 
     *Qian Wu, Zheyao Gao, Longfei Gou, Yifan Hou, Qi Dou*
 
     EMNLP, 2025. [`conference`](https://aclanthology.org/2025.emnlp-main.1401/)
 
-6. **Leveraging Large Language Model as Simulated Patients for Clinical Education**
+7. **Leveraging Large Language Model as Simulated Patients for Clinical Education**
 
     *Yanzeng Li, Cheng Zeng, Jialun Zhong, Ruoyu Zhang, Minhao Zhang, Lei Zou*
 
@@ -1789,73 +1837,79 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     ACL Findings, 2026. [`conference`](https://aclanthology.org/2026.findings-acl.181/)
 
-4. **Visual Reasoning Benchmark: Evaluating Multimodal LLMs on Classroom-Authentic Visual Problems from Primary Education**
+4. **Position: Sycophancy is an Educational Safety Risk: Why LLM Tutors Need Sycophancy Benchmarks**
+
+    *Enkelejda Kasneci, Gjergji Kasneci*
+
+    ICML, 2026. [`conference`](https://openreview.net/forum?id=Oxp2oWV0H3)
+
+5. **Visual Reasoning Benchmark: Evaluating Multimodal LLMs on Classroom-Authentic Visual Problems from Primary Education**
 
     *Mohamed Huti, Alasdair Mackintosh, Amy Waldock, Dominic Andrews, Maxime Lelievre, Moritz Boos, Tobias Murray, Paul Atherton, Robin A. A. Ince, Oliver G. B. Garrod*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.12196)
 
-5. **CASTLE: A Comprehensive Benchmark for Evaluating Student-Tailored Personalized Safety in Large Language Models**
+6. **CASTLE: A Comprehensive Benchmark for Evaluating Student-Tailored Personalized Safety in Large Language Models**
 
     *Rui Jia, Ruiyi Lan, Fengrui Liu, Zhongxiang Dai, Bo Jiang, Jing Shao, Jingyuan Chen, Guandong Xu, Fei Wu, Min Zhang*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.05633)
 
-6. **ISD-Agent-Bench: A Comprehensive Benchmark for Evaluating LLM-based Instructional Design Agents**
+7. **ISD-Agent-Bench: A Comprehensive Benchmark for Evaluating LLM-based Instructional Design Agents**
 
     *YoungHoon Jeon, Suwan Kim, Haein Son, Sookbun Lee, Yeil Jeong, Unggi Lee*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.10620)
 
-7. **MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors**
+8. **MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors**
 
     *Jakub Macina, Nico Daheim, Ido Hakimi, Manu Kapur, Iryna Gurevych, Mrinmaya Sachan*
 
     EMNLP, 2025. [`conference`](https://arxiv.org/abs/2502.18940)
 
-8. **VisualEDU: A Benchmark for Assessing Coding and Visual Comprehension through Educational Problem-Solving Video Generation**
+9. **VisualEDU: A Benchmark for Assessing Coding and Visual Comprehension through Educational Problem-Solving Video Generation**
 
     *Hao Chen, TIANYU SHI, Pengran huang, Zeyuan Li, Jiahui Pan, Qianglong Chen, Lewei He*
 
     EMNLP Findings, 2025. [`conference`](https://aclanthology.org/2025.findings-emnlp.889/)
 
-9. **Towards Robust Evaluation of STEM Education: Leveraging MLLMs in Project-Based Learning**
+10. **Towards Robust Evaluation of STEM Education: Leveraging MLLMs in Project-Based Learning**
 
     *Yanhao Jia, Xinyi Wu, Qinglin Zhang, Yiran Qin, Luwei Xiao, Shuai Zhao*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.17050)
 
-10. **Benchmarking the Pedagogical Knowledge of Large Language Models**
+11. **Benchmarking the Pedagogical Knowledge of Large Language Models**
 
     *Maxime Lelièvre, Amy Waldock, Meng Liu, Natalia Valdés Aspillaga, Alasdair Mackintosh, María José Ogando Portela, Jared Lee, Paul Atherton, Robin A. A. Ince, Oliver G. B. Garrod*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2506.18710)
 
-11. **From Answers to Questions: EQGBench for Evaluating LLMs' Educational Question Generation**
+12. **From Answers to Questions: EQGBench for Evaluating LLMs' Educational Question Generation**
 
     *Chengliang Zhou, Mei Wang, Ting Zhang, Qiannan Zhu, Jian Li, Hua Huang*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2508.10005)
 
-12. **EduNLP: Towards a Unified and Modularized Library for Educational Resources**
+13. **EduNLP: Towards a Unified and Modularized Library for Educational Resources**
 
     *Zhenya Huang, Yuting Ning, Longhu Qin, Shiwei Tong, Shangzi Xue, Tong Xiao, Xin Lin, Jiayu Liu, Qi Liu, Enhong Chen, Shijing Wang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2406.01276)
 
-13. **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
+14. **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
 
     *Jinchang Hou, Chang Ao, Haihong Wu, Xiangtao Kong, Zhigang Zheng, Daijia Tang, Chengming Li, Xiping Hu, Ruifeng Xu, Shiwen Ni, Min Yang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2401.15927)
 
-14. **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
+15. **Experimental Interface for Multimodal and Large Language Model Based Explanations of Educational Recommender Systems**
 
     *Hasan Abu-Rasheed, Christian Weber, Madjid Fathi*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2402.07910)
 
-15. **pyKT: A Python Library to Benchmark Deep Learning based Knowledge Tracing Models**
+16. **pyKT: A Python Library to Benchmark Deep Learning based Knowledge Tracing Models**
 
     *Zitao Liu, Qiongqiong Liu, Jiahao Chen, Shuyan Huang, Jiliang Tang, Weiqing Luo*
 
