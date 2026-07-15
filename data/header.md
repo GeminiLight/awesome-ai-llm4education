@@ -18,6 +18,8 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 **:sparkles: indicates the papers that are related to LLM.**
 
 > [!note]
+> 🎉 Our paper "[SocialCoach: Personalized Social Skill Learning with RL-based Agentic Tutoring and Practice](https://arxiv.org/abs/2606.04155)" has been released!
+>
 > 🎉 Our paper "[LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System](https://arxiv.org/abs/2501.15749)" has been accepted by **WWW 2025 (Industry Track) as Oral Presentation**!
 >
 > 🎈 Welcome to check our [project page](https://tianfuwang.tech/gen-mentor/) and [demo code](https://github.com/GeminiLight/gen-mentor) to enjoy the goal-oriented learning experience!

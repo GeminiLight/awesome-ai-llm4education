@@ -4,8 +4,8 @@
     A curated list of papers related to artificial intelligence (AI) and large language model (LLM) for education
   </p>
   <p>
-    <strong><a href="http://tianfuwang.tech/awesome-ai-llm4education/" style="text-decoration: none; color:rgb(255, 193, 7);"> Online Webpage</a> |
-    </strong><a href="LLM4EDU.md" style="text-decoration: none; color:rgb(69, 162, 255);"> LLM4EDU Version</a> | <a href="README.md" style="text-decoration: none; color:rgb(170, 125, 252);"> Full Version</a>
+    <strong><a href="http://tianfuwang.tech/awesome-ai-llm4education/" style="text-decoration: none; color:rgb(255, 193, 7);">🚀 Online Webpage</a> |
+    </strong><a href="LLM4EDU.md" style="text-decoration: none; color:rgb(69, 162, 255);">🌟 LLM4EDU Version</a> | <a href="README.md" style="text-decoration: none; color:rgb(170, 125, 252);">🤖 Full Version</a>
   </p>
 </div>
 
@@ -18,11 +18,11 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 **:sparkles: indicates the papers that are related to LLM.**
 
 > [!note]
->  Our paper "[SocialCoach: Personalized Social Skill Learning with RL-based Agentic Tutoring and Practice](https://arxiv.org/abs/2606.04155)" has been released**!
-> 
->  Our paper "[LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System](https://arxiv.org/abs/2501.15749)" has been accepted by **WWW 2025 (Industry Track) as Oral Presentation**!
+> 🎉 Our paper "[SocialCoach: Personalized Social Skill Learning with RL-based Agentic Tutoring and Practice](https://arxiv.org/abs/2606.04155)" has been released!
 >
->  Welcome to check our [project page](https://tianfuwang.tech/gen-mentor/) and [demo code](https://github.com/GeminiLight/gen-mentor) to enjoy the goal-oriented learning experience!
+> 🎉 Our paper "[LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System](https://arxiv.org/abs/2501.15749)" has been accepted by **WWW 2025 (Industry Track) as Oral Presentation**!
+>
+> 🎈 Welcome to check our [project page](https://tianfuwang.tech/gen-mentor/) and [demo code](https://github.com/GeminiLight/gen-mentor) to enjoy the goal-oriented learning experience!
 
 ## [Content](#content)
 
@@ -377,181 +377,187 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2603.03339)
 
-8. **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
+8. **SocialCoach: Personalized Social Skill Learning with RL-based Agentic Tutoring and Practice**
+
+    *Tianfu Wang, Max Xiong, Jianxun Lian, Hongyuan Zhu, Zhengyu Hu, Yuxuan Lei, Linxiao Gong, Xiaofang Li, Peiting Tsai, Nicholas Jing Yuan, Qi Zhang*
+
+    arXiv, 2026. [`preprint`](https://arxiv.org/abs/2606.04155)
+
+9. **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
 
     *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
 
     WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749), [`code`](https://github.com/GeminiLight/gen-mentor)
 
-9. **Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning**
+10. **Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning**
 
     *Xiangen Hu, Sheng Xu, Richard Tong, Art Graesser*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2501.06682)
 
-10. **From Problem-Solving to Teaching Problem-Solving: Aligning LLMs with Pedagogy using Reinforcement Learning**
+11. **From Problem-Solving to Teaching Problem-Solving: Aligning LLMs with Pedagogy using Reinforcement Learning**
 
     *David Dinucu-Jianu, Jakub Macina, Nico Daheim, Ido Hakimi, Iryna Gurevych, Mrinmaya Sachan*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.15607), [`code`](https://github.com/eth-lre/PedagogicalRL)
 
-11. **A Theory of Adaptive Scaffolding for LLM-Based Pedagogical Agents**
+12. **A Theory of Adaptive Scaffolding for LLM-Based Pedagogical Agents**
 
     *Clayton Cohn, Surya Rayala, Namrata Srivastava, Joyce Horn Fonteles, Shruti Jain, Xinying Luo, Divya Mereddy, Naveeduddin Mohammed, Gautam Biswas*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2508.01503)
 
-12. **Cultivating Helpful, Personalized, and Creative AI Tutors: A Framework for Pedagogical Alignment using Reinforcement Learning**
+13. **Cultivating Helpful, Personalized, and Creative AI Tutors: A Framework for Pedagogical Alignment using Reinforcement Learning**
 
     *Siyu Song, Wentao Liu, Ye Lu, Ruohua Zhang, Tao Liu, Jinze Lv, Xinyun Wang, Aimin Zhou, Fei Tan, Bo Jiang, Hao Hao*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2507.20335)
 
-13. **Exploring Conversational Design Choices in LLMs for Pedagogical Purposes: Socratic and Narrative Approaches for Improving Instructor's Teaching Practice**
+14. **Exploring Conversational Design Choices in LLMs for Pedagogical Purposes: Socratic and Narrative Approaches for Improving Instructor's Teaching Practice**
 
     *Si Chen, Isabel R. Molnar, Peiyu Li, Adam Acunin, Ting Hua, Alex Ambrose, Nitesh V. Chawla, Ronald Metoyer*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2501.04100)
 
-14. **An Experience Report on a Pedagogically Controlled Curriculum-Constrained AI Tutor for SE Education**
+15. **An Experience Report on a Pedagogically Controlled Curriculum-Constrained AI Tutor for SE Education**
 
     *Lucia Happe, Dominik Fuchs, Luca Huttner, Kai Marquardt, Anne Koziolek*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.11882)
 
-15. **IntelliCode: A Multi-Agent LLM Tutoring System with Centralized Learner Modeling**
+16. **IntelliCode: A Multi-Agent LLM Tutoring System with Centralized Learner Modeling**
 
     *Jones David, Shreya Ghosh*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.18669)
 
-16. **AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms**
+17. **AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms**
 
     *LearnLM Team, Eedi*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.23633)
 
-17. **AgentTutor: Empowering Personalized Learning with Multi-Turn Interactive Teaching in Intelligent Education Systems**
+18. **AgentTutor: Empowering Personalized Learning with Multi-Turn Interactive Teaching in Intelligent Education Systems**
 
     *Yuxin Liu, Zeqing Song, Jiong Lou, Chentao Wu, Jie Li*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2601.04219)
 
-18. **LeafTutor: An AI Agent for Programming Assignment Tutoring**
+19. **LeafTutor: An AI Agent for Programming Assignment Tutoring**
 
     *Madison Bochard, Tim Conser, Alyssa Duran, Lazaro Martull, Pu Tian, Yalong Wu*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2601.02375)
 
-19. **Evolutionary Reinforcement Learning based AI tutor for Socratic Interdisciplinary Instruction**
+20. **Evolutionary Reinforcement Learning based AI tutor for Socratic Interdisciplinary Instruction**
 
     *Mei Jiang, Haihai Shen, Zhuo Luo, Bingdong Li, Wenjing Hong, Ke Tang, Aimin Zhou*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.11930)
 
-20. **Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring**
+21. **Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring**
 
     *Saisab Sadhu, Ashim Dhor*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.22496)
 
-21. **Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling**
+22. **Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling**
 
     *Minju Park, Sojung Kim, Seunghyun Lee, Soonwoo Kwon, Kyuseok Kim*
 
     CHI-LBW, 2024. [`workshop`](https://arxiv.org/abs/2403.14071)
 
-22. **An Educational Tool for Learning about Social Media Tracking, Profiling, and Recommendation**
+23. **An Educational Tool for Learning about Social Media Tracking, Profiling, and Recommendation**
 
     *Nicolas Pope, Juho Kahila, Jari Laru, Henriikka Vartiainen, Teemu Roos, Matti Tedre*
 
     ICALT, 2024. [`conference`](https://arxiv.org/abs/2402.01813)
 
-23. **AutoTutor meets Large Language Models: A Language Model Tutor with Rich Pedagogy and Guardrails**
+24. **AutoTutor meets Large Language Models: A Language Model Tutor with Rich Pedagogy and Guardrails**
 
     *Sankalan Pal Chowdhury, Vilém Zouhar, Mrinmaya Sachan*
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2402.09216)
 
-24. **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
+25. **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
 
     *Jiayu Liu, Zhenya Huang, Tong Xiao, Jing Sha, Jinze Wu, Qi Liu, Shijin Wang, Enhong Chen*
 
     NeurIPS, 2024. [`conference`](https://neurips.cc/virtual/2024/poster/93477)
 
-25. **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
+26. **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
 
     *Zhengyuan Liu, Stella Xin Yin, Geyu Lin, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-26. **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
+27. **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
 
     *Wei-Yu Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-27. **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
+28. **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
 
     *Zhengyuan Liu, Stella Xin Yin, Carolyn Lee, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.03429)
 
-28. **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
+29. **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
 
     *Glen Smith, Adit Gupta, Christopher MacLellan*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07883)
 
-29. **OATutor: An Open-source Adaptive Tutoring System and Curated Content Library for Learning Sciences Research**
+30. **OATutor: An Open-source Adaptive Tutoring System and Curated Content Library for Learning Sciences Research**
 
     *Z. Pardos, Matthew Tang, Ioannis Anastasopoulos, Shreya K. Sheel, Ethan Zhang*
 
     CHI, 2023. [`conference`](https://dl.acm.org/doi/10.1145/3544548.3581574)
 
-30. **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
+31. **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
 
     *Yann Hicke, Anmol Agarwal, Qianou Ma, Paul Denny*
 
     NeurIPS - Workshop on Generative AI for Education (GAIED), 2023. [`workshop`](https://arxiv.org/abs/2311.02775)
 
-31. **Empowering Private Tutoring by Chaining Large Language Models**
+32. **Empowering Private Tutoring by Chaining Large Language Models**
 
     *Yulin Chen, Ning Ding, Hai-Tao Zheng, Zhiyuan Liu, Maosong Sun, Bowen Zhou*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2309.08112)
 
-32. **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
+33. **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
 
     *Chenxi Dong*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2311.17696)
 
-33. **Personal Knowledge Graphs: Use Cases in e-learning Platforms**
+34. **Personal Knowledge Graphs: Use Cases in e-learning Platforms**
 
     *Eleni Ilkou*
 
     WWW Companion, 2022. [`workshop`](https://arxiv.org/abs/2203.08507)
 
-34. **ArgueTutor: An Adaptive Dialog-Based Learning System for Argumentation Skills**
+35. **ArgueTutor: An Adaptive Dialog-Based Learning System for Argumentation Skills**
 
     *Thiemo Wambsganss, C. Niklaus, Matthias Cetto, Matthias Söllner, S. Handschuh, J. Leimeister*
 
     CHI, 2021. [`conference`](https://dl.acm.org/doi/abs/10.1145/3411764.3445781)
 
-35. **An Interaction Design for Machine Teaching to Develop AI Tutors**
+36. **An Interaction Design for Machine Teaching to Develop AI Tutors**
 
     *Daniel Weitekamp, Erik Harpstead, K. Koedinger*
 
     CHI, 2020. [`conference`](https://dl.acm.org/doi/10.1145/3313831.3376226)
 
-36. **The Cognitive Tutor Authoring Tools (CTAT): Preliminary Evaluation of Efficiency Gains**
+37. **The Cognitive Tutor Authoring Tools (CTAT): Preliminary Evaluation of Efficiency Gains**
 
     *V. Aleven, B. McLaren, J. Sewall, K. Koedinger*
 
     International Conference on Intelligent Tutoring Systems, 2006. [`conference`](https://figshare.com/articles/journal_contribution/The_Cognitive_Tutor_Authoring_Tools_CTAT_Preliminary_Evaluation_of_Efficiency_Gains/6470495/1/files/11899052.pdf)
 
-37. **Locus of Feedback Control in Computer-Based Tutoring**
+38. **Locus of Feedback Control in Computer-Based Tutoring**
 
     *Albert T. Corbett, John R. Anderson*
 
