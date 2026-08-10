@@ -50,10 +50,10 @@ SURVEY_SCOPE = (
         "AIED, EDM, LAK, Learning@Scale, EC-TEL, ITS, ICALT",
     ),
     ("Human-Computer Interaction", "CHI, CSCW, UIST, IUI"),
-    ("Machine Learning", "NeurIPS, ICML, ICLR, COLM"),
+    ("Machine Learning", "NeurIPS, ICML, ICLR"),
     (
         "Natural Language Processing",
-        "ACL, EMNLP, NAACL, EACL, COLING, and Findings tracks",
+        "ACL, EMNLP, NAACL, EACL, COLING, COLM, and Findings tracks",
     ),
     (
         "Selected Journals",
