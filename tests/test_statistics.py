@@ -1,4 +1,5 @@
 import csv
+import re
 import sys
 import tempfile
 import unittest
@@ -102,6 +103,12 @@ class CatalogStatisticsTest(unittest.TestCase):
             analysis.index("## Survey Scope"),
             analysis.index("## Catalog Trends"),
         )
+        scope = analysis.split("## Survey Scope\n", 1)[1].split(
+            "\n## Catalog Trends", 1
+        )[0]
+        fields = re.findall(r"^- \*\*(.+?):\*\*", scope, flags=re.MULTILINE)
+        self.assertEqual(fields, sorted(fields, key=str.casefold))
+        self.assertEqual(fields[0], "Artificial Intelligence")
         self.assertIn("**Data Mining, Web & Information Retrieval:**", analysis)
         self.assertIn("KDD, WWW, SIGIR, CIKM, WSDM", analysis)
         self.assertIn("**Natural Language Processing:**", analysis)
