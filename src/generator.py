@@ -1,6 +1,5 @@
 import json
 import re
-import shutil
 from pathlib import Path
 
 import pandas as pd
@@ -8,6 +7,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 TAXONOMY_PATH = ROOT / "data" / "taxonomy.json"
+ANALYSIS_MARKER = "<!-- catalog-trends -->"
 
 
 def load_taxonomy():
@@ -16,6 +16,21 @@ def load_taxonomy():
 
 def heading_anchor(value):
     return re.sub(r"[^a-z0-9]+", "-", value.casefold()).strip("-")
+
+
+def render_header(header_path, analysis_path=None):
+    header_content = Path(header_path).read_text(encoding="utf-8")
+    if header_content.count(ANALYSIS_MARKER) != 1:
+        raise ValueError(
+            f"expected exactly one {ANALYSIS_MARKER!r} marker in {header_path}"
+        )
+
+    if analysis_path:
+        analysis = Path(analysis_path).read_text(encoding="utf-8").rstrip()
+        rendered_header = header_content.replace(ANALYSIS_MARKER, analysis)
+    else:
+        rendered_header = header_content.replace(f"{ANALYSIS_MARKER}\n\n", "")
+    return rendered_header.rstrip() + "\n\n"
 
 
 def convert_csv_to_md(
@@ -40,13 +55,11 @@ def convert_csv_to_md(
 
     taxonomy = load_taxonomy()
 
-    shutil.copy(header, mdFile)
+    Path(mdFile).write_text(
+        render_header(header, analysis_path),
+        encoding="utf-8",
+    )
     with open(mdFile, "a", encoding="utf-8") as file:
-        if analysis_path:
-            file.write("\n")
-            file.write(Path(analysis_path).read_text(encoding="utf-8").rstrip())
-            file.write("\n\n")
-
         file.write("<table>\n")
         for section_id, section in enumerate(taxonomy, start=1):
             section_name = section["name"]

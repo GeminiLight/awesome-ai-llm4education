@@ -24,6 +24,8 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 >
 > 🎈 Welcome to check our [project page](https://tianfuwang.tech/gen-mentor/) and [demo code](https://github.com/GeminiLight/gen-mentor) to enjoy the goal-oriented learning experience!
 
+<!-- catalog-trends -->
+
 ## [Content](#content)
 
 ![AI4Edu](resources/ai4edu-loop.png)
