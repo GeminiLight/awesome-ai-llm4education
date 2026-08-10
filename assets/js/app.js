@@ -6,6 +6,7 @@
         let fieldMap = {};
         const F = (name) => fieldMap[name?.toLowerCase?.()] || name;
         const displayLabels = {
+            'section': 'Section 🧭',
             'category': 'Category 🏷️',
             'is_llm_related': 'LLM-related 🤖',
             'type': 'Type 🧩',
@@ -46,7 +47,7 @@
         }
 
         const REQUIRED_PAPER_COLUMNS = [
-            'group', 'category', 'publisher', 'year', 'type',
+            'section', 'group', 'category', 'publisher', 'year', 'type',
             'is_llm_related', 'title', 'link', 'authors', 'code'
         ];
 
@@ -63,7 +64,7 @@
             }
 
             const requiredValues = [
-                'group', 'category', 'publisher', 'year', 'type',
+                'section', 'group', 'publisher', 'year', 'type',
                 'is_llm_related', 'title', 'authors'
             ];
             papers.forEach((paper, index) => {
@@ -106,14 +107,14 @@
         // Helper: detect which fields are categorical (for dropdown)
         function isCategorical(header, papers) {
             // Always treat these specific fields as categorical
-            if(['category', 'group', 'year', 'type', 'publisher', 'is_llm_related'].includes(header.toLowerCase())) {
+            if(['section', 'category', 'group', 'year', 'type', 'publisher', 'is_llm_related'].includes(header.toLowerCase())) {
                 return true;
             }
             // For other fields, use the original logic
             const values = Array.from(new Set(papers.map(p => p[header]).filter(Boolean)));
             return values.length > 1 && values.length <= 20 && values.every(v => v.length < 32);
         }
-        // Group is now a chip-based multi-select; group button bar removed
+        // Taxonomy levels use chip-based multi-select filters.
         
         // Create filter controls
         function createFilters(papers, headers) {
@@ -135,7 +136,7 @@
             bar.appendChild(searchSection);
 
             // Create filter sections for button-based filters
-            const chipFilters = ['group', 'category', 'type', 'is_llm_related'];
+            const chipFilters = ['section', 'group', 'category', 'type', 'is_llm_related'];
             chipFilters.forEach(fieldName => {
                 const key = F(fieldName);
                 if(key && headers.includes(key)) {
@@ -351,22 +352,22 @@
                 `;
             }).join('');
 
-            const groupCounts = new Map();
+            const sectionCounts = new Map();
             papers.forEach(paper => {
-                const group = paper[F('group')];
-                groupCounts.set(group, (groupCounts.get(group) || 0) + 1);
+                const section = paper[F('section')];
+                sectionCounts.set(section, (sectionCounts.get(section) || 0) + 1);
             });
-            const byGroup = Array.from(groupCounts.entries()).sort(
-                ([groupA, countA], [groupB, countB]) => countB - countA || groupA.localeCompare(groupB)
+            const bySection = Array.from(sectionCounts.entries()).sort(
+                ([sectionA, countA], [sectionB, countB]) => countB - countA || sectionA.localeCompare(sectionB)
             );
-            const maxGroupCount = Math.max(...byGroup.map(([, count]) => count), 1);
-            document.getElementById('groupCoverageChart').innerHTML = byGroup.map(([group, count]) => {
+            const maxSectionCount = Math.max(...bySection.map(([, count]) => count), 1);
+            document.getElementById('sectionCoverageChart').innerHTML = bySection.map(([section, count]) => {
                 const share = total ? ((count / total) * 100).toFixed(1) : '0.0';
                 return `
-                    <div class="group-bar-row" aria-label="${escapeHtml(group)}: ${count} papers, ${share}% of catalog">
-                        <span class="group-bar-label">${escapeHtml(group)}</span>
+                    <div class="group-bar-row" aria-label="${escapeHtml(section)}: ${count} papers, ${share}% of catalog">
+                        <span class="group-bar-label">${escapeHtml(section)}</span>
                         <span class="group-bar-track" aria-hidden="true">
-                            <span class="group-bar-fill" style="width: ${((count / maxGroupCount) * 100).toFixed(2)}%"></span>
+                            <span class="group-bar-fill" style="width: ${((count / maxSectionCount) * 100).toFixed(2)}%"></span>
                         </span>
                         <span class="group-bar-value">${count} <small>${share}%</small></span>
                     </div>
@@ -383,7 +384,7 @@
                         toggle.setAttribute('aria-pressed', String(isActive));
                     });
                     document.getElementById('coverageYearView').hidden = selectedView !== 'year';
-                    document.getElementById('coverageGroupView').hidden = selectedView !== 'group';
+                    document.getElementById('coverageSectionView').hidden = selectedView !== 'section';
                 };
             });
         }
@@ -514,6 +515,7 @@
                     const publisher = paper[F('publisher')] || 'N/A';
                     const title = escapeHtml(paper[F('title')] || 'Untitled');
                     const authors = escapeHtml(paper[F('authors')] || 'Unknown');
+                    const section = paper[F('section')] ? escapeHtml(paper[F('section')]) : '';
                     const group = paper[F('group')] ? escapeHtml(paper[F('group')]) : '';
                     const category = paper[F('category')] ? escapeHtml(paper[F('category')]) : '';
                     const type = paper[F('type')] ? escapeHtml(paper[F('type')]) : '';
@@ -528,6 +530,7 @@
                             <p class="paper-authors">${authors}</p>
                             <div class="paper-footer">
                                 <div class="paper-tags">
+                                    ${section ? `<span class="tag">${section}</span>` : ''}
                                     ${group ? `<span class="tag">${group}</span>` : ''}
                                     ${category ? `<span class="tag">${category}</span>` : ''}
                                     ${type ? `<span class="tag">${type}</span>` : ''}

@@ -7,7 +7,7 @@ const { parseCSV } = require('../assets/js/csv-parser.js');
 
 const projectRoot = path.resolve(__dirname, '..');
 const mainColumns = [
-    'group', 'category', 'publisher', 'year', 'type',
+    'section', 'group', 'category', 'publisher', 'year', 'type',
     'is_llm_related', 'title', 'link', 'authors', 'code'
 ];
 const monthlyFiles = {
@@ -66,9 +66,10 @@ test('distinguishes blank lines from explicit empty records', () => {
 test('parses every canonical paper without field shifts', () => {
     const papers = readCSV('data/papers.csv');
 
-    assert.equal(papers.length, 296);
+    assert.equal(papers.length, 310);
     assert.deepEqual(Object.keys(papers[0]), mainColumns);
-    assert.equal(papers[0].group, 'Survey, Analysis & Vision');
+    assert.equal(papers[0].section, 'Surveys, Analyses & Perspectives');
+    assert.equal(papers[0].group, 'Comprehensive Surveys');
     assert.equal(papers[0].year, '2023');
     assert.equal(papers[0].is_llm_related, '1');
     assert.equal(
@@ -78,6 +79,7 @@ test('parses every canonical paper without field shifts', () => {
     assert.ok(papers.every(paper => /^\d{4}$/.test(paper.year)));
     assert.ok(papers.every(paper => ['0', '1'].includes(paper.is_llm_related)));
     assert.ok(papers.every(paper => !paper.link || /^https?:\/\//.test(paper.link)));
+    assert.equal(new Set(papers.map(paper => paper.title.toLowerCase())).size, papers.length);
 });
 
 test('keeps processed_data as a complete sorted copy of papers.csv', () => {
@@ -106,8 +108,10 @@ test('keeps categorical labels canonically cased and spaced', () => {
         ...readCSV('data/papers.csv'),
         ...Object.keys(monthlyFiles).flatMap(readCSV)
     ];
+    assert.ok(rows.some(row => row.section === 'Application Domains'));
+    assert.ok(rows.every(row => row.section !== 'Specific Scenario'));
 
-    for (const field of ['group', 'category', 'publisher', 'type']) {
+    for (const field of ['section', 'group', 'category', 'publisher', 'type']) {
         const variants = new Map();
         for (const row of rows) {
             const canonicalSpacing = row[field].normalize('NFC').trim().replace(/\s+/g, ' ');
@@ -122,6 +126,45 @@ test('keeps categorical labels canonically cased and spaced', () => {
             variants.set(normalized, row[field]);
         }
     }
+});
+
+test('uses only section/group/category combinations declared by the taxonomy', () => {
+    const taxonomy = JSON.parse(
+        fs.readFileSync(path.join(projectRoot, 'data/taxonomy.json'), 'utf8')
+    );
+    const allowed = new Map(taxonomy.sections.map(section => [
+        section.name,
+        new Map(section.groups.map(group => [group.name, group.categories]))
+    ]));
+    const rows = [
+        ...readCSV('data/papers.csv'),
+        ...Object.keys(monthlyFiles).flatMap(readCSV)
+    ];
+
+    for (const row of rows) {
+        assert.ok(allowed.has(row.section), `unknown section: ${row.section}`);
+        const groups = allowed.get(row.section);
+        assert.ok(groups.has(row.group), `unknown group: ${row.section} > ${row.group}`);
+        const categories = groups.get(row.group);
+        if (categories.length === 0) {
+            assert.equal(row.category, '', `category must be blank: ${row.section} > ${row.group}`);
+        } else {
+            assert.ok(
+                categories.includes(row.category),
+                `unknown category: ${row.section} > ${row.group} > ${row.category}`
+            );
+        }
+    }
+});
+
+test('renders the lifecycle taxonomy at three Markdown heading levels', () => {
+    const readme = fs.readFileSync(path.join(projectRoot, 'README.md'), 'utf8');
+
+    assert.match(readme, /^## \[Teaching & Learning Lifecycle\]\(#content\)$/m);
+    assert.match(readme, /^### \[Tutoring Systems\]\(#content\)$/m);
+    assert.match(readme, /^#### \[General Tutoring\]\(#content\)$/m);
+    assert.match(readme, />2\.1\.1\. General Tutoring<\/a>/);
+    assert.doesNotMatch(readme, /^## \[Tutoring Strategy\]/m);
 });
 
 test('loads the parser before the app and uses only the canonical CSV in the UI', () => {

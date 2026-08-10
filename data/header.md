@@ -14,7 +14,7 @@
 We collect papers related to **artificial intelligence (AI) and large language model (LLM) for education** from top conferences, journals, and specialized domain-specific conferences. We then categorize them according to their specific tasks for better organization.
 
 
-The overview section is organized as **Survey, Analysis & Vision** (including Comprehensive Survey, Empirical Analysis, and Position & Vision).
+The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching & Learning Lifecycle**, **Application Domains**, and **Datasets, Benchmarks & Toolkits**. Lifecycle papers use a third level to distinguish concrete tasks such as tutoring, material preparation, learner modeling, and assessment.
 **:sparkles: indicates the papers that are related to LLM.**
 
 > [!note]

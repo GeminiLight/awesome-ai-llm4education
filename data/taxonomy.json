@@ -1,0 +1,69 @@
+{
+  "sections": [
+    {
+      "name": "Surveys, Analyses & Perspectives",
+      "groups": [
+        {"name": "Comprehensive Surveys", "categories": []},
+        {"name": "Empirical Analyses", "categories": []},
+        {"name": "Perspectives", "categories": []}
+      ]
+    },
+    {
+      "name": "Teaching & Learning Lifecycle",
+      "groups": [
+        {
+          "name": "Tutoring Systems",
+          "categories": ["General Tutoring", "Learning Path Recommendation"]
+        },
+        {
+          "name": "Material Preparation",
+          "categories": [
+            "Content Generation",
+            "Question Generation",
+            "Knowledge Structuring",
+            "Resource Retrieval",
+            "Instructional Design"
+          ]
+        },
+        {
+          "name": "Teaching Support",
+          "categories": ["Teaching Assistance", "Classroom Support"]
+        },
+        {
+          "name": "Learner Modeling",
+          "categories": [
+            "Knowledge Tracing",
+            "Cognitive Diagnosis",
+            "Student Profiling",
+            "Student Simulation",
+            "Learning Engagement"
+          ]
+        },
+        {
+          "name": "Learning Assessment",
+          "categories": ["Adaptive Testing", "Automated Grading", "Feedback"]
+        }
+      ]
+    },
+    {
+      "name": "Application Domains",
+      "groups": [
+        {"name": "Computer Science", "categories": []},
+        {"name": "Mathematics", "categories": []},
+        {"name": "Language Learning", "categories": []},
+        {"name": "Medical Education", "categories": []},
+        {"name": "Humanities", "categories": []},
+        {"name": "Social Good", "categories": []},
+        {"name": "Social Skills", "categories": []}
+      ]
+    },
+    {
+      "name": "Datasets, Benchmarks & Toolkits",
+      "groups": [
+        {"name": "Datasets", "categories": []},
+        {"name": "Benchmarks", "categories": []},
+        {"name": "Toolkits", "categories": []}
+      ]
+    }
+  ]
+}

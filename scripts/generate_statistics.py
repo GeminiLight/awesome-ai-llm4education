@@ -20,8 +20,16 @@ from catalog_stats import (
 
 OUTPUT_DIR = ROOT / "visualization"
 YEAR_CHART_PATH = OUTPUT_DIR / "papers-by-year.svg"
-GROUP_CHART_PATH = OUTPUT_DIR / "papers-by-group.svg"
+SECTION_CHART_PATH = OUTPUT_DIR / "papers-by-section.svg"
+LEGACY_GROUP_CHART_PATH = OUTPUT_DIR / "papers-by-group.svg"
 ANALYSIS_PATH = OUTPUT_DIR / "analysis.md"
+
+SECTION_COLOR_TOKENS = {
+    "Surveys, Analyses & Perspectives": "section-surveys",
+    "Teaching & Learning Lifecycle": "section-lifecycle",
+    "Application Domains": "section-applications",
+    "Datasets, Benchmarks & Toolkits": "section-resources",
+}
 
 
 def escape(value: object) -> str:
@@ -53,27 +61,32 @@ def svg_header(width: int, height: int, title: str, description: str) -> list[st
         f'  <desc id="chart-description">{escape(description)}</desc>',
         "  <style>",
         (
-            "    :root { color-scheme: light dark; --background: #ffffff; "
-            "--foreground: #202124; --muted: #5f6368; --grid: #e2e7ee; "
-            "--frame: #c8d0da; --llm: #1a73e8; --other: #a9bfdc; "
-            "--group: #5b8def; }"
+            "    :root { color-scheme: light dark; --background: #fcfbf8; "
+            "--plot: #f7f5f0; --foreground: #26332e; --muted: #68756f; "
+            "--grid: #e2e6e1; --frame: #cbd4ce; --llm: #4d8b7d; "
+            "--other: #d7a28e; --section-surveys: #c49a52; "
+            "--section-lifecycle: #4d8b7d; --section-applications: #c7746b; "
+            "--section-resources: #8878a5; --section-default: #7c9189; }"
         ),
         (
-            "    @media (prefers-color-scheme: dark) { :root { --background: #202124; "
-            "--foreground: #e8eaed; --muted: #aeb4bc; --grid: #3c4043; "
-            "--frame: #5f6368; --llm: #8ab4f8; --other: #596b83; "
-            "--group: #8ab4f8; } }"
+            "    @media (prefers-color-scheme: dark) { :root { --background: #18201e; "
+            "--plot: #202a27; --foreground: #edf2ef; --muted: #a9b5af; "
+            "--grid: #34413c; --frame: #4b5b55; --llm: #77b6a8; "
+            "--other: #dda58e; --section-surveys: #d5af69; "
+            "--section-lifecycle: #77b6a8; --section-applications: #de9187; "
+            "--section-resources: #aa99c8; --section-default: #9cb3aa; } }"
         ),
         "    text { fill: var(--foreground); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }",
-        "    .title { font-size: 26px; font-weight: 700; }",
+        "    .title { font-family: Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 700; }",
         "    .subtitle, .note, .legend, .axis-label { fill: var(--muted); }",
-        "    .subtitle { font-size: 15px; }",
+        "    .subtitle { font-size: 15px; letter-spacing: 0.01em; }",
         "    .legend, .axis-label, .note { font-size: 13px; }",
-        "    .value { font-size: 13px; font-weight: 700; }",
+        "    .value { font-size: 13px; font-variant-numeric: tabular-nums; font-weight: 700; }",
         "    .grid { stroke: var(--grid); stroke-width: 1; }",
         "    .frame { fill: none; stroke: var(--frame); stroke-width: 1; }",
+        "    .plot-background { fill: var(--plot); }",
         "  </style>",
-        f'  <rect width="{width}" height="{height}" rx="16" fill="var(--background)"/>',
+        f'  <rect width="{width}" height="{height}" rx="18" fill="var(--background)"/>',
     ]
 
 
@@ -98,10 +111,11 @@ def render_year_chart(stats: CatalogStatistics) -> str:
         [
             '  <text class="title" x="54" y="46">Publication coverage by year</text>',
             '  <text class="subtitle" x="54" y="73">Cataloged papers split by LLM relationship</text>',
-            '  <rect x="54" y="94" width="12" height="12" rx="2" fill="var(--llm)"/>',
+            '  <rect x="54" y="94" width="12" height="12" rx="6" fill="var(--llm)"/>',
             '  <text class="legend" x="74" y="105">LLM-related</text>',
-            '  <rect x="180" y="94" width="12" height="12" rx="2" fill="var(--other)"/>',
+            '  <rect x="180" y="94" width="12" height="12" rx="6" fill="var(--other)"/>',
             '  <text class="legend" x="200" y="105">Other AI/education</text>',
+            f'  <rect class="plot-background" x="{plot_left}" y="{plot_top}" width="{plot_width}" height="{plot_height}" rx="10"/>',
         ]
     )
 
@@ -125,7 +139,7 @@ def render_year_chart(stats: CatalogStatistics) -> str:
             [
                 f'  <g><title>{item.year}: {item.total} papers ({item.llm_related} LLM-related, {item.other} other)</title>',
                 f'    <rect x="{x:.1f}" y="{other_y:.1f}" width="{bar_width:.1f}" height="{other_height:.1f}" fill="var(--other)"/>',
-                f'    <rect x="{x:.1f}" y="{llm_y:.1f}" width="{bar_width:.1f}" height="{llm_height:.1f}" rx="3" fill="var(--llm)"/>',
+                f'    <rect x="{x:.1f}" y="{llm_y:.1f}" width="{bar_width:.1f}" height="{llm_height:.1f}" rx="5" fill="var(--llm)"/>',
                 "  </g>",
                 f'  <text class="value" x="{center:.1f}" y="{max(plot_top, llm_y) - 8:.1f}" text-anchor="middle">{item.total}</text>',
                 f'  <text class="axis-label" x="{center:.1f}" y="{plot_bottom + 24}" text-anchor="middle">{item.year}</text>',
@@ -142,27 +156,28 @@ def render_year_chart(stats: CatalogStatistics) -> str:
     return "\n".join(lines) + "\n"
 
 
-def render_group_chart(stats: CatalogStatistics) -> str:
+def render_section_chart(stats: CatalogStatistics) -> str:
     width = 1200
     row_height = 52
     plot_left, plot_right = 310, 1100
     plot_top = 118
-    plot_bottom = plot_top + row_height * len(stats.by_group)
+    plot_bottom = plot_top + row_height * len(stats.by_section)
     height = plot_bottom + 92
     plot_width = plot_right - plot_left
-    maximum = axis_maximum(max(item.count for item in stats.by_group))
+    maximum = axis_maximum(max(item.count for item in stats.by_section))
     step = axis_step(maximum)
 
     lines = svg_header(
         width,
         height,
-        "Research group distribution",
-        "Horizontal bars compare cataloged paper counts across eight research groups.",
+        "Catalog section distribution",
+        "Horizontal bars compare cataloged paper counts across four top-level sections.",
     )
     lines.extend(
         [
-            '  <text class="title" x="54" y="46">Research group distribution</text>',
-            '  <text class="subtitle" x="54" y="73">Primary group assigned to each cataloged paper</text>',
+            '  <text class="title" x="54" y="46">Catalog section distribution</text>',
+            '  <text class="subtitle" x="54" y="73">Top-level section assigned to each cataloged paper</text>',
+            f'  <rect class="plot-background" x="{plot_left}" y="{plot_top}" width="{plot_width}" height="{plot_bottom - plot_top}" rx="10"/>',
         ]
     )
 
@@ -175,14 +190,15 @@ def render_group_chart(stats: CatalogStatistics) -> str:
             f'  <text class="axis-label" x="{x:.1f}" y="{plot_top - 12}" text-anchor="middle">{tick}</text>'
         )
 
-    for index, item in enumerate(stats.by_group):
+    for index, item in enumerate(stats.by_section):
         y = plot_top + index * row_height + 12
         bar_width = item.count / maximum * plot_width
         share = item.count / stats.total * 100
+        color_token = SECTION_COLOR_TOKENS.get(item.name, "section-default")
         lines.extend(
             [
                 f'  <text x="{plot_left - 16}" y="{y + 19}" text-anchor="end">{escape(item.name)}</text>',
-                f'  <rect x="{plot_left}" y="{y}" width="{bar_width:.1f}" height="28" rx="4" fill="var(--group)">',
+                f'  <rect x="{plot_left}" y="{y}" width="{bar_width:.1f}" height="28" rx="7" fill="var(--{color_token})">',
                 f'    <title>{escape(item.name)}: {item.count} papers ({share:.1f}%)</title>',
                 "  </rect>",
                 f'  <text class="value" x="{plot_left + bar_width + 10:.1f}" y="{y + 19}">{item.count} · {share:.1f}%</text>',
@@ -192,7 +208,7 @@ def render_group_chart(stats: CatalogStatistics) -> str:
     lines.extend(
         [
             f'  <rect class="frame" x="{plot_left}" y="{plot_top}" width="{plot_width}" height="{plot_bottom - plot_top}"/>',
-            f'  <text class="note" x="54" y="{height - 28}">Source: data/papers.csv · Each paper is counted once by its primary group</text>',
+            f'  <text class="note" x="54" y="{height - 28}">Source: data/papers.csv · Each paper is counted once by its top-level section</text>',
             "</svg>",
         ]
     )
@@ -200,7 +216,7 @@ def render_group_chart(stats: CatalogStatistics) -> str:
 
 
 def render_analysis(stats: CatalogStatistics) -> str:
-    largest_group = stats.by_group[0]
+    largest_section = stats.by_section[0]
     return f"""## Catalog Trends
 
 > [!NOTE]
@@ -211,13 +227,13 @@ def render_analysis(stats: CatalogStatistics) -> str:
 </p>
 
 <p align="center">
-  <img src="visualization/papers-by-group.svg" alt="Horizontal bar chart of cataloged papers by research group" width="100%">
+  <img src="visualization/papers-by-section.svg" alt="Horizontal bar chart of cataloged papers by top-level section" width="100%">
 </p>
 
 - **Catalog coverage:** {stats.total} papers spanning **{stats.earliest_year}–{stats.latest_year}**.
 - **LLM-related coverage:** {stats.llm_related} papers (**{stats.llm_share:.1%}** of the catalog).
 - **Publication sources:** {stats.source_count} venues and preprint sources.
-- **Largest research group:** {largest_group.name} — **{largest_group.count} papers ({largest_group.count / stats.total:.1%})**.
+- **Largest catalog section:** {largest_section.name} — **{largest_section.count} papers ({largest_section.count / stats.total:.1%})**.
 
 *Source: `data/papers.csv`; generated by `scripts/generate_statistics.py`.*
 """
@@ -226,9 +242,12 @@ def render_analysis(stats: CatalogStatistics) -> str:
 def build_outputs(stats: CatalogStatistics | None = None) -> dict[Path, str]:
     if stats is None:
         stats = compute_statistics(load_papers())
+    section_chart = render_section_chart(stats)
     return {
         YEAR_CHART_PATH: render_year_chart(stats),
-        GROUP_CHART_PATH: render_group_chart(stats),
+        SECTION_CHART_PATH: section_chart,
+        # Preserve existing external links while the canonical filename migrates.
+        LEGACY_GROUP_CHART_PATH: section_chart,
         ANALYSIS_PATH: render_analysis(stats),
     }
 
@@ -250,7 +269,11 @@ def sync_outputs(outputs: dict[Path, str], check: bool = False) -> list[Path]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--check", action="store_true", help="fail if generated statistics are stale")
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="fail if generated statistics are stale",
+    )
     args = parser.parse_args()
 
     try:

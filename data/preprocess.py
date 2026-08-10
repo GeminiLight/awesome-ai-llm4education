@@ -7,7 +7,7 @@ DATA_DIR = Path(__file__).resolve().parent
 SOURCE_PATH = DATA_DIR / 'papers.csv'
 OUTPUT_PATH = DATA_DIR / 'processed_data.csv'
 COLUMNS = [
-    'group', 'category', 'publisher', 'year', 'type',
+    'section', 'group', 'category', 'publisher', 'year', 'type',
     'is_llm_related', 'title', 'link', 'authors', 'code',
 ]
 
@@ -33,7 +33,8 @@ def render_processed_csv():
     rows = load_papers()
     rows.sort(
         key=lambda row: (
-            row['category'], row['publisher'], int(row['year']), row['type']
+            row['section'], row['group'], row['category'], row['publisher'],
+            int(row['year']), row['type']
         )
     )
 
