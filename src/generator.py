@@ -2,10 +2,17 @@ import csv
 import os
 import copy
 import shutil
+from pathlib import Path
 import pandas as pd
 
 
-def convert_csv_to_md(csv_file_path, mdFile, header, only_llm_related=False):
+def convert_csv_to_md(
+    csv_file_path,
+    mdFile,
+    header,
+    only_llm_related=False,
+    analysis_path=None,
+):
     df_paper_info = pd.read_csv(csv_file_path, sep=',', encoding='utf-8')
     df_paper_info['category'] = df_paper_info['category'].apply(lambda x: x.split(';'))
     df_paper_info = df_paper_info.explode('category')
@@ -17,6 +24,10 @@ def convert_csv_to_md(csv_file_path, mdFile, header, only_llm_related=False):
     shutil.copy(header, mdFile)
     # Write the table of content
     with open(mdFile, "a", encoding='utf-8') as file:
+        if analysis_path:
+            file.write('\n')
+            file.write(Path(analysis_path).read_text(encoding='utf-8').rstrip())
+            file.write('\n\n')
         file.writelines('<table>\n\n')
         for group_id, group_name in enumerate(group_list):
             df_paper_info_of_group = df_paper_info[df_paper_info['group'] == group_name]
@@ -183,6 +194,12 @@ def convert_csv_to_md(csv_file_path, mdFile, header, only_llm_related=False):
 if __name__ == '__main__':
     # md2csv("../README.md", "../data/papers.csv")
     theme = 'dark'
-    convert_csv_to_md("../data/papers.csv", "../README.md", "../data/header.md", only_llm_related=False)
+    convert_csv_to_md(
+        "../data/papers.csv",
+        "../README.md",
+        "../data/header.md",
+        only_llm_related=False,
+        analysis_path="../visualization/analysis.md",
+    )
     convert_csv_to_md("../data/papers.csv", "../LLM4EDU.md", "../data/header.md", only_llm_related=True)
     # visualize("../data/papers.csv")

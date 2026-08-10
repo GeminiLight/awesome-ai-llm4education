@@ -1,4 +1,5 @@
 import csv
+import io
 from pathlib import Path
 
 
@@ -28,7 +29,7 @@ def load_papers():
     return rows
 
 
-def main():
+def render_processed_csv():
     rows = load_papers()
     rows.sort(
         key=lambda row: (
@@ -36,10 +37,19 @@ def main():
         )
     )
 
-    with OUTPUT_PATH.open('w', encoding='utf-8', newline='') as output:
-        writer = csv.DictWriter(output, fieldnames=COLUMNS, lineterminator='\n')
-        writer.writeheader()
-        writer.writerows(rows)
+    output = io.StringIO(newline='')
+    writer = csv.DictWriter(output, fieldnames=COLUMNS, lineterminator='\n')
+    writer.writeheader()
+    writer.writerows(rows)
+    return output.getvalue()
+
+
+def write_processed_csv():
+    OUTPUT_PATH.write_text(render_processed_csv(), encoding='utf-8')
+
+
+def main():
+    write_processed_csv()
 
 
 if __name__ == '__main__':

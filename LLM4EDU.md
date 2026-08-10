@@ -92,6 +92,10 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 	<td>&emsp;<a href=#social-good>7.6 Social Good</a></td>
 </tr>
 <tr>
+	<td>&emsp;<a href=#social-skill>7.7 Social Skill</a></td>
+	<td></td>
+</tr>
+<tr>
 <tr><td colspan="2"><a href="#dataset--benchmark">8. Dataset & Benchmark</a></td>
 <tr>
 	<td>&emsp;<a href=#benchmark>8.1 Benchmark</a></td>
@@ -269,145 +273,139 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2603.03339)
 
-13. :sparkles: **SocialCoach: Personalized Social Skill Learning with RL-based Agentic Tutoring and Practice**
-
-    *Tianfu Wang, Max Xiong, Jianxun Lian, Hongyuan Zhu, Zhengyu Hu, Yuxuan Lei, Linxiao Gong, Xiaofang Li, Peiting Tsai, Nicholas Jing Yuan, Qi Zhang*
-
-    arXiv, 2026. [`preprint`](https://arxiv.org/abs/2606.04155)
-
-14. :sparkles: **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
+13. :sparkles: **LLM-powered Multi-agent Framework for Goal-oriented Learning in Intelligent Tutoring System**
 
     *Tianfu Wang, Yi Zhan, Jianxun Lian, Zhengyu Hu, Nicholas Jing Yuan, Qi Zhang, Xing Xie, Hui Xiong*
 
     WWW, 2025. [`conference`](https://arxiv.org/abs/2501.15749), [`code`](https://github.com/GeminiLight/gen-mentor)
 
-15. :sparkles: **Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning**
+14. :sparkles: **Generative AI in Education: From Foundational Insights to the Socratic Playground for Learning**
 
     *Xiangen Hu, Sheng Xu, Richard Tong, Art Graesser*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2501.06682)
 
-16. :sparkles: **From Problem-Solving to Teaching Problem-Solving: Aligning LLMs with Pedagogy using Reinforcement Learning**
+15. :sparkles: **From Problem-Solving to Teaching Problem-Solving: Aligning LLMs with Pedagogy using Reinforcement Learning**
 
     *David Dinucu-Jianu, Jakub Macina, Nico Daheim, Ido Hakimi, Iryna Gurevych, Mrinmaya Sachan*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.15607), [`code`](https://github.com/eth-lre/PedagogicalRL)
 
-17. :sparkles: **A Theory of Adaptive Scaffolding for LLM-Based Pedagogical Agents**
+16. :sparkles: **A Theory of Adaptive Scaffolding for LLM-Based Pedagogical Agents**
 
     *Clayton Cohn, Surya Rayala, Namrata Srivastava, Joyce Horn Fonteles, Shruti Jain, Xinying Luo, Divya Mereddy, Naveeduddin Mohammed, Gautam Biswas*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2508.01503)
 
-18. :sparkles: **Cultivating Helpful, Personalized, and Creative AI Tutors: A Framework for Pedagogical Alignment using Reinforcement Learning**
+17. :sparkles: **Cultivating Helpful, Personalized, and Creative AI Tutors: A Framework for Pedagogical Alignment using Reinforcement Learning**
 
     *Siyu Song, Wentao Liu, Ye Lu, Ruohua Zhang, Tao Liu, Jinze Lv, Xinyun Wang, Aimin Zhou, Fei Tan, Bo Jiang, Hao Hao*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2507.20335)
 
-19. :sparkles: **Exploring Conversational Design Choices in LLMs for Pedagogical Purposes: Socratic and Narrative Approaches for Improving Instructor's Teaching Practice**
+18. :sparkles: **Exploring Conversational Design Choices in LLMs for Pedagogical Purposes: Socratic and Narrative Approaches for Improving Instructor's Teaching Practice**
 
     *Si Chen, Isabel R. Molnar, Peiyu Li, Adam Acunin, Ting Hua, Alex Ambrose, Nitesh V. Chawla, Ronald Metoyer*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2501.04100)
 
-20. :sparkles: **An Experience Report on a Pedagogically Controlled Curriculum-Constrained AI Tutor for SE Education**
+19. :sparkles: **An Experience Report on a Pedagogically Controlled Curriculum-Constrained AI Tutor for SE Education**
 
     *Lucia Happe, Dominik Fuchs, Luca Huttner, Kai Marquardt, Anne Koziolek*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.11882)
 
-21. :sparkles: **IntelliCode: A Multi-Agent LLM Tutoring System with Centralized Learner Modeling**
+20. :sparkles: **IntelliCode: A Multi-Agent LLM Tutoring System with Centralized Learner Modeling**
 
     *Jones David, Shreya Ghosh*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.18669)
 
-22. :sparkles: **AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms**
+21. :sparkles: **AI tutoring can safely and effectively support students: An exploratory RCT in UK classrooms**
 
     *LearnLM Team, Eedi*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.23633)
 
-23. :sparkles: **AgentTutor: Empowering Personalized Learning with Multi-Turn Interactive Teaching in Intelligent Education Systems**
+22. :sparkles: **AgentTutor: Empowering Personalized Learning with Multi-Turn Interactive Teaching in Intelligent Education Systems**
 
     *Yuxin Liu, Zeqing Song, Jiong Lou, Chentao Wu, Jie Li*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2601.04219)
 
-24. :sparkles: **LeafTutor: An AI Agent for Programming Assignment Tutoring**
+23. :sparkles: **LeafTutor: An AI Agent for Programming Assignment Tutoring**
 
     *Madison Bochard, Tim Conser, Alyssa Duran, Lazaro Martull, Pu Tian, Yalong Wu*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2601.02375)
 
-25. :sparkles: **Evolutionary Reinforcement Learning based AI tutor for Socratic Interdisciplinary Instruction**
+24. :sparkles: **Evolutionary Reinforcement Learning based AI tutor for Socratic Interdisciplinary Instruction**
 
     *Mei Jiang, Haihai Shen, Zhuo Luo, Bingdong Li, Wenjing Hong, Ke Tang, Aimin Zhou*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.11930)
 
-26. :sparkles: **Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring**
+25. :sparkles: **Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring**
 
     *Saisab Sadhu, Ashim Dhor*
 
     arXiv, 2025. [`preprint`](https://arxiv.org/abs/2512.22496)
 
-27. :sparkles: **Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling**
+26. :sparkles: **Empowering Personalized Learning through a Conversation-based Tutoring System with Student Modeling**
 
     *Minju Park, Sojung Kim, Seunghyun Lee, Soonwoo Kwon, Kyuseok Kim*
 
     CHI-LBW, 2024. [`workshop`](https://arxiv.org/abs/2403.14071)
 
-28. :sparkles: **AutoTutor meets Large Language Models: A Language Model Tutor with Rich Pedagogy and Guardrails**
+27. :sparkles: **AutoTutor meets Large Language Models: A Language Model Tutor with Rich Pedagogy and Guardrails**
 
     *Sankalan Pal Chowdhury, Vilém Zouhar, Mrinmaya Sachan*
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2402.09216)
 
-29. :sparkles: **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
+28. :sparkles: **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
 
     *Jiayu Liu, Zhenya Huang, Tong Xiao, Jing Sha, Jinze Wu, Qi Liu, Shijin Wang, Enhong Chen*
 
     NeurIPS, 2024. [`conference`](https://neurips.cc/virtual/2024/poster/93477)
 
-30. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
+29. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
 
     *Zhengyuan Liu, Stella Xin Yin, Geyu Lin, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-31. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
+30. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
 
     *Wei-Yu Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
-32. :sparkles: **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
+31. :sparkles: **Scaffolding Language Learning via Multi-modal Tutoring Systems with Pedagogical Instructions**
 
     *Zhengyuan Liu, Stella Xin Yin, Carolyn Lee, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.03429)
 
-33. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
+32. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
 
     *Glen Smith, Adit Gupta, Christopher MacLellan*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07883)
 
-34. :sparkles: **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
+33. :sparkles: **AI-TA: Towards an Intelligent Question-Answer Teaching Assistant using Open-Source LLMs**
 
     *Yann Hicke, Anmol Agarwal, Qianou Ma, Paul Denny*
 
     NeurIPS - Workshop on Generative AI for Education (GAIED), 2023. [`workshop`](https://arxiv.org/abs/2311.02775)
 
-35. :sparkles: **Empowering Private Tutoring by Chaining Large Language Models**
+34. :sparkles: **Empowering Private Tutoring by Chaining Large Language Models**
 
     *Yulin Chen, Ning Ding, Hai-Tao Zheng, Zhiyuan Liu, Maosong Sun, Bowen Zhou*
 
     arXiv, 2023. [`preprint`](https://arxiv.org/abs/2309.08112)
 
-36. :sparkles: **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
+35. :sparkles: **How to Build an AI Tutor that Can Adapt to Any Course and Provide Accurate Answers Using Large Language Model and Retrieval-Augmented Generation**
 
     *Chenxi Dong*
 
@@ -837,7 +835,7 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
 
     *Wanyong Feng, Jaewook Lee, Hunter McNichols, Alexander Scarlatos, Digory Smith, Simon Woodhead, Nancy Otero Ornelas, Andrew Lan*
 
-    NAACL findings, 2024. [`conference`](https://arxiv.org/abs/2404.02124)
+    NAACL Findings, 2024. [`conference`](https://arxiv.org/abs/2404.02124)
 
 8. :sparkles: **Multiple Choice Questions and Large Languages Models: A Case Study with Fictional Medical Data**
 
@@ -1158,6 +1156,14 @@ The overview section is organized as **Survey, Analysis & Vision** (including Co
     *Haocong Cheng, Si Chen, Christopher Perdriau, Yun Huang*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2411.09873)
+
+### [Social Skill](#content)
+
+1. :sparkles: **SocialCoach: Personalized Social Skill Learning with RL-based Agentic Tutoring and Practice**
+
+    *Tianfu Wang, Max Xiong, Jianxun Lian, Hongyuan Zhu, Zhengyu Hu, Yuxuan Lei, Linxiao Gong, Xiaofang Li, Peiting Tsai, Nicholas Jing Yuan, Qi Zhang*
+
+    arXiv, 2026. [`preprint`](https://arxiv.org/abs/2606.04155)
 
 
 

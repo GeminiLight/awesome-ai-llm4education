@@ -10,6 +10,12 @@ const mainColumns = [
     'group', 'category', 'publisher', 'year', 'type',
     'is_llm_related', 'title', 'link', 'authors', 'code'
 ];
+const monthlyFiles = {
+    'data/monthly/papers_2025_11_llm_education.csv': 21,
+    'data/monthly/papers_2025_12_llm_education.csv': 16,
+    'data/monthly/papers_2026_01_llm_education.csv': 16,
+    'data/monthly/papers_2026_02_llm_education.csv': 18
+};
 
 const readCSV = relativePath => (
     parseCSV(fs.readFileSync(path.join(projectRoot, relativePath), 'utf8'))
@@ -85,13 +91,6 @@ test('keeps processed_data as a complete sorted copy of papers.csv', () => {
 });
 
 test('parses all monthly CSV records with the extended schema', () => {
-    const monthlyFiles = {
-        'data/monthly/papers_2025_11_llm_education.csv': 21,
-        'data/monthly/papers_2025_12_llm_education.csv': 16,
-        'data/monthly/papers_2026_01_llm_education.csv': 16,
-        'data/monthly/papers_2026_02_llm_education.csv': 18
-    };
-
     for (const [relativePath, expectedCount] of Object.entries(monthlyFiles)) {
         const rows = readCSV(relativePath);
         assert.equal(rows.length, expectedCount, relativePath);
@@ -99,6 +98,29 @@ test('parses all monthly CSV records with the extended schema', () => {
         assert.ok(rows.every(row => /^\d{4}$/.test(row.year)), relativePath);
         assert.ok(rows.every(row => row.is_llm_related === '1'), relativePath);
         assert.ok(rows.every(row => /^https?:\/\//.test(row.link)), relativePath);
+    }
+});
+
+test('keeps categorical labels canonically cased and spaced', () => {
+    const rows = [
+        ...readCSV('data/papers.csv'),
+        ...Object.keys(monthlyFiles).flatMap(readCSV)
+    ];
+
+    for (const field of ['group', 'category', 'publisher', 'type']) {
+        const variants = new Map();
+        for (const row of rows) {
+            const canonicalSpacing = row[field].normalize('NFC').trim().replace(/\s+/g, ' ');
+            assert.equal(row[field], canonicalSpacing, `${field} has non-canonical whitespace`);
+
+            const normalized = canonicalSpacing.toLocaleLowerCase('en-US');
+            const existing = variants.get(normalized);
+            assert.ok(
+                existing === undefined || existing === row[field],
+                `${field} has conflicting variants: ${existing} / ${row[field]}`
+            );
+            variants.set(normalized, row[field]);
+        }
     }
 });
 
@@ -111,6 +133,6 @@ test('loads the parser before the app and uses only the canonical CSV in the UI'
         'csv-parser.js must load before app.js'
     );
     assert.match(app, /CSVParser\.parseCSV/);
-    assert.match(app, /fetch\('data\/papers\.csv'\)/);
+    assert.match(app, /fetch\('data\/papers\.csv', \{ cache: 'no-cache' \}\)/);
     assert.doesNotMatch(app, /processed_data\.csv/);
 });

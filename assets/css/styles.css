@@ -12,6 +12,9 @@
     --text-secondary: #5f6368;
     --text-tertiary: #80868b;
     --border: #dadce0;
+    --chart-llm: #1a73e8;
+    --chart-other: #b7c9df;
+    --chart-grid: #e4e9f0;
     --shadow-sm: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
     --shadow-md: 0 1px 3px 0 rgba(60,64,67,.3), 0 4px 8px 3px rgba(60,64,67,.15);
     --shadow-lg: 0 2px 6px 2px rgba(60,64,67,.15), 0 8px 24px 4px rgba(60,64,67,.15);
@@ -33,6 +36,9 @@ body.dark {
     --text-secondary: #9aa0a6;
     --text-tertiary: #5f6368;
     --border: #3c4043;
+    --chart-llm: #8ab4f8;
+    --chart-other: #52677f;
+    --chart-grid: #3c4043;
 }
 
 * {
@@ -122,16 +128,71 @@ main {
     box-shadow: var(--shadow-sm);
 }
 
-.stats-strip {
+.overview-header {
     display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.panel-kicker {
+    margin-bottom: 2px;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.overview-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 23px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.coverage-toggle {
+    display: inline-flex;
+    padding: 3px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+}
+
+.coverage-toggle-button {
+    padding: 7px 13px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.coverage-toggle-button:hover {
+    color: var(--primary);
+}
+
+.coverage-toggle-button.active {
+    background: var(--primary);
+    color: white;
+}
+
+body.dark .coverage-toggle-button.active {
+    color: #202124;
+}
+
+.stats-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .stat-card {
-    flex: 1;
-    min-width: 120px;
     padding: 12px 16px;
     background: var(--background);
     border-radius: var(--radius-sm);
@@ -150,6 +211,182 @@ main {
     font-size: 24px;
     font-weight: 700;
     color: var(--primary);
+}
+
+.stat-detail {
+    margin-top: 1px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* Catalog coverage charts */
+.coverage-views {
+    padding: 16px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+}
+
+.coverage-view[hidden] {
+    display: none;
+}
+
+.coverage-legend {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.coverage-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-swatch {
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+}
+
+.legend-llm {
+    background: var(--chart-llm);
+}
+
+.legend-other {
+    background: var(--chart-other);
+}
+
+.coverage-chart-scroll {
+    overflow-x: auto;
+    padding-bottom: 3px;
+}
+
+.year-coverage-chart {
+    display: grid;
+    grid-template-columns: repeat(var(--year-count), minmax(32px, 1fr));
+    gap: 7px;
+    min-width: 660px;
+    height: 235px;
+    padding-top: 4px;
+}
+
+.year-bar-column {
+    display: grid;
+    grid-template-rows: 18px minmax(0, 1fr) 24px;
+    min-width: 0;
+    text-align: center;
+}
+
+.year-bar-value,
+.year-bar-label {
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-variant-numeric: tabular-nums;
+}
+
+.year-bar-label {
+    align-self: end;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    white-space: nowrap;
+}
+
+.year-bar-track {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    border-bottom: 1px solid var(--chart-grid);
+    background: repeating-linear-gradient(
+        to top,
+        transparent 0,
+        transparent calc(25% - 1px),
+        var(--chart-grid) 25%
+    );
+}
+
+.year-bar-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 72%;
+    max-width: 26px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+}
+
+.year-bar-segment {
+    display: block;
+    min-height: 0;
+}
+
+.year-bar-llm {
+    order: 1;
+    background: var(--chart-llm);
+}
+
+.year-bar-other {
+    background: var(--chart-other);
+}
+
+.group-coverage-chart {
+    display: grid;
+    gap: 11px;
+}
+
+.group-bar-row {
+    display: grid;
+    grid-template-columns: minmax(132px, 1.25fr) minmax(180px, 4fr) 80px;
+    align-items: center;
+    gap: 12px;
+}
+
+.group-bar-label {
+    overflow: hidden;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.group-bar-track {
+    display: block;
+    height: 11px;
+    overflow: hidden;
+    background: var(--surface-hover);
+    border-radius: 999px;
+}
+
+.group-bar-fill {
+    display: block;
+    height: 100%;
+    background: var(--chart-llm);
+    border-radius: inherit;
+}
+
+.group-bar-value {
+    color: var(--text-primary);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    text-align: right;
+}
+
+.group-bar-value small {
+    color: var(--text-tertiary);
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.coverage-disclaimer {
+    margin: 9px 2px 16px;
+    color: var(--text-tertiary);
+    font-size: 11px;
 }
 
 /* Active Filters */
@@ -595,12 +832,16 @@ body.dark .llm-badge {
 
 /* Loader */
 .loader {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 60px 24px;
     color: var(--text-secondary);
+}
+
+.loader.active {
+    display: flex;
 }
 
 .spinner {
@@ -671,7 +912,7 @@ body.dark .llm-badge {
     color: var(--text-secondary);
 }
 
-#resultsCount {
+.results-info strong {
     font-weight: 600;
     color: var(--primary);
 }
@@ -730,12 +971,22 @@ body.dark .llm-badge {
         gap: 16px;
     }
 
-    .stats-strip {
+    .overview-header {
+        align-items: flex-start;
         flex-direction: column;
     }
 
+    .stats-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .stat-card {
-        min-width: 100%;
+        min-width: 0;
+    }
+
+    .group-bar-row {
+        grid-template-columns: minmax(110px, 1.2fr) minmax(90px, 2fr) 68px;
+        gap: 8px;
     }
 
     .paper-card {
@@ -748,6 +999,31 @@ body.dark .llm-badge {
 
     .filter-bar, .ia-toolbar {
         padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-strip {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .coverage-views {
+        padding: 12px;
+    }
+
+    .coverage-legend {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 6px 12px;
+    }
+
+    .group-bar-row {
+        grid-template-columns: minmax(95px, 1.35fr) minmax(70px, 1.6fr) 55px;
+    }
+
+    .group-bar-value small {
+        display: none;
     }
 }
 

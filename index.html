@@ -26,20 +26,53 @@
 
         <div class="container">
             <section class="ia-toolbar" id="iaToolbar" aria-label="Statistics and active filters">
+                <div class="overview-header">
+                    <div>
+                        <p class="panel-kicker">Catalog coverage</p>
+                        <h2 class="overview-title">Research at a glance</h2>
+                    </div>
+                    <div class="coverage-toggle" role="group" aria-label="Coverage chart dimension">
+                        <button class="coverage-toggle-button active" type="button" data-coverage-view="year" aria-pressed="true">Year</button>
+                        <button class="coverage-toggle-button" type="button" data-coverage-view="group" aria-pressed="false">Research group</button>
+                    </div>
+                </div>
                 <div class="stats-strip" id="statsStrip">
                     <div class="stat-card">
                         <div class="stat-label">Total Papers</div>
                         <div class="stat-value" id="statTotal">0</div>
+                        <div class="stat-detail">Curated records</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-label">Visible</div>
-                        <div class="stat-value" id="statVisible">0</div>
+                        <div class="stat-label">LLM-related</div>
+                        <div class="stat-value" id="statLLMCount">0</div>
+                        <div class="stat-detail" id="statLLMShare">0% of catalog</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-label">LLM Share</div>
-                        <div class="stat-value" id="statLLMShare">0%</div>
+                        <div class="stat-label">Publication Sources</div>
+                        <div class="stat-value" id="statSources">0</div>
+                        <div class="stat-detail">Venues and preprints</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Latest Year</div>
+                        <div class="stat-value" id="statLatestYear">—</div>
+                        <div class="stat-detail" id="statYearRange">Coverage range</div>
                     </div>
                 </div>
+                <div class="coverage-views">
+                    <div class="coverage-view" id="coverageYearView">
+                        <div class="coverage-legend" aria-hidden="true">
+                            <span><i class="legend-swatch legend-llm"></i>LLM-related</span>
+                            <span><i class="legend-swatch legend-other"></i>Other AI/education</span>
+                        </div>
+                        <div class="coverage-chart-scroll">
+                            <div class="year-coverage-chart" id="yearCoverageChart" aria-label="Paper count by publication year and LLM relationship"></div>
+                        </div>
+                    </div>
+                    <div class="coverage-view" id="coverageGroupView" hidden>
+                        <div class="group-coverage-chart" id="groupCoverageChart" aria-label="Paper count by research group"></div>
+                    </div>
+                </div>
+                <p class="coverage-disclaimer">Coverage describes this curated catalog, not total field output. The latest publication year is incomplete.</p>
                 <div class="active-filters" id="activeFilters" aria-live="polite" aria-atomic="true">
                     <div class="active-filters-title">Active Filters</div>
                     <div class="active-filters-chips" id="activeFiltersChips">
@@ -56,6 +89,10 @@
             <div class="loader" id="loader" role="status" aria-live="polite">
                 <div class="spinner"></div>
                 <div>Loading papers…</div>
+            </div>
+
+            <div class="results-info" role="status" aria-live="polite">
+                Showing <strong id="statVisible">0</strong> of <strong id="statResultTotal">0</strong> papers
             </div>
 
             <section class="paper-list" id="paperList" aria-label="Paper list">
