@@ -2,14 +2,14 @@
 
 This catalog monitors representative venues across AI, computing, and education. The list is indicative rather than exhaustive; relevant workshops, journals, and arXiv preprints are also considered.
 
-- **Data Mining, Web & Information Retrieval:** KDD, WWW, SIGIR, CIKM, WSDM
 - **Artificial Intelligence:** AAAI, IJCAI
+- **Data Mining, Web & Information Retrieval:** KDD, WWW, SIGIR, CIKM, WSDM
+- **Education & Learning Sciences:** AIED, EDM, LAK, Learning@Scale, EC-TEL, ITS, ICALT
+- **Human-Computer Interaction:** CHI, CSCW, UIST, IUI
 - **Machine Learning:** NeurIPS, ICML, ICLR, COLM
 - **Natural Language Processing:** ACL, EMNLP, NAACL, EACL, COLING, and Findings tracks
-- **Human-Computer Interaction:** CHI, CSCW, UIST, IUI
-- **Education & Learning Sciences:** AIED, EDM, LAK, Learning@Scale, EC-TEL, ITS, ICALT
-- **Software Engineering & Computing Education:** ICSE, SIGCSE, ITiCSE
 - **Selected Journals:** IJAIED, Computers & Education, IEEE TLT, TKDE, TOIS, npj Science of Learning
+- **Software Engineering & Computing Education:** ICSE, SIGCSE, ITiCSE
 
 ## Catalog Trends
 
