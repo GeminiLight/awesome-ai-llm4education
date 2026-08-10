@@ -15,6 +15,7 @@ from catalog_stats import (
     CatalogValidationError,
     compute_statistics,
     load_papers,
+    load_taxonomy,
 )
 
 
@@ -23,6 +24,7 @@ YEAR_CHART_PATH = OUTPUT_DIR / "papers-by-year.svg"
 SECTION_CHART_PATH = OUTPUT_DIR / "papers-by-section.svg"
 LEGACY_GROUP_CHART_PATH = OUTPUT_DIR / "papers-by-group.svg"
 ANALYSIS_PATH = OUTPUT_DIR / "analysis.md"
+LIFECYCLE_SECTION = "Teaching & Learning Lifecycle"
 
 SECTION_COLOR_TOKENS = {
     "Surveys, Analyses & Perspectives": "section-surveys",
@@ -30,6 +32,39 @@ SECTION_COLOR_TOKENS = {
     "Application Domains": "section-applications",
     "Datasets, Benchmarks & Toolkits": "section-resources",
 }
+LIFECYCLE_GROUP_COLOR_TOKENS = {
+    "Tutoring Systems": "lifecycle-tutoring",
+    "Material Preparation": "lifecycle-material",
+    "Teaching Support": "lifecycle-support",
+    "Learner Modeling": "lifecycle-modeling",
+    "Learning Assessment": "lifecycle-assessment",
+}
+SURVEY_SCOPE = (
+    (
+        "Data Mining, Web & Information Retrieval",
+        "KDD, WWW, SIGIR, CIKM, WSDM",
+    ),
+    ("Artificial Intelligence", "AAAI, IJCAI"),
+    ("Machine Learning", "NeurIPS, ICML, ICLR, COLM"),
+    (
+        "Natural Language Processing",
+        "ACL, EMNLP, NAACL, EACL, COLING, and Findings tracks",
+    ),
+    ("Human-Computer Interaction", "CHI, CSCW, UIST, IUI"),
+    (
+        "Education & Learning Sciences",
+        "AIED, EDM, LAK, Learning@Scale, EC-TEL, ITS, ICALT",
+    ),
+    (
+        "Software Engineering & Computing Education",
+        "ICSE, SIGCSE, ITiCSE",
+    ),
+    (
+        "Selected Journals",
+        "IJAIED, Computers & Education, IEEE TLT, TKDE, TOIS, "
+        "npj Science of Learning",
+    ),
+)
 
 
 def escape(value: object) -> str:
@@ -66,7 +101,10 @@ def svg_header(width: int, height: int, title: str, description: str) -> list[st
             "--grid: #e2e6e1; --frame: #cbd4ce; --llm: #4d8b7d; "
             "--other: #d7a28e; --section-surveys: #c49a52; "
             "--section-lifecycle: #4d8b7d; --section-applications: #c7746b; "
-            "--section-resources: #8878a5; --section-default: #7c9189; }"
+            "--section-resources: #8878a5; --section-default: #7c9189; "
+            "--lifecycle-tutoring: #386d63; --lifecycle-material: #4f877b; "
+            "--lifecycle-support: #6fa093; --lifecycle-modeling: #8bb5aa; "
+            "--lifecycle-assessment: #a9c7bf; }"
         ),
         (
             "    @media (prefers-color-scheme: dark) { :root { --background: #18201e; "
@@ -74,7 +112,10 @@ def svg_header(width: int, height: int, title: str, description: str) -> list[st
             "--grid: #34413c; --frame: #4b5b55; --llm: #77b6a8; "
             "--other: #dda58e; --section-surveys: #d5af69; "
             "--section-lifecycle: #77b6a8; --section-applications: #de9187; "
-            "--section-resources: #aa99c8; --section-default: #9cb3aa; } }"
+            "--section-resources: #aa99c8; --section-default: #9cb3aa; "
+            "--lifecycle-tutoring: #85c5b6; --lifecycle-material: #73b3a5; "
+            "--lifecycle-support: #62a092; --lifecycle-modeling: #528b80; "
+            "--lifecycle-assessment: #43766d; } }"
         ),
         "    text { fill: var(--foreground); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }",
         "    .title { font-family: Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 700; }",
@@ -85,6 +126,7 @@ def svg_header(width: int, height: int, title: str, description: str) -> list[st
         "    .grid { stroke: var(--grid); stroke-width: 1; }",
         "    .frame { fill: none; stroke: var(--frame); stroke-width: 1; }",
         "    .plot-background { fill: var(--plot); }",
+        "    .lifecycle-segment { stroke: var(--background); stroke-width: 1.5; }",
         "  </style>",
         f'  <rect width="{width}" height="{height}" rx="18" fill="var(--background)"/>',
     ]
@@ -160,26 +202,54 @@ def render_section_chart(stats: CatalogStatistics) -> str:
     width = 1200
     row_height = 52
     plot_left, plot_right = 310, 1100
-    plot_top = 118
+    plot_top = 154
     plot_bottom = plot_top + row_height * len(stats.by_section)
     height = plot_bottom + 92
     plot_width = plot_right - plot_left
     maximum = axis_maximum(max(item.count for item in stats.by_section))
     step = axis_step(maximum)
+    group_counts = {
+        (item.section, item.name): item.count for item in stats.by_group
+    }
+    lifecycle_groups = [
+        (
+            group_name,
+            group_counts.get((LIFECYCLE_SECTION, group_name), 0),
+            LIFECYCLE_GROUP_COLOR_TOKENS.get(group_name, "section-lifecycle"),
+        )
+        for group_name in load_taxonomy()[LIFECYCLE_SECTION]
+    ]
+    lifecycle_count = next(
+        item.count for item in stats.by_section if item.name == LIFECYCLE_SECTION
+    )
+    if sum(count for _, count, _ in lifecycle_groups) != lifecycle_count:
+        raise ValueError("lifecycle group counts do not match the section total")
 
     lines = svg_header(
         width,
         height,
         "Catalog section distribution",
-        "Horizontal bars compare cataloged paper counts across four top-level sections.",
+        "Horizontal bars compare four top-level sections. The Teaching and Learning "
+        "Lifecycle bar is segmented into its five groups.",
     )
     lines.extend(
         [
             '  <text class="title" x="54" y="46">Catalog section distribution</text>',
-            '  <text class="subtitle" x="54" y="73">Top-level section assigned to each cataloged paper</text>',
+            '  <text class="subtitle" x="54" y="73">Top-level sections; the lifecycle is segmented into its five groups</text>',
             f'  <rect class="plot-background" x="{plot_left}" y="{plot_top}" width="{plot_width}" height="{plot_bottom - plot_top}" rx="10"/>',
         ]
     )
+
+    legend_x = 54.0
+    for group_name, count, color_token in lifecycle_groups:
+        legend_label = f"{group_name} · {count}"
+        lines.extend(
+            [
+                f'  <rect x="{legend_x:.1f}" y="94" width="12" height="12" rx="3" fill="var(--{color_token})"/>',
+                f'  <text class="legend" x="{legend_x + 20:.1f}" y="105">{escape(legend_label)}</text>',
+            ]
+        )
+        legend_x += 28 + len(legend_label) * 6.5
 
     for tick in range(0, maximum + 1, step):
         x = plot_left + tick / maximum * plot_width
@@ -195,20 +265,47 @@ def render_section_chart(stats: CatalogStatistics) -> str:
         bar_width = item.count / maximum * plot_width
         share = item.count / stats.total * 100
         color_token = SECTION_COLOR_TOKENS.get(item.name, "section-default")
-        lines.extend(
-            [
-                f'  <text x="{plot_left - 16}" y="{y + 19}" text-anchor="end">{escape(item.name)}</text>',
-                f'  <rect x="{plot_left}" y="{y}" width="{bar_width:.1f}" height="28" rx="7" fill="var(--{color_token})">',
-                f'    <title>{escape(item.name)}: {item.count} papers ({share:.1f}%)</title>',
-                "  </rect>",
-                f'  <text class="value" x="{plot_left + bar_width + 10:.1f}" y="{y + 19}">{item.count} · {share:.1f}%</text>',
-            ]
+        lines.append(
+            f'  <text x="{plot_left - 16}" y="{y + 19}" text-anchor="end">{escape(item.name)}</text>'
+        )
+        if item.name == LIFECYCLE_SECTION:
+            lines.extend(
+                [
+                    '  <defs><clipPath id="lifecycle-bar-clip">',
+                    f'    <rect x="{plot_left}" y="{y}" width="{bar_width:.1f}" height="28" rx="7"/>',
+                    "  </clipPath></defs>",
+                    '  <g clip-path="url(#lifecycle-bar-clip)">',
+                ]
+            )
+            segment_x = float(plot_left)
+            for group_name, count, group_color_token in lifecycle_groups:
+                segment_width = count / maximum * plot_width
+                lifecycle_share = count / item.count * 100
+                lines.extend(
+                    [
+                        f'    <rect class="lifecycle-segment" x="{segment_x:.1f}" y="{y}" width="{segment_width:.1f}" height="28" fill="var(--{group_color_token})">',
+                        f'      <title>{escape(group_name)}: {count} papers ({lifecycle_share:.1f}% of lifecycle)</title>',
+                        "    </rect>",
+                    ]
+                )
+                segment_x += segment_width
+            lines.append("  </g>")
+        else:
+            lines.extend(
+                [
+                    f'  <rect x="{plot_left}" y="{y}" width="{bar_width:.1f}" height="28" rx="7" fill="var(--{color_token})">',
+                    f'    <title>{escape(item.name)}: {item.count} papers ({share:.1f}%)</title>',
+                    "  </rect>",
+                ]
+            )
+        lines.append(
+            f'  <text class="value" x="{plot_left + bar_width + 10:.1f}" y="{y + 19}">{item.count} · {share:.1f}%</text>'
         )
 
     lines.extend(
         [
             f'  <rect class="frame" x="{plot_left}" y="{plot_top}" width="{plot_width}" height="{plot_bottom - plot_top}"/>',
-            f'  <text class="note" x="54" y="{height - 28}">Source: data/papers.csv · Each paper is counted once by its top-level section</text>',
+            f'  <text class="note" x="54" y="{height - 28}">Source: data/papers.csv · Lifecycle segments sum to its top-level section total</text>',
             "</svg>",
         ]
     )
@@ -217,7 +314,16 @@ def render_section_chart(stats: CatalogStatistics) -> str:
 
 def render_analysis(stats: CatalogStatistics) -> str:
     largest_section = stats.by_section[0]
-    return f"""## Catalog Trends
+    survey_scope = "\n".join(
+        f"- **{field}:** {venues}" for field, venues in SURVEY_SCOPE
+    )
+    return f"""## Survey Scope
+
+This catalog monitors representative venues across AI, computing, and education. The list is indicative rather than exhaustive; relevant workshops, journals, and arXiv preprints are also considered.
+
+{survey_scope}
+
+## Catalog Trends
 
 > [!NOTE]
 > These charts summarize this curated catalog. Coverage changes may reflect collection activity as well as research activity, and {stats.latest_year} is an incomplete publication year.
@@ -227,7 +333,7 @@ def render_analysis(stats: CatalogStatistics) -> str:
 </p>
 
 <p align="center">
-  <img src="visualization/papers-by-section.svg" alt="Horizontal bar chart of cataloged papers by top-level section" width="100%">
+  <img src="visualization/papers-by-section.svg" alt="Horizontal bar chart of cataloged papers by top-level section, with Teaching and Learning Lifecycle split into five groups" width="100%">
 </p>
 
 - **Catalog coverage:** {stats.total} papers spanning **{stats.earliest_year}–{stats.latest_year}**.

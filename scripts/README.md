@@ -8,10 +8,13 @@ All catalog statistics derive from `data/papers.csv`; no metric is maintained by
 | LLM-related | Records where `is_llm_related == 1`, with share of all papers | Summary card and yearly stacked bars |
 | Publication sources | Distinct `publisher` values, including venues and preprint sources | Summary card |
 | Latest year | Maximum publication year in the catalog | Summary card |
-| Catalog section mix | Paper count and share for each top-level `section` | Horizontal bars |
+| Catalog section mix | Paper count and share for each top-level `section`; the lifecycle bar is segmented into its five `group` values | Horizontal bars |
 | Catalog group/category mix | Counts for every canonical `section/group/category` path | Validation and reusable statistics API |
 
 These are coverage metrics, not claims about total research output. The current year is always labeled as incomplete.
+
+The `Survey Scope` venue families are a curated, indicative list maintained in
+`scripts/generate_statistics.py`; they are not inferred from the current CSV rows.
 
 Refresh every derived artifact:
 

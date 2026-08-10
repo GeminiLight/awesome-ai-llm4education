@@ -55,6 +55,28 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertEqual(socialcoach["group"], "Social Skills")
         self.assertEqual(socialcoach["category"], "")
 
+    def test_section_chart_splits_the_lifecycle_into_five_groups(self):
+        expected_groups = {
+            "Tutoring Systems": 66,
+            "Material Preparation": 37,
+            "Teaching Support": 10,
+            "Learner Modeling": 101,
+            "Learning Assessment": 25,
+        }
+        lifecycle_groups = {
+            item.name: item.count
+            for item in self.stats.by_group
+            if item.section == "Teaching & Learning Lifecycle"
+        }
+        self.assertEqual(lifecycle_groups, expected_groups)
+
+        section_chart = build_outputs(self.stats)[
+            ROOT / "visualization" / "papers-by-section.svg"
+        ]
+        for group, count in expected_groups.items():
+            self.assertIn(f"{group} · {count}", section_chart)
+            self.assertIn(f"{group}: {count} papers", section_chart)
+
     def test_recent_kdd_and_www_education_papers_are_covered(self):
         counts = {}
         for paper in self.papers:
@@ -70,6 +92,23 @@ class CatalogStatisticsTest(unittest.TestCase):
             "Lesson Plan Generation",
             titles,
         )
+
+    def test_analysis_documents_the_cross_field_survey_scope(self):
+        analysis = build_outputs(self.stats)[
+            ROOT / "visualization" / "analysis.md"
+        ]
+        self.assertIn("## Survey Scope", analysis)
+        self.assertLess(
+            analysis.index("## Survey Scope"),
+            analysis.index("## Catalog Trends"),
+        )
+        self.assertIn("**Data Mining, Web & Information Retrieval:**", analysis)
+        self.assertIn("KDD, WWW, SIGIR, CIKM, WSDM", analysis)
+        self.assertIn("**Natural Language Processing:**", analysis)
+        self.assertIn("ACL, EMNLP, NAACL, EACL, COLING", analysis)
+        self.assertIn("**Human-Computer Interaction:**", analysis)
+        self.assertIn("CHI, CSCW, UIST, IUI", analysis)
+        self.assertIn("**Education & Learning Sciences:**", analysis)
 
     def test_duplicate_papers_are_rejected(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -167,13 +167,19 @@ test('renders the lifecycle taxonomy at three Markdown heading levels', () => {
     assert.doesNotMatch(readme, /^## \[Tutoring Strategy\]/m);
 });
 
-test('places Catalog Trends before Content as peer sections', () => {
+test('places Survey Scope and Catalog Trends before Content as peer sections', () => {
     const readme = fs.readFileSync(path.join(projectRoot, 'README.md'), 'utf8');
+    const scopeHeading = '\n## Survey Scope\n';
     const trendsHeading = '\n## Catalog Trends\n';
     const contentHeading = '\n## [Content](#content)\n';
 
+    assert.ok(readme.includes(scopeHeading));
     assert.ok(readme.includes(trendsHeading));
     assert.ok(readme.includes(contentHeading));
+    assert.ok(
+        readme.indexOf(scopeHeading) < readme.indexOf(trendsHeading),
+        'Survey Scope must appear before Catalog Trends'
+    );
     assert.ok(
         readme.indexOf(trendsHeading) < readme.indexOf(contentHeading),
         'Catalog Trends must appear before Content'
