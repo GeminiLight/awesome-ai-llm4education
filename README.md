@@ -34,8 +34,8 @@ This catalog monitors representative venues across AI, computing, and education.
 - **Human-Computer Interaction:** CHI, CSCW, UIST, IUI
 - **Machine Learning:** NeurIPS, ICML, ICLR
 - **Natural Language Processing:** ACL, EMNLP, NAACL, EACL, COLING, COLM, and Findings tracks
-- **Selected Journals:** IJAIED, Computers & Education, IEEE TLT, TKDE, TOIS, npj Science of Learning
 - **Software Engineering & Computing Education:** ICSE, SIGCSE, ITiCSE
+- **Selected Journals:** IJAIED, Computers & Education, IEEE TLT, TKDE, TOIS, npj Science of Learning
 
 ## Catalog Trends
 
