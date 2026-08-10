@@ -24,6 +24,19 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 >
 > 🎈 Welcome to check our [project page](https://tianfuwang.tech/gen-mentor/) and [demo code](https://github.com/GeminiLight/gen-mentor) to enjoy the goal-oriented learning experience!
 
+## Survey Scope
+
+This catalog monitors representative venues across AI, computing, and education. The list is indicative rather than exhaustive; relevant workshops, journals, and arXiv preprints are also considered.
+
+- **Data Mining, Web & Information Retrieval:** KDD, WWW, SIGIR, CIKM, WSDM
+- **Artificial Intelligence:** AAAI, IJCAI
+- **Machine Learning:** NeurIPS, ICML, ICLR, COLM
+- **Natural Language Processing:** ACL, EMNLP, NAACL, EACL, COLING, and Findings tracks
+- **Human-Computer Interaction:** CHI, CSCW, UIST, IUI
+- **Education & Learning Sciences:** AIED, EDM, LAK, Learning@Scale, EC-TEL, ITS, ICALT
+- **Software Engineering & Computing Education:** ICSE, SIGCSE, ITiCSE
+- **Selected Journals:** IJAIED, Computers & Education, IEEE TLT, TKDE, TOIS, npj Science of Learning
+
 ## Catalog Trends
 
 > [!NOTE]
@@ -34,7 +47,7 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 </p>
 
 <p align="center">
-  <img src="visualization/papers-by-section.svg" alt="Horizontal bar chart of cataloged papers by top-level section" width="100%">
+  <img src="visualization/papers-by-section.svg" alt="Horizontal bar chart of cataloged papers by top-level section, with Teaching and Learning Lifecycle split into five groups" width="100%">
 </p>
 
 - **Catalog coverage:** 310 papers spanning **2001–2026**.

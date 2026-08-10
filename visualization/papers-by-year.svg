@@ -2,8 +2,8 @@
   <title id="chart-title">Publication coverage by year</title>
   <desc id="chart-description">Stacked bars show cataloged LLM-related and other education papers by publication year.</desc>
   <style>
-    :root { color-scheme: light dark; --background: #fcfbf8; --plot: #f7f5f0; --foreground: #26332e; --muted: #68756f; --grid: #e2e6e1; --frame: #cbd4ce; --llm: #4d8b7d; --other: #d7a28e; --section-surveys: #c49a52; --section-lifecycle: #4d8b7d; --section-applications: #c7746b; --section-resources: #8878a5; --section-default: #7c9189; }
-    @media (prefers-color-scheme: dark) { :root { --background: #18201e; --plot: #202a27; --foreground: #edf2ef; --muted: #a9b5af; --grid: #34413c; --frame: #4b5b55; --llm: #77b6a8; --other: #dda58e; --section-surveys: #d5af69; --section-lifecycle: #77b6a8; --section-applications: #de9187; --section-resources: #aa99c8; --section-default: #9cb3aa; } }
+    :root { color-scheme: light dark; --background: #fcfbf8; --plot: #f7f5f0; --foreground: #26332e; --muted: #68756f; --grid: #e2e6e1; --frame: #cbd4ce; --llm: #4d8b7d; --other: #d7a28e; --section-surveys: #c49a52; --section-lifecycle: #4d8b7d; --section-applications: #c7746b; --section-resources: #8878a5; --section-default: #7c9189; --lifecycle-tutoring: #386d63; --lifecycle-material: #4f877b; --lifecycle-support: #6fa093; --lifecycle-modeling: #8bb5aa; --lifecycle-assessment: #a9c7bf; }
+    @media (prefers-color-scheme: dark) { :root { --background: #18201e; --plot: #202a27; --foreground: #edf2ef; --muted: #a9b5af; --grid: #34413c; --frame: #4b5b55; --llm: #77b6a8; --other: #dda58e; --section-surveys: #d5af69; --section-lifecycle: #77b6a8; --section-applications: #de9187; --section-resources: #aa99c8; --section-default: #9cb3aa; --lifecycle-tutoring: #85c5b6; --lifecycle-material: #73b3a5; --lifecycle-support: #62a092; --lifecycle-modeling: #528b80; --lifecycle-assessment: #43766d; } }
     text { fill: var(--foreground); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
     .title { font-family: Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 700; }
     .subtitle, .note, .legend, .axis-label { fill: var(--muted); }
@@ -13,6 +13,7 @@
     .grid { stroke: var(--grid); stroke-width: 1; }
     .frame { fill: none; stroke: var(--frame); stroke-width: 1; }
     .plot-background { fill: var(--plot); }
+    .lifecycle-segment { stroke: var(--background); stroke-width: 1.5; }
   </style>
   <rect width="1200" height="560" rx="18" fill="var(--background)"/>
   <text class="title" x="54" y="46">Publication coverage by year</text>
