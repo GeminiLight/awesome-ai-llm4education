@@ -56,13 +56,13 @@ SURVEY_SCOPE = (
         "ACL, EMNLP, NAACL, EACL, COLING, COLM, and Findings tracks",
     ),
     (
+        "Software Engineering & Computing Education",
+        "ICSE, SIGCSE, ITiCSE",
+    ),
+    (
         "Selected Journals",
         "IJAIED, Computers & Education, IEEE TLT, TKDE, TOIS, "
         "npj Science of Learning",
-    ),
-    (
-        "Software Engineering & Computing Education",
-        "ICSE, SIGCSE, ITiCSE",
     ),
 )
 
