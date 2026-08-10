@@ -45,123 +45,63 @@
             }
         }
 
-        // Fetch and parse CSV: prefer merging both files if available
+        const REQUIRED_PAPER_COLUMNS = [
+            'group', 'category', 'publisher', 'year', 'type',
+            'is_llm_related', 'title', 'link', 'authors', 'code'
+        ];
+
+        function validatePaperData(papers) {
+            if (papers.length === 0) {
+                throw new Error('The papers CSV contains no data rows');
+            }
+
+            const missingColumns = REQUIRED_PAPER_COLUMNS.filter(
+                column => !Object.prototype.hasOwnProperty.call(papers[0], column)
+            );
+            if (missingColumns.length > 0) {
+                throw new Error(`Missing required CSV columns: ${missingColumns.join(', ')}`);
+            }
+
+            const requiredValues = [
+                'group', 'category', 'publisher', 'year', 'type',
+                'is_llm_related', 'title', 'authors'
+            ];
+            papers.forEach((paper, index) => {
+                const recordNumber = index + 2;
+                const missingValue = requiredValues.find(column => !paper[column].trim());
+                if (missingValue) {
+                    throw new Error(`Missing ${missingValue} in CSV record ${recordNumber}`);
+                }
+                if (!/^\d{4}$/.test(paper.year)) {
+                    throw new Error(`Invalid year in CSV record ${recordNumber}: ${paper.year}`);
+                }
+                if (!['0', '1'].includes(paper.is_llm_related)) {
+                    throw new Error(
+                        `Invalid is_llm_related value in CSV record ${recordNumber}: ${paper.is_llm_related}`
+                    );
+                }
+                if (paper.link && !/^https?:\/\//.test(paper.link)) {
+                    throw new Error(`Invalid link in CSV record ${recordNumber}: ${paper.link}`);
+                }
+            });
+        }
+
+        // Fetch the canonical data source. Processed files are derived copies, not additional papers.
         async function fetchCSV() {
             const loader = document.getElementById('loader');
             loader.classList.add('active');
             try {
-                const files = ['data/papers.csv', 'data/processed_data.csv'];
-                const results = await Promise.allSettled(files.map(f => fetch(f)));
-                const okResponses = [];
-                for (let i = 0; i < results.length; i++) {
-                    const res = results[i];
-                    if(res.status === 'fulfilled' && res.value && res.value.ok) {
-                        okResponses.push(res.value);
-                    }
+                const response = await fetch('data/papers.csv');
+                if (!response.ok) {
+                    throw new Error(`Failed to load data/papers.csv (${response.status})`);
                 }
-                if(okResponses.length === 0) throw new Error('Failed to load data files');
-                const allText = await Promise.all(okResponses.map(r => r.text()));
-                const arrays = allText.map(txt => parseCSV(txt));
-                // Merge arrays (simple concat). We'll compute header union later.
-                return arrays.flat();
+
+                const papers = CSVParser.parseCSV(await response.text());
+                validatePaperData(papers);
+                return papers;
             } finally {
                 loader.classList.remove('active');
             }
-        }
-        function parseCSV(text) {
-            const lines = [];
-            let currentLine = '';
-            let inQuotes = false;
-
-            // First pass: handle multi-line fields
-            for (let i = 0; i < text.length; i++) {
-                const char = text[i];
-                const nextChar = text[i + 1];
-
-                if (char === '"') {
-                    if (inQuotes && nextChar === '"') {
-                        // Escaped quote
-                        currentLine += '"';
-                        i++; // Skip next quote
-                    } else {
-                        // Toggle quote state
-                        inQuotes = !inQuotes;
-                    }
-                } else if ((char === '\n' || char === '\r') && !inQuotes) {
-                    // End of line (not inside quotes)
-                    if (currentLine.trim()) {
-                        lines.push(currentLine);
-                    }
-                    currentLine = '';
-                    // Skip \r\n combination
-                    if (char === '\r' && nextChar === '\n') {
-                        i++;
-                    }
-                } else {
-                    currentLine += char;
-                }
-            }
-
-            // Add last line
-            if (currentLine.trim()) {
-                lines.push(currentLine);
-            }
-
-            if (lines.length === 0) return [];
-
-            // Parse header
-            const headers = parseCSVLine(lines[0]);
-
-            // Parse data rows
-            return lines.slice(1).map(line => {
-                const values = parseCSVLine(line);
-                const obj = {};
-                headers.forEach((h, i) => {
-                    obj[h] = values[i] || '';
-                });
-                return obj;
-            });
-        }
-
-        function parseCSVLine(line) {
-            const result = [];
-            let current = '';
-            let inQuotes = false;
-            let fieldStarted = false;
-
-            for (let i = 0; i < line.length; i++) {
-                const char = line[i];
-                const nextChar = line[i + 1];
-
-                if (char === '"' && !fieldStarted) {
-                    // Starting quote - enter quoted mode
-                    inQuotes = true;
-                    fieldStarted = true;
-                } else if (char === '"' && inQuotes) {
-                    if (nextChar === '"') {
-                        // Escaped quote - add single quote
-                        current += '"';
-                        i++; // Skip next quote
-                    } else {
-                        // Ending quote - exit quoted mode
-                        inQuotes = false;
-                    }
-                } else if (char === ',' && !inQuotes) {
-                    // Field separator
-                    result.push(current);
-                    current = '';
-                    fieldStarted = false;
-                } else if (char !== ' ' || fieldStarted || inQuotes) {
-                    // Add character (skip leading spaces unless in quotes or field started)
-                    current += char;
-                    if (char !== ' ') fieldStarted = true;
-                }
-            }
-
-            // Add last field
-            result.push(current);
-
-            return result;
         }
         // Helper: detect which fields are categorical (for dropdown)
         function isCategorical(header, papers) {

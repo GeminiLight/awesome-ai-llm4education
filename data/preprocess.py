@@ -1,19 +1,46 @@
-import pandas as pd
+import csv
+from pathlib import Path
 
-# Load data into a DataFrame
-df = pd.read_csv('papers.csv')
 
-# Reorder the columns
-df = df[['category', 'publisher', 'year', 'type', 'is_llm_related', 'title', 'link', 'authors', 'code']]
+DATA_DIR = Path(__file__).resolve().parent
+SOURCE_PATH = DATA_DIR / 'papers.csv'
+OUTPUT_PATH = DATA_DIR / 'processed_data.csv'
+COLUMNS = [
+    'group', 'category', 'publisher', 'year', 'type',
+    'is_llm_related', 'title', 'link', 'authors', 'code',
+]
 
-# Ensure the 'publisher' column values are enclosed in double quotes if they are not already
-df['publisher'] = df['publisher'].apply(lambda x: f'{x}' if not x.startswith('"') else x)
 
-# Sort the DataFrame based on category, publisher, year, and type
-df = df.sort_values(by=['category', 'publisher', 'year', 'type'])
+def load_papers():
+    with SOURCE_PATH.open(encoding='utf-8-sig', newline='') as source:
+        reader = csv.DictReader(source, strict=True)
+        if reader.fieldnames != COLUMNS:
+            raise ValueError(
+                f'Unexpected papers.csv columns: {reader.fieldnames}; expected {COLUMNS}'
+            )
 
-# Save the processed DataFrame to a new CSV file
-df.to_csv('processed_data.csv', index=False)
+        rows = list(reader)
 
-# Display the processed DataFrame
-df
+    for record_number, row in enumerate(rows, start=2):
+        if None in row or any(value is None for value in row.values()):
+            raise ValueError(f'Malformed CSV record {record_number}')
+
+    return rows
+
+
+def main():
+    rows = load_papers()
+    rows.sort(
+        key=lambda row: (
+            row['category'], row['publisher'], int(row['year']), row['type']
+        )
+    )
+
+    with OUTPUT_PATH.open('w', encoding='utf-8', newline='') as output:
+        writer = csv.DictWriter(output, fieldnames=COLUMNS, lineterminator='\n')
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+if __name__ == '__main__':
+    main()
