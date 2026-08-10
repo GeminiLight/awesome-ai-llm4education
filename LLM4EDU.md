@@ -31,6 +31,7 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 <!-- <table>
 <tr><td colspan="2"><a href="#survey-papers">1. Survey</a></td></tr>
 <tr><td colspan="2"><a href="#tasks">2. Tasks</a></td></tr>  -->
+
 <table>
 <tr><td colspan="2"><strong><a href="#surveys-analyses-perspectives">1. Surveys, Analyses & Perspectives</a></strong></td></tr>
 <tr><td colspan="2">&emsp;<a href="#comprehensive-surveys">1.1. Comprehensive Surveys</a></td></tr>

@@ -167,6 +167,19 @@ test('renders the lifecycle taxonomy at three Markdown heading levels', () => {
     assert.doesNotMatch(readme, /^## \[Tutoring Strategy\]/m);
 });
 
+test('places Catalog Trends before Content as peer sections', () => {
+    const readme = fs.readFileSync(path.join(projectRoot, 'README.md'), 'utf8');
+    const trendsHeading = '\n## Catalog Trends\n';
+    const contentHeading = '\n## [Content](#content)\n';
+
+    assert.ok(readme.includes(trendsHeading));
+    assert.ok(readme.includes(contentHeading));
+    assert.ok(
+        readme.indexOf(trendsHeading) < readme.indexOf(contentHeading),
+        'Catalog Trends must appear before Content'
+    );
+});
+
 test('loads the parser before the app and uses only the canonical CSV in the UI', () => {
     const html = fs.readFileSync(path.join(projectRoot, 'index.html'), 'utf8');
     const app = fs.readFileSync(path.join(projectRoot, 'assets/js/app.js'), 'utf8');
