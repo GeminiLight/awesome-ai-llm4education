@@ -20,64 +20,66 @@
   <text class="subtitle" x="54" y="73">Top-level sections; the lifecycle is segmented into its five groups</text>
   <rect class="plot-background" x="310" y="154" width="790" height="208" rx="10"/>
   <rect x="54.0" y="94" width="12" height="12" rx="3" fill="var(--lifecycle-tutoring)"/>
-  <text class="legend" x="74.0" y="105">Tutoring Systems · 66</text>
+  <text class="legend" x="74.0" y="105">Tutoring Systems · 67</text>
   <rect x="218.5" y="94" width="12" height="12" rx="3" fill="var(--lifecycle-material)"/>
   <text class="legend" x="238.5" y="105">Material Preparation · 37</text>
   <rect x="409.0" y="94" width="12" height="12" rx="3" fill="var(--lifecycle-support)"/>
   <text class="legend" x="429.0" y="105">Teaching Support · 10</text>
   <rect x="573.5" y="94" width="12" height="12" rx="3" fill="var(--lifecycle-modeling)"/>
-  <text class="legend" x="593.5" y="105">Learner Modeling · 101</text>
+  <text class="legend" x="593.5" y="105">Learner Modeling · 111</text>
   <rect x="744.5" y="94" width="12" height="12" rx="3" fill="var(--lifecycle-assessment)"/>
-  <text class="legend" x="764.5" y="105">Learning Assessment · 25</text>
+  <text class="legend" x="764.5" y="105">Learning Assessment · 26</text>
   <line class="grid" x1="310.0" y1="154" x2="310.0" y2="362"/>
   <text class="axis-label" x="310.0" y="142" text-anchor="middle">0</text>
-  <line class="grid" x1="468.0" y1="154" x2="468.0" y2="362"/>
-  <text class="axis-label" x="468.0" y="142" text-anchor="middle">50</text>
-  <line class="grid" x1="626.0" y1="154" x2="626.0" y2="362"/>
-  <text class="axis-label" x="626.0" y="142" text-anchor="middle">100</text>
-  <line class="grid" x1="784.0" y1="154" x2="784.0" y2="362"/>
-  <text class="axis-label" x="784.0" y="142" text-anchor="middle">150</text>
-  <line class="grid" x1="942.0" y1="154" x2="942.0" y2="362"/>
-  <text class="axis-label" x="942.0" y="142" text-anchor="middle">200</text>
+  <line class="grid" x1="441.7" y1="154" x2="441.7" y2="362"/>
+  <text class="axis-label" x="441.7" y="142" text-anchor="middle">50</text>
+  <line class="grid" x1="573.3" y1="154" x2="573.3" y2="362"/>
+  <text class="axis-label" x="573.3" y="142" text-anchor="middle">100</text>
+  <line class="grid" x1="705.0" y1="154" x2="705.0" y2="362"/>
+  <text class="axis-label" x="705.0" y="142" text-anchor="middle">150</text>
+  <line class="grid" x1="836.7" y1="154" x2="836.7" y2="362"/>
+  <text class="axis-label" x="836.7" y="142" text-anchor="middle">200</text>
+  <line class="grid" x1="968.3" y1="154" x2="968.3" y2="362"/>
+  <text class="axis-label" x="968.3" y="142" text-anchor="middle">250</text>
   <line class="grid" x1="1100.0" y1="154" x2="1100.0" y2="362"/>
-  <text class="axis-label" x="1100.0" y="142" text-anchor="middle">250</text>
+  <text class="axis-label" x="1100.0" y="142" text-anchor="middle">300</text>
   <text x="294" y="185" text-anchor="end">Teaching &amp; Learning Lifecycle</text>
   <defs><clipPath id="lifecycle-bar-clip">
-    <rect x="310" y="166" width="755.2" height="28" rx="7"/>
+    <rect x="310" y="166" width="661.0" height="28" rx="7"/>
   </clipPath></defs>
   <g clip-path="url(#lifecycle-bar-clip)">
-    <rect class="lifecycle-segment" x="310.0" y="166" width="208.6" height="28" fill="var(--lifecycle-tutoring)">
-      <title>Tutoring Systems: 66 papers (27.6% of lifecycle)</title>
+    <rect class="lifecycle-segment" x="310.0" y="166" width="176.4" height="28" fill="var(--lifecycle-tutoring)">
+      <title>Tutoring Systems: 67 papers (26.7% of lifecycle)</title>
     </rect>
-    <rect class="lifecycle-segment" x="518.6" y="166" width="116.9" height="28" fill="var(--lifecycle-material)">
-      <title>Material Preparation: 37 papers (15.5% of lifecycle)</title>
+    <rect class="lifecycle-segment" x="486.4" y="166" width="97.4" height="28" fill="var(--lifecycle-material)">
+      <title>Material Preparation: 37 papers (14.7% of lifecycle)</title>
     </rect>
-    <rect class="lifecycle-segment" x="635.5" y="166" width="31.6" height="28" fill="var(--lifecycle-support)">
-      <title>Teaching Support: 10 papers (4.2% of lifecycle)</title>
+    <rect class="lifecycle-segment" x="583.9" y="166" width="26.3" height="28" fill="var(--lifecycle-support)">
+      <title>Teaching Support: 10 papers (4.0% of lifecycle)</title>
     </rect>
-    <rect class="lifecycle-segment" x="667.1" y="166" width="319.2" height="28" fill="var(--lifecycle-modeling)">
-      <title>Learner Modeling: 101 papers (42.3% of lifecycle)</title>
+    <rect class="lifecycle-segment" x="610.2" y="166" width="292.3" height="28" fill="var(--lifecycle-modeling)">
+      <title>Learner Modeling: 111 papers (44.2% of lifecycle)</title>
     </rect>
-    <rect class="lifecycle-segment" x="986.2" y="166" width="79.0" height="28" fill="var(--lifecycle-assessment)">
-      <title>Learning Assessment: 25 papers (10.5% of lifecycle)</title>
+    <rect class="lifecycle-segment" x="902.5" y="166" width="68.5" height="28" fill="var(--lifecycle-assessment)">
+      <title>Learning Assessment: 26 papers (10.4% of lifecycle)</title>
     </rect>
   </g>
-  <text class="value" x="1075.2" y="185">239 · 77.1%</text>
+  <text class="value" x="981.0" y="185">251 · 75.8%</text>
   <text x="294" y="237" text-anchor="end">Application Domains</text>
-  <rect x="310" y="218" width="113.8" height="28" rx="7" fill="var(--section-applications)">
-    <title>Application Domains: 36 papers (11.6%)</title>
+  <rect x="310" y="218" width="110.6" height="28" rx="7" fill="var(--section-applications)">
+    <title>Application Domains: 42 papers (12.7%)</title>
   </rect>
-  <text class="value" x="433.8" y="237">36 · 11.6%</text>
+  <text class="value" x="430.6" y="237">42 · 12.7%</text>
   <text x="294" y="289" text-anchor="end">Datasets, Benchmarks &amp; Toolkits</text>
-  <rect x="310" y="270" width="69.5" height="28" rx="7" fill="var(--section-resources)">
-    <title>Datasets, Benchmarks &amp; Toolkits: 22 papers (7.1%)</title>
+  <rect x="310" y="270" width="65.8" height="28" rx="7" fill="var(--section-resources)">
+    <title>Datasets, Benchmarks &amp; Toolkits: 25 papers (7.6%)</title>
   </rect>
-  <text class="value" x="389.5" y="289">22 · 7.1%</text>
+  <text class="value" x="385.8" y="289">25 · 7.6%</text>
   <text x="294" y="341" text-anchor="end">Surveys, Analyses &amp; Perspectives</text>
-  <rect x="310" y="322" width="41.1" height="28" rx="7" fill="var(--section-surveys)">
-    <title>Surveys, Analyses &amp; Perspectives: 13 papers (4.2%)</title>
+  <rect x="310" y="322" width="34.2" height="28" rx="7" fill="var(--section-surveys)">
+    <title>Surveys, Analyses &amp; Perspectives: 13 papers (3.9%)</title>
   </rect>
-  <text class="value" x="361.1" y="341">13 · 4.2%</text>
+  <text class="value" x="354.2" y="341">13 · 3.9%</text>
   <rect class="frame" x="310" y="154" width="790" height="208"/>
   <text class="note" x="54" y="426">Source: data/papers.csv · Lifecycle segments sum to its top-level section total</text>
 </svg>

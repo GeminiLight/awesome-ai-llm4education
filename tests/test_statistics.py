@@ -25,8 +25,8 @@ class CatalogStatisticsTest(unittest.TestCase):
         cls.stats = compute_statistics(cls.papers)
 
     def test_summary_metrics(self):
-        self.assertEqual(self.stats.total, 310)
-        self.assertEqual(self.stats.llm_related, 185)
+        self.assertEqual(self.stats.total, 331)
+        self.assertEqual(self.stats.llm_related, 195)
         self.assertEqual(self.stats.source_count, 50)
         self.assertEqual(self.stats.earliest_year, 2001)
         self.assertEqual(self.stats.latest_year, 2026)
@@ -44,9 +44,9 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertEqual(
             self.stats.by_section[0].name, "Teaching & Learning Lifecycle"
         )
-        self.assertEqual(self.stats.by_section[0].count, 239)
+        self.assertEqual(self.stats.by_section[0].count, 251)
         self.assertEqual(self.stats.by_group[0].name, "Learner Modeling")
-        self.assertEqual(self.stats.by_group[0].count, 101)
+        self.assertEqual(self.stats.by_group[0].count, 111)
 
     def test_socialcoach_uses_the_application_domain_taxonomy(self):
         socialcoach = next(
@@ -58,11 +58,11 @@ class CatalogStatisticsTest(unittest.TestCase):
 
     def test_section_chart_splits_the_lifecycle_into_five_groups(self):
         expected_groups = {
-            "Tutoring Systems": 66,
+            "Tutoring Systems": 67,
             "Material Preparation": 37,
             "Teaching Support": 10,
-            "Learner Modeling": 101,
-            "Learning Assessment": 25,
+            "Learner Modeling": 111,
+            "Learning Assessment": 26,
         }
         lifecycle_groups = {
             item.name: item.count
@@ -93,6 +93,57 @@ class CatalogStatisticsTest(unittest.TestCase):
             "Lesson Plan Generation",
             titles,
         )
+
+    def test_recent_top_ai_and_nlp_venue_additions_are_covered(self):
+        recent = [
+            paper
+            for paper in self.papers
+            if 2022 <= int(paper["year"]) <= 2026
+        ]
+        venue_counts = {}
+        for paper in recent:
+            venue_counts[paper["publisher"]] = venue_counts.get(
+                paper["publisher"], 0
+            ) + 1
+
+        minimum_counts = {
+            "AAAI": 16,
+            "IJCAI": 6,
+            "NeurIPS": 10,
+            "ICML": 10,
+            "ICLR": 2,
+            "ACL": 11,
+            "EMNLP": 12,
+        }
+        for venue, minimum in minimum_counts.items():
+            self.assertGreaterEqual(venue_counts.get(venue, 0), minimum, venue)
+
+        expected_titles = {
+            "BETA-CD: A Bayesian Meta-Learned Cognitive Diagnosis Framework "
+            "for Personalized Learning": "AAAI",
+            "Exploiting Non-Interactive Exercises in Cognitive Diagnosis": "IJCAI",
+            "XES3G5M: A Knowledge Tracing Benchmark Dataset with Auxiliary "
+            "Information": "NeurIPS",
+            "Language Models as Science Tutors": "ICML",
+            "Predictive, scalable and interpretable knowledge tracing on "
+            "structured domains": "ICLR",
+            "Dr.Academy: A Benchmark for Evaluating Questioning Capability in "
+            "Education for Large Language Models": "ACL",
+            "Automatic Generation of Socratic Subquestions for Teaching Math "
+            "Word Problems": "EMNLP",
+        }
+        papers_by_title = {paper["title"]: paper for paper in recent}
+        for title, venue in expected_titles.items():
+            self.assertIn(title, papers_by_title)
+            self.assertEqual(papers_by_title[title]["publisher"], venue)
+
+        personality_simulation = papers_by_title[
+            "Personality-aware Student Simulation for Conversational "
+            "Intelligent Tutoring Systems"
+        ]
+        self.assertEqual(personality_simulation["publisher"], "EMNLP")
+        self.assertEqual(personality_simulation["group"], "Learner Modeling")
+        self.assertEqual(personality_simulation["category"], "Student Simulation")
 
     def test_analysis_documents_the_cross_field_survey_scope(self):
         analysis = build_outputs(self.stats)[

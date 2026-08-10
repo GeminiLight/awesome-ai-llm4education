@@ -327,27 +327,27 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 
     Learning@Scale, 2024. [`conference`](https://arxiv.org/abs/2402.09216)
 
-28. :sparkles: **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
+28. :sparkles: **Multi-turn Reinforcement Learning with Preference Human Feedback**
+
+    *Lior Shani, Aviv Rosenberg, Asaf Cassel, Oran Lang, Daniele Calandriello, Avital Zipori, Hila Noga, Orgad Keller, Bilal Piot, Idan Szpektor, Avinatan Hassidim, Yossi Matias, Rémi Munos*
+
+    NeurIPS, 2024. [`conference`](https://proceedings.neurips.cc/paper_files/paper/2024/hash/d77a7b289361abff82bdd2fb537ae152-Abstract-Conference.html)
+
+29. :sparkles: **SocraticLM: Exploring Socratic Personalized Teaching with Large Language Models**
 
     *Jiayu Liu, Zhenya Huang, Tong Xiao, Jing Sha, Jinze Wu, Qi Liu, Shijin Wang, Enhong Chen*
 
     NeurIPS, 2024. [`conference`](https://neurips.cc/virtual/2024/poster/93477)
 
-29. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
+30. :sparkles: **Apprentice Tutor Builder: A Platform For Users to Create and Personalize Intelligent Tutors**
 
     *Glen Smith, Adit Gupta, Christopher MacLellan*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.07883)
 
-30. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
+31. :sparkles: **Intelligent Tutor: Leveraging ChatGPT and Microsoft Copilot Studio to Deliver a Generative AI Student Support and Feedback System within Teams**
 
     *Wei-Yu Chen*
-
-    arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
-
-31. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
-
-    *Zhengyuan Liu, Stella Xin Yin, Geyu Lin, Nancy F. Chen*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2404.06762)
 
@@ -395,7 +395,13 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 
     Learning@Scale, 2025. [`conference`](https://arxiv.org/abs/2504.12452)
 
-4. :sparkles: **Learning Structure and Knowledge Aware Representation with Large Language Models for Concept Recommendation**
+4. :sparkles: **Knowledge Starts with Practice: Knowledge-Aware Exercise Generative Recommendation with Adaptive Multi-Agent Cooperation**
+
+    *Yangtao Zhou, Hua Chu, Yongxiang Chen, Ziwen Wang, Jiacheng Liu, Jianan Li, Yueying Feng, Xiangming Li, Zihan Han, Qingshan Li*
+
+    NeurIPS, 2025. [`conference`](https://proceedings.neurips.cc/paper_files/paper/2025/hash/85dbd2fb8b355e4231b51e454c08ec1c-Abstract-Conference.html), [`code`](https://github.com/dsz532/exeGen)
+
+5. :sparkles: **Learning Structure and Knowledge Aware Representation with Large Language Models for Concept Recommendation**
 
     *Qingyao Li, Wei Xia, Kounianhua Du, Qiji Zhang, Weinan Zhang, Ruiming Tang, Yong Yu*
 
@@ -693,7 +699,13 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2602.02414)
 
-5. :sparkles: **Generative Students: Using LLM-Simulated Student Profiles to Support Question Item Evaluation**
+5. :sparkles: **Knowledge Is Power: Harnessing Large Language Models for Enhanced Cognitive Diagnosis**
+
+    *Zhiang Dong, Jingyuan Chen, Fei Wu*
+
+    AAAI, 2025. [`conference`](https://ojs.aaai.org/index.php/AAAI/article/view/31992)
+
+6. :sparkles: **Generative Students: Using LLM-Simulated Student Profiles to Support Question Item Evaluation**
 
     *Xinyi Lu, Xu Wang*
 
@@ -769,7 +781,13 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 
     IJCAI, 2025. [`conference`](https://arxiv.org/abs/2505.20642)
 
-10. :sparkles: **EduAgent: Generative Student Agents in Learning**
+10. :sparkles: **Personality-aware Student Simulation for Conversational Intelligent Tutoring Systems**
+
+    *Zhengyuan Liu, Stella Xin Yin, Geyu Lin, Nancy F. Chen*
+
+    EMNLP, 2024. [`conference`](https://aclanthology.org/2024.emnlp-main.37/)
+
+11. :sparkles: **EduAgent: Generative Student Agents in Learning**
 
     *Songlin Xu, Xinyu Zhang, Lianhui Qin*
 
@@ -1072,15 +1090,39 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 
     CHI, 2024. [`conference`](https://arxiv.org/abs/2402.01927)
 
+10. :sparkles: **Stepwise Verification and Remediation of Student Reasoning Errors with Large Language Model Tutors**
+
+    *Nico Daheim, Jakub Macina, Manu Kapur, Iryna Gurevych, Mrinmaya Sachan*
+
+    EMNLP, 2024. [`conference`](https://aclanthology.org/2024.emnlp-main.478/)
+
+11. :sparkles: **Automatic Generation of Socratic Subquestions for Teaching Math Word Problems**
+
+    *Kumar Shridhar, Jakub Macina, Mennatallah El-Assady, Tanmay Sinha, Manu Kapur, Mrinmaya Sachan*
+
+    EMNLP, 2022. [`conference`](https://aclanthology.org/2022.emnlp-main.277/)
+
 ### [Language Learning](#content)
 
-1. :sparkles: **Position: LLMs Can be Good Tutors in Foreign Language Education**
+1. :sparkles: **GPT-4 as a Homework Tutor Can Improve Student Engagement and Learning Outcomes**
+
+    *Alessandro Vanzo, Sankalan Pal Chowdhury, Mrinmaya Sachan*
+
+    ACL, 2025. [`conference`](https://aclanthology.org/2025.acl-long.1502/)
+
+2. :sparkles: **Position: LLMs Can be Good Tutors in Foreign Language Education**
 
     *Jingheng Ye, Shen Wang, Deqing Zou, Yibo Yan, Kun Wang, Hai-Tao Zheng, Zenglin Xu, Irwin King, Philip S. Yu, Qingsong Wen*
 
     EMNLP, 2025. [`conference`](https://arxiv.org/abs/2502.05467)
 
-2. :sparkles: **WordPlay: An Agent Framework for Language Learning Games**
+3. :sparkles: **BIPED: Pedagogically Informed Tutoring System for ESL Education**
+
+    *Soonwoo Kwon, Sojung Kim, Minju Park, Seunghyun Lee, Kyuseok Kim*
+
+    ACL, 2024. [`conference`](https://aclanthology.org/2024.acl-long.186/)
+
+4. :sparkles: **WordPlay: An Agent Framework for Language Learning Games**
 
     *Ariel Blobstein, Daniel Izmaylov, Tal Yifat, Michal Levy, Avi Segal, Avi Segal*
 
@@ -1159,6 +1201,12 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
     *Tianfu Wang, Max Xiong, Jianxun Lian, Hongyuan Zhu, Zhengyu Hu, Yuxuan Lei, Linxiao Gong, Xiaofang Li, Peiting Tsai, Nicholas Jing Yuan, Qi Zhang*
 
     arXiv, 2026. [`preprint`](https://arxiv.org/abs/2606.04155)
+
+2. :sparkles: **ACE: A LLM-based Negotiation Coaching System**
+
+    *Ryan Shea, Aymen Kallala, Xin Lucy Liu, Michael W. Morris, Zhou Yu*
+
+    EMNLP, 2024. [`conference`](https://aclanthology.org/2024.emnlp-main.709/)
 
 
 ## [Datasets, Benchmarks & Toolkits](#content)
@@ -1263,7 +1311,19 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 
     arXiv, 2025. [`preprint`](https://arxiv.org/pdf/2505.17050)
 
-13. :sparkles: **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
+13. :sparkles: **Dr.Academy: A Benchmark for Evaluating Questioning Capability in Education for Large Language Models**
+
+    *Yuyan Chen, Chenwei Wu, Songzhou Yan, Panjun Liu, Yanghua Xiao*
+
+    ACL, 2024. [`conference`](https://aclanthology.org/2024.acl-long.173/)
+
+14. :sparkles: **Language Models as Science Tutors**
+
+    *Alexis Chevalier, Jiayi Geng, Alexander Wettig, Howard Chen, Sebastian Mizera, Toni Annala, Max Aragon, Arturo Rodriguez Fanlo, Simon Frieder, Simon Machado, Akshara Prabhakar, Ellie Thieu, Jiachen T. Wang, Zirui Wang, Xindi Wu, Mengzhou Xia, Wenhan Xia, Jiatong Yu, Junjie Zhu, Zhiyong Ren, Sanjeev Arora, Danqi Chen*
+
+    ICML, 2024. [`conference`](https://proceedings.mlr.press/v235/chevalier24a.html)
+
+15. :sparkles: **E-EVAL: A Comprehensive Chinese K-12 Education Evaluation Benchmark for Large Language Models**
 
     *Jinchang Hou, Chang Ao, Haihong Wu, Xiangtao Kong, Zhigang Zheng, Daijia Tang, Chengming Li, Xiping Hu, Ruifeng Xu, Shiwen Ni, Min Yang*
 

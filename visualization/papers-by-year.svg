@@ -25,97 +25,99 @@
   <rect class="plot-background" x="78" y="142" width="1072" height="320" rx="10"/>
   <line class="grid" x1="78" y1="462.0" x2="1150" y2="462.0"/>
   <text class="axis-label" x="66" y="466.0" text-anchor="end">0</text>
-  <line class="grid" x1="78" y1="382.0" x2="1150" y2="382.0"/>
-  <text class="axis-label" x="66" y="386.0" text-anchor="end">20</text>
-  <line class="grid" x1="78" y1="302.0" x2="1150" y2="302.0"/>
-  <text class="axis-label" x="66" y="306.0" text-anchor="end">40</text>
-  <line class="grid" x1="78" y1="222.0" x2="1150" y2="222.0"/>
-  <text class="axis-label" x="66" y="226.0" text-anchor="end">60</text>
+  <line class="grid" x1="78" y1="398.0" x2="1150" y2="398.0"/>
+  <text class="axis-label" x="66" y="402.0" text-anchor="end">20</text>
+  <line class="grid" x1="78" y1="334.0" x2="1150" y2="334.0"/>
+  <text class="axis-label" x="66" y="338.0" text-anchor="end">40</text>
+  <line class="grid" x1="78" y1="270.0" x2="1150" y2="270.0"/>
+  <text class="axis-label" x="66" y="274.0" text-anchor="end">60</text>
+  <line class="grid" x1="78" y1="206.0" x2="1150" y2="206.0"/>
+  <text class="axis-label" x="66" y="210.0" text-anchor="end">80</text>
   <line class="grid" x1="78" y1="142.0" x2="1150" y2="142.0"/>
-  <text class="axis-label" x="66" y="146.0" text-anchor="end">80</text>
+  <text class="axis-label" x="66" y="146.0" text-anchor="end">100</text>
   <g><title>2001: 1 papers (0 LLM-related, 1 other)</title>
-    <rect x="93.3" y="458.0" width="46.0" height="4.0" fill="var(--other)"/>
-    <rect x="93.3" y="458.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
+    <rect x="93.3" y="458.8" width="46.0" height="3.2" fill="var(--other)"/>
+    <rect x="93.3" y="458.8" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="116.3" y="450.0" text-anchor="middle">1</text>
+  <text class="value" x="116.3" y="450.8" text-anchor="middle">1</text>
   <text class="axis-label" x="116.3" y="486" text-anchor="middle">2001</text>
   <g><title>2006: 1 papers (0 LLM-related, 1 other)</title>
-    <rect x="169.9" y="458.0" width="46.0" height="4.0" fill="var(--other)"/>
-    <rect x="169.9" y="458.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
+    <rect x="169.9" y="458.8" width="46.0" height="3.2" fill="var(--other)"/>
+    <rect x="169.9" y="458.8" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="192.9" y="450.0" text-anchor="middle">1</text>
+  <text class="value" x="192.9" y="450.8" text-anchor="middle">1</text>
   <text class="axis-label" x="192.9" y="486" text-anchor="middle">2006</text>
   <g><title>2012: 1 papers (0 LLM-related, 1 other)</title>
-    <rect x="246.4" y="458.0" width="46.0" height="4.0" fill="var(--other)"/>
-    <rect x="246.4" y="458.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
+    <rect x="246.4" y="458.8" width="46.0" height="3.2" fill="var(--other)"/>
+    <rect x="246.4" y="458.8" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="269.4" y="450.0" text-anchor="middle">1</text>
+  <text class="value" x="269.4" y="450.8" text-anchor="middle">1</text>
   <text class="axis-label" x="269.4" y="486" text-anchor="middle">2012</text>
   <g><title>2015: 1 papers (0 LLM-related, 1 other)</title>
-    <rect x="323.0" y="458.0" width="46.0" height="4.0" fill="var(--other)"/>
-    <rect x="323.0" y="458.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
+    <rect x="323.0" y="458.8" width="46.0" height="3.2" fill="var(--other)"/>
+    <rect x="323.0" y="458.8" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="346.0" y="450.0" text-anchor="middle">1</text>
+  <text class="value" x="346.0" y="450.8" text-anchor="middle">1</text>
   <text class="axis-label" x="346.0" y="486" text-anchor="middle">2015</text>
   <g><title>2017: 3 papers (0 LLM-related, 3 other)</title>
-    <rect x="399.6" y="450.0" width="46.0" height="12.0" fill="var(--other)"/>
-    <rect x="399.6" y="450.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
+    <rect x="399.6" y="452.4" width="46.0" height="9.6" fill="var(--other)"/>
+    <rect x="399.6" y="452.4" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="422.6" y="442.0" text-anchor="middle">3</text>
+  <text class="value" x="422.6" y="444.4" text-anchor="middle">3</text>
   <text class="axis-label" x="422.6" y="486" text-anchor="middle">2017</text>
   <g><title>2018: 5 papers (0 LLM-related, 5 other)</title>
-    <rect x="476.1" y="442.0" width="46.0" height="20.0" fill="var(--other)"/>
-    <rect x="476.1" y="442.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
+    <rect x="476.1" y="446.0" width="46.0" height="16.0" fill="var(--other)"/>
+    <rect x="476.1" y="446.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="499.1" y="434.0" text-anchor="middle">5</text>
+  <text class="value" x="499.1" y="438.0" text-anchor="middle">5</text>
   <text class="axis-label" x="499.1" y="486" text-anchor="middle">2018</text>
   <g><title>2019: 8 papers (0 LLM-related, 8 other)</title>
-    <rect x="552.7" y="430.0" width="46.0" height="32.0" fill="var(--other)"/>
-    <rect x="552.7" y="430.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
+    <rect x="552.7" y="436.4" width="46.0" height="25.6" fill="var(--other)"/>
+    <rect x="552.7" y="436.4" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="575.7" y="422.0" text-anchor="middle">8</text>
+  <text class="value" x="575.7" y="428.4" text-anchor="middle">8</text>
   <text class="axis-label" x="575.7" y="486" text-anchor="middle">2019</text>
   <g><title>2020: 10 papers (0 LLM-related, 10 other)</title>
-    <rect x="629.3" y="422.0" width="46.0" height="40.0" fill="var(--other)"/>
-    <rect x="629.3" y="422.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
+    <rect x="629.3" y="430.0" width="46.0" height="32.0" fill="var(--other)"/>
+    <rect x="629.3" y="430.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="652.3" y="414.0" text-anchor="middle">10</text>
+  <text class="value" x="652.3" y="422.0" text-anchor="middle">10</text>
   <text class="axis-label" x="652.3" y="486" text-anchor="middle">2020</text>
   <g><title>2021: 13 papers (0 LLM-related, 13 other)</title>
-    <rect x="705.9" y="410.0" width="46.0" height="52.0" fill="var(--other)"/>
-    <rect x="705.9" y="410.0" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
+    <rect x="705.9" y="420.4" width="46.0" height="41.6" fill="var(--other)"/>
+    <rect x="705.9" y="420.4" width="46.0" height="0.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="728.9" y="402.0" text-anchor="middle">13</text>
+  <text class="value" x="728.9" y="412.4" text-anchor="middle">13</text>
   <text class="axis-label" x="728.9" y="486" text-anchor="middle">2021</text>
-  <g><title>2022: 20 papers (1 LLM-related, 19 other)</title>
-    <rect x="782.4" y="386.0" width="46.0" height="76.0" fill="var(--other)"/>
-    <rect x="782.4" y="382.0" width="46.0" height="4.0" rx="5" fill="var(--llm)"/>
+  <g><title>2022: 22 papers (2 LLM-related, 20 other)</title>
+    <rect x="782.4" y="398.0" width="46.0" height="64.0" fill="var(--other)"/>
+    <rect x="782.4" y="391.6" width="46.0" height="6.4" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="805.4" y="374.0" text-anchor="middle">20</text>
+  <text class="value" x="805.4" y="383.6" text-anchor="middle">22</text>
   <text class="axis-label" x="805.4" y="486" text-anchor="middle">2022</text>
-  <g><title>2023: 32 papers (9 LLM-related, 23 other)</title>
-    <rect x="859.0" y="370.0" width="46.0" height="92.0" fill="var(--other)"/>
-    <rect x="859.0" y="334.0" width="46.0" height="36.0" rx="5" fill="var(--llm)"/>
+  <g><title>2023: 35 papers (9 LLM-related, 26 other)</title>
+    <rect x="859.0" y="378.8" width="46.0" height="83.2" fill="var(--other)"/>
+    <rect x="859.0" y="350.0" width="46.0" height="28.8" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="882.0" y="326.0" text-anchor="middle">32</text>
+  <text class="value" x="882.0" y="342.0" text-anchor="middle">35</text>
   <text class="axis-label" x="882.0" y="486" text-anchor="middle">2023</text>
-  <g><title>2024: 70 papers (43 LLM-related, 27 other)</title>
-    <rect x="935.6" y="354.0" width="46.0" height="108.0" fill="var(--other)"/>
-    <rect x="935.6" y="182.0" width="46.0" height="172.0" rx="5" fill="var(--llm)"/>
+  <g><title>2024: 82 papers (49 LLM-related, 33 other)</title>
+    <rect x="935.6" y="356.4" width="46.0" height="105.6" fill="var(--other)"/>
+    <rect x="935.6" y="199.6" width="46.0" height="156.8" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="958.6" y="174.0" text-anchor="middle">70</text>
+  <text class="value" x="958.6" y="191.6" text-anchor="middle">82</text>
   <text class="axis-label" x="958.6" y="486" text-anchor="middle">2024</text>
-  <g><title>2025: 66 papers (57 LLM-related, 9 other)</title>
-    <rect x="1012.1" y="426.0" width="46.0" height="36.0" fill="var(--other)"/>
-    <rect x="1012.1" y="198.0" width="46.0" height="228.0" rx="5" fill="var(--llm)"/>
+  <g><title>2025: 70 papers (60 LLM-related, 10 other)</title>
+    <rect x="1012.1" y="430.0" width="46.0" height="32.0" fill="var(--other)"/>
+    <rect x="1012.1" y="238.0" width="46.0" height="192.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="1035.1" y="190.0" text-anchor="middle">66</text>
+  <text class="value" x="1035.1" y="230.0" text-anchor="middle">70</text>
   <text class="axis-label" x="1035.1" y="486" text-anchor="middle">2025</text>
   <g><title>2026: 79 papers (75 LLM-related, 4 other)</title>
-    <rect x="1088.7" y="446.0" width="46.0" height="16.0" fill="var(--other)"/>
-    <rect x="1088.7" y="146.0" width="46.0" height="300.0" rx="5" fill="var(--llm)"/>
+    <rect x="1088.7" y="449.2" width="46.0" height="12.8" fill="var(--other)"/>
+    <rect x="1088.7" y="209.2" width="46.0" height="240.0" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="1111.7" y="138.0" text-anchor="middle">79</text>
+  <text class="value" x="1111.7" y="201.2" text-anchor="middle">79</text>
   <text class="axis-label" x="1111.7" y="486" text-anchor="middle">2026</text>
   <rect class="frame" x="78" y="142" width="1072" height="320"/>
   <text class="note" x="54" y="530">Source: data/papers.csv · Counts describe catalog coverage, not total field output</text>
