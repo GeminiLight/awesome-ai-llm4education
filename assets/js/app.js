@@ -91,7 +91,7 @@
             const loader = document.getElementById('loader');
             loader.classList.add('active');
             try {
-                const response = await fetch('data/papers.csv');
+                const response = await fetch('data/papers.csv', { cache: 'no-cache' });
                 if (!response.ok) {
                     throw new Error(`Failed to load data/papers.csv (${response.status})`);
                 }
@@ -127,7 +127,7 @@
             searchInput.type = 'text';
             searchInput.name = 'title';
             searchInput.placeholder = 'Search papers by title, authors, or keywords...';
-            searchInput.oninput = debounce(() => { renderPapers(); updateStats(); }, 250);
+            searchInput.oninput = debounce(renderPapers, 250);
             const searchIcon = document.createElement('i');
             searchIcon.className = 'fa-solid fa-search';
             searchSection.appendChild(searchInput);
@@ -260,7 +260,6 @@
 
             // Trigger filter update
             renderPapers();
-            updateStats();
         }
 
         // Close dropdowns when clicking outside
@@ -293,7 +292,6 @@
                 btn.onclick = () => {
                     btn.classList.toggle('active');
                     renderPapers();
-                    updateStats();
                 };
                 buttonsContainer.appendChild(btn);
             });
@@ -302,7 +300,95 @@
             container.appendChild(section);
         }
         
-        // Update stats display
+        function renderCatalogOverview(papers) {
+            const total = papers.length;
+            const llmCount = papers.filter(
+                paper => normalizeBool(paper[F('is_llm_related')]) === 'true'
+            ).length;
+            const publishers = new Set(papers.map(paper => paper[F('publisher')]).filter(Boolean));
+            const years = papers.map(paper => Number(paper[F('year')])).sort((a, b) => a - b);
+            const earliestYear = years[0];
+            const latestYear = years[years.length - 1];
+
+            document.getElementById('statTotal').textContent = total.toLocaleString();
+            document.getElementById('statLLMCount').textContent = llmCount.toLocaleString();
+            document.getElementById('statLLMShare').textContent =
+                `${total ? ((llmCount / total) * 100).toFixed(1) : '0.0'}% of catalog`;
+            document.getElementById('statSources').textContent = publishers.size.toLocaleString();
+            document.getElementById('statLatestYear').textContent = latestYear || '—';
+            document.getElementById('statYearRange').textContent =
+                earliestYear && latestYear ? `${earliestYear}–${latestYear} coverage` : 'Coverage range';
+            document.getElementById('statResultTotal').textContent = total.toLocaleString();
+
+            const yearCounts = new Map();
+            papers.forEach(paper => {
+                const year = Number(paper[F('year')]);
+                const count = yearCounts.get(year) || { total: 0, llm: 0 };
+                count.total += 1;
+                if(normalizeBool(paper[F('is_llm_related')]) === 'true') count.llm += 1;
+                yearCounts.set(year, count);
+            });
+            const byYear = Array.from(yearCounts.entries()).sort(([a], [b]) => a - b);
+            const maxYearCount = Math.max(...byYear.map(([, count]) => count.total), 1);
+            const yearChart = document.getElementById('yearCoverageChart');
+            yearChart.style.setProperty('--year-count', byYear.length);
+            yearChart.innerHTML = byYear.map(([year, count]) => {
+                const other = count.total - count.llm;
+                const totalHeight = Math.max((count.total / maxYearCount) * 100, 2);
+                const llmHeight = count.total ? (count.llm / count.total) * 100 : 0;
+                const otherHeight = 100 - llmHeight;
+                return `
+                    <div class="year-bar-column" aria-label="${year}: ${count.total} papers, ${count.llm} LLM-related">
+                        <span class="year-bar-value">${count.total}</span>
+                        <div class="year-bar-track">
+                            <div class="year-bar-stack" style="height: ${totalHeight.toFixed(2)}%">
+                                <span class="year-bar-segment year-bar-llm" style="height: ${llmHeight.toFixed(2)}%" title="${count.llm} LLM-related papers"></span>
+                                <span class="year-bar-segment year-bar-other" style="height: ${otherHeight.toFixed(2)}%" title="${other} other AI/education papers"></span>
+                            </div>
+                        </div>
+                        <span class="year-bar-label">${year}</span>
+                    </div>
+                `;
+            }).join('');
+
+            const groupCounts = new Map();
+            papers.forEach(paper => {
+                const group = paper[F('group')];
+                groupCounts.set(group, (groupCounts.get(group) || 0) + 1);
+            });
+            const byGroup = Array.from(groupCounts.entries()).sort(
+                ([groupA, countA], [groupB, countB]) => countB - countA || groupA.localeCompare(groupB)
+            );
+            const maxGroupCount = Math.max(...byGroup.map(([, count]) => count), 1);
+            document.getElementById('groupCoverageChart').innerHTML = byGroup.map(([group, count]) => {
+                const share = total ? ((count / total) * 100).toFixed(1) : '0.0';
+                return `
+                    <div class="group-bar-row" aria-label="${escapeHtml(group)}: ${count} papers, ${share}% of catalog">
+                        <span class="group-bar-label">${escapeHtml(group)}</span>
+                        <span class="group-bar-track" aria-hidden="true">
+                            <span class="group-bar-fill" style="width: ${((count / maxGroupCount) * 100).toFixed(2)}%"></span>
+                        </span>
+                        <span class="group-bar-value">${count} <small>${share}%</small></span>
+                    </div>
+                `;
+            }).join('');
+
+            const toggleButtons = document.querySelectorAll('[data-coverage-view]');
+            toggleButtons.forEach(button => {
+                button.onclick = () => {
+                    const selectedView = button.dataset.coverageView;
+                    toggleButtons.forEach(toggle => {
+                        const isActive = toggle === button;
+                        toggle.classList.toggle('active', isActive);
+                        toggle.setAttribute('aria-pressed', String(isActive));
+                    });
+                    document.getElementById('coverageYearView').hidden = selectedView !== 'year';
+                    document.getElementById('coverageGroupView').hidden = selectedView !== 'group';
+                };
+            });
+        }
+
+        // Update filtered-results stats and active filter display
         function updateStats() {
             const filters = getFilters();
             const filtered = allPapers.filter(paper => matchesFilters(paper, filters));
@@ -467,17 +553,7 @@
             fieldMap = {};
             allHeaders.forEach(h => { fieldMap[h.toLowerCase()] = h; });
 
-            // Update total stats
-            const statTotal = document.getElementById('statTotal');
-            const statVisible = document.getElementById('statVisible');
-            const statLLMShare = document.getElementById('statLLMShare');
-
-            if(statTotal) statTotal.textContent = papers.length;
-            if(statVisible) statVisible.textContent = papers.length;
-
-            const llmCount = papers.filter(p => normalizeBool(p[F('is_llm_related')]) === 'true').length;
-            const llmPercent = papers.length > 0 ? Math.round((llmCount / papers.length) * 100) : 0;
-            if(statLLMShare) statLLMShare.textContent = `${llmPercent}%`;
+            renderCatalogOverview(papers);
 
             // Setup clear all button
             const quickClearBtn = document.getElementById('quickClearBtn');

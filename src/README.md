@@ -1,6 +1,6 @@
 # Code Auto-generator
 
-When adding new papers, please add them in "data/papers.csv", then run generator.py to update "README.md".
+When adding new papers, update `data/papers.csv`, then refresh all generated files from the repository root.
 
 p.s.
 1. When adding a paper containing more than one problem, please use ";" to separate them in the first column.
@@ -15,6 +15,6 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-cd src
-python generator.py
+python3 scripts/refresh.py
+python3 scripts/refresh.py --check
 ```

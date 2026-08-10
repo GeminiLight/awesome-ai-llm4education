@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 626" role="img" aria-labelledby="chart-title chart-description">
+  <title id="chart-title">Research group distribution</title>
+  <desc id="chart-description">Horizontal bars compare cataloged paper counts across eight research groups.</desc>
+  <style>
+    :root { color-scheme: light dark; --background: #ffffff; --foreground: #202124; --muted: #5f6368; --grid: #e2e7ee; --frame: #c8d0da; --llm: #1a73e8; --other: #a9bfdc; --group: #5b8def; }
+    @media (prefers-color-scheme: dark) { :root { --background: #202124; --foreground: #e8eaed; --muted: #aeb4bc; --grid: #3c4043; --frame: #5f6368; --llm: #8ab4f8; --other: #596b83; --group: #8ab4f8; } }
+    text { fill: var(--foreground); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .title { font-size: 26px; font-weight: 700; }
+    .subtitle, .note, .legend, .axis-label { fill: var(--muted); }
+    .subtitle { font-size: 15px; }
+    .legend, .axis-label, .note { font-size: 13px; }
+    .value { font-size: 13px; font-weight: 700; }
+    .grid { stroke: var(--grid); stroke-width: 1; }
+    .frame { fill: none; stroke: var(--frame); stroke-width: 1; }
+  </style>
+  <rect width="1200" height="626" rx="16" fill="var(--background)"/>
+  <text class="title" x="54" y="46">Research group distribution</text>
+  <text class="subtitle" x="54" y="73">Primary group assigned to each cataloged paper</text>
+  <line class="grid" x1="310.0" y1="118" x2="310.0" y2="534"/>
+  <text class="axis-label" x="310.0" y="106" text-anchor="middle">0</text>
+  <line class="grid" x1="468.0" y1="118" x2="468.0" y2="534"/>
+  <text class="axis-label" x="468.0" y="106" text-anchor="middle">20</text>
+  <line class="grid" x1="626.0" y1="118" x2="626.0" y2="534"/>
+  <text class="axis-label" x="626.0" y="106" text-anchor="middle">40</text>
+  <line class="grid" x1="784.0" y1="118" x2="784.0" y2="534"/>
+  <text class="axis-label" x="784.0" y="106" text-anchor="middle">60</text>
+  <line class="grid" x1="942.0" y1="118" x2="942.0" y2="534"/>
+  <text class="axis-label" x="942.0" y="106" text-anchor="middle">80</text>
+  <line class="grid" x1="1100.0" y1="118" x2="1100.0" y2="534"/>
+  <text class="axis-label" x="1100.0" y="106" text-anchor="middle">100</text>
+  <text x="294" y="149" text-anchor="end">Assessment &amp; Feedback</text>
+  <rect x="310" y="130" width="679.4" height="28" rx="4" fill="var(--group)">
+    <title>Assessment &amp; Feedback: 86 papers (29.1%)</title>
+  </rect>
+  <text class="value" x="999.4" y="149">86 · 29.1%</text>
+  <text x="294" y="201" text-anchor="end">Tutoring Strategy</text>
+  <rect x="310" y="182" width="521.4" height="28" rx="4" fill="var(--group)">
+    <title>Tutoring Strategy: 66 papers (22.3%)</title>
+  </rect>
+  <text class="value" x="841.4" y="201">66 · 22.3%</text>
+  <text x="294" y="253" text-anchor="end">Specific Scenario</text>
+  <rect x="310" y="234" width="300.2" height="28" rx="4" fill="var(--group)">
+    <title>Specific Scenario: 38 papers (12.8%)</title>
+  </rect>
+  <text class="value" x="620.2" y="253">38 · 12.8%</text>
+  <text x="294" y="305" text-anchor="end">Material Preparation</text>
+  <rect x="310" y="286" width="276.5" height="28" rx="4" fill="var(--group)">
+    <title>Material Preparation: 35 papers (11.8%)</title>
+  </rect>
+  <text class="value" x="596.5" y="305">35 · 11.8%</text>
+  <text x="294" y="357" text-anchor="end">Learning Experience</text>
+  <rect x="310" y="338" width="197.5" height="28" rx="4" fill="var(--group)">
+    <title>Learning Experience: 25 papers (8.4%)</title>
+  </rect>
+  <text class="value" x="517.5" y="357">25 · 8.4%</text>
+  <text x="294" y="409" text-anchor="end">Dataset &amp; Benchmark</text>
+  <rect x="310" y="390" width="173.8" height="28" rx="4" fill="var(--group)">
+    <title>Dataset &amp; Benchmark: 22 papers (7.4%)</title>
+  </rect>
+  <text class="value" x="493.8" y="409">22 · 7.4%</text>
+  <text x="294" y="461" text-anchor="end">Survey, Analysis &amp; Vision</text>
+  <rect x="310" y="442" width="102.7" height="28" rx="4" fill="var(--group)">
+    <title>Survey, Analysis &amp; Vision: 13 papers (4.4%)</title>
+  </rect>
+  <text class="value" x="422.7" y="461">13 · 4.4%</text>
+  <text x="294" y="513" text-anchor="end">Aided Teaching</text>
+  <rect x="310" y="494" width="86.9" height="28" rx="4" fill="var(--group)">
+    <title>Aided Teaching: 11 papers (3.7%)</title>
+  </rect>
+  <text class="value" x="406.9" y="513">11 · 3.7%</text>
+  <rect class="frame" x="310" y="118" width="790" height="416"/>
+  <text class="note" x="54" y="598">Source: data/papers.csv · Each paper is counted once by its primary group</text>
+</svg>
