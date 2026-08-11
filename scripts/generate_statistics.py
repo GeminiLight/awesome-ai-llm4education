@@ -47,7 +47,7 @@ SURVEY_SCOPE = (
     ),
     (
         "Education & Learning Sciences",
-        "AIED, EDM, LAK, Learning@Scale, ITS, ICALT",
+        "AIED, EDM, LAK, Learning@Scale, ITS",
     ),
     ("Human-Computer Interaction", "CHI, CSCW, UIST, IUI"),
     ("Machine Learning", "NeurIPS, ICML, ICLR"),

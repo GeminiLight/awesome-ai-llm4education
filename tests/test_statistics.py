@@ -25,9 +25,9 @@ class CatalogStatisticsTest(unittest.TestCase):
         cls.stats = compute_statistics(cls.papers)
 
     def test_summary_metrics(self):
-        self.assertEqual(self.stats.total, 331)
+        self.assertEqual(self.stats.total, 330)
         self.assertEqual(self.stats.llm_related, 195)
-        self.assertEqual(self.stats.source_count, 50)
+        self.assertEqual(self.stats.source_count, 49)
         self.assertEqual(self.stats.earliest_year, 2001)
         self.assertEqual(self.stats.latest_year, 2026)
 
@@ -44,7 +44,7 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertEqual(
             self.stats.by_section[0].name, "Teaching & Learning Lifecycle"
         )
-        self.assertEqual(self.stats.by_section[0].count, 251)
+        self.assertEqual(self.stats.by_section[0].count, 250)
         self.assertEqual(self.stats.by_group[0].name, "Learner Modeling")
         self.assertEqual(self.stats.by_group[0].count, 111)
 
@@ -58,7 +58,7 @@ class CatalogStatisticsTest(unittest.TestCase):
 
     def test_section_chart_splits_the_lifecycle_into_five_groups(self):
         expected_groups = {
-            "Tutoring Systems": 67,
+            "Tutoring Systems": 66,
             "Material Preparation": 37,
             "Teaching Support": 10,
             "Learner Modeling": 111,
@@ -173,13 +173,15 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertIn("**Human-Computer Interaction:**", analysis)
         self.assertIn("CHI, CSCW, UIST, IUI", analysis)
         self.assertIn("**Education & Learning Sciences:**", analysis)
-        self.assertIn("AIED, EDM, LAK, Learning@Scale, ITS, ICALT", scope)
+        self.assertIn("AIED, EDM, LAK, Learning@Scale, ITS", scope)
         self.assertNotIn("EC-TEL", scope)
+        self.assertNotIn("ICALT", scope)
         self.assertIn(
             "**Software Engineering & Computing Education:** ICSE, SIGCSE",
             scope,
         )
         self.assertNotIn("ITiCSE", scope)
+        self.assertNotIn("ICALT", {paper["publisher"] for paper in self.papers})
 
     def test_duplicate_papers_are_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
