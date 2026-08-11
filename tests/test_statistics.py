@@ -173,6 +173,13 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertIn("**Human-Computer Interaction:**", analysis)
         self.assertIn("CHI, CSCW, UIST, IUI", analysis)
         self.assertIn("**Education & Learning Sciences:**", analysis)
+        self.assertIn("AIED, EDM, LAK, Learning@Scale, ITS, ICALT", scope)
+        self.assertNotIn("EC-TEL", scope)
+        self.assertIn(
+            "**Software Engineering & Computing Education:** ICSE, SIGCSE",
+            scope,
+        )
+        self.assertNotIn("ITiCSE", scope)
 
     def test_duplicate_papers_are_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
