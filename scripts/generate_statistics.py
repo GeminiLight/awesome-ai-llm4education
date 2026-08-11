@@ -43,7 +43,7 @@ SURVEY_SCOPE = (
     ("Artificial Intelligence", "AAAI, IJCAI"),
     ("Computer Vision", "CVPR, ICCV, ECCV"),
     (
-        "Data Mining, Web & Information Retrieval",
+        "Data Mining & Information Retrieval",
         "KDD, WWW, SIGIR, CIKM, WSDM, TKDE, TOIS",
     ),
     (

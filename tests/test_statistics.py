@@ -208,7 +208,7 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertEqual(fields[0], "Artificial Intelligence")
         self.assertEqual(fields[-1], "Selected Journals")
         self.assertIn("**Computer Vision:** CVPR, ICCV, ECCV", scope)
-        self.assertIn("**Data Mining, Web & Information Retrieval:**", analysis)
+        self.assertIn("**Data Mining & Information Retrieval:**", analysis)
         self.assertIn(
             "KDD, WWW, SIGIR, CIKM, WSDM, TKDE, TOIS", analysis
         )
