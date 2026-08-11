@@ -30,7 +30,7 @@ This catalog monitors representative venues across AI, computing, and education.
 
 - **Artificial Intelligence:** AAAI, IJCAI
 - **Computer Vision:** CVPR, ICCV, ECCV
-- **Data Mining & Information Retrieval:** KDD, WWW, SIGIR, WSDM, TKDE, TOIS
+- **Data Mining & Information Retrieval:** KDD, WWW, SIGIR, TKDE, TOIS
 - **Education & Learning Sciences:** AIED, EDM, LAK, Learning@Scale, ITS
 - **Human-Computer Interaction:** CHI, CSCW, UIST, IUI
 - **Machine Learning:** NeurIPS, ICML, ICLR
