@@ -44,7 +44,7 @@ SURVEY_SCOPE = (
     ("Computer Vision", "CVPR, ICCV, ECCV"),
     (
         "Data Mining & Information Retrieval",
-        "KDD, WWW, SIGIR, CIKM, WSDM, TKDE, TOIS",
+        "KDD, WWW, SIGIR, WSDM, TKDE, TOIS",
     ),
     (
         "Education & Learning Sciences",

@@ -210,8 +210,9 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertIn("**Computer Vision:** CVPR, ICCV, ECCV", scope)
         self.assertIn("**Data Mining & Information Retrieval:**", analysis)
         self.assertIn(
-            "KDD, WWW, SIGIR, CIKM, WSDM, TKDE, TOIS", analysis
+            "KDD, WWW, SIGIR, WSDM, TKDE, TOIS", analysis
         )
+        self.assertNotIn("CIKM", scope)
         self.assertIn("**Machine Learning:** NeurIPS, ICML, ICLR", analysis)
         self.assertNotIn("NeurIPS, ICML, ICLR, COLM", analysis)
         self.assertIn(
