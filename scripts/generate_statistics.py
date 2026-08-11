@@ -46,11 +46,7 @@ SURVEY_SCOPE = (
         "Data Mining & Information Retrieval",
         "KDD, WWW, SIGIR, TKDE, TOIS",
     ),
-    (
-        "Education & Learning Sciences",
-        "AIED, EDM, LAK, Learning@Scale, ITS",
-    ),
-    ("Human-Computer Interaction", "CHI, CSCW, UIST, IUI"),
+    ("Human-Computer Interaction", "CHI, CSCW, UIST"),
     ("Machine Learning", "NeurIPS, ICML, ICLR"),
     (
         "Natural Language Processing",
@@ -60,6 +56,9 @@ SURVEY_SCOPE = (
         "Software Engineering & Computing Education",
         "ICSE, SIGCSE",
     ),
+)
+EDUCATION_SURVEY_SCOPE = (
+    ("Selected Conferences", "AIED, EDM, LAK, Learning@Scale, ITS"),
     (
         "Selected Journals",
         "npj Science of Learning, Computers & Education, IJAIED, IEEE TLT",
@@ -317,11 +316,19 @@ def render_analysis(stats: CatalogStatistics) -> str:
     survey_scope = "\n".join(
         f"- **{field}:** {venues}" for field, venues in SURVEY_SCOPE
     )
+    education_survey_scope = "\n".join(
+        f"- **{field}:** {venues}"
+        for field, venues in EDUCATION_SURVEY_SCOPE
+    )
     return f"""## Survey Scope
 
 This catalog monitors representative venues across AI, computing, and education. The list is indicative rather than exhaustive; relevant workshops, journals, and arXiv preprints are also considered.
 
 {survey_scope}
+
+Selected education and learning sciences venues include:
+
+{education_survey_scope}
 
 ## Catalog Trends
 
