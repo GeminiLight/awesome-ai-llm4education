@@ -47,7 +47,7 @@ SURVEY_SCOPE = (
     ),
     (
         "Education & Learning Sciences",
-        "AIED, EDM, LAK, Learning@Scale, EC-TEL, ITS, ICALT",
+        "AIED, EDM, LAK, Learning@Scale, ITS, ICALT",
     ),
     ("Human-Computer Interaction", "CHI, CSCW, UIST, IUI"),
     ("Machine Learning", "NeurIPS, ICML, ICLR"),
@@ -57,7 +57,7 @@ SURVEY_SCOPE = (
     ),
     (
         "Software Engineering & Computing Education",
-        "ICSE, SIGCSE, ITiCSE",
+        "ICSE, SIGCSE",
     ),
     (
         "Selected Journals",
