@@ -6,16 +6,17 @@
         let fieldMap = {};
         const F = (name) => fieldMap[name?.toLowerCase?.()] || name;
         const displayLabels = {
-            'section': 'Section 🧭',
-            'category': 'Category 🏷️',
-            'is_llm_related': 'LLM-related 🤖',
-            'type': 'Type 🧩',
-            'group': 'Group 🗂️',
+            'section': 'Catalog section',
+            'category': 'Topic',
+            'is_llm_related': 'LLM relationship',
+            'type': 'Publication type',
+            'group': 'Lifecycle group',
             'publisher': 'Publisher',
-            'year': 'Year',
+            'year': 'Publication year',
             'title': 'Title',
             'authors': 'Authors'
         };
+        let selectIdCounter = 0;
         // Normalize helpers for boolean-like fields
         const normalizeBool = (val) => {
             const s = (val ?? '').toString().trim().toLowerCase();
@@ -35,15 +36,26 @@
         if (!toggleBtn) {
             console.warn('Toggle button not found');
         } else {
+            const updateThemeToggle = () => {
+                const isDark = document.body.classList.contains('dark');
+                toggleBtn.innerHTML = isDark
+                    ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+                    : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+                toggleBtn.setAttribute(
+                    'aria-label',
+                    isDark ? 'Switch to light mode' : 'Switch to dark mode'
+                );
+                toggleBtn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+            };
             toggleBtn.onclick = () => {
                 document.body.classList.toggle('dark');
-                toggleBtn.innerHTML = document.body.classList.contains('dark') ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+                updateThemeToggle();
                 localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
             };
             if(localStorage.getItem('theme') === 'dark') {
                 document.body.classList.add('dark');
-                toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
             }
+            updateThemeToggle();
         }
 
         const REQUIRED_PAPER_COLUMNS = [
@@ -121,19 +133,70 @@
             const bar = document.getElementById('filterBar');
             bar.innerHTML = '';
 
+            const filterHeader = document.createElement('div');
+            filterHeader.className = 'filter-bar-header';
+            filterHeader.innerHTML = `
+                <div>
+                    <p class="panel-kicker">Find a paper</p>
+                    <h2 class="filter-bar-title">Refine the catalog</h2>
+                </div>
+                <p class="filter-bar-summary">Combine filters or search across titles, authors, venues, and topics.</p>
+            `;
+            bar.appendChild(filterHeader);
+
             // Add search box first
             const searchSection = document.createElement('div');
             searchSection.className = 'search-box';
             const searchInput = document.createElement('input');
             searchInput.type = 'text';
             searchInput.name = 'title';
-            searchInput.placeholder = 'Search papers by title, authors, or keywords...';
+            searchInput.autocomplete = 'off';
+            searchInput.setAttribute('aria-label', 'Search the paper catalog');
+            searchInput.placeholder = 'Search title, author, venue, or topic';
             searchInput.oninput = debounce(renderPapers, 250);
             const searchIcon = document.createElement('i');
             searchIcon.className = 'fa-solid fa-search';
             searchSection.appendChild(searchInput);
             searchSection.appendChild(searchIcon);
             bar.appendChild(searchSection);
+
+            const selectGrid = document.createElement('div');
+            selectGrid.className = 'filter-select-grid';
+
+            const yearKey = F('year');
+            if(yearKey && headers.includes(yearKey)) {
+                const years = Array.from(
+                    new Set(papers.map(p => p[yearKey]).filter(Boolean))
+                ).sort((a, b) => parseInt(b) - parseInt(a));
+                if(years.length > 0) {
+                    const section = createSelectFilterGroup(
+                        displayLabels.year,
+                        'Jump to a publication year'
+                    );
+                    section.appendChild(createCustomSelect(
+                        yearKey,
+                        years,
+                        'All years'
+                    ));
+                    selectGrid.appendChild(section);
+                }
+            }
+
+            const publisherKey = F('publisher');
+            if(publisherKey && headers.includes(publisherKey)) {
+                const section = createSelectFilterGroup(
+                    displayLabels.publisher,
+                    'Browse sources by research field'
+                );
+                section.classList.add('publisher-filter-group');
+                section.appendChild(createPublisherSelect(publisherKey, papers));
+                selectGrid.appendChild(section);
+            }
+
+            bar.appendChild(selectGrid);
+
+            const taxonomyFilters = document.createElement('div');
+            taxonomyFilters.className = 'taxonomy-filters';
 
             // Create filter sections for button-based filters
             const chipFilters = ['section', 'group', 'category', 'type', 'is_llm_related'];
@@ -149,92 +212,114 @@
                         if(hasTrue) values.push('Yes');
                         if(hasFalse) values.push('No');
                         if(values.length) {
-                            createChipFilterSection(bar, key, values, displayLabels[fieldName] || key);
+                            const displayValues = rawValues.map(value => (
+                                value === 'true' ? 'Yes' : 'No'
+                            ));
+                            createChipFilterSection(
+                                taxonomyFilters,
+                                key,
+                                values,
+                                displayLabels[fieldName] || key,
+                                displayValues
+                            );
                             return;
                         }
                     }
                     const values = Array.from(new Set(rawValues)).sort();
                     if(values.length > 0) {
-                        createChipFilterSection(bar, key, values, displayLabels[fieldName] || key);
+                        createChipFilterSection(
+                            taxonomyFilters,
+                            key,
+                            values,
+                            displayLabels[fieldName] || key,
+                            rawValues
+                        );
                     }
                 }
             });
+            bar.appendChild(taxonomyFilters);
+        }
 
-            // Add year and publisher dropdowns
-            ['year', 'publisher'].forEach(fieldName => {
-                const key = F(fieldName);
-                if(key && headers.includes(key)) {
-                    const values = Array.from(new Set(papers.map(p => p[key]).filter(Boolean))).sort((a,b) => {
-                        if(fieldName === 'year') return parseInt(b) - parseInt(a);
-                        return a.localeCompare(b);
-                    });
-                    if(values.length > 0) {
-                        const section = document.createElement('div');
-                        section.className = 'filter-group';
+        function createSelectFilterGroup(labelText, helperText) {
+            const section = document.createElement('div');
+            section.className = 'filter-group filter-group-select';
 
-                        const label = document.createElement('label');
-                        label.className = 'filter-label';
-                        label.textContent = displayLabels[fieldName] || key;
-                        section.appendChild(label);
-
-                        // Create custom select
-                        const customSelect = createCustomSelect(key, values, displayLabels[fieldName] || key);
-                        section.appendChild(customSelect);
-                        bar.appendChild(section);
-                    }
-                }
-            });
+            const heading = document.createElement('div');
+            heading.className = 'filter-label-row';
+            const label = document.createElement('span');
+            label.className = 'filter-label';
+            label.textContent = labelText;
+            const helper = document.createElement('span');
+            helper.className = 'filter-helper';
+            helper.textContent = helperText;
+            heading.appendChild(label);
+            heading.appendChild(helper);
+            section.appendChild(heading);
+            return section;
         }
 
         // Create custom select dropdown
-        function createCustomSelect(name, options, label) {
+        function createCustomSelect(name, options, allLabel) {
             const container = document.createElement('div');
             container.className = 'custom-select';
             container.dataset.name = name;
+            container.dataset.allLabel = allLabel;
+            container.dataset.allMeta = `${options.length} options`;
 
-            const trigger = document.createElement('div');
+            const trigger = document.createElement('button');
+            trigger.type = 'button';
             trigger.className = 'select-trigger';
+            const dropdownId = `select-dropdown-${++selectIdCounter}`;
+            trigger.setAttribute('aria-haspopup', 'listbox');
+            trigger.setAttribute('aria-expanded', 'false');
+            trigger.setAttribute('aria-controls', dropdownId);
             trigger.innerHTML = `
-                <span class="select-value">All ${label}</span>
+                <span class="select-trigger-copy">
+                    <span class="select-value">${escapeHtml(allLabel)}</span>
+                    <span class="select-meta">${options.length} options</span>
+                </span>
                 <i class="fa-solid fa-chevron-down"></i>
             `;
 
             const dropdown = document.createElement('div');
             dropdown.className = 'select-dropdown';
+            dropdown.id = dropdownId;
+            dropdown.setAttribute('role', 'listbox');
+            dropdown.setAttribute('aria-hidden', 'true');
+            dropdown.inert = true;
+            dropdown.onclick = event => event.stopPropagation();
 
             // Add "All" option
-            const allOption = document.createElement('div');
+            const allOption = document.createElement('button');
+            allOption.type = 'button';
             allOption.className = 'select-option selected';
             allOption.dataset.value = '';
-            allOption.textContent = `All ${label}`;
-            allOption.onclick = () => selectOption(container, '', `All ${label}`);
+            allOption.dataset.meta = `${options.length} options`;
+            allOption.setAttribute('role', 'option');
+            allOption.setAttribute('aria-selected', 'true');
+            allOption.textContent = allLabel;
+            allOption.onclick = () => selectOption(
+                container,
+                '',
+                allLabel,
+                `${options.length} options`
+            );
             dropdown.appendChild(allOption);
 
             // Add other options
             options.forEach(opt => {
-                const option = document.createElement('div');
+                const option = document.createElement('button');
+                option.type = 'button';
                 option.className = 'select-option';
                 option.dataset.value = opt;
+                option.setAttribute('role', 'option');
+                option.setAttribute('aria-selected', 'false');
                 option.textContent = opt;
-                option.onclick = () => selectOption(container, opt, opt);
+                option.onclick = () => selectOption(container, opt, opt, '1 selected year');
                 dropdown.appendChild(option);
             });
 
-            trigger.onclick = (e) => {
-                e.stopPropagation();
-                const wasActive = trigger.classList.contains('active');
-
-                // Close all other dropdowns
-                document.querySelectorAll('.select-trigger.active').forEach(t => {
-                    t.classList.remove('active');
-                    t.nextElementSibling.classList.remove('active');
-                });
-
-                if(!wasActive) {
-                    trigger.classList.add('active');
-                    dropdown.classList.add('active');
-                }
-            };
+            bindSelectBehavior(container, trigger, dropdown);
 
             container.appendChild(trigger);
             container.appendChild(dropdown);
@@ -242,37 +327,251 @@
             return container;
         }
 
-        function selectOption(container, value, text) {
+        function createPublisherSelect(name, papers) {
+            const publisherCounts = new Map();
+            papers.forEach(paper => {
+                const publisher = paper[name];
+                if(publisher) {
+                    publisherCounts.set(
+                        publisher,
+                        (publisherCounts.get(publisher) || 0) + 1
+                    );
+                }
+            });
+            const groups = PublisherCatalog.groupPublishers(
+                Array.from(publisherCounts, ([publisherName, count]) => ({
+                    name: publisherName,
+                    count
+                }))
+            );
+            const sourceCount = publisherCounts.size;
+            const container = document.createElement('div');
+            container.className = 'custom-select publisher-select';
+            container.dataset.name = name;
+            container.dataset.allLabel = 'All publishers';
+            container.dataset.allMeta = `${sourceCount} sources · ${groups.length} fields`;
+
+            const trigger = document.createElement('button');
+            trigger.type = 'button';
+            trigger.className = 'select-trigger publisher-select-trigger';
+            const dropdownId = `select-dropdown-${++selectIdCounter}`;
+            trigger.setAttribute('aria-haspopup', 'listbox');
+            trigger.setAttribute('aria-expanded', 'false');
+            trigger.setAttribute('aria-controls', dropdownId);
+            trigger.innerHTML = `
+                <span class="select-trigger-copy">
+                    <span class="select-value">All publishers</span>
+                    <span class="select-meta">${sourceCount} sources · ${groups.length} fields</span>
+                </span>
+                <i class="fa-solid fa-chevron-down"></i>
+            `;
+
+            const dropdown = document.createElement('div');
+            dropdown.className = 'select-dropdown publisher-dropdown';
+            dropdown.id = dropdownId;
+            dropdown.setAttribute('role', 'listbox');
+            dropdown.setAttribute('aria-hidden', 'true');
+            dropdown.inert = true;
+            dropdown.onclick = event => event.stopPropagation();
+
+            const search = document.createElement('div');
+            search.className = 'publisher-search';
+            search.innerHTML = '<i class="fa-solid fa-search" aria-hidden="true"></i>';
+            const searchInput = document.createElement('input');
+            searchInput.type = 'search';
+            searchInput.className = 'publisher-search-input';
+            searchInput.placeholder = 'Search publishers or fields';
+            searchInput.autocomplete = 'off';
+            searchInput.setAttribute('aria-label', 'Search publishers');
+            search.appendChild(searchInput);
+            dropdown.appendChild(search);
+
+            const optionList = document.createElement('div');
+            optionList.className = 'publisher-option-list';
+            const allOption = createPublisherOption({
+                name: 'All publishers',
+                count: papers.length,
+                value: '',
+                groupLabel: 'Entire catalog',
+                selected: true
+            });
+            allOption.classList.add('publisher-all-option');
+            allOption.onclick = () => selectOption(
+                container,
+                '',
+                'All publishers',
+                `${sourceCount} sources · ${groups.length} fields`
+            );
+            optionList.appendChild(allOption);
+
+            groups.forEach(group => {
+                const groupSection = document.createElement('section');
+                groupSection.className = 'publisher-group';
+                groupSection.dataset.search = `${group.label} ${group.description}`.toLowerCase();
+
+                const heading = document.createElement('div');
+                heading.className = 'publisher-group-heading';
+                heading.innerHTML = `
+                    <span>
+                        <strong>${escapeHtml(group.label)}</strong>
+                        <small>${escapeHtml(group.description)}</small>
+                    </span>
+                    <span class="publisher-group-count">${group.publishers.length} sources · ${group.paperCount} papers</span>
+                `;
+                groupSection.appendChild(heading);
+
+                group.publishers.forEach(publisher => {
+                    const option = createPublisherOption({
+                        name: publisher.name,
+                        count: publisher.count,
+                        value: publisher.name,
+                        groupLabel: group.label
+                    });
+                    option.onclick = () => selectOption(
+                        container,
+                        publisher.name,
+                        publisher.name,
+                        `${group.label} · ${publisher.count} ${publisher.count === 1 ? 'paper' : 'papers'}`
+                    );
+                    groupSection.appendChild(option);
+                });
+                optionList.appendChild(groupSection);
+            });
+
+            const empty = document.createElement('p');
+            empty.className = 'publisher-search-empty hidden';
+            empty.textContent = 'No publisher matches this search.';
+            optionList.appendChild(empty);
+            dropdown.appendChild(optionList);
+
+            searchInput.oninput = () => filterPublisherOptions(dropdown, searchInput.value);
+            searchInput.onkeydown = event => {
+                if(event.key === 'Escape') {
+                    closeSelect(container, true);
+                }
+            };
+            bindSelectBehavior(container, trigger, dropdown, searchInput);
+
+            container.appendChild(trigger);
+            container.appendChild(dropdown);
+            return container;
+        }
+
+        function createPublisherOption({ name, count, value, groupLabel, selected = false }) {
+            const option = document.createElement('button');
+            option.type = 'button';
+            option.className = `select-option publisher-option${selected ? ' selected' : ''}`;
+            option.dataset.value = value;
+            option.dataset.search = `${name} ${groupLabel}`.toLowerCase();
+            option.setAttribute('role', 'option');
+            option.setAttribute('aria-selected', String(selected));
+
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'publisher-option-name';
+            nameSpan.textContent = name;
+            const countSpan = document.createElement('span');
+            countSpan.className = 'publisher-option-count';
+            countSpan.textContent = count.toLocaleString();
+            countSpan.setAttribute('aria-label', `${count} papers`);
+            option.appendChild(nameSpan);
+            option.appendChild(countSpan);
+            return option;
+        }
+
+        function filterPublisherOptions(dropdown, value) {
+            const query = value.trim().toLowerCase();
+            dropdown.querySelector('.publisher-all-option').hidden = Boolean(query);
+            let visibleOptions = 0;
+            dropdown.querySelectorAll('.publisher-group').forEach(group => {
+                const groupMatches = group.dataset.search.includes(query);
+                let visibleInGroup = 0;
+                group.querySelectorAll('.publisher-option').forEach(option => {
+                    const isVisible = !query || groupMatches || option.dataset.search.includes(query);
+                    option.hidden = !isVisible;
+                    if(isVisible) visibleInGroup += 1;
+                });
+                group.hidden = visibleInGroup === 0;
+                visibleOptions += visibleInGroup;
+            });
+            dropdown.querySelector('.publisher-search-empty').classList.toggle(
+                'hidden',
+                visibleOptions > 0
+            );
+        }
+
+        function bindSelectBehavior(container, trigger, dropdown, focusTarget = null) {
+            trigger.onclick = event => {
+                event.stopPropagation();
+                const wasActive = trigger.classList.contains('active');
+                closeAllSelects(container);
+                if(!wasActive) {
+                    trigger.classList.add('active');
+                    trigger.setAttribute('aria-expanded', 'true');
+                    dropdown.setAttribute('aria-hidden', 'false');
+                    dropdown.inert = false;
+                    dropdown.classList.add('active');
+                    if(focusTarget) window.setTimeout(() => focusTarget.focus(), 0);
+                }
+            };
+            dropdown.onkeydown = event => {
+                if(event.key === 'Escape') closeSelect(container, true);
+            };
+        }
+
+        function closeSelect(container, returnFocus = false) {
+            const trigger = container.querySelector('.select-trigger');
+            const dropdown = container.querySelector('.select-dropdown');
+            trigger.classList.remove('active');
+            trigger.setAttribute('aria-expanded', 'false');
+            dropdown.setAttribute('aria-hidden', 'true');
+            dropdown.inert = true;
+            dropdown.classList.remove('active');
+            if(returnFocus) trigger.focus();
+        }
+
+        function closeAllSelects(except = null) {
+            document.querySelectorAll('.custom-select').forEach(select => {
+                if(select !== except) closeSelect(select);
+            });
+        }
+
+        function selectOption(container, value, text, metaText = '', shouldRender = true) {
             const trigger = container.querySelector('.select-trigger');
             const valueSpan = trigger.querySelector('.select-value');
+            const metaSpan = trigger.querySelector('.select-meta');
             const dropdown = container.querySelector('.select-dropdown');
 
             valueSpan.textContent = text;
+            if(metaSpan) metaSpan.textContent = metaText;
             container.dataset.value = value;
 
             // Update selected state
             dropdown.querySelectorAll('.select-option').forEach(opt => {
-                opt.classList.toggle('selected', opt.dataset.value === value);
+                const isSelected = opt.dataset.value === value;
+                opt.classList.toggle('selected', isSelected);
+                opt.setAttribute('aria-selected', String(isSelected));
             });
 
             // Close dropdown
-            trigger.classList.remove('active');
-            dropdown.classList.remove('active');
+            closeSelect(container);
+
+            const publisherSearch = dropdown.querySelector('.publisher-search-input');
+            if(publisherSearch) {
+                publisherSearch.value = '';
+                filterPublisherOptions(dropdown, '');
+            }
 
             // Trigger filter update
-            renderPapers();
+            if(shouldRender) renderPapers();
         }
 
         // Close dropdowns when clicking outside
         document.addEventListener('click', () => {
-            document.querySelectorAll('.select-trigger.active').forEach(trigger => {
-                trigger.classList.remove('active');
-                trigger.nextElementSibling.classList.remove('active');
-            });
+            closeAllSelects();
         });
 
         // Create chip-based multi-select filter section
-        function createChipFilterSection(container, actualFieldName, values, labelText) {
+        function createChipFilterSection(container, actualFieldName, values, labelText, rawValues) {
             const section = document.createElement('div');
             section.className = 'filter-group';
 
@@ -284,16 +583,31 @@
             const buttonsContainer = document.createElement('div');
             buttonsContainer.className = 'filter-options';
 
+            const valueCounts = rawValues.reduce((counts, value) => {
+                const normalized = String(value);
+                counts.set(normalized, (counts.get(normalized) || 0) + 1);
+                return counts;
+            }, new Map());
+
             values.forEach(value => {
                 const btn = document.createElement('button');
+                btn.type = 'button';
                 btn.className = 'filter-btn';
                 btn.dataset.field = actualFieldName;
                 btn.dataset.value = value;
-                btn.textContent = value;
+                const valueLabel = document.createElement('span');
+                valueLabel.textContent = value;
+                const count = document.createElement('span');
+                count.className = 'filter-btn-count';
+                count.textContent = valueCounts.get(value) || 0;
+                btn.appendChild(valueLabel);
+                btn.appendChild(count);
                 btn.onclick = () => {
                     btn.classList.toggle('active');
+                    btn.setAttribute('aria-pressed', String(btn.classList.contains('active')));
                     renderPapers();
                 };
+                btn.setAttribute('aria-pressed', 'false');
                 buttonsContainer.appendChild(btn);
             });
 
@@ -412,21 +726,45 @@
                     const chips = [];
 
                     if(filters.search) {
-                        chips.push(`<span class="filter-chip">Search: "${escapeHtml(filters.search)}"</span>`);
+                        chips.push(`
+                            <button type="button" class="filter-chip" data-clear-field="search">
+                                <span>Search: “${escapeHtml(filters.search)}”</span>
+                                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                <span class="sr-only">Clear search</span>
+                            </button>
+                        `);
                     }
 
                     filterEntries.forEach(([field, values]) => {
                         const label = displayLabels[field.toLowerCase()] || field;
                         if(Array.isArray(values)) {
                             values.forEach(v => {
-                                chips.push(`<span class="filter-chip">${escapeHtml(label)}: ${escapeHtml(v)}</span>`);
+                                chips.push(`
+                                    <button type="button" class="filter-chip" data-clear-field="${escapeHtml(field)}" data-clear-value="${escapeHtml(v)}">
+                                        <span>${escapeHtml(label)}: ${escapeHtml(v)}</span>
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                        <span class="sr-only">Remove ${escapeHtml(label)} filter</span>
+                                    </button>
+                                `);
                             });
                         } else {
-                            chips.push(`<span class="filter-chip">${escapeHtml(label)}: ${escapeHtml(values)}</span>`);
+                            chips.push(`
+                                <button type="button" class="filter-chip" data-clear-field="${escapeHtml(field)}" data-clear-value="${escapeHtml(values)}">
+                                    <span>${escapeHtml(label)}: ${escapeHtml(values)}</span>
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                    <span class="sr-only">Remove ${escapeHtml(label)} filter</span>
+                                </button>
+                            `);
                         }
                     });
 
                     activeFiltersChips.innerHTML = chips.join('');
+                    activeFiltersChips.querySelectorAll('[data-clear-field]').forEach(chip => {
+                        chip.onclick = () => clearSingleFilter(
+                            chip.dataset.clearField,
+                            chip.dataset.clearValue || ''
+                        );
+                    });
                     if(quickClearBtn) quickClearBtn.classList.remove('hidden');
                 }
             }
@@ -465,9 +803,12 @@
             return Object.entries(filters).every(([k, v]) => {
                 if(k === 'search') {
                     const searchTerm = v.toLowerCase();
-                    const title = (paper[F('title')] || '').toLowerCase();
-                    const authors = (paper[F('authors')] || '').toLowerCase();
-                    return title.includes(searchTerm) || authors.includes(searchTerm);
+                    const searchableFields = [
+                        'title', 'authors', 'publisher', 'section', 'group', 'category'
+                    ];
+                    return searchableFields.some(field => (
+                        (paper[F(field)] || '').toLowerCase().includes(searchTerm)
+                    ));
                 }
 
                 const key = F(k) || k;
@@ -488,6 +829,10 @@
                     return (v === 'Yes' && paperVal === 'true') || (v === 'No' && paperVal === 'false');
                 }
 
+                if(kLower === 'publisher' || kLower === 'year') {
+                    return (paper[key] || '').toLowerCase() === v.toLowerCase();
+                }
+
                 return (paper[key] || '').toLowerCase().includes(v.toLowerCase());
             });
         }
@@ -506,7 +851,15 @@
 
             const list = document.getElementById('paperList');
             if(filtered.length === 0) {
-                list.innerHTML = '<div class="empty-state"><i class="fa-solid fa-search"></i><p>No papers found matching your filters</p></div>';
+                list.innerHTML = `
+                    <div class="empty-state">
+                        <span class="empty-state-icon"><i class="fa-solid fa-filter-circle-xmark" aria-hidden="true"></i></span>
+                        <h3 class="empty-title">No papers match these filters</h3>
+                        <p class="empty-subtitle">Try a broader topic, another publisher, or clear the current filters.</p>
+                        <button type="button" class="reset-button" id="emptyResetBtn">Clear filters</button>
+                    </div>
+                `;
+                document.getElementById('emptyResetBtn').onclick = clearAllFilters;
             } else {
                 list.innerHTML = filtered.map(paper => {
                     const isLLM = normalizeBool(paper[F('is_llm_related')]) === 'true';
@@ -519,14 +872,17 @@
                     const group = paper[F('group')] ? escapeHtml(paper[F('group')]) : '';
                     const category = paper[F('category')] ? escapeHtml(paper[F('category')]) : '';
                     const type = paper[F('type')] ? escapeHtml(paper[F('type')]) : '';
+                    const titleMarkup = link
+                        ? `<a href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer">${title}</a>`
+                        : title;
 
                     return `
                         <article class="paper-card">
                             <div class="paper-header">
-                                <span class="paper-venue">${escapeHtml(publisher)} ${escapeHtml(year)}</span>
-                                ${isLLM ? '<span class="llm-badge">🤖 LLM</span>' : ''}
+                                <span class="paper-venue">${escapeHtml(publisher)} <span>${escapeHtml(year)}</span></span>
+                                ${isLLM ? '<span class="llm-badge">LLM-related</span>' : ''}
                             </div>
-                            <h3 class="paper-title">${title}</h3>
+                            <h3 class="paper-title">${titleMarkup}</h3>
                             <p class="paper-authors">${authors}</p>
                             <div class="paper-footer">
                                 <div class="paper-tags">
@@ -535,7 +891,7 @@
                                     ${category ? `<span class="tag">${category}</span>` : ''}
                                     ${type ? `<span class="tag">${type}</span>` : ''}
                                 </div>
-                                ${link ? `<a href="${escapeHtml(link)}" target="_blank" class="paper-link">View Paper <i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : ''}
+                                ${link ? `<a href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer" class="paper-link">View paper <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>` : ''}
                             </div>
                         </article>
                     `;
@@ -544,6 +900,52 @@
 
             updateStats();
         }
+
+        function resetCustomSelect(select) {
+            selectOption(
+                select,
+                '',
+                select.dataset.allLabel,
+                select.dataset.allMeta,
+                false
+            );
+        }
+
+        function clearSingleFilter(field, value) {
+            const bar = document.getElementById('filterBar');
+            if(field === 'search') {
+                const searchInput = bar.querySelector('input[name="title"]');
+                if(searchInput) searchInput.value = '';
+            } else {
+                const select = Array.from(bar.querySelectorAll('.custom-select')).find(
+                    candidate => candidate.dataset.name === field
+                );
+                if(select) {
+                    resetCustomSelect(select);
+                } else {
+                    bar.querySelectorAll('.filter-btn.active').forEach(button => {
+                        if(button.dataset.field === field && button.dataset.value === value) {
+                            button.classList.remove('active');
+                            button.setAttribute('aria-pressed', 'false');
+                        }
+                    });
+                }
+            }
+            renderPapers();
+        }
+
+        function clearAllFilters() {
+            const bar = document.getElementById('filterBar');
+            bar.querySelectorAll('.filter-btn.active').forEach(button => {
+                button.classList.remove('active');
+                button.setAttribute('aria-pressed', 'false');
+            });
+            bar.querySelectorAll('.custom-select').forEach(resetCustomSelect);
+            const searchInput = bar.querySelector('input[name="title"]');
+            if(searchInput) searchInput.value = '';
+            renderPapers();
+        }
+
         // Initialize
         fetchCSV().then(papers => {
             if(!papers || !papers.length) throw new Error('No data');
@@ -561,39 +963,19 @@
             // Setup clear all button
             const quickClearBtn = document.getElementById('quickClearBtn');
             if(quickClearBtn) {
-                quickClearBtn.onclick = () => {
-                    const bar = document.getElementById('filterBar');
-
-                    // Clear filter buttons
-                    bar.querySelectorAll('.filter-btn.active').forEach(btn => btn.classList.remove('active'));
-
-                    // Clear custom selects
-                    bar.querySelectorAll('.custom-select').forEach(select => {
-                        const trigger = select.querySelector('.select-trigger');
-                        const valueSpan = trigger.querySelector('.select-value');
-                        const label = select.dataset.name;
-                        const displayLabel = displayLabels[label] || label;
-                        valueSpan.textContent = `All ${displayLabel}`;
-                        select.dataset.value = '';
-
-                        // Update selected state
-                        const dropdown = select.querySelector('.select-dropdown');
-                        dropdown.querySelectorAll('.select-option').forEach(opt => {
-                            opt.classList.toggle('selected', opt.dataset.value === '');
-                        });
-                    });
-
-                    // Clear search input
-                    bar.querySelectorAll('input').forEach(inp => inp.value = '');
-
-                    renderPapers();
-                };
+                quickClearBtn.onclick = clearAllFilters;
             }
 
             createFilters(papers, allHeaders);
             renderPapers();
         }).catch(err => {
             const list = document.getElementById('paperList');
-            list.innerHTML = '<div class="empty-state"><p>Failed to load papers. Please check data files.</p></div>';
+            list.innerHTML = `
+                <div class="empty-state">
+                    <span class="empty-state-icon"><i class="fa-solid fa-file-circle-exclamation" aria-hidden="true"></i></span>
+                    <h3 class="empty-title">The catalog could not be loaded</h3>
+                    <p class="empty-subtitle">Check the data file and reload this page.</p>
+                </div>
+            `;
             console.error(err);
         });

@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A curated, searchable catalog of AI and large language model research for education.">
+    <meta name="theme-color" content="#f3f0e8">
     <title>Awesome AI and LLM for Education</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260811b">
 </head>
 <body>
-    <main>
+    <a class="skip-link" href="#paperList">Skip to paper results</a>
+    <main id="catalog">
         <header class="header">
+            <p class="header-kicker">Open research catalog</p>
             <div class="header-top">
                 <h1 class="title">Awesome AI & LLM for Education</h1>
                 <div class="toggle-mode-wrapper">
@@ -91,16 +95,27 @@
                 <div>Loading papers…</div>
             </div>
 
-            <div class="results-info" role="status" aria-live="polite">
-                Showing <strong id="statVisible">0</strong> of <strong id="statResultTotal">0</strong> papers
-            </div>
+            <section class="results-header" aria-labelledby="resultsTitle">
+                <div>
+                    <p class="panel-kicker">Research library</p>
+                    <h2 class="results-title" id="resultsTitle">Paper collection</h2>
+                </div>
+                <div class="results-info" role="status" aria-live="polite">
+                    Showing <strong id="statVisible">0</strong> of <strong id="statResultTotal">0</strong> papers
+                </div>
+            </section>
 
             <section class="paper-list" id="paperList" aria-label="Paper list">
                 <!-- Paper cards will be rendered here -->
             </section>
         </div>
+        <footer class="site-footer">
+            <p>Built from the canonical catalog in <code>data/papers.csv</code>.</p>
+            <a href="https://github.com/GeminiLight/awesome-ai-llm4education" target="_blank" rel="noopener noreferrer">View the project on GitHub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </footer>
     </main>
-    <script src="assets/js/csv-parser.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/csv-parser.js?v=20260811b"></script>
+    <script src="assets/js/publisher-groups.js?v=20260811b"></script>
+    <script src="assets/js/app.js?v=20260811b"></script>
 </body>
 </html>
