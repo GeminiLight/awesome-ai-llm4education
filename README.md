@@ -30,13 +30,13 @@ This catalog monitors representative venues across AI, computing, and education.
 
 - **Artificial Intelligence:** AAAI, IJCAI
 - **Computer Vision:** CVPR, ICCV, ECCV
-- **Data Mining, Web & Information Retrieval:** KDD, WWW, SIGIR, CIKM, WSDM
+- **Data Mining & Information Retrieval:** KDD, WWW, SIGIR, CIKM, WSDM, TKDE, TOIS
 - **Education & Learning Sciences:** AIED, EDM, LAK, Learning@Scale, ITS
 - **Human-Computer Interaction:** CHI, CSCW, UIST, IUI
 - **Machine Learning:** NeurIPS, ICML, ICLR
 - **Natural Language Processing:** ACL, EMNLP, NAACL, EACL, COLING, COLM, and Findings tracks
 - **Software Engineering & Computing Education:** ICSE, SIGCSE
-- **Selected Journals:** IJAIED, Computers & Education, IEEE TLT, TKDE, TOIS, npj Science of Learning
+- **Selected Journals:** npj Science of Learning, Computers & Education, IJAIED, IEEE TLT
 
 ## Catalog Trends
 

@@ -208,8 +208,10 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertEqual(fields[0], "Artificial Intelligence")
         self.assertEqual(fields[-1], "Selected Journals")
         self.assertIn("**Computer Vision:** CVPR, ICCV, ECCV", scope)
-        self.assertIn("**Data Mining, Web & Information Retrieval:**", analysis)
-        self.assertIn("KDD, WWW, SIGIR, CIKM, WSDM", analysis)
+        self.assertIn("**Data Mining & Information Retrieval:**", analysis)
+        self.assertIn(
+            "KDD, WWW, SIGIR, CIKM, WSDM, TKDE, TOIS", analysis
+        )
         self.assertIn("**Machine Learning:** NeurIPS, ICML, ICLR", analysis)
         self.assertNotIn("NeurIPS, ICML, ICLR, COLM", analysis)
         self.assertIn(
@@ -218,6 +220,11 @@ class CatalogStatisticsTest(unittest.TestCase):
             analysis,
         )
         self.assertIn("**Human-Computer Interaction:**", analysis)
+        self.assertIn(
+            "**Selected Journals:** npj Science of Learning, "
+            "Computers & Education, IJAIED, IEEE TLT",
+            analysis,
+        )
         self.assertIn("CHI, CSCW, UIST, IUI", analysis)
         self.assertIn("**Education & Learning Sciences:**", analysis)
         self.assertIn("AIED, EDM, LAK, Learning@Scale, ITS", scope)

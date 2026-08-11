@@ -43,8 +43,8 @@ SURVEY_SCOPE = (
     ("Artificial Intelligence", "AAAI, IJCAI"),
     ("Computer Vision", "CVPR, ICCV, ECCV"),
     (
-        "Data Mining, Web & Information Retrieval",
-        "KDD, WWW, SIGIR, CIKM, WSDM",
+        "Data Mining & Information Retrieval",
+        "KDD, WWW, SIGIR, CIKM, WSDM, TKDE, TOIS",
     ),
     (
         "Education & Learning Sciences",
@@ -62,8 +62,7 @@ SURVEY_SCOPE = (
     ),
     (
         "Selected Journals",
-        "IJAIED, Computers & Education, IEEE TLT, TKDE, TOIS, "
-        "npj Science of Learning",
+        "npj Science of Learning, Computers & Education, IJAIED, IEEE TLT",
     ),
 )
 
