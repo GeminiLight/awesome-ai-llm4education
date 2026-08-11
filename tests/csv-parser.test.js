@@ -66,7 +66,7 @@ test('distinguishes blank lines from explicit empty records', () => {
 test('parses every canonical paper without field shifts', () => {
     const papers = readCSV('data/papers.csv');
 
-    assert.equal(papers.length, 330);
+    assert.equal(papers.length, 334);
     assert.deepEqual(Object.keys(papers[0]), mainColumns);
     assert.equal(papers[0].section, 'Surveys, Analyses & Perspectives');
     assert.equal(papers[0].group, 'Comprehensive Surveys');

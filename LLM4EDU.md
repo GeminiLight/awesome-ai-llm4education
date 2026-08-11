@@ -78,6 +78,10 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
 <td>&emsp;&emsp;<a href="#adaptive-testing">2.5.1. Adaptive Testing</a></td>
 <td>&emsp;&emsp;<a href="#automated-grading">2.5.2. Automated Grading</a></td>
 </tr>
+<tr>
+<td>&emsp;&emsp;<a href="#feedback">2.5.3. Feedback</a></td>
+<td></td>
+</tr>
 <tr><td colspan="2"><strong><a href="#application-domains">3. Application Domains</a></strong></td></tr>
 <tr><td colspan="2">&emsp;<a href="#computer-science">3.1. Computer Science</a></td></tr>
 <tr><td colspan="2">&emsp;<a href="#mathematics">3.2. Mathematics</a></td></tr>
@@ -944,6 +948,14 @@ The catalog is organized into **Surveys, Analyses & Perspectives**, **Teaching &
     *Toru Ishida, Tongxi Liu, Hailong Wang, William K. Cheung*
 
     arXiv, 2024. [`preprint`](https://arxiv.org/abs/2405.18632)
+
+#### [Feedback](#content)
+
+1. :sparkles: **ExpertAF: Expert Actionable Feedback from Video**
+
+    *Kumar Ashutosh, Tushar Nagarajan, Georgios Pavlakos, Kris Kitani, Kristen Grauman*
+
+    CVPR, 2025. [`conference`](https://openaccess.thecvf.com/content/CVPR2025/html/Ashutosh_ExpertAF_Expert_Actionable_Feedback_from_Video_CVPR_2025_paper.html)
 
 
 ## [Application Domains](#content)

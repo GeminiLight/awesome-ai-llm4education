@@ -25,9 +25,9 @@ class CatalogStatisticsTest(unittest.TestCase):
         cls.stats = compute_statistics(cls.papers)
 
     def test_summary_metrics(self):
-        self.assertEqual(self.stats.total, 330)
-        self.assertEqual(self.stats.llm_related, 195)
-        self.assertEqual(self.stats.source_count, 49)
+        self.assertEqual(self.stats.total, 334)
+        self.assertEqual(self.stats.llm_related, 196)
+        self.assertEqual(self.stats.source_count, 51)
         self.assertEqual(self.stats.earliest_year, 2001)
         self.assertEqual(self.stats.latest_year, 2026)
 
@@ -44,7 +44,7 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertEqual(
             self.stats.by_section[0].name, "Teaching & Learning Lifecycle"
         )
-        self.assertEqual(self.stats.by_section[0].count, 250)
+        self.assertEqual(self.stats.by_section[0].count, 251)
         self.assertEqual(self.stats.by_group[0].name, "Learner Modeling")
         self.assertEqual(self.stats.by_group[0].count, 111)
 
@@ -62,7 +62,7 @@ class CatalogStatisticsTest(unittest.TestCase):
             "Material Preparation": 37,
             "Teaching Support": 10,
             "Learner Modeling": 111,
-            "Learning Assessment": 26,
+            "Learning Assessment": 27,
         }
         lifecycle_groups = {
             item.name: item.count
@@ -94,7 +94,7 @@ class CatalogStatisticsTest(unittest.TestCase):
             titles,
         )
 
-    def test_recent_top_ai_and_nlp_venue_additions_are_covered(self):
+    def test_recent_top_venue_additions_are_covered(self):
         recent = [
             paper
             for paper in self.papers
@@ -114,6 +114,8 @@ class CatalogStatisticsTest(unittest.TestCase):
             "ICLR": 2,
             "ACL": 11,
             "EMNLP": 12,
+            "CVPR": 2,
+            "ICCV": 2,
         }
         for venue, minimum in minimum_counts.items():
             self.assertGreaterEqual(venue_counts.get(venue, 0), minimum, venue)
@@ -131,6 +133,12 @@ class CatalogStatisticsTest(unittest.TestCase):
             "Education for Large Language Models": "ACL",
             "Automatic Generation of Socratic Subquestions for Teaching Math "
             "Word Problems": "EMNLP",
+            "ExpertAF: Expert Actionable Feedback from Video": "CVPR",
+            "CPR-Coach: Recognizing Composite Error Actions based on "
+            "Single-class Training": "CVPR",
+            "Context-Aware Academic Emotion Dataset and Benchmark": "ICCV",
+            "Towards Comprehensive Lecture Slides Understanding: Large-scale "
+            "Dataset and Effective Method": "ICCV",
         }
         papers_by_title = {paper["title"]: paper for paper in recent}
         for title, venue in expected_titles.items():
@@ -144,6 +152,44 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertEqual(personality_simulation["publisher"], "EMNLP")
         self.assertEqual(personality_simulation["group"], "Learner Modeling")
         self.assertEqual(personality_simulation["category"], "Student Simulation")
+
+        expected_paths = {
+            "ExpertAF: Expert Actionable Feedback from Video": (
+                "Teaching & Learning Lifecycle",
+                "Learning Assessment",
+                "Feedback",
+                "1",
+            ),
+            "CPR-Coach: Recognizing Composite Error Actions based on "
+            "Single-class Training": (
+                "Application Domains",
+                "Medical Education",
+                "",
+                "0",
+            ),
+            "Context-Aware Academic Emotion Dataset and Benchmark": (
+                "Datasets, Benchmarks & Toolkits",
+                "Datasets",
+                "",
+                "0",
+            ),
+            "Towards Comprehensive Lecture Slides Understanding: Large-scale "
+            "Dataset and Effective Method": (
+                "Datasets, Benchmarks & Toolkits",
+                "Datasets",
+                "",
+                "0",
+            ),
+        }
+        for title, expected_path in expected_paths.items():
+            paper = papers_by_title[title]
+            actual_path = (
+                paper["section"],
+                paper["group"],
+                paper["category"],
+                paper["is_llm_related"],
+            )
+            self.assertEqual(actual_path, expected_path)
 
     def test_analysis_documents_the_cross_field_survey_scope(self):
         analysis = build_outputs(self.stats)[
@@ -161,6 +207,7 @@ class CatalogStatisticsTest(unittest.TestCase):
         self.assertEqual(fields[:-1], sorted(fields[:-1], key=str.casefold))
         self.assertEqual(fields[0], "Artificial Intelligence")
         self.assertEqual(fields[-1], "Selected Journals")
+        self.assertIn("**Computer Vision:** CVPR, ICCV, ECCV", scope)
         self.assertIn("**Data Mining, Web & Information Retrieval:**", analysis)
         self.assertIn("KDD, WWW, SIGIR, CIKM, WSDM", analysis)
         self.assertIn("**Machine Learning:** NeurIPS, ICML, ICLR", analysis)
