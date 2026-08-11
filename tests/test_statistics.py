@@ -203,10 +203,23 @@ class CatalogStatisticsTest(unittest.TestCase):
         scope = analysis.split("## Survey Scope\n", 1)[1].split(
             "\n## Catalog Trends", 1
         )[0]
-        fields = re.findall(r"^- \*\*(.+?):\*\*", scope, flags=re.MULTILINE)
-        self.assertEqual(fields[:-1], sorted(fields[:-1], key=str.casefold))
-        self.assertEqual(fields[0], "Artificial Intelligence")
-        self.assertEqual(fields[-1], "Selected Journals")
+        primary_scope, education_scope = scope.split(
+            "\n\nSelected education and learning sciences venues include:\n",
+            1,
+        )
+        primary_fields = re.findall(
+            r"^- \*\*(.+?):\*\*", primary_scope, flags=re.MULTILINE
+        )
+        education_fields = re.findall(
+            r"^- \*\*(.+?):\*\*", education_scope, flags=re.MULTILINE
+        )
+        self.assertEqual(
+            primary_fields, sorted(primary_fields, key=str.casefold)
+        )
+        self.assertEqual(primary_fields[0], "Artificial Intelligence")
+        self.assertEqual(
+            education_fields, ["Selected Conferences", "Selected Journals"]
+        )
         self.assertIn("**Computer Vision:** CVPR, ICCV, ECCV", scope)
         self.assertIn("**Data Mining & Information Retrieval:**", analysis)
         self.assertIn(
@@ -221,15 +234,20 @@ class CatalogStatisticsTest(unittest.TestCase):
             "COLING, COLM, and Findings tracks",
             analysis,
         )
-        self.assertIn("**Human-Computer Interaction:**", analysis)
+        self.assertIn(
+            "**Human-Computer Interaction:** CHI, CSCW, UIST", analysis
+        )
+        self.assertNotIn("IUI", scope)
+        self.assertIn(
+            "**Selected Conferences:** AIED, EDM, LAK, Learning@Scale, ITS",
+            education_scope,
+        )
         self.assertIn(
             "**Selected Journals:** npj Science of Learning, "
             "Computers & Education, IJAIED, IEEE TLT",
             analysis,
         )
-        self.assertIn("CHI, CSCW, UIST, IUI", analysis)
-        self.assertIn("**Education & Learning Sciences:**", analysis)
-        self.assertIn("AIED, EDM, LAK, Learning@Scale, ITS", scope)
+        self.assertNotIn("**Education & Learning Sciences:**", analysis)
         self.assertNotIn("EC-TEL", scope)
         self.assertNotIn("ICALT", scope)
         self.assertIn(
