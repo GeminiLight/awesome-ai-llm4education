@@ -4,6 +4,10 @@ const path = require('node:path');
 const test = require('node:test');
 
 const { parseCSV } = require('../assets/js/csv-parser.js');
+const {
+    classifyPublisher,
+    groupPublishers
+} = require('../assets/js/publisher-groups.js');
 
 const projectRoot = path.resolve(__dirname, '..');
 const mainColumns = [
@@ -186,6 +190,37 @@ test('places Survey Scope and Catalog Trends before Content as peer sections', (
     );
 });
 
+test('groups every publisher into a searchable research-domain directory', () => {
+    const papers = readCSV('data/papers.csv');
+    const counts = new Map();
+    for (const paper of papers) {
+        counts.set(paper.publisher, (counts.get(paper.publisher) || 0) + 1);
+    }
+    const groups = groupPublishers(
+        Array.from(counts, ([name, count]) => ({ name, count }))
+    );
+    const groupedPublishers = groups.flatMap(group => (
+        group.publishers.map(publisher => publisher.name)
+    ));
+
+    assert.equal(groupedPublishers.length, counts.size);
+    assert.equal(new Set(groupedPublishers).size, counts.size);
+    assert.equal(classifyPublisher('AIED - Workshop on LLMs'), 'education-conferences');
+    assert.equal(classifyPublisher('npj science of learning'), 'education-journals');
+    assert.equal(classifyPublisher('ACL Findings'), 'natural-language-processing');
+    assert.equal(classifyPublisher('NeurIPS - Workshop on GAIED'), 'machine-learning');
+    assert.equal(classifyPublisher('CHI Extended Abstract'), 'human-computer-interaction');
+    assert.equal(classifyPublisher('arXiv'), 'preprints');
+
+    const nlp = groups.find(group => group.id === 'natural-language-processing');
+    assert.ok(nlp.publishers.some(publisher => publisher.name === 'ACL Findings'));
+    assert.ok(nlp.publishers.some(publisher => publisher.name === 'EMNLP'));
+    assert.equal(
+        groups.reduce((total, group) => total + group.paperCount, 0),
+        papers.length
+    );
+});
+
 test('loads the parser before the app and uses only the canonical CSV in the UI', () => {
     const html = fs.readFileSync(path.join(projectRoot, 'index.html'), 'utf8');
     const app = fs.readFileSync(path.join(projectRoot, 'assets/js/app.js'), 'utf8');
@@ -194,7 +229,14 @@ test('loads the parser before the app and uses only the canonical CSV in the UI'
         html.indexOf('assets/js/csv-parser.js') < html.indexOf('assets/js/app.js'),
         'csv-parser.js must load before app.js'
     );
+    assert.ok(
+        html.indexOf('assets/js/publisher-groups.js') < html.indexOf('assets/js/app.js'),
+        'publisher-groups.js must load before app.js'
+    );
     assert.match(app, /CSVParser\.parseCSV/);
+    assert.match(app, /PublisherCatalog\.groupPublishers/);
+    assert.match(app, /createPublisherSelect/);
+    assert.match(app, /publisher-search-input/);
     assert.match(app, /fetch\('data\/papers\.csv', \{ cache: 'no-cache' \}\)/);
     assert.doesNotMatch(app, /processed_data\.csv/);
 });
