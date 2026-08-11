@@ -101,11 +101,11 @@
   </g>
   <text class="value" x="882.0" y="342.0" text-anchor="middle">35</text>
   <text class="axis-label" x="882.0" y="486" text-anchor="middle">2023</text>
-  <g><title>2024: 82 papers (49 LLM-related, 33 other)</title>
-    <rect x="935.6" y="356.4" width="46.0" height="105.6" fill="var(--other)"/>
-    <rect x="935.6" y="199.6" width="46.0" height="156.8" rx="5" fill="var(--llm)"/>
+  <g><title>2024: 81 papers (49 LLM-related, 32 other)</title>
+    <rect x="935.6" y="359.6" width="46.0" height="102.4" fill="var(--other)"/>
+    <rect x="935.6" y="202.8" width="46.0" height="156.8" rx="5" fill="var(--llm)"/>
   </g>
-  <text class="value" x="958.6" y="191.6" text-anchor="middle">82</text>
+  <text class="value" x="958.6" y="194.8" text-anchor="middle">81</text>
   <text class="axis-label" x="958.6" y="486" text-anchor="middle">2024</text>
   <g><title>2025: 70 papers (60 LLM-related, 10 other)</title>
     <rect x="1012.1" y="430.0" width="46.0" height="32.0" fill="var(--other)"/>
