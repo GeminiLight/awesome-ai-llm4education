@@ -1,0 +1,18 @@
+name: Site SEO checks
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify sitemap targets and canonical URLs
+        env:
+          SITE_URL: https://tianfuwang.tech/awesome-ai-llm4education
+        run: python3 scripts/verify-site-seo.py
