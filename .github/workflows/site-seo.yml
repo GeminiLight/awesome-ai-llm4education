@@ -14,5 +14,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify sitemap targets and canonical URLs
         env:
-          SITE_URL: https://tianfuwang.tech/awesome-ai-llm4education
+          SITE_URL: https://tianfu.wang/awesome-ai-llm4education
         run: python3 scripts/verify-site-seo.py
