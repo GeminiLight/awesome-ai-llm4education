@@ -1995,7 +1995,13 @@ Selected education and learning sciences venues include:
 
     CVPR, 2024. [`conference`](https://openaccess.thecvf.com/content/CVPR2024/html/Wang_CPR-Coach_Recognizing_Composite_Error_Actions_based_on_Single-class_Training_CVPR_2024_paper.html), [`code`](https://github.com/Shunli-Wang/CPR-Coach)
 
-7. **Leveraging Large Language Model as Simulated Patients for Clinical Education**
+7. **PATIENT-Ψ: Using Large Language Models to Simulate Patients for Training Mental Health Professionals**
+
+    *Ruiyi Wang, Stephanie Milani, Jamie C. Chiu, Jiayin Zhi, Shaun M. Eack, Travis Labrum, Samuel M. Murphy, Nev Jones, Kate Hardy, Hong Shen, Fei Fang, Zhiyu Zoey Chen*
+
+    EMNLP, 2024. [`conference`](https://aclanthology.org/2024.emnlp-main.711/), [`code`](https://github.com/ruiyiw/patient-psi)
+
+8. **Leveraging Large Language Model as Simulated Patients for Clinical Education**
 
     *Yanzeng Li, Cheng Zeng, Jialun Zhong, Ruoyu Zhang, Minhao Zhang, Lei Zou*
 
